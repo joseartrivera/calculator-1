@@ -7,6 +7,7 @@
              xmlns:local="using:CalculatorApp"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              x:Name="ControlRoot"
+             XYFocusKeyboardNavigation="Enabled"
              mc:Ignorable="d">
 
     <Grid x:Name="Root">
@@ -150,6 +151,51 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
+        <Grid x:Name="DisplayControls"
+              x:Uid="DisplayControls"
+              Grid.Row="0"
+              Grid.Column="2"
+              Grid.ColumnSpan="4"
+              AutomationProperties.HeadingLevel="Level1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <controls:CalculatorButton x:Name="percentButton"
+                                       x:Uid="percentButton"
+                                       Grid.Column="0"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="percentButton"
+                                       ButtonId="Percent"
+                                       Content="&#xE94C;"/>
+            <controls:CalculatorButton x:Name="clearEntryButton"
+                                       x:Uid="clearEntryButton"
+                                       Grid.Column="1"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       FontSize="16"
+                                       AutomationProperties.AutomationId="clearEntryButton"
+                                       ButtonId="ClearEntry"
+                                       Content="CE"/>
+            <controls:CalculatorButton x:Name="clearButton"
+                                       x:Uid="clearButton"
+                                       Grid.Column="2"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       FontSize="16"
+                                       AutomationProperties.AutomationId="clearButton"
+                                       ButtonId="Clear"
+                                       Content="C"/>
+            <controls:CalculatorButton x:Name="backSpaceButton"
+                                       x:Uid="backSpaceButton"
+                                       Grid.Column="3"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       FontSize="16"
+                                       AutomationProperties.AutomationId="backSpaceButton"
+                                       ButtonId="Backspace"
+                                       Content="&#xE94F;"/>
+        </Grid>
+
         <Grid x:Name="StandardFunctions"
               x:Uid="StandardFunctions"
               Grid.Row="1"
@@ -251,51 +297,6 @@
                                        AutomationProperties.AutomationId="equalButton"
                                        ButtonId="Equals"
                                        Content="&#xE94E;"/>
-        </Grid>
-
-        <Grid x:Name="DisplayControls"
-              x:Uid="DisplayControls"
-              Grid.Row="0"
-              Grid.Column="2"
-              Grid.ColumnSpan="4"
-              AutomationProperties.HeadingLevel="Level1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <controls:CalculatorButton x:Name="percentButton"
-                                       x:Uid="percentButton"
-                                       Grid.Column="0"
-                                       Style="{StaticResource SymbolOperatorButtonStyle}"
-                                       AutomationProperties.AutomationId="percentButton"
-                                       ButtonId="Percent"
-                                       Content="&#xE94C;"/>
-            <controls:CalculatorButton x:Name="clearEntryButton"
-                                       x:Uid="clearEntryButton"
-                                       Grid.Column="1"
-                                       Style="{StaticResource OperatorButtonStyle}"
-                                       FontSize="16"
-                                       AutomationProperties.AutomationId="clearEntryButton"
-                                       ButtonId="ClearEntry"
-                                       Content="CE"/>
-            <controls:CalculatorButton x:Name="clearButton"
-                                       x:Uid="clearButton"
-                                       Grid.Column="2"
-                                       Style="{StaticResource OperatorButtonStyle}"
-                                       FontSize="16"
-                                       AutomationProperties.AutomationId="clearButton"
-                                       ButtonId="Clear"
-                                       Content="C"/>
-            <controls:CalculatorButton x:Name="backSpaceButton"
-                                       x:Uid="backSpaceButton"
-                                       Grid.Column="3"
-                                       Style="{StaticResource SymbolOperatorButtonStyle}"
-                                       FontSize="16"
-                                       AutomationProperties.AutomationId="backSpaceButton"
-                                       ButtonId="Backspace"
-                                       Content="&#xE94F;"/>
         </Grid>
 
         <local:NumberPad x:Name="NumberPad"
