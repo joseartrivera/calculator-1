@@ -37,7 +37,6 @@
                         <Setter Target="percentButton.IsEnabled" Value="False"/>
                         <Setter Target="squareRootButton.IsEnabled" Value="False"/>
                         <Setter Target="xpower2Button.IsEnabled" Value="False"/>
-                        <Setter Target="xpower3Button.IsEnabled" Value="False"/>
                         <Setter Target="invertButton.IsEnabled" Value="False"/>
                         <Setter Target="divideButton.IsEnabled" Value="False"/>
                         <Setter Target="multiplyButton.IsEnabled" Value="False"/>
@@ -56,7 +55,6 @@
                         <Setter Target="percentButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="squareRootButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="xpower2Button.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="xpower3Button.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="invertButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="negateButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="clearEntryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
@@ -79,7 +77,6 @@
                         <Setter Target="percentButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="squareRootButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="xpower2Button.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="xpower3Button.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="invertButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="negateButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="clearEntryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
@@ -230,15 +227,6 @@
                                        AutomationProperties.AutomationId="xpower2Button"
                                        ButtonId="XPower2"
                                        Content="&#xf7c8;"/>
-            <controls:CalculatorButton x:Name="xpower3Button"
-                                       x:Uid="xpower3Button"
-                                       Grid.Row="3"
-                                       Style="{StaticResource SymbolOperatorButtonStyle}"
-                                       FontSize="18"
-                                       AutomationProperties.AutomationId="xpower3Button"
-                                       ButtonId="Cube"
-                                       Content="&#xf7cb;"
-                                       Visibility="Collapsed"/>
             <controls:CalculatorButton x:Name="invertButton"
                                        x:Uid="invertButton"
                                        Grid.Column="2"
@@ -293,7 +281,7 @@
             <controls:CalculatorButton x:Name="equalButton"
                                        x:Uid="equalButton"
                                        Grid.Row="4"
-                                       Style="{StaticResource AccentCalcButtonStyle}"
+                                       Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
                                        AutomationProperties.AutomationId="equalButton"
                                        ButtonId="Equals"
                                        Content="&#xE94E;"/>

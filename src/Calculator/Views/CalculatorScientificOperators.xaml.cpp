@@ -76,12 +76,7 @@ void CalculatorScientificOperators::shiftButton_IsEnabledChanged(_In_ Platform::
 void CalculatorScientificOperators::SetOperatorRowVisibility()
 {
     ::Visibility rowVis, invRowVis;
-    if (IsWideLayout)
-    {
-        rowVis = ::Visibility::Visible;
-        invRowVis = ::Visibility::Visible;
-    }
-    else if (shiftButton->IsChecked->Value)
+    if (shiftButton->IsChecked->Value)
     {
         rowVis = ::Visibility::Collapsed;
         invRowVis = ::Visibility::Visible;
