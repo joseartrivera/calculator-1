@@ -1,4 +1,4 @@
-<UserControl x:Class="CalculatorApp.Calculator"
+﻿<UserControl x:Class="CalculatorApp.Calculator"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:automation="using:CalculatorApp.Common.Automation"
@@ -690,7 +690,8 @@
                                                     x:Load="False"
                                                     IsEnabled="{x:Bind Model.IsScientific, Mode=OneWay}"
                                                     TabIndex="6"
-                                                    Visibility="{x:Bind Model.IsScientific, Mode=OneWay}"/>
+                                                    Visibility="Collapsed"/>
+            <!-- Visibility="{x:Bind Model.IsScientific, Mode=OneWay}"/> -->
 
             <!-- Memory panel controls -->
             <Grid x:Name="MemoryPanel"

@@ -629,6 +629,60 @@
                 </Setter>
             </Style>
 
+            <Style x:Key="OverflowButtonStyle"
+                   BasedOn="{StaticResource CaptionButtonStyle}"
+                   TargetType="Button">
+                <Setter Property="FontSize" Value="{StaticResource CaptionFontSize}"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="PointerOver">
+                                            <VisualState.Setters>
+                                                <Setter Target="RootGrid.(RevealBrush.State)" Value="PointerOver"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource AppControlHoverButtonFaceBrush}"/>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Target="RootGrid.(RevealBrush.State)" Value="Pressed"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource AppControlPressedButtonFaceBrush}"/>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <VisualState.Setters>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlDisabledBaseLowBrush}"/>
+                                                <Setter Target="ContentPresenter.BorderThickness" Value="0"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+
+                                <ContentPresenter x:Name="ContentPresenter"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  BorderBrush="{ThemeResource AppControlForegroundTransparentRevealBorderBrush}"
+                                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                                  FontSize="{TemplateBinding FontSize}"
+                                                  FontWeight="Normal"
+                                                  AutomationProperties.AccessibilityView="Raw"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  ContentTransitions="{TemplateBinding ContentTransitions}"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
             <Style x:Key="CaptionButtonStyle" TargetType="Button">
                 <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
                 <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundTransparentBrush}"/>
@@ -862,6 +916,12 @@
                    TargetType="ToggleButton">
                 <Setter Property="MinWidth" Value="0"/>
                 <Setter Property="MinHeight" Value="0"/>
+            </Style>
+
+            <Style x:Key="CaptionToggleEmphasizedButtonStyle"
+                   BasedOn="{StaticResource CaptionToggleButtonStyle}"
+                   TargetType="ToggleButton">
+                <Setter Property="Background" Value="{ThemeResource SystemAccentColorLight1}"/>
             </Style>
 
             <Style x:Key="ProgWordSizeButtonStyle"

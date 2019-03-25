@@ -14,9 +14,32 @@
         <converters:BooleanNegationConverter x:Key="BooleanNegationConverter"/>
         <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         <converters:BooleanToVisibilityNegationConverter x:Key="BooleanToVisibilityNegationConverter"/>
+
+        <Style x:Key="OverflowFlyoutStyle" TargetType="FlyoutPresenter">
+            <Setter Property="MinWidth" Value="256"/>
+            <Setter Property="MinHeight" Value="96"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="FlyoutPresenter">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Content="{TemplateBinding Content}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              ContentTransitions="{TemplateBinding ContentTransitions}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
     <Grid x:Name="ScientificOperators">
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -199,271 +222,183 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <Grid x:Name="ScientificFunctions"
-              x:Uid="ScientificFunctions"
-              Grid.Row="0"
-              Grid.RowSpan="2"
-              Grid.Column="0"
-              Grid.ColumnSpan="5"
-              AutomationProperties.HeadingLevel="Level1">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition x:Name="OpR2" Height="0"/>
-                <RowDefinition x:Name="OpR3" Height="0"/>
-            </Grid.RowDefinitions>
+        <Grid x:Name="StorageSpace" Visibility="Collapsed">
+            <!-- Other stuff -->
 
-            <Grid x:Name="StorageSpace" Visibility="Collapsed">
-                <controls:CalculatorButton x:Name="sinButton"
-                                           x:Uid="sinButton"
-                                           Grid.Column="2"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="sinButton"
-                                           ButtonId="Sin"
-                                           Content="sin"
-                                           Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
-                <controls:CalculatorButton x:Name="cosButton"
-                                           x:Uid="cosButton"
-                                           Grid.Column="3"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="cosButton"
-                                           ButtonId="Cos"
-                                           Content="cos"
-                                           Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
-                <controls:CalculatorButton x:Name="tanButton"
-                                           x:Uid="tanButton"
-                                           Grid.Column="4"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="tanButton"
-                                           ButtonId="Tan"
-                                           Content="tan"
-                                           Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
-                <controls:CalculatorButton x:Name="sinhButton"
-                                           x:Uid="sinhButton"
-                                           Grid.Column="2"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="sinhButton"
-                                           ButtonId="Sinh"
-                                           Content="sinh"
-                                           Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                <controls:CalculatorButton x:Name="coshButton"
-                                           x:Uid="coshButton"
-                                           Grid.Column="3"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="coshButton"
-                                           ButtonId="Cosh"
-                                           Content="cosh"
-                                           Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                <controls:CalculatorButton x:Name="tanhButton"
-                                           x:Uid="tanhButton"
-                                           Grid.Column="4"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="tanhButton"
-                                           ButtonId="Tanh"
-                                           Content="tanh"
-                                           Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-
-                <!-- inverse functions -->
-                <controls:CalculatorButton x:Name="invsinButton"
-                                           x:Uid="invsinButton"
-                                           Grid.Column="2"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="invsinButton"
-                                           ButtonId="InvSin"
-                                           Content="sin⁻¹"
-                                           Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
-                <controls:CalculatorButton x:Name="invcosButton"
-                                           x:Uid="invcosButton"
-                                           Grid.Column="3"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="invcosButton"
-                                           ButtonId="InvCos"
-                                           Content="cos⁻¹"
-                                           Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
-                <controls:CalculatorButton x:Name="invtanButton"
-                                           x:Uid="invtanButton"
-                                           Grid.Column="4"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="invtanButton"
-                                           ButtonId="InvTan"
-                                           Content="tan⁻¹"
-                                           Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
-                <controls:CalculatorButton x:Name="invsinhButton"
-                                           x:Uid="invsinhButton"
-                                           Grid.Column="2"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="invsinhButton"
-                                           ButtonId="InvSinh"
-                                           Content="sinh⁻¹"
-                                           Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                <controls:CalculatorButton x:Name="invcoshButton"
-                                           x:Uid="invcoshButton"
-                                           Grid.Column="3"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="invcoshButton"
-                                           ButtonId="InvCosh"
-                                           Content="cosh⁻¹"
-                                           Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                <controls:CalculatorButton x:Name="invtanhButton"
-                                           x:Uid="invtanhButton"
-                                           Grid.Column="4"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="invtanhButton"
-                                           ButtonId="InvTanh"
-                                           Content="tanh⁻¹"
-                                           Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-            </Grid>
-
-            <!-- Scientific Row 1 -->
-            <Grid x:Name="Row1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-
-                <controls:CalculatorButton x:Name="xpower2Button"
-                                           x:Uid="xpower2Button"
-                                           Style="{StaticResource SymbolOperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="xpower2Button"
-                                           ButtonId="XPower2"
-                                           Content="&#xf7c8;"/>
-                <controls:CalculatorButton x:Name="powerButton"
-                                           x:Uid="powerButton"
-                                           Grid.Column="1"
-                                           Style="{StaticResource SymbolOperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="powerButton"
-                                           ButtonId="XPowerY"
-                                           Content="&#xf7ca;"/>
-            </Grid>
-
-            <!-- Scientific INV Row 1 -->
-            <Grid x:Name="InvRow1" Visibility="Collapsed">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition x:Name="CX0" Width="1*"/>
-                    <ColumnDefinition x:Name="CX1" Width="1*"/>
-                    <ColumnDefinition x:Name="CX2" Width="1*"/>
-                    <ColumnDefinition x:Name="Cx3" Width="1*"/>
-                    <ColumnDefinition x:Name="CX4" Width="1*"/>
-                </Grid.ColumnDefinitions>
-
-                <controls:CalculatorButton x:Name="xpower3Button"
-                                           x:Uid="xpower3Button"
-                                           Style="{StaticResource SymbolOperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="xpower3Button"
-                                           ButtonId="Cube"
-                                           Content="&#xf7cb;"/>
-                <controls:CalculatorButton x:Name="ySquareRootButton"
-                                           x:Uid="ySquareRootButton"
-                                           Grid.Column="1"
-                                           Style="{StaticResource SymbolOperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="ySquareRootButton"
-                                           ButtonId="YRootX"
-                                           Content="&#xf7cd;"/>
-            </Grid>
-
-            <!-- Scientific Row 2 -->
-            <Grid x:Name="Row2" Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-
-                <controls:CalculatorButton x:Name="squareRootButton"
-                                           x:Uid="squareRootButton"
-                                           Style="{StaticResource SymbolOperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="squareRootButton"
-                                           ButtonId="Sqrt"
-                                           Content="&#xE94B;"/>
-                <controls:CalculatorButton x:Name="powerOf10Button"
-                                           x:Uid="powerOf10Button"
-                                           Grid.Column="1"
-                                           Style="{StaticResource SymbolOperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="powerOf10Button"
-                                           ButtonId="TenPowerX"
-                                           Content="&#xF7CC;"/>
-                <controls:CalculatorButton x:Name="logBase10Button"
-                                           x:Uid="logBase10Button"
-                                           Grid.Column="2"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="logBase10Button"
-                                           ButtonId="LogBase10"
-                                           Content="log"/>
-                <controls:CalculatorButton x:Name="expButton"
-                                           x:Uid="expButton"
-                                           Grid.Column="3"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="expButton"
-                                           ButtonId="Exp"
-                                           Content="Exp"/>
-                <controls:CalculatorButton x:Name="modButton"
-                                           x:Uid="modButton"
-                                           Grid.Column="4"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="modButton"
-                                           ButtonId="Mod"
-                                           Content="Mod"/>
-            </Grid>
-
-            <!-- Scientific INV Row 2 -->
-            <Grid x:Name="InvRow2"
-                  Grid.Row="1"
-                  Visibility="Collapsed">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-
-                <controls:CalculatorButton x:Name="invertButton"
-                                           x:Uid="invertButton"
-                                           Style="{StaticResource SymbolOperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="invertButton"
-                                           ButtonId="Invert"
-                                           Content="&#xf7c9;"/>
-                <controls:CalculatorButton x:Name="powerOfEButton"
-                                           x:Uid="powerOfEButton"
-                                           Grid.Column="1"
-                                           Style="{StaticResource SymbolOperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="powerOfEButton"
-                                           ButtonId="EPowerX"
-                                           Content="&#xf7ce;"/>
-                <controls:CalculatorButton x:Name="logBaseEButton"
-                                           x:Uid="logBaseEButton"
-                                           Grid.Column="2"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="logBaseEButton"
-                                           ButtonId="LogBaseE"
-                                           Content="ln"/>
-                <controls:CalculatorButton x:Name="dmsButton"
-                                           x:Uid="dmsButton"
-                                           Grid.Column="3"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="dmsButton"
-                                           ButtonId="DMS"
-                                           Content="dms"/>
-                <controls:CalculatorButton x:Name="degreesButton"
-                                           x:Uid="degreesButton"
-                                           Grid.Column="4"
-                                           Style="{StaticResource OperatorButtonStyle}"
-                                           AutomationProperties.AutomationId="degreesButton"
-                                           ButtonId="Degrees"
-                                           Content="deg"/>
-            </Grid>
+            <controls:CalculatorButton x:Name="dmsButton"
+                                       x:Uid="dmsButton"
+                                       Grid.Column="3"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="dmsButton"
+                                       ButtonId="DMS"
+                                       Content="dms"/>
+            <controls:CalculatorButton x:Name="degreesButton"
+                                       x:Uid="degreesButton"
+                                       Grid.Column="4"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="degreesButton"
+                                       ButtonId="Degrees"
+                                       Content="deg"/>
         </Grid>
+
+        <StackPanel Grid.ColumnSpan="5"
+                    Width="Auto"
+                    Orientation="Horizontal">
+            <Button MinWidth="64"
+                    Style="{StaticResource OverflowButtonStyle}"
+                    Background="Transparent"
+                    FontWeight="Normal">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="6,2,6,0"
+                               FontFamily="{StaticResource CalculatorFontFamily}"
+                               Text="&#xF1AA;"/>
+                    <TextBlock Text="TRIG"/>
+                    <TextBlock Margin="6,3,6,0"
+                               FontFamily="{StaticResource CalculatorFontFamily}"
+                               Text="&#xE70D;"/>
+                </StackPanel>
+                <Button.Flyout>
+                    <Flyout FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}" Placement="Bottom">
+                        <Grid MinWidth="128" MinHeight="64">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton x:Name="shiftButton2"
+                                          x:Uid="shiftButton2"
+                                          Style="{StaticResource CaptionToggleEmphasizedButtonStyle}"
+                                          AutomationProperties.AutomationId="shiftButton"
+                                          Checked="shiftButton_Check"
+                                          Content="2nd"
+                                          IsEnabledChanged="shiftButton_IsEnabledChanged"
+                                          Unchecked="shiftButton_Check"/>
+
+                            <controls:CalculatorButton x:Name="sinButton"
+                                                       x:Uid="sinButton"
+                                                       Grid.Column="1"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="sinButton"
+                                                       ButtonId="Sin"
+                                                       Content="sin"
+                                                       Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
+                            <controls:CalculatorButton x:Name="cosButton"
+                                                       x:Uid="cosButton"
+                                                       Grid.Column="2"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="cosButton"
+                                                       ButtonId="Cos"
+                                                       Content="cos"
+                                                       Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
+                            <controls:CalculatorButton x:Name="tanButton"
+                                                       x:Uid="tanButton"
+                                                       Grid.Column="3"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="tanButton"
+                                                       ButtonId="Tan"
+                                                       Content="tan"
+                                                       Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
+                            <controls:CalculatorButton x:Name="sinhButton"
+                                                       x:Uid="sinhButton"
+                                                       Grid.Column="1"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="sinhButton"
+                                                       ButtonId="Sinh"
+                                                       Content="sinh"
+                                                       Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                            <controls:CalculatorButton x:Name="coshButton"
+                                                       x:Uid="coshButton"
+                                                       Grid.Column="2"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="coshButton"
+                                                       ButtonId="Cosh"
+                                                       Content="cosh"
+                                                       Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                            <controls:CalculatorButton x:Name="tanhButton"
+                                                       x:Uid="tanhButton"
+                                                       Grid.Column="3"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="tanhButton"
+                                                       ButtonId="Tanh"
+                                                       Content="tanh"
+                                                       Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+                            <!-- inverse functions -->
+                            <controls:CalculatorButton x:Name="invsinButton"
+                                                       x:Uid="invsinButton"
+                                                       Grid.Column="1"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="invsinButton"
+                                                       ButtonId="InvSin"
+                                                       Content="sin⁻¹"
+                                                       Visibility="Collapsed"/>
+                            <controls:CalculatorButton x:Name="invcosButton"
+                                                       x:Uid="invcosButton"
+                                                       Grid.Column="2"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="invcosButton"
+                                                       ButtonId="InvCos"
+                                                       Content="cos⁻¹"
+                                                       Visibility="Collapsed"/>
+                            <controls:CalculatorButton x:Name="invtanButton"
+                                                       x:Uid="invtanButton"
+                                                       Grid.Column="3"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="invtanButton"
+                                                       ButtonId="InvTan"
+                                                       Content="tan⁻¹"
+                                                       Visibility="Collapsed"/>
+                            <controls:CalculatorButton x:Name="invsinhButton"
+                                                       x:Uid="invsinhButton"
+                                                       Grid.Column="1"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="invsinhButton"
+                                                       ButtonId="InvSinh"
+                                                       Content="sinh⁻¹"
+                                                       Visibility="Collapsed"/>
+                            <controls:CalculatorButton x:Name="invcoshButton"
+                                                       x:Uid="invcoshButton"
+                                                       Grid.Column="2"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="invcoshButton"
+                                                       ButtonId="InvCosh"
+                                                       Content="cosh⁻¹"
+                                                       Visibility="Collapsed"/>
+                            <controls:CalculatorButton x:Name="invtanhButton"
+                                                       x:Uid="invtanhButton"
+                                                       Grid.Column="3"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="invtanhButton"
+                                                       ButtonId="InvTanh"
+                                                       Content="tanh⁻¹"
+                                                       Visibility="Collapsed"/>
+
+
+                            <ToggleButton x:Name="hypButton2"
+                                          x:Uid="hypButton2"
+                                          Grid.Row="1"
+                                          Style="{StaticResource CaptionToggleEmphasizedButtonStyle}"
+                                          AutomationProperties.AutomationId="shiftButton"
+                                          Checked="shiftButton_Check"
+                                          Content="Hyp"
+                                          IsEnabledChanged="shiftButton_IsEnabledChanged"
+                                          Unchecked="shiftButton_Check"/>
+                        </Grid>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
+        </StackPanel>
 
         <ToggleButton x:Name="shiftButton"
                       x:Uid="shiftButton"
-                      Grid.Row="2"
-                      Grid.Column="0"
-                      Style="{StaticResource CaptionToggleButtonStyle}"
+                      Grid.Row="1"
+                      Style="{StaticResource CaptionToggleEmphasizedButtonStyle}"
                       FontFamily="{StaticResource CalculatorFontFamily}"
                       FontSize="20"
                       AutomationProperties.AutomationId="shiftButton"
@@ -472,9 +407,214 @@
                       IsEnabledChanged="shiftButton_IsEnabledChanged"
                       Unchecked="shiftButton_Check"/>
 
+        <controls:CalculatorButton x:Name="piButton"
+                                   x:Uid="piButton"
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                                   Style="{StaticResource SymbolOperatorButtonStyle}"
+                                   FontSize="14"
+                                   AutomationProperties.AutomationId="piButton"
+                                   ButtonId="Pi"
+                                   Content="&#xf7cf;"/>
+
+        <Grid x:Name="DisplayControls"
+              x:Uid="DisplayControls"
+              Grid.Row="1"
+              Grid.Column="2"
+              Grid.ColumnSpan="3"
+              AutomationProperties.HeadingLevel="Level1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <controls:CalculatorButton x:Name="clearEntryButton"
+                                       x:Uid="clearEntryButton"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       FontSize="16"
+                                       AutomationProperties.AutomationId="clearEntryButton"
+                                       ButtonId="ClearEntry"
+                                       Content="CE"/>
+            <controls:CalculatorButton x:Name="clearButton"
+                                       x:Uid="clearButton"
+                                       Grid.Column="1"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       FontSize="16"
+                                       AutomationProperties.AutomationId="clearButton"
+                                       ButtonId="Clear"
+                                       Content="C"/>
+            <controls:CalculatorButton x:Name="backSpaceButton"
+                                       x:Uid="backSpaceButton"
+                                       Grid.Column="2"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       FontFamily="{StaticResource CalculatorFontFamily}"
+                                       FontSize="16"
+                                       AutomationProperties.AutomationId="backSpaceButton"
+                                       ButtonId="Backspace"
+                                       Content="&#xE94F;"/>
+        </Grid>
+
+        <!-- Scientific Row 1 -->
+        <Grid x:Name="Row1"
+              Grid.Row="2"
+              Grid.RowSpan="6">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <controls:CalculatorButton x:Name="xpower2Button"
+                                       x:Uid="xpower2Button"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="xpower2Button"
+                                       ButtonId="XPower2"
+                                       Content="&#xf7c8;"/>
+            <controls:CalculatorButton x:Name="xpower3Button"
+                                       x:Uid="xpower3Button"
+                                       Grid.Row="1"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="xpower3Button"
+                                       ButtonId="Cube"
+                                       Content="&#xf7cb;"/>
+            <controls:CalculatorButton x:Name="powerButton"
+                                       x:Uid="powerButton"
+                                       Grid.Row="2"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="powerButton"
+                                       ButtonId="XPowerY"
+                                       Content="&#xf7ca;"/>
+            <controls:CalculatorButton x:Name="powerOf10Button"
+                                       x:Uid="powerOf10Button"
+                                       Grid.Row="3"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="powerOf10Button"
+                                       ButtonId="TenPowerX"
+                                       Content="&#xF7CC;"/>
+            <controls:CalculatorButton x:Name="logBase10Button"
+                                       x:Uid="logBase10Button"
+                                       Grid.Row="4"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="logBase10Button"
+                                       ButtonId="LogBase10"
+                                       Content="log"/>
+            <controls:CalculatorButton x:Name="logBaseEButton"
+                                       x:Uid="logBaseEButton"
+                                       Grid.Row="5"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="logBaseEButton"
+                                       ButtonId="LogBaseE"
+                                       Content="ln"/>
+        </Grid>
+
+        <!-- Scientific INV Row 1 -->
+        <Grid x:Name="InvRow1"
+              Grid.Row="2"
+              Grid.RowSpan="6"
+              Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <controls:CalculatorButton x:Name="squareRootButton"
+                                       x:Uid="squareRootButton"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="squareRootButton"
+                                       ButtonId="Sqrt"
+                                       Content="&#xE94B;"/>
+            <!-- Cube root goes here -->
+            <controls:CalculatorButton x:Name="ySquareRootButton"
+                                       x:Uid="ySquareRootButton"
+                                       Grid.Row="2"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="ySquareRootButton"
+                                       ButtonId="YRootX"
+                                       Content="&#xf7cd;"/>
+            <!-- 2^x goes here -->
+            <!-- log base y goes here -->
+            <controls:CalculatorButton x:Name="powerOfEButton"
+                                       x:Uid="powerOfEButton"
+                                       Grid.Row="5"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="powerOfEButton"
+                                       ButtonId="EPowerX"
+                                       Content="&#xf7ce;"/>
+        </Grid>
+
+        <!-- Scientific Row 2 -->
+        <Grid x:Name="Row2"
+              Grid.Row="2"
+              Grid.Column="1"
+              Grid.ColumnSpan="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <controls:CalculatorButton x:Name="invertButton"
+                                       x:Uid="invertButton"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="invertButton"
+                                       ButtonId="Invert"
+                                       Content="&#xf7c9;"/>
+            <controls:CalculatorButton x:Name="expButton"
+                                       x:Uid="expButton"
+                                       Grid.Column="2"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="expButton"
+                                       ButtonId="Exp"
+                                       Content="Exp"/>
+            <controls:CalculatorButton x:Name="modButton"
+                                       x:Uid="modButton"
+                                       Grid.Column="3"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="modButton"
+                                       ButtonId="Mod"
+                                       Content="Mod"/>
+        </Grid>
+
+        <controls:CalculatorButton x:Name="openParenthesisButton"
+                                   x:Uid="openParenthesisButton"
+                                   Grid.Row="3"
+                                   Grid.Column="1"
+                                   Style="{StaticResource ParenthesisCalcButtonStyle}"
+                                   FontSize="19"
+                                   AutomationProperties.AutomationId="openParenthesisButton"
+                                   AutomationProperties.Name="{Binding LeftParenthesisAutomationName}"
+                                   ButtonId="OpenParenthesis"
+                                   Content="("
+                                   Tag="{x:Bind Model.OpenParenthesisCount, Mode=OneWay}"/>
+        <controls:CalculatorButton x:Name="closeParenthesisButton"
+                                   x:Uid="closeParenthesisButton"
+                                   Grid.Row="3"
+                                   Grid.Column="2"
+                                   Style="{StaticResource OperatorButtonStyle}"
+                                   FontSize="19"
+                                   AutomationProperties.AutomationId="closeParenthesisButton"
+                                   ButtonId="CloseParenthesis"
+                                   Content=")"/>
+        <controls:CalculatorButton x:Name="factorialButton"
+                                   x:Uid="factorialButton"
+                                   Grid.Row="3"
+                                   Grid.Column="3"
+                                   Style="{StaticResource OperatorButtonStyle}"
+                                   FontSize="18"
+                                   AutomationProperties.AutomationId="factorialButton"
+                                   ButtonId="Factorial"
+                                   Content="x!"/>
+
         <Grid x:Name="StandardOperators"
               x:Uid="StandardOperators"
-              Grid.Row="2"
+              Grid.Row="3"
               Grid.RowSpan="5"
               Grid.Column="4"
               AutomationProperties.HeadingLevel="Level1">
@@ -522,63 +662,9 @@
                                        Content="&#xE94E;"/>
         </Grid>
 
-        <Grid x:Name="DisplayControls"
-              x:Uid="DisplayControls"
-              Grid.Column="2"
-              Grid.ColumnSpan="3"
-              AutomationProperties.HeadingLevel="Level1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <controls:CalculatorButton x:Name="clearEntryButton"
-                                       x:Uid="clearEntryButton"
-                                       Style="{StaticResource OperatorButtonStyle}"
-                                       FontSize="16"
-                                       AutomationProperties.AutomationId="clearEntryButton"
-                                       ButtonId="ClearEntry"
-                                       Content="CE"/>
-            <controls:CalculatorButton x:Name="clearButton"
-                                       x:Uid="clearButton"
-                                       Grid.Column="1"
-                                       Style="{StaticResource OperatorButtonStyle}"
-                                       FontSize="16"
-                                       AutomationProperties.AutomationId="clearButton"
-                                       ButtonId="Clear"
-                                       Content="C"/>
-            <controls:CalculatorButton x:Name="backSpaceButton"
-                                       x:Uid="backSpaceButton"
-                                       Grid.Column="2"
-                                       Style="{StaticResource SymbolOperatorButtonStyle}"
-                                       FontFamily="{StaticResource CalculatorFontFamily}"
-                                       FontSize="16"
-                                       AutomationProperties.AutomationId="backSpaceButton"
-                                       ButtonId="Backspace"
-                                       Content="&#xE94F;"/>
-        </Grid>
-
-        <controls:CalculatorButton x:Name="piButton"
-                                   x:Uid="piButton"
-                                   Grid.Row="3"
-                                   Grid.Column="0"
-                                   Style="{StaticResource SymbolOperatorButtonStyle}"
-                                   FontSize="14"
-                                   AutomationProperties.AutomationId="piButton"
-                                   ButtonId="Pi"
-                                   Content="&#xf7cf;"/>
-        <controls:CalculatorButton x:Name="factorialButton"
-                                   x:Uid="factorialButton"
-                                   Grid.Row="2"
-                                   Grid.Column="3"
-                                   Style="{StaticResource OperatorButtonStyle}"
-                                   FontSize="18"
-                                   AutomationProperties.AutomationId="factorialButton"
-                                   ButtonId="Factorial"
-                                   Content="x!"/>
         <controls:CalculatorButton x:Name="negateButton"
                                    x:Uid="negateButton"
-                                   Grid.Row="6"
+                                   Grid.Row="7"
                                    Grid.Column="1"
                                    Style="{StaticResource SymbolOperatorKeypadButtonStyle}"
                                    FontSize="16"
@@ -586,30 +672,10 @@
                                    ButtonId="Negate"
                                    Content="&#xE94D;"
                                    IsEnabled="{x:Bind Model.IsNegateEnabled, Mode=OneWay}"/>
-        <controls:CalculatorButton x:Name="openParenthesisButton"
-                                   x:Uid="openParenthesisButton"
-                                   Grid.Row="2"
-                                   Grid.Column="1"
-                                   Style="{StaticResource ParenthesisCalcButtonStyle}"
-                                   FontSize="19"
-                                   AutomationProperties.AutomationId="openParenthesisButton"
-                                   AutomationProperties.Name="{Binding LeftParenthesisAutomationName}"
-                                   ButtonId="OpenParenthesis"
-                                   Content="("
-                                   Tag="{x:Bind Model.OpenParenthesisCount, Mode=OneWay}"/>
-        <controls:CalculatorButton x:Name="closeParenthesisButton"
-                                   x:Uid="closeParenthesisButton"
-                                   Grid.Row="2"
-                                   Grid.Column="2"
-                                   Style="{StaticResource OperatorButtonStyle}"
-                                   FontSize="19"
-                                   AutomationProperties.AutomationId="closeParenthesisButton"
-                                   ButtonId="CloseParenthesis"
-                                   Content=")"/>
 
         <local:NumberPad x:Name="NumberPad"
                          x:Uid="NumberPad"
-                         Grid.Row="3"
+                         Grid.Row="4"
                          Grid.RowSpan="4"
                          Grid.Column="1"
                          Grid.ColumnSpan="3"

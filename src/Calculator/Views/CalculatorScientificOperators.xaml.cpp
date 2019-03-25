@@ -88,7 +88,7 @@ void CalculatorScientificOperators::SetOperatorRowVisibility()
     }
 
     Row1->Visibility = rowVis;
-    Row2->Visibility = rowVis;
+    //Row2->Visibility = rowVis;
     InvRow1->Visibility = invRowVis;
-    InvRow2->Visibility = invRowVis;
+    //InvRow2->Visibility = invRowVis;
 }
