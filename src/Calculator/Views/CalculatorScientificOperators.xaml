@@ -14,28 +14,6 @@
         <converters:BooleanNegationConverter x:Key="BooleanNegationConverter"/>
         <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         <converters:BooleanToVisibilityNegationConverter x:Key="BooleanToVisibilityNegationConverter"/>
-
-        <Style x:Key="OverflowFlyoutStyle" TargetType="FlyoutPresenter">
-            <Setter Property="MinWidth" Value="256"/>
-            <Setter Property="MinHeight" Value="96"/>
-            <Setter Property="Padding" Value="0"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="FlyoutPresenter">
-                        <Border Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}">
-                            <ContentPresenter Margin="{TemplateBinding Padding}"
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              Content="{TemplateBinding Content}"
-                                              ContentTemplate="{TemplateBinding ContentTemplate}"
-                                              ContentTransitions="{TemplateBinding ContentTransitions}"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
     </UserControl.Resources>
     <Grid x:Name="ScientificOperators">
         <Grid.RowDefinitions>
@@ -242,19 +220,12 @@
         </Grid>
 
 
-        <ListView Grid.ColumnSpan="5"
-                  Height="Auto"
-                  HorizontalAlignment="Stretch"
-                  VerticalAlignment="Stretch"
-                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                  ScrollViewer.HorizontalScrollMode="Enabled"
-                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                  ScrollViewer.VerticalScrollMode="Disabled"
-                  SelectionMode="None">
+        <controls:OverflowListView Grid.ColumnSpan="5">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="MinHeight" Value="0"/>
                     <Setter Property="Padding" Value="0"/>
+                    <Setter Property="IsTabStop" Value="False"/>
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     <Setter Property="VerticalContentAlignment" Value="Stretch"/>
                 </Style>
@@ -446,7 +417,7 @@
                                Text="&#xE70D;"/>
                 </StackPanel>
             </Button>
-        </ListView>
+        </controls:OverflowListView>
 
         <ToggleButton x:Name="shiftButton"
                       x:Uid="shiftButton"

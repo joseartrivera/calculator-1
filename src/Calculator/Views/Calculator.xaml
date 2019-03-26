@@ -690,8 +690,7 @@
                                                     x:Load="False"
                                                     IsEnabled="{x:Bind Model.IsScientific, Mode=OneWay}"
                                                     TabIndex="6"
-                                                    Visibility="Collapsed"/>
-            <!-- Visibility="{x:Bind Model.IsScientific, Mode=OneWay}"/> -->
+                                                    Visibility="{x:Bind Model.IsScientific, Mode=OneWay}"/>
 
             <!-- Memory panel controls -->
             <Grid x:Name="MemoryPanel"
