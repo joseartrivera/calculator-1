@@ -241,13 +241,33 @@
                                        Content="deg"/>
         </Grid>
 
-        <StackPanel Grid.ColumnSpan="5"
-                    Width="Auto"
-                    Orientation="Horizontal">
-            <Button MinWidth="64"
-                    Style="{StaticResource OverflowButtonStyle}"
-                    Background="Transparent"
-                    FontWeight="Normal">
+
+        <ListView Grid.ColumnSpan="5"
+                  Height="Auto"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                  ScrollViewer.HorizontalScrollMode="Enabled"
+                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                  ScrollViewer.VerticalScrollMode="Disabled"
+                  SelectionMode="None">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="MinHeight" Value="0"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Height="Auto"
+                                VerticalAlignment="Stretch"
+                                Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <Button Margin="1" Style="{StaticResource OverflowButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="6,2,6,0"
                                FontFamily="{StaticResource CalculatorFontFamily}"
@@ -393,7 +413,40 @@
                     </Flyout>
                 </Button.Flyout>
             </Button>
-        </StackPanel>
+            <Button Margin="1" Style="{StaticResource OverflowButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="6,2,6,0"
+                               FontFamily="{StaticResource CalculatorFontFamily}"
+                               Text="&#xF1AA;"/>
+                    <TextBlock Text="FUNC"/>
+                    <TextBlock Margin="6,3,6,0"
+                               FontFamily="{StaticResource CalculatorFontFamily}"
+                               Text="&#xE70D;"/>
+                </StackPanel>
+            </Button>
+            <Button Margin="1" Style="{StaticResource OverflowButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="6,2,6,0"
+                               FontFamily="{StaticResource CalculatorFontFamily}"
+                               Text="&#xF1AA;"/>
+                    <TextBlock Text="VARIABLES"/>
+                    <TextBlock Margin="6,3,6,0"
+                               FontFamily="{StaticResource CalculatorFontFamily}"
+                               Text="&#xE70D;"/>
+                </StackPanel>
+            </Button>
+            <Button Margin="1" Style="{StaticResource OverflowButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="6,2,6,0"
+                               FontFamily="{StaticResource CalculatorFontFamily}"
+                               Text="&#xF1AA;"/>
+                    <TextBlock Text="INEQUALITIES"/>
+                    <TextBlock Margin="6,3,6,0"
+                               FontFamily="{StaticResource CalculatorFontFamily}"
+                               Text="&#xE70D;"/>
+                </StackPanel>
+            </Button>
+        </ListView>
 
         <ToggleButton x:Name="shiftButton"
                       x:Uid="shiftButton"
