@@ -232,9 +232,9 @@
             </ListView.ItemContainerStyle>
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel Height="Auto"
-                                VerticalAlignment="Stretch"
-                                Orientation="Horizontal"/>
+                    <ItemsStackPanel Height="Auto"
+                                     VerticalAlignment="Stretch"
+                                     Orientation="Horizontal"/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
 
