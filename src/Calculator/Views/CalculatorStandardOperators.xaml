@@ -212,13 +212,13 @@
                 <ColumnDefinition x:Name="FnC2" Width="1*"/>
                 <ColumnDefinition x:Name="FnC3" Width="1*"/>
             </Grid.ColumnDefinitions>
-            <controls:CalculatorButton x:Name="squareRootButton"
-                                       x:Uid="squareRootButton"
-                                       Grid.Column="0"
+            <controls:CalculatorButton x:Name="invertButton"
+                                       x:Uid="invertButton"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
-                                       AutomationProperties.AutomationId="squareRootButton"
-                                       ButtonId="Sqrt"
-                                       Content="&#xE94B;"/>
+                                       FontSize="18"
+                                       AutomationProperties.AutomationId="invertButton"
+                                       ButtonId="Invert"
+                                       Content="&#xf7c9;"/>
             <controls:CalculatorButton x:Name="xpower2Button"
                                        x:Uid="xpower2Button"
                                        Grid.Column="1"
@@ -227,14 +227,13 @@
                                        AutomationProperties.AutomationId="xpower2Button"
                                        ButtonId="XPower2"
                                        Content="&#xf7c8;"/>
-            <controls:CalculatorButton x:Name="invertButton"
-                                       x:Uid="invertButton"
+            <controls:CalculatorButton x:Name="squareRootButton"
+                                       x:Uid="squareRootButton"
                                        Grid.Column="2"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
-                                       FontSize="18"
-                                       AutomationProperties.AutomationId="invertButton"
-                                       ButtonId="Invert"
-                                       Content="&#xf7c9;"/>
+                                       AutomationProperties.AutomationId="squareRootButton"
+                                       ButtonId="Sqrt"
+                                       Content="&#xE94B;"/>
         </Grid>
 
         <Grid x:Name="StandardOperators"
