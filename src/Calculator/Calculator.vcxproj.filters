@@ -311,6 +311,9 @@
     <ClCompile Include="Controls\OverflowListView.cpp">
       <Filter>Controls</Filter>
     </ClCompile>
+    <ClCompile Include="Controls\HorizontalNoOverflowStackPanel.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -413,12 +416,16 @@
     <ClInclude Include="Controls\OverflowListView.h">
       <Filter>Controls</Filter>
     </ClInclude>
+    <ClInclude Include="Controls\HorizontalNoOverflowStackPanel.h">
+      <Filter>Controls</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\Calculator.xaml">
