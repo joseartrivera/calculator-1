@@ -1394,10 +1394,9 @@
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}">
-                                <Grid>
+                                <Grid x:Name="Grid">
                                     <Grid.ColumnDefinitions/>
                                     <ScrollViewer x:Name="ScrollViewer"
-                                                  Grid.Column="1"
                                                   AutomationProperties.AccessibilityView="Raw"
                                                   BringIntoViewOnFocusChange="{TemplateBinding ScrollViewer.BringIntoViewOnFocusChange}"
                                                   HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
@@ -1421,7 +1420,6 @@
                                                         HeaderTransitions="{TemplateBinding HeaderTransitions}"/>
                                     </ScrollViewer>
                                     <Button x:Name="ScrollLeft"
-                                            Grid.Column="1"
                                             Width="24"
                                             Padding="0"
                                             HorizontalAlignment="Left"
@@ -1436,7 +1434,6 @@
                                         </Button.Resources>
                                     </Button>
                                     <Button x:Name="ScrollRight"
-                                            Grid.Column="1"
                                             Width="24"
                                             Padding="0"
                                             HorizontalAlignment="Right"

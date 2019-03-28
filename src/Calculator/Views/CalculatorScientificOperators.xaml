@@ -384,39 +384,6 @@
                     </Flyout>
                 </Button.Flyout>
             </Button>
-            <Button Margin="1" Style="{StaticResource OverflowButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="6,2,6,0"
-                               FontFamily="{StaticResource CalculatorFontFamily}"
-                               Text="&#xF1AA;"/>
-                    <TextBlock Text="FUNC"/>
-                    <TextBlock Margin="6,3,6,0"
-                               FontFamily="{StaticResource CalculatorFontFamily}"
-                               Text="&#xE70D;"/>
-                </StackPanel>
-            </Button>
-            <Button Margin="1" Style="{StaticResource OverflowButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="6,2,6,0"
-                               FontFamily="{StaticResource CalculatorFontFamily}"
-                               Text="&#xF1AA;"/>
-                    <TextBlock Text="VARIABLES"/>
-                    <TextBlock Margin="6,3,6,0"
-                               FontFamily="{StaticResource CalculatorFontFamily}"
-                               Text="&#xE70D;"/>
-                </StackPanel>
-            </Button>
-            <Button Margin="1" Style="{StaticResource OverflowButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="6,2,6,0"
-                               FontFamily="{StaticResource CalculatorFontFamily}"
-                               Text="&#xF1AA;"/>
-                    <TextBlock Text="INEQUALITIES"/>
-                    <TextBlock Margin="6,3,6,0"
-                               FontFamily="{StaticResource CalculatorFontFamily}"
-                               Text="&#xE70D;"/>
-                </StackPanel>
-            </Button>
         </controls:OverflowListView>
 
         <ToggleButton x:Name="shiftButton"
