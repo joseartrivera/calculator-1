@@ -63,6 +63,7 @@
                     <SolidColorBrush x:Key="AppControlTransparentAccentColorBrush" Color="{ThemeResource SystemAccentColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextBaseHighColorBrush" Color="{StaticResource SystemBaseHighColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextRedColorBrush" Color="Red"/>
+
                     <RevealBorderBrush x:Key="AppControlForegroundTransparentRevealBorderBrush"
                                        FallbackColor="Transparent"
                                        TargetTheme="Light"
@@ -343,11 +344,11 @@
             <Style x:Key="AccentEmphasizedCalcButtonStyle"
                    BasedOn="{StaticResource SymbolOperatorButtonStyle}"
                    TargetType="Controls:CalculatorButton">
-                <Setter Property="HoverBackground" Value="{ThemeResource SystemControlHighlightAccentRevealBackgroundBrush}"/>
-                <Setter Property="HoverForeground" Value="{ThemeResource SystemControlHighlightAltAltHighBrush}"/>
-                <Setter Property="PressBackground" Value="{ThemeResource AppControlHighlightAltListAccentHighRevealBackgroundBrush}"/>
-                <Setter Property="PressForeground" Value="{ThemeResource SystemControlHighlightAltAltHighBrush}"/>
-                <Setter Property="Background" Value="{ThemeResource SystemAccentColorLight1}"/>
+                <Setter Property="HoverBackground" Value="{ThemeResource SystemControlHighlightAltListAccentHighBrush}"/>
+                <Setter Property="HoverForeground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                <Setter Property="PressBackground" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
+                <Setter Property="PressForeground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                <Setter Property="Background" Value="{ThemeResource SystemControlHighlightAltListAccentLowBrush}"/>
             </Style>
 
             <!-- RESULTS -->
@@ -921,7 +922,101 @@
             <Style x:Key="CaptionToggleEmphasizedButtonStyle"
                    BasedOn="{StaticResource CaptionToggleButtonStyle}"
                    TargetType="ToggleButton">
-                <Setter Property="Background" Value="{ThemeResource SystemAccentColorLight1}"/>
+                <Setter Property="Background" Value="{ThemeResource SystemControlHighlightAltListAccentLowBrush}"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ToggleButton">
+                            <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="PointerOver">
+                                            <VisualState.Setters>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
+                                                <Setter Target="RootGrid.(RevealBrush.State)" Value="PointerOver"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource SystemControlHighlightAltListAccentHighBrush}"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
+                                                <Setter Target="RootGrid.(RevealBrush.State)" Value="Pressed"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <VisualState.Setters>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlDisabledBaseLowBrush}"/>
+                                                <Setter Target="ContentPresenter.BorderThickness" Value="0"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Checked">
+                                            <VisualState.Setters>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
+                                                <Setter Target="SelectionBorder.Background" Value="{ThemeResource SystemControlHighlightTransparentBrush}"/>
+                                                <Setter Target="SelectionBorder.BorderBrush" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="CheckedPointerOver">
+                                            <VisualState.Setters>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
+                                                <Setter Target="RootGrid.(RevealBrush.State)" Value="PointerOver"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource SystemControlHighlightAltListAccentHighBrush}"/>
+                                                <Setter Target="SelectionBorder.Background" Value="{ThemeResource SystemControlHighlightTransparentBrush}"/>
+                                                <Setter Target="SelectionBorder.BorderBrush" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="CheckedPressed">
+                                            <VisualState.Setters>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
+                                                <Setter Target="RootGrid.(RevealBrush.State)" Value="Pressed"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
+                                                <Setter Target="SelectionBorder.Background" Value="{ThemeResource SystemControlHighlightTransparentBrush}"/>
+                                                <Setter Target="SelectionBorder.BorderBrush" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="CheckedDisabled">
+                                            <VisualState.Setters>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlDisabledBaseLowBrush}"/>
+                                                <Setter Target="ContentPresenter.BorderThickness" Value="0"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="Sizing">
+                                        <VisualState x:Name="NormalSize">
+                                            <VisualState.StateTriggers>
+                                                <AdaptiveTrigger MinWindowHeight="{StaticResource AppMinWindowHeight}" MinWindowWidth="{StaticResource AppMinWindowWidth}"/>
+                                            </VisualState.StateTriggers>
+                                        </VisualState>
+                                        <VisualState x:Name="SmallSize">
+                                            <VisualState.StateTriggers>
+                                                <AdaptiveTrigger MinWindowHeight="0" MinWindowWidth="0"/>
+                                            </VisualState.StateTriggers>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+
+                                <Border x:Name="SelectionBorder" BorderThickness="0,0,0,2"/>
+
+                                <ContentPresenter x:Name="ContentPresenter"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  Foreground="{TemplateBinding Foreground}"
+                                                  BorderBrush="{ThemeResource AppControlForegroundTransparentRevealBorderBrush}"
+                                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                                  FontSize="{TemplateBinding FontSize}"
+                                                  AutomationProperties.AccessibilityView="Raw"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  ContentTransitions="{TemplateBinding ContentTransitions}"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
             </Style>
 
             <Style x:Key="ProgWordSizeButtonStyle"
