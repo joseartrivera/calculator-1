@@ -204,7 +204,7 @@
 
 
         <controls:OverflowListView Grid.ColumnSpan="5">
-            <Button Style="{StaticResource OverflowButtonStyle}">
+            <Button x:Name="TrigButton" Style="{StaticResource OverflowButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="6,2,6,0"
                                FontFamily="{StaticResource CalculatorFontFamily}"
@@ -218,7 +218,9 @@
                     <Flyout x:Name="Trigflyout"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
                             Placement="Bottom">
-                        <Grid MinWidth="258" MinHeight="96">
+                        <Grid x:Name="TrigGrid"
+                              MinWidth="258"
+                              MinHeight="96">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1*"/>
                                 <RowDefinition Height="1*"/>
@@ -367,7 +369,9 @@
                     <Flyout x:Name="FuncFlyout"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
                             Placement="Bottom">
-                        <Grid MinWidth="194" MinHeight="48">
+                        <Grid x:Name="FuncGrid"
+                              MinWidth="194"
+                              MinHeight="48">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
@@ -436,7 +440,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <controls:CalculatorButton x:Name="clearEntryButton"
+            <controls:CalculatorButton Name="clearEntryButton"
                                        x:Uid="clearEntryButton"
                                        Style="{StaticResource OperatorButtonStyle}"
                                        FontSize="16"
@@ -538,6 +542,7 @@
                                        ButtonId="Sqrt"
                                        Content="&#xE94B;"/>
             <!-- cuberoot goes here PLACEHOLDER -->
+            <!--
             <controls:CalculatorButton x:Name="cubeRootButton"
                                        x:Uid="cubeRootButton"
                                        Grid.Row="1"
@@ -545,7 +550,9 @@
                                        AutomationProperties.AutomationId="cubeRootButton"
                                        ButtonId="Sqrt"
                                        Content="&#xF1AA;"/>
+            -->
             <!-- PLACEHOLDER -->
+            <!--
             <controls:CalculatorButton x:Name="ySquareRootButton"
                                        x:Uid="ySquareRootButton"
                                        Grid.Row="2"
@@ -553,8 +560,10 @@
                                        AutomationProperties.AutomationId="ySquareRootButton"
                                        ButtonId="YRootX"
                                        Content="&#xf7cd;"/>
+            -->
             <!-- 2^x goes here -->
             <!-- PLACEHOLDER -->
+            <!--
             <controls:CalculatorButton x:Name="x2PowerButton"
                                        x:Uid="x2PowerButton"
                                        Grid.Row="3"
@@ -562,15 +571,17 @@
                                        AutomationProperties.AutomationId="x2PowerButton"
                                        ButtonId="Sqrt"
                                        Content="&#xF1AA;"/>
+            -->
             <!-- PLACEHOLDER -->
             <!-- log base y goes here -->
+            <!--
             <controls:CalculatorButton x:Name="logBaseY"
                                        x:Uid="logBaseY"
                                        Grid.Row="4"
                                        Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
                                        AutomationProperties.AutomationId="logBaseY"
                                        ButtonId="Sqrt"
-                                       Content="&#xF1AA;"/>
+                                       Content="&#xF1AA;"/>-->
             <controls:CalculatorButton x:Name="powerOfEButton"
                                        x:Uid="powerOfEButton"
                                        Grid.Row="5"
@@ -600,13 +611,14 @@
                                        Content="&#xf7c9;"/>
             <!-- PLACEHOLDER -->
             <!-- absoloute value goes here -->
+            <!--
             <controls:CalculatorButton x:Name="absX"
                                        x:Uid="absX"
                                        Grid.Column="1"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="absX"
                                        ButtonId="Sqrt"
-                                       Content="&#xF1AA;"/>
+                                       Content="&#xF1AA;"/>-->
             <controls:CalculatorButton x:Name="expButton"
                                        x:Uid="expButton"
                                        Grid.Column="2"

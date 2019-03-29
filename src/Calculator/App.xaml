@@ -1468,9 +1468,9 @@
                 <Setter Property="ItemsPanel">
                     <Setter.Value>
                         <ItemsPanelTemplate>
-                            <ItemsStackPanel Height="Auto"
-                                             VerticalAlignment="Stretch"
-                                             Orientation="Horizontal"/>
+                            <StackPanel Height="Auto"
+                                        VerticalAlignment="Stretch"
+                                        Orientation="Horizontal"/>
                         </ItemsPanelTemplate>
                     </Setter.Value>
                 </Setter>
