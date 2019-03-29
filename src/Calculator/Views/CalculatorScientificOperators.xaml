@@ -367,7 +367,7 @@
                     <Flyout x:Name="FuncFlyout"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
                             Placement="Bottom">
-                        <Grid MinWidth="258" MinHeight="48">
+                        <Grid MinWidth="194" MinHeight="48">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
