@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="CalculatorApp.CalculatorScientificOperators"
+<UserControl x:Class="CalculatorApp.CalculatorScientificOperators"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="using:CalculatorApp.Controls"
@@ -202,45 +202,9 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <Grid x:Name="StorageSpace" Visibility="Collapsed">
-            <!-- Other stuff -->
-
-            <controls:CalculatorButton x:Name="dmsButton"
-                                       x:Uid="dmsButton"
-                                       Grid.Column="3"
-                                       Style="{StaticResource OperatorButtonStyle}"
-                                       AutomationProperties.AutomationId="dmsButton"
-                                       ButtonId="DMS"
-                                       Content="dms"/>
-            <controls:CalculatorButton x:Name="degreesButton"
-                                       x:Uid="degreesButton"
-                                       Grid.Column="4"
-                                       Style="{StaticResource OperatorButtonStyle}"
-                                       AutomationProperties.AutomationId="degreesButton"
-                                       ButtonId="Degrees"
-                                       Content="deg"/>
-        </Grid>
-
 
         <controls:OverflowListView Grid.ColumnSpan="5">
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="MinHeight" Value="0"/>
-                    <Setter Property="Padding" Value="0"/>
-                    <Setter Property="IsTabStop" Value="False"/>
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
-                </Style>
-            </ListView.ItemContainerStyle>
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <ItemsStackPanel Height="Auto"
-                                     VerticalAlignment="Stretch"
-                                     Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-
-            <Button Margin="1" Style="{StaticResource OverflowButtonStyle}">
+            <Button Style="{StaticResource OverflowButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="6,2,6,0"
                                FontFamily="{StaticResource CalculatorFontFamily}"
@@ -251,8 +215,10 @@
                                Text="&#xE70D;"/>
                 </StackPanel>
                 <Button.Flyout>
-                    <Flyout FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}" Placement="Bottom">
-                        <Grid MinWidth="128" MinHeight="64">
+                    <Flyout x:Name="Trigflyout"
+                            FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
+                            Placement="Bottom">
+                        <Grid MinWidth="258" MinHeight="96">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1*"/>
                                 <RowDefinition Height="1*"/>
@@ -279,6 +245,7 @@
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="sinButton"
                                                        ButtonId="Sin"
+                                                       Click="flyoutButton_Clicked"
                                                        Content="sin"
                                                        Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
                             <controls:CalculatorButton x:Name="cosButton"
@@ -382,6 +349,54 @@
                                           Content="Hyp"
                                           IsEnabledChanged="shiftButton_IsEnabledChanged"
                                           Unchecked="shiftButton_Check"/>
+                        </Grid>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
+            <Button Style="{StaticResource OverflowButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="6,2,6,0"
+                               FontFamily="{StaticResource CalculatorFontFamily}"
+                               Text="&#xF1AA;"/>
+                    <TextBlock Text="FUNCTIONS"/>
+                    <TextBlock Margin="6,3,6,0"
+                               FontFamily="{StaticResource CalculatorFontFamily}"
+                               Text="&#xE70D;"/>
+                </StackPanel>
+                <Button.Flyout>
+                    <Flyout x:Name="FuncFlyout"
+                            FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
+                            Placement="Bottom">
+                        <Grid MinWidth="258" MinHeight="48">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- place holder for rand -->
+                            <controls:CalculatorButton x:Name="randButton"
+                                                       x:Uid="randButton"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="randButton"
+                                                       ButtonId="DMS"
+                                                       Content="rand"/>
+                            <controls:CalculatorButton x:Name="dmsButton"
+                                                       x:Uid="dmsButton"
+                                                       Grid.Column="1"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="dmsButton"
+                                                       ButtonId="DMS"
+                                                       Content="dms"/>
+                            <controls:CalculatorButton x:Name="degreesButton"
+                                                       x:Uid="degreesButton"
+                                                       Grid.Column="2"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="degreesButton"
+                                                       ButtonId="Degrees"
+                                                       Content="deg"/>
                         </Grid>
                     </Flyout>
                 </Button.Flyout>
@@ -518,24 +533,48 @@
             </Grid.RowDefinitions>
             <controls:CalculatorButton x:Name="squareRootButton"
                                        x:Uid="squareRootButton"
-                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
                                        AutomationProperties.AutomationId="squareRootButton"
                                        ButtonId="Sqrt"
                                        Content="&#xE94B;"/>
-            <!-- Cube root goes here -->
+            <!-- cuberoot goes here PLACEHOLDER -->
+            <controls:CalculatorButton x:Name="cubeRootButton"
+                                       x:Uid="cubeRootButton"
+                                       Grid.Row="1"
+                                       Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
+                                       AutomationProperties.AutomationId="cubeRootButton"
+                                       ButtonId="Sqrt"
+                                       Content="&#xF1AA;"/>
+            <!-- PLACEHOLDER -->
             <controls:CalculatorButton x:Name="ySquareRootButton"
                                        x:Uid="ySquareRootButton"
                                        Grid.Row="2"
-                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
                                        AutomationProperties.AutomationId="ySquareRootButton"
                                        ButtonId="YRootX"
                                        Content="&#xf7cd;"/>
             <!-- 2^x goes here -->
+            <!-- PLACEHOLDER -->
+            <controls:CalculatorButton x:Name="x2PowerButton"
+                                       x:Uid="x2PowerButton"
+                                       Grid.Row="3"
+                                       Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
+                                       AutomationProperties.AutomationId="x2PowerButton"
+                                       ButtonId="Sqrt"
+                                       Content="&#xF1AA;"/>
+            <!-- PLACEHOLDER -->
             <!-- log base y goes here -->
+            <controls:CalculatorButton x:Name="logBaseY"
+                                       x:Uid="logBaseY"
+                                       Grid.Row="4"
+                                       Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
+                                       AutomationProperties.AutomationId="logBaseY"
+                                       ButtonId="Sqrt"
+                                       Content="&#xF1AA;"/>
             <controls:CalculatorButton x:Name="powerOfEButton"
                                        x:Uid="powerOfEButton"
                                        Grid.Row="5"
-                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
                                        AutomationProperties.AutomationId="powerOfEButton"
                                        ButtonId="EPowerX"
                                        Content="&#xf7ce;"/>
@@ -559,6 +598,15 @@
                                        AutomationProperties.AutomationId="invertButton"
                                        ButtonId="Invert"
                                        Content="&#xf7c9;"/>
+            <!-- PLACEHOLDER -->
+            <!-- absoloute value goes here -->
+            <controls:CalculatorButton x:Name="absX"
+                                       x:Uid="absX"
+                                       Grid.Column="1"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="absX"
+                                       ButtonId="Sqrt"
+                                       Content="&#xF1AA;"/>
             <controls:CalculatorButton x:Name="expButton"
                                        x:Uid="expButton"
                                        Grid.Column="2"
@@ -621,28 +669,28 @@
             <controls:CalculatorButton x:Name="divideButton"
                                        x:Uid="divideButton"
                                        Grid.Row="0"
-                                       Style="{StaticResource AccentCalcButtonStyle}"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="divideButton"
                                        ButtonId="Divide"
                                        Content="&#xE94A;"/>
             <controls:CalculatorButton x:Name="multiplyButton"
                                        x:Uid="multiplyButton"
                                        Grid.Row="1"
-                                       Style="{StaticResource AccentCalcButtonStyle}"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="multiplyButton"
                                        ButtonId="Multiply"
                                        Content="&#xE947;"/>
             <controls:CalculatorButton x:Name="minusButton"
                                        x:Uid="minusButton"
                                        Grid.Row="2"
-                                       Style="{StaticResource AccentCalcButtonStyle}"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="minusButton"
                                        ButtonId="Subtract"
                                        Content="&#xE949;"/>
             <controls:CalculatorButton x:Name="plusButton"
                                        x:Uid="plusButton"
                                        Grid.Row="3"
-                                       Style="{StaticResource AccentCalcButtonStyle}"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="plusButton"
                                        ButtonId="Add"
                                        Content="&#xE948;"/>

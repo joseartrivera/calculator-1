@@ -1,0 +1,97 @@
+[33mcommit 4497059138aaa4f4aeb0aafae4989dced6055202[m
+Merge: 23c1884 cb198e1
+Author: Pepe Rivera <joriv@microsoft.com>
+Date:   Thu Mar 28 15:23:26 2019 -0700
+
+    merge with master
+
+[1mdiff --cc src/Calculator/Calculator.vcxproj[m
+[1mindex c27c73b,4e19aab..6205514[m
+[1m--- a/src/Calculator/Calculator.vcxproj[m
+[1m+++ b/src/Calculator/Calculator.vcxproj[m
+[36m@@@ -257,7 -251,7 +251,8 @@@[m
+      <ClInclude Include="Converters\ItemSizeToVisibilityConverter.h" />[m
+      <ClInclude Include="Converters\RadixToStringConverter.h" />[m
+      <ClInclude Include="Converters\VisibilityNegationConverter.h" />[m
+[32m+     <ClInclude Include="Controls\HorizontalNoOverflowStackPanel.h" />[m
+[32m +    <ClInclude Include="Controls\OverflowListView.h" />[m
+      <ClInclude Include="pch.h" />[m
+      <ClInclude Include="App.xaml.h">[m
+        <DependentUpon>App.xaml</DependentUpon>[m
+[36m@@@ -391,7 -385,7 +386,8 @@@[m
+      <ClCompile Include="Converters\ItemSizeToVisibilityConverter.cpp" />[m
+      <ClCompile Include="Converters\RadixToStringConverter.cpp" />[m
+      <ClCompile Include="Converters\VisibilityNegationConverter.cpp" />[m
+[32m+     <ClCompile Include="Controls\HorizontalNoOverflowStackPanel.cpp" />[m
+[32m +    <ClCompile Include="Controls\OverflowListView.cpp" />[m
+      <ClCompile Include="pch.cpp">[m
+        <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>[m
+        <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>[m
+[1mdiff --cc src/Calculator/Calculator.vcxproj.filters[m
+[1mindex 27acfec,cc25a22..ddb13d3[m
+[1m--- a/src/Calculator/Calculator.vcxproj.filters[m
+[1m+++ b/src/Calculator/Calculator.vcxproj.filters[m
+[36m@@@ -308,9 -308,9 +308,12 @@@[m
+      <ClCompile Include="Common\AppLifecycleLogger.cpp">[m
+        <Filter>Common</Filter>[m
+      </ClCompile>[m
+[32m +    <ClCompile Include="Controls\OverflowListView.cpp">[m
+[32m +      <Filter>Controls</Filter>[m
+[32m +    </ClCompile>[m
+[32m+     <ClCompile Include="Controls\HorizontalNoOverflowStackPanel.cpp">[m
+[32m+       <Filter>Controls</Filter>[m
+[32m+     </ClCompile>[m
+    </ItemGroup>[m
+    <ItemGroup>[m
+      <ClInclude Include="pch.h" />[m
+[36m@@@ -410,9 -410,9 +413,12 @@@[m
+      <ClInclude Include="Common\AppLifecycleLogger.h">[m
+        <Filter>Common</Filter>[m
+      </ClInclude>[m
+[32m +    <ClInclude Include="Controls\OverflowListView.h">[m
+[32m +      <Filter>Controls</Filter>[m
+[32m +    </ClInclude>[m
+[32m+     <ClInclude Include="Controls\HorizontalNoOverflowStackPanel.h">[m
+[32m+       <Filter>Controls</Filter>[m
+[32m+     </ClInclude>[m
+    </ItemGroup>[m
+    <ItemGroup>[m
+      <AppxManifest Include="Package.appxmanifest" />[m
+[1mdiff --cc src/Calculator/Views/CalculatorScientificOperators.xaml.cpp[m
+[1mindex 8bb0016,ee31a1a..34f0d04[m
+[1m--- a/src/Calculator/Views/CalculatorScientificOperators.xaml.cpp[m
+[1m+++ b/src/Calculator/Views/CalculatorScientificOperators.xaml.cpp[m
+[36m@@@ -88,7 -102,15 +97,15 @@@[m [mvoid CalculatorScientificOperators::Set[m
+      }[m
+  [m
+      Row1->Visibility = rowVis;[m
+[31m -    Row2->Visibility = rowVis;[m
+[32m +    //Row2->Visibility = rowVis;[m
+      InvRow1->Visibility = invRowVis;[m
+[31m -    InvRow2->Visibility = invRowVis;[m
+[32m +    //InvRow2->Visibility = invRowVis;[m
+  }[m
+[32m+ [m
+[32m+ void CalculatorScientificOperators::OnViewModelPropertyChanged(Object^ sender, PropertyChangedEventArgs^ e)[m
+[32m+ {[m
+[32m+     if (e->PropertyName == StandardCalculatorViewModel::OpenParenthesisCountPropertyName && closeParenthesisButton->FocusState != ::FocusState::Unfocused)[m
+[32m+     {[m
+[32m+         Model->SetOpenParenthesisCountNarratorAnnouncement();[m
+[32m+     }[m
+[32m+ }[m
+[1mdiff --cc src/Calculator/Views/NumberPad.xaml[m
+[1mindex 8804abe,eb49048..e1b17fc[m
+[1m--- a/src/Calculator/Views/NumberPad.xaml[m
+[1m+++ b/src/Calculator/Views/NumberPad.xaml[m
+[36m@@@ -109,9 -109,10 +109,9 @@@[m
+          -->[m
+          <controls:CalculatorButton x:Name="decimalSeparatorButton"[m
+                                     x:Uid="decimalSeparatorButton"[m
+[31m-                                    Grid.Row="4"[m
+[32m+                                    Grid.Row="3"[m
+                                     Grid.Column="2"[m
+                                     Style="{Binding ElementName=ControlRoot, Path=ButtonStyle}"[m
+[31m -                                   Background="{ThemeResource AppBackgroundAltMediumLowBrush}"[m
+                                     common:KeyboardShortcutManager.Character="."[m
+                                     AutomationProperties.AutomationId="decimalSeparatorButton"[m
+                                     ButtonId="Decimal"[m

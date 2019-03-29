@@ -76,6 +76,11 @@ void CalculatorScientificOperators::shiftButton_Check(_In_ Platform::Object^ /*s
     SetOperatorRowVisibility();
 }
 
+void CalculatorScientificOperators::flyoutButton_Clicked(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
+{
+    this->Trigflyout->Hide();
+}
+
 void CalculatorScientificOperators::shiftButton_IsEnabledChanged(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ /*e*/)
 {
     SetOperatorRowVisibility();
