@@ -238,6 +238,7 @@
                                           AutomationProperties.AutomationId="shiftButton"
                                           Checked="shiftButton_Check"
                                           Content="2nd"
+                                          IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                           IsEnabledChanged="shiftButton_IsEnabledChanged"
                                           Unchecked="shiftButton_Check"/>
 
@@ -248,7 +249,9 @@
                                                        AutomationProperties.AutomationId="sinButton"
                                                        ButtonId="Sin"
                                                        Click="flyoutButton_Clicked"
+                                                       Command="{x:Bind Model.ButtonPressed}"
                                                        Content="sin"
+                                                       IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
                             <controls:CalculatorButton x:Name="cosButton"
                                                        x:Uid="cosButton"
@@ -256,7 +259,9 @@
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="cosButton"
                                                        ButtonId="Cos"
+                                                       Command="{x:Bind Model.ButtonPressed}"
                                                        Content="cos"
+                                                       IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
                             <controls:CalculatorButton x:Name="tanButton"
                                                        x:Uid="tanButton"
@@ -264,7 +269,9 @@
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="tanButton"
                                                        ButtonId="Tan"
+                                                       Command="{x:Bind Model.ButtonPressed}"
                                                        Content="tan"
+                                                       IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
                             <controls:CalculatorButton x:Name="sinhButton"
                                                        x:Uid="sinhButton"
@@ -272,7 +279,9 @@
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="sinhButton"
                                                        ButtonId="Sinh"
+                                                       Command="{x:Bind Model.ButtonPressed}"
                                                        Content="sinh"
+                                                       IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                             <controls:CalculatorButton x:Name="coshButton"
                                                        x:Uid="coshButton"
@@ -280,7 +289,9 @@
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="coshButton"
                                                        ButtonId="Cosh"
+                                                       Command="{x:Bind Model.ButtonPressed}"
                                                        Content="cosh"
+                                                       IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                             <controls:CalculatorButton x:Name="tanhButton"
                                                        x:Uid="tanhButton"
@@ -288,7 +299,9 @@
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="tanhButton"
                                                        ButtonId="Tanh"
+                                                       Command="{x:Bind Model.ButtonPressed}"
                                                        Content="tanh"
+                                                       IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="{Binding IsHyperbolicChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
 
                             <!-- inverse functions -->
@@ -298,7 +311,9 @@
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="invsinButton"
                                                        ButtonId="InvSin"
+                                                       Command="{x:Bind Model.ButtonPressed}"
                                                        Content="sin⁻¹"
+                                                       IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="Collapsed"/>
                             <controls:CalculatorButton x:Name="invcosButton"
                                                        x:Uid="invcosButton"
@@ -306,7 +321,9 @@
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="invcosButton"
                                                        ButtonId="InvCos"
+                                                       Command="{x:Bind Model.ButtonPressed}"
                                                        Content="cos⁻¹"
+                                                       IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="Collapsed"/>
                             <controls:CalculatorButton x:Name="invtanButton"
                                                        x:Uid="invtanButton"
@@ -314,7 +331,9 @@
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="invtanButton"
                                                        ButtonId="InvTan"
+                                                       Command="{x:Bind Model.ButtonPressed}"
                                                        Content="tan⁻¹"
+                                                       IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="Collapsed"/>
                             <controls:CalculatorButton x:Name="invsinhButton"
                                                        x:Uid="invsinhButton"
@@ -322,7 +341,9 @@
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="invsinhButton"
                                                        ButtonId="InvSinh"
+                                                       Command="{x:Bind Model.ButtonPressed}"
                                                        Content="sinh⁻¹"
+                                                       IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="Collapsed"/>
                             <controls:CalculatorButton x:Name="invcoshButton"
                                                        x:Uid="invcoshButton"
@@ -330,7 +351,9 @@
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="invcoshButton"
                                                        ButtonId="InvCosh"
+                                                       Command="{x:Bind Model.ButtonPressed}"
                                                        Content="cosh⁻¹"
+                                                       IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="Collapsed"/>
                             <controls:CalculatorButton x:Name="invtanhButton"
                                                        x:Uid="invtanhButton"
@@ -338,7 +361,9 @@
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="invtanhButton"
                                                        ButtonId="InvTanh"
+                                                       Command="{x:Bind Model.ButtonPressed}"
                                                        Content="tanh⁻¹"
+                                                       IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="Collapsed"/>
 
 
@@ -349,13 +374,14 @@
                                           AutomationProperties.AutomationId="shiftButton"
                                           Checked="shiftButton_Check"
                                           Content="Hyp"
+                                          IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
                                           IsEnabledChanged="shiftButton_IsEnabledChanged"
                                           Unchecked="shiftButton_Check"/>
                         </Grid>
                     </Flyout>
                 </Button.Flyout>
             </Button>
-            <Button Style="{StaticResource OverflowButtonStyle}">
+            <Button x:Name="FuncButton" Style="{StaticResource OverflowButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="6,2,6,0"
                                FontFamily="{StaticResource CalculatorFontFamily}"
@@ -386,21 +412,27 @@
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="randButton"
                                                        ButtonId="DMS"
-                                                       Content="rand"/>
+                                                       Command="{x:Bind Model.ButtonPressed}"
+                                                       Content="rand"
+                                                       IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
                             <controls:CalculatorButton x:Name="dmsButton"
                                                        x:Uid="dmsButton"
                                                        Grid.Column="1"
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="dmsButton"
                                                        ButtonId="DMS"
-                                                       Content="dms"/>
+                                                       Command="{x:Bind Model.ButtonPressed}"
+                                                       Content="dms"
+                                                       IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
                             <controls:CalculatorButton x:Name="degreesButton"
                                                        x:Uid="degreesButton"
                                                        Grid.Column="2"
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="degreesButton"
                                                        ButtonId="Degrees"
-                                                       Content="deg"/>
+                                                       Command="{x:Bind Model.ButtonPressed}"
+                                                       Content="deg"
+                                                       IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
                         </Grid>
                     </Flyout>
                 </Button.Flyout>
