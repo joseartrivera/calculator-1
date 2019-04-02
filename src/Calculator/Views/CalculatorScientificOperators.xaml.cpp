@@ -72,8 +72,18 @@ void CalculatorScientificOperators::shiftButton_Check(_In_ Platform::Object^ /*s
 {
     bool isChecked = shiftButton->IsChecked->Value;
     Model->IsShiftChecked = isChecked;
-    Common::KeyboardShortcutManager::ShiftButtonChecked(isChecked);
     SetOperatorRowVisibility();
+}
+
+void CalculatorScientificOperators::trigFlyoutShift_Toggle(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
+{
+    SetTrigRowVisibility();
+    Common::KeyboardShortcutManager::ShiftButtonChecked(trigShiftButton->IsEnabled && trigShiftButton->IsChecked->Value);
+}
+
+void CalculatorScientificOperators::trigFlyoutHyp_Toggle(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
+{
+    SetTrigRowVisibility();
 }
 
 void CalculatorScientificOperators::flyoutButton_Clicked(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
@@ -84,7 +94,34 @@ void CalculatorScientificOperators::flyoutButton_Clicked(_In_ Platform::Object^ 
 void CalculatorScientificOperators::shiftButton_IsEnabledChanged(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ /*e*/)
 {
     SetOperatorRowVisibility();
-    Common::KeyboardShortcutManager::ShiftButtonChecked(shiftButton->IsEnabled && shiftButton->IsChecked->Value);
+}
+
+void CalculatorScientificOperators::SetTrigRowVisibility()
+{
+    bool isShiftChecked = trigShiftButton->IsChecked->Value;
+    bool isHypeChecked = hypButton->IsChecked->Value;
+
+    InverseHyperbolicTrigFunctions->Visibility = ::Visibility::Collapsed;
+    InverseTrigFunctions->Visibility = ::Visibility::Collapsed;
+    HyperbolicTrigFunctions->Visibility = ::Visibility::Collapsed;
+    TrigFunctions->Visibility = ::Visibility::Collapsed;
+
+    if (isShiftChecked && isHypeChecked)
+    {
+        InverseHyperbolicTrigFunctions->Visibility = ::Visibility::Visible;
+    }
+    else if (isShiftChecked && !isHypeChecked)
+    {
+        InverseTrigFunctions->Visibility = ::Visibility::Visible;
+    }
+    else if (!isShiftChecked && isHypeChecked)
+    {
+        HyperbolicTrigFunctions->Visibility = ::Visibility::Visible;
+    }
+    else
+    {
+        TrigFunctions->Visibility = ::Visibility::Visible;
+    }
 }
 
 void CalculatorScientificOperators::SetOperatorRowVisibility()
@@ -102,9 +139,7 @@ void CalculatorScientificOperators::SetOperatorRowVisibility()
     }
 
     Row1->Visibility = rowVis;
-    //Row2->Visibility = rowVis;
     InvRow1->Visibility = invRowVis;
-    //InvRow2->Visibility = invRowVis;
 }
 
 void CalculatorScientificOperators::OnViewModelPropertyChanged(Object^ sender, PropertyChangedEventArgs^ e)
