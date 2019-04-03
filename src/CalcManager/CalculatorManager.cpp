@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #include "pch.h"
@@ -290,6 +290,10 @@ namespace CalculationManager
             m_currentCalculatorEngine->ProcessCommand(static_cast<OpCode>(Command::CommandINV));
             m_currentCalculatorEngine->ProcessCommand(static_cast<OpCode>(Command::CommandTANH));
             break;
+        //case Command::CommandSEC:
+        //    m_currentCalculatorEngine->ProcessCommand(static_cast<OpCode>(Command::CommandCOS));
+        //    m_currentCalculatorEngine->ProcessCommand(static_cast<OpCode>(Command::CommandREC));
+        //    break;
         case Command::CommandFE:
             m_isExponentialFormat = !m_isExponentialFormat;
             [[fallthrough]];

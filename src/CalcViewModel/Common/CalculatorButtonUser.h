@@ -160,7 +160,13 @@ namespace CalculatorApp
         BINPOS62 = (int) CM::Command::CommandBINPOS62,
         BINPOS63 = (int) CM::Command::CommandBINPOS63,
         BINEND = (int) CM::Command::CommandBINEDITEND,
-        Hyp = (int) CM::Command::CommandHYP
+        Hyp = (int) CM::Command::CommandHYP,
+        Sec = (int)CM::Command::CommandSEC,
+        Csc = (int)CM::Command::CommandCSC,
+        Cot = (int)CM::Command::CommandCOT,
+        Sech = (int)CM::Command::CommandSECH,
+        Csch = (int)CM::Command::CommandCSCH,
+        Coth = (int)CM::Command::CommandCOTH,
     };
 
     // This contains list of functions whose usage we are tracelogging

@@ -19,7 +19,7 @@ bool IsBinOpCode(OpCode opCode)
 // of it and catch it themselves or not needing this
 bool IsUnaryOpCode(OpCode opCode)
 {
-    return IsOpInRange(opCode, IDC_UNARYFIRST, IDC_UNARYLAST);
+    return (IsOpInRange(opCode, IDC_UNARYFIRST, IDC_UNARYLAST) || IsOpInRange(opCode, IDC_UNARYEXTENDEDFIRST, IDC_UNARYEXTENDEDLAST));
 }
 
 bool IsDigitOpCode(OpCode opCode)

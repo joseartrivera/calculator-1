@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #include "pch.h"
@@ -63,10 +63,10 @@ static constexpr array<const NavCategoryInitializer, 17> s_categoryManifest = {
     NavCategoryInitializer { ViewMode::Area,        AREA_ID,        L"Area",            L"CategoryName_Area",        L"\uE809", CategoryGroupType::Converter,  MyVirtualKey::None,    POSITIVE_ONLY     },
     NavCategoryInitializer { ViewMode::Speed,       SPEED_ID,       L"Speed",           L"CategoryName_Speed",       L"\uEADA", CategoryGroupType::Converter,  MyVirtualKey::None,    POSITIVE_ONLY     },
     NavCategoryInitializer { ViewMode::Time,        TIME_ID,        L"Time",            L"CategoryName_Time",        L"\uE917", CategoryGroupType::Converter,  MyVirtualKey::None,    POSITIVE_ONLY     },
-    NavCategoryInitializer { ViewMode::Power,       POWER_ID,       L"Power",           L"CategoryName_Power",       L"\uE945", CategoryGroupType::Converter,  MyVirtualKey::None,    POSITIVE_ONLY     },
+    NavCategoryInitializer { ViewMode::Power,       POWER_ID,       L"Power",           L"CategoryName_Power",       L"\uE945", CategoryGroupType::Converter,  MyVirtualKey::None,    SUPPORTS_NEGATIVE },
     NavCategoryInitializer { ViewMode::Data,        DATA_ID,        L"Data",            L"CategoryName_Data",        L"\uF20F", CategoryGroupType::Converter,  MyVirtualKey::None,    POSITIVE_ONLY     },
     NavCategoryInitializer { ViewMode::Pressure,    PRESSURE_ID,    L"Pressure",        L"CategoryName_Pressure",    L"\uEC4A", CategoryGroupType::Converter,  MyVirtualKey::None,    POSITIVE_ONLY     },
-    NavCategoryInitializer { ViewMode::Angle,       ANGLE_ID,       L"Angle",           L"CategoryName_Angle",       L"\uF515", CategoryGroupType::Converter,  MyVirtualKey::None,    POSITIVE_ONLY     }
+    NavCategoryInitializer { ViewMode::Angle,       ANGLE_ID,       L"Angle",           L"CategoryName_Angle",       L"\uF515", CategoryGroupType::Converter,  MyVirtualKey::None,    SUPPORTS_NEGATIVE }
 };
 
 // This function should only be used when storing the mode to app data.

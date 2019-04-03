@@ -81,6 +81,7 @@
 #define IDC_ROL            99
 #define IDC_ROR            100
 #define IDC_COM          101
+
 #define IDC_SIN          102
 #define IDC_COS          103
 #define IDC_TAN         104
@@ -137,7 +138,18 @@
 #define IDC_INV         146
 #define IDC_SET_RESULT  147
 
-#define IDC_LASTCONTROL IDC_SET_RESULT
+#define IDC_UNARYEXTENDEDFIRST  IDC_SEC
+#define IDC_SEC          148
+#define IDC_CSC          149
+#define IDC_COT         150
+
+#define IDC_SECH          151
+#define IDC_CSCH          152
+#define IDC_COTH         153
+
+#define IDC_UNARYEXTENDEDLAST  IDC_COTH
+
+#define IDC_LASTCONTROL IDC_COTH
 
 #define IDC_BINEDITSTART    700
 #define IDC_BINPOS0         700

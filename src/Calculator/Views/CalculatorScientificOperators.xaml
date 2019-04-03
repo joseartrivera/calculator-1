@@ -254,8 +254,14 @@
                                           Unchecked="trigFlyoutHyp_Toggle"/>
 
                             <Grid x:Name="TrigFunctions"
+                                  Grid.RowSpan="2"
                                   Grid.Column="1"
                                   Grid.ColumnSpan="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*"/>
                                     <ColumnDefinition Width="1*"/>
@@ -288,6 +294,37 @@
                                                            ButtonId="Tan"
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="tan"
+                                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
+                                <controls:CalculatorButton x:Name="secButton"
+                                                           x:Uid="secButton"
+                                                           Grid.Row="1"
+                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           AutomationProperties.AutomationId="secButton"
+                                                           ButtonId="Sec"
+                                                           Click="flyoutButton_Clicked"
+                                                           Command="{x:Bind Model.ButtonPressed}"
+                                                           Content="sec"
+                                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+                                <controls:CalculatorButton x:Name="cscButton"
+                                                           x:Uid="cscButton"
+                                                           Grid.Row="1"
+                                                           Grid.Column="1"
+                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           AutomationProperties.AutomationId="cscButton"
+                                                           ButtonId="Csc"
+                                                           Command="{x:Bind Model.ButtonPressed}"
+                                                           Content="csc"
+                                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+                                <controls:CalculatorButton x:Name="cotButton"
+                                                           x:Uid="cotButton"
+                                                           Grid.Row="1"
+                                                           Grid.Column="2"
+                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           AutomationProperties.AutomationId="cotButton"
+                                                           ButtonId="Cot"
+                                                           Command="{x:Bind Model.ButtonPressed}"
+                                                           Content="cot"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
                             </Grid>
                             <Grid x:Name="InverseTrigFunctions"

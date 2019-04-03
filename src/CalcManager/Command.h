@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
@@ -77,6 +77,7 @@ namespace CalculationManager
         CommandROL = 99,
         CommandROR = 100,
         CommandCOM = 101,
+
         CommandSIN = 102,
         CommandCOS = 103,
         CommandTAN = 104,
@@ -84,7 +85,6 @@ namespace CalculationManager
         CommandSINH = 105,
         CommandCOSH = 106,
         CommandTANH = 107,
-
 
         CommandLN = 108,
         CommandLOG = 109,
@@ -131,6 +131,14 @@ namespace CalculationManager
         CommandF = 145,     // this is last control ID which must match the string table
         CommandINV = 146,
         CommandSET_RESULT = 147,
+
+        CommandSEC = 148,
+        CommandCSC = 149,
+        CommandCOT = 150,
+
+        CommandSECH = 151,
+        CommandCSCH = 152,
+        CommandCOTH = 153,
 
         CommandAnd = 86,
         CommandOR = 87,

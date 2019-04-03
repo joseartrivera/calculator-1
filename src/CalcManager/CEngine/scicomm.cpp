@@ -131,7 +131,8 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
     // Toggle Record/Display mode if appropriate.
     if (m_bRecord)
     {
-        if (IsOpInRange(wParam, IDC_AND, IDC_MMINUS) ||
+        if (IsBinOpCode(wParam) ||
+            IsUnaryOpCode(wParam) ||
             IsOpInRange(wParam, IDC_OPENP, IDC_CLOSEP) ||
             IsOpInRange(wParam, IDM_HEX, IDM_BIN) ||
             IsOpInRange(wParam, IDM_QWORD, IDM_BYTE) ||
@@ -316,7 +317,8 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
             m_HistoryCollector.AddUnaryOpToHistory((int)wParam, m_bInv, m_angletype);
         }
 
-        if ((wParam == IDC_SIN) || (wParam == IDC_COS) || (wParam == IDC_TAN) || (wParam == IDC_SINH) || (wParam == IDC_COSH) || (wParam == IDC_TANH))
+        if ((wParam == IDC_SIN) || (wParam == IDC_COS) || (wParam == IDC_TAN) || (wParam == IDC_SINH) || (wParam == IDC_COSH) || (wParam == IDC_TANH)
+            || (wParam == IDC_SEC) || (wParam == IDC_CSC) || (wParam == IDC_COT) || (wParam == IDC_SECH) || (wParam == IDC_CSCH) || (wParam == IDC_COTH))
         {
             if (IsCurrentTooBigForTrig())
             {

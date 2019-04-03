@@ -134,6 +134,27 @@ CalcEngine::Rational CCalcEngine::SciCalcFunctions(CalcEngine::Rational const& r
             }
             break;
 
+        case IDC_SEC:
+            if (!m_fIntegerMode)
+            {
+                result = m_bInv ? Invert(ACos(rat, m_angletype)) : Invert(Cos(rat, m_angletype));
+            }
+            break;
+
+        case IDC_CSC: 
+            if (!m_fIntegerMode)
+            {
+                result = m_bInv ? Invert(ASin(rat, m_angletype)) : Invert(Sin(rat, m_angletype));
+            }
+            break;
+
+        case IDC_COT:
+            if (!m_fIntegerMode)
+            {
+                result = m_bInv ? Invert(ATan(rat, m_angletype)) : Invert(Tan(rat, m_angletype));
+            }
+            break;
+
         case IDC_REC: /* Reciprocal. */
             result = Invert(rat);
             break;
