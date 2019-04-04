@@ -145,7 +145,6 @@ private:
 
     bool TryToggleBit(CalcEngine::Rational& rat, uint32_t wbitno);
     void CheckAndAddLastBinOpToHistory(bool addToHistory = true);
-    int IdcSetAngleTypeDecMode(int idc);
 
     void InitChopNumbers();
 

@@ -34,7 +34,7 @@ void CCalcEngine::LoadEngineStrings(CalculationManager::IResourceProvider& resou
         auto locString = resourceProvider.GetCEngineString(g_sids[i]);
         if (!locString.empty())
         {
-            s_engineStrings[i] = resourceProvider.GetCEngineString(g_sids[i]);
+            s_engineStrings[i] = locString;
         }
     }
 }

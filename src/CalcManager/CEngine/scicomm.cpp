@@ -16,13 +16,6 @@
 #include "Header Files/CalcEngine.h"
 #include "Header Files/CalcUtils.h"
 
-#define IDC_RADSIN  IDC_UNARYLAST+1
-#define IDC_RADCOS  IDC_UNARYLAST+2
-#define IDC_RADTAN  IDC_UNARYLAST+3
-#define IDC_GRADSIN IDC_UNARYLAST+4
-#define IDC_GRADCOS IDC_UNARYLAST+5
-#define IDC_GRADTAN IDC_UNARYLAST+6
-
 using namespace std;
 using namespace CalcEngine;
 
@@ -862,45 +855,37 @@ void CCalcEngine::DisplayAnnounceBinaryOperator()
 // we have this separate table to get its localized name and for its Inv function if it exists.
 typedef struct
 {
-    int idsFunc;    // index of string for the unary op function. Can be NULL, in which case it same as button name
-    int idsFuncInv; // index of string for Inv of unary op. Can be NULL, in case it is same as idsFunc
-    bool fDontUseInExpEval;  // true if this cant be used in reverse direction as well, ie. during expression evaluation
+    int degreeString;    // index of string for the unary op function. Can be 0, in which case it same as button name
+    int inverseDegreeString; // index of string for Inv of unary op. Can be 0, in case it is same as idsFunc
+
+    int radString;    // index of string for the unary op function in rads. Can be 0, in which case it same as button name
+    int inverseRadString; // index of string for Inv of unary op in rads. Can be 0, in case it is same as idsFunc
+
+    int gradString;    // index of string for the unary op function in grads. Can be 0, in which case it same as button name
+    int inverseGradString; // index of string for Inv of unary op in grads. Can be 0, in case it is same as idsFunc
+
+    bool hasAngleStrings = ((radString != 0) || (inverseRadString != 0) || (gradString != 0) || (inverseGradString != 0));
 } UFNE;
 
 // Table for each unary operator
-static const UFNE rgUfne[] =
+static const std::unordered_map<int, UFNE> unaryOperatorStringTable =
 {
-    /* IDC_CHOP  */{ 0, IDS_FRAC, false },
-    /* IDC_ROL   */{ 0, 0, true },
-    /* IDC_ROR   */{ 0, 0, true },
+    { IDC_CHOP, { 0, IDS_FRAC } },
 
-    /* IDC_COM   */{ 0, 0, true },
-    /* IDC_SIN    */{ IDS_SIND, IDS_ASIND, false },   // default in this table is degrees for sin,cos & tan
-    /* IDC_COS   */{ IDS_COSD, IDS_ACOSD, false },
-    /* IDC_TAN   */{ IDS_TAND, IDS_ATAND, false },
+    { IDC_SIN, { IDS_SIND, IDS_ASIND, IDS_SINR, IDS_ASINR, IDS_SING, IDS_ASING } },   // default in this table is degrees for sin,cos & tan
+    { IDC_COS, { IDS_COSD, IDS_ACOSD, IDS_COSR, IDS_ACOSR, IDS_COSG, IDS_ACOSG } },
+    { IDC_TAN, { IDS_TAND, IDS_ATAND, IDS_TANR, IDS_ATANR, IDS_TANG, IDS_ATANG} },
 
-    /* IDC_SINH    */{ 0, IDS_ASINH, false },
-    /* IDC_COSH   */{ 0, IDS_ACOSH, false },
-    /* IDC_TANH   */{ 0, IDS_ATANH, false },
+    { IDC_SINH, { 0, IDS_ASINH } },
+    { IDC_COSH, { 0, IDS_ACOSH } },
+    { IDC_TANH, { 0, IDS_ATANH } },
 
-    /* IDC_LN     */{ 0, IDS_POWE, false },
-    /* IDC_LOG   */{ 0, 0, false },
-    /* IDC_SQRT */{ 0, 0, false },
-    /* IDC_SQR   */{ IDS_SQR, 0, false },
-    /* IDC_CUB   */{ IDS_CUBE, 0, false },
-    /* IDC_FAC   */{ IDS_FACT, 0, false },
-    /* IDC_REC   */{ IDS_REC, 0, false },
-    /* IDC_DMS  */{ 0, IDS_DEGREES, false },
-    /* IDC_CUBEROOT  */{ 0, 0, false },
-    /* IDC_POW10  */{ 0, 0, false },
-    /* IDC_PERCENT  */{ 0, 0, false },
-
-    /* IDC_RADSIN  */{ IDS_SINR, IDS_ASINR, false },
-    /* IDC_RADCOS  */{ IDS_COSR, IDS_ACOSR, false },
-    /* IDC_RADTAN  */{ IDS_TANR, IDS_ATANR, false },
-    /* IDC_GRADCOS  */{ IDS_SING, IDS_ASING, false },
-    /* IDC_GRADCOS  */{ IDS_COSG, IDS_ACOSG, false },
-    /* IDC_GRADTAN  */{ IDS_TANG, IDS_ATANG, false },
+    { IDC_LN , { 0, IDS_POWE } },
+    { IDC_SQR, { IDS_SQR } },
+    { IDC_CUB, { IDS_CUBE } },
+    { IDC_FAC, { IDS_FACT } },
+    { IDC_REC, { IDS_REC } },
+    { IDC_DMS, { 0, IDS_DEGREES } }
 };
 
 wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE angletype)
@@ -919,52 +904,50 @@ wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE
         return GetString(IDS_DEGREES);
     }
 
-    // Correct the trigonometric functions with type of angle argument they take
-    if (ANGLE_RAD == angletype)
+    // Try to lookup the ID in the UFNE table
+
+    int ids = 0;
+    auto pair = unaryOperatorStringTable.find(nOpCode);
+    if (pair != unaryOperatorStringTable.end())
     {
-        switch (nOpCode)
+        if (!pair->second.hasAngleStrings || ANGLE_DEG == angletype)
         {
-        case IDC_SIN:
-            nOpCode = IDC_RADSIN;
-            break;
-        case IDC_COS:
-            nOpCode = IDC_RADCOS;
-            break;
-        case IDC_TAN:
-            nOpCode = IDC_RADTAN;
-            break;
+            if (fInv)
+            {
+                ids = pair->second.inverseDegreeString;
+            }
+
+            if (0 == ids)
+            {
+                ids = pair->second.degreeString;
+            }
         }
-    }
-    else if (ANGLE_GRAD == angletype)
-    {
-        switch (nOpCode)
+        else if (ANGLE_RAD == angletype)
         {
-        case IDC_SIN:
-            nOpCode = IDC_GRADSIN;
-            break;
-        case IDC_COS:
-            nOpCode = IDC_GRADCOS;
-            break;
-        case IDC_TAN:
-            nOpCode = IDC_GRADTAN;
-            break;
+            if (fInv)
+            {
+                ids = pair->second.inverseRadString;
+            }
+
+            if (0 == ids)
+            {
+                ids = pair->second.radString;
+            }
+        }
+        else if (ANGLE_GRAD == angletype)
+        {
+            if (fInv)
+            {
+                ids = pair->second.inverseGradString;
+            }
+
+            if (0 == ids)
+            {
+                ids = pair->second.gradString;
+            }
         }
     }
 
-    // Try to lookup the ID in the UFNE table
-    int ids = 0;
-    int iufne = nOpCode - IDC_UNARYFIRST;
-    if (iufne >= 0 && (size_t)iufne < size(rgUfne))
-    {
-        if (fInv)
-        {
-            ids = rgUfne[iufne].idsFuncInv;
-        }
-        if (0 == ids)
-        {
-            ids = rgUfne[iufne].idsFunc;
-        }
-    }
 
     // If we didn't find an ID in the table, use the op code.
     if (0 == ids)
@@ -973,46 +956,6 @@ wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE
     }
 
     return GetString(ids);
-}
-
-//
-// Sets the Angle Mode for special unary op IDC's which are used to index to the table rgUfne
-// and returns the equivalent plain IDC for trigonometric function. If it isn't a trigonometric function
-// returns the passed in idc itself.
-int CCalcEngine::IdcSetAngleTypeDecMode(int idc)
-{
-    int idcAngleCmd = IDM_DEG;
-
-    switch (idc)
-    {
-    case IDC_RADSIN:
-        idcAngleCmd = IDM_RAD;
-        idc = IDC_SIN;
-        break;
-    case IDC_RADCOS:
-        idcAngleCmd = IDM_RAD;
-        idc = IDC_COS;
-        break;
-    case IDC_RADTAN:
-        idcAngleCmd = IDM_RAD;
-        idc = IDC_TAN;
-        break;
-    case IDC_GRADSIN:
-        idcAngleCmd = IDM_GRAD;
-        idc = IDC_SIN;
-        break;
-    case IDC_GRADCOS:
-        idcAngleCmd = IDM_GRAD;
-        idc = IDC_COS;
-        break;
-    case IDC_GRADTAN:
-        idcAngleCmd = IDM_GRAD;
-        idc = IDC_TAN;
-        break;
-    }
-    ProcessCommand(idcAngleCmd);
-    return idc;
-
 }
 
 bool CCalcEngine::IsCurrentTooBigForTrig()
