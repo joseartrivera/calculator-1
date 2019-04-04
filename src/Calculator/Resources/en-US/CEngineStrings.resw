@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -416,5 +416,17 @@
   <data name="99" xml:space="preserve">
     <value>Cannot divide by zero</value>
     <comment>Error string shown when a divide by zero condition happens during the calculation</comment>
+  </data>
+  <data name="SecDeg" xml:space="preserve">
+    <value>sec₀</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="SecRad" xml:space="preserve">
+    <value>secᵣ</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="SecGrad" xml:space="preserve">
+    <value>sec₉</value>
+    <comment>{Locked}The string that represents the function</comment>
   </data>
 </root>

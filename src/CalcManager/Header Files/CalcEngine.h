@@ -123,7 +123,7 @@ private:
 
     std::array<CalcEngine::Rational, NUM_WIDTH_LENGTH> m_chopNumbers; // word size enforcement
     std::array<std::wstring, NUM_WIDTH_LENGTH> m_maxDecimalValueStrings; // maximum values represented by a given word width based off m_chopNumbers
-    static std::array<std::wstring, CSTRINGSENGMAX> s_engineStrings; // the string table shared across all instances
+    static std::unordered_map<int, std::wstring> s_engineStrings; // the string table shared across all instances
     wchar_t m_decimalSeparator;
     wchar_t m_groupSeparator;
 

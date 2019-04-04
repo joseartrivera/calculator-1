@@ -133,6 +133,7 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
     {
         if (IsBinOpCode(wParam) ||
             IsUnaryOpCode(wParam) ||
+            IsOpInRange(wParam, IDC_FE, IDC_MMINUS) ||
             IsOpInRange(wParam, IDC_OPENP, IDC_CLOSEP) ||
             IsOpInRange(wParam, IDM_HEX, IDM_BIN) ||
             IsOpInRange(wParam, IDM_QWORD, IDM_BYTE) ||
@@ -904,6 +905,10 @@ static const UFNE rgUfne[] =
 
 wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE angletype)
 {
+    if (nOpCode > IDC_STRING_MAPPED_VALUES)
+    {
+
+    }
     // Special cases for Sign and Degrees
     if (IDC_SIGN == nOpCode)
     {

@@ -138,7 +138,8 @@
 #define IDC_INV         146
 #define IDC_SET_RESULT  147
 
-#define IDC_UNARYEXTENDEDFIRST  IDC_SEC
+#define IDC_STRING_MAPPED_VALUES  IDC_SEC // Values after this point are manually mapped to their resw counterparts
+#define IDC_UNARYEXTENDEDFIRST  IDC_STRING_MAPPED_VALUES
 #define IDC_SEC          148
 #define IDC_CSC          149
 #define IDC_COT         150

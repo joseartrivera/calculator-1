@@ -25,13 +25,17 @@ static constexpr wstring_view DEFAULT_NUMBER_STR = L"0";
 // Read strings for keys, errors, trig types, etc.
 // These will be copied from the resources to local memory.
 
-array<wstring, CSTRINGSENGMAX> CCalcEngine::s_engineStrings;
+unordered_map<int, wstring> CCalcEngine::s_engineStrings;
 
 void CCalcEngine::LoadEngineStrings(CalculationManager::IResourceProvider& resourceProvider)
 {
-    for (size_t i = 0; i < s_engineStrings.size(); i++)
+    for (int i = 0; i < CSTRINGSENGMAX; i++)
     {
-        s_engineStrings[i] = resourceProvider.GetCEngineString(g_sids[i]);
+        auto locString = resourceProvider.GetCEngineString(g_sids[i]);
+        if (!locString.empty())
+        {
+            s_engineStrings[i] = resourceProvider.GetCEngineString(g_sids[i]);
+        }
     }
 }
 
