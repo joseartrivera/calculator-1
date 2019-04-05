@@ -855,58 +855,47 @@ void CCalcEngine::DisplayAnnounceBinaryOperator()
 // we have this separate table to get its localized name and for its Inv function if it exists.
 typedef struct
 {
-    int degreeString;    // index of string for the unary op function. Can be 0, in which case it same as button name
-    int inverseDegreeString; // index of string for Inv of unary op. Can be 0, in case it is same as idsFunc
+    wstring degreeString;    // index of string for the unary op function. Can be 0, in which case it same as button name
+    wstring inverseDegreeString; // index of string for Inv of unary op. Can be 0, in case it is same as idsFunc
 
-    int radString;    // index of string for the unary op function in rads. Can be 0, in which case it same as button name
-    int inverseRadString; // index of string for Inv of unary op in rads. Can be 0, in case it is same as idsFunc
+    wstring radString;    // index of string for the unary op function in rads. Can be 0, in which case it same as button name
+    wstring inverseRadString; // index of string for Inv of unary op in rads. Can be 0, in case it is same as idsFunc
 
-    int gradString;    // index of string for the unary op function in grads. Can be 0, in which case it same as button name
-    int inverseGradString; // index of string for Inv of unary op in grads. Can be 0, in case it is same as idsFunc
+    wstring gradString;    // index of string for the unary op function in grads. Can be 0, in which case it same as button name
+    wstring inverseGradString; // index of string for Inv of unary op in grads. Can be 0, in case it is same as idsFunc
 
-    bool hasAngleStrings = ((radString != 0) || (inverseRadString != 0) || (gradString != 0) || (inverseGradString != 0));
+    bool hasAngleStrings = ((!radString.empty()) || (!inverseRadString.empty()) || (!gradString.empty()) || (!inverseGradString.empty()));
 } UFNE;
 
 // Table for each unary operator
 static const std::unordered_map<int, UFNE> unaryOperatorStringTable =
 {
-    { IDC_CHOP, { 0, IDS_FRAC } },
+    { IDC_CHOP, { L"", SIDS_FRAC} },
 
-    { IDC_SIN, { IDS_SIND, IDS_ASIND, IDS_SINR, IDS_ASINR, IDS_SING, IDS_ASING } },   // default in this table is degrees for sin,cos & tan
-    { IDC_COS, { IDS_COSD, IDS_ACOSD, IDS_COSR, IDS_ACOSR, IDS_COSG, IDS_ACOSG } },
-    { IDC_TAN, { IDS_TAND, IDS_ATAND, IDS_TANR, IDS_ATANR, IDS_TANG, IDS_ATANG} },
+    { IDC_SIN, { SIDS_SIND, SIDS_ASIND, SIDS_SINR, SIDS_ASINR, SIDS_SING, SIDS_ASING } },
+    { IDC_COS, { SIDS_COSD, SIDS_ACOSD, SIDS_COSR, SIDS_ACOSR, SIDS_COSG, SIDS_ACOSG } },
+    { IDC_TAN, { SIDS_TAND, SIDS_ATAND, SIDS_TANR, SIDS_ATANR, SIDS_TANG, SIDS_ATANG } },
 
-    { IDC_SINH, { 0, IDS_ASINH } },
-    { IDC_COSH, { 0, IDS_ACOSH } },
-    { IDC_TANH, { 0, IDS_ATANH } },
+    { IDC_SINH, { L"", SIDS_ASINH } },
+    { IDC_COSH, { L"", SIDS_ACOSH } },
+    { IDC_TANH, { L"", SIDS_ATANH } },
 
-    { IDC_LN , { 0, IDS_POWE } },
-    { IDC_SQR, { IDS_SQR } },
-    { IDC_CUB, { IDS_CUBE } },
-    { IDC_FAC, { IDS_FACT } },
-    { IDC_REC, { IDS_REC } },
-    { IDC_DMS, { 0, IDS_DEGREES } }
+    { IDC_SEC, { SIDS_SECD, SIDS_SECD, SIDS_SECR, SIDS_SECR, SIDS_SECG, SIDS_SECG } },
+
+    { IDC_LN , { L"", SIDS_POWE } },
+    { IDC_SQR, { SIDS_SQR } },
+    { IDC_CUB, { SIDS_CUBE } },
+    { IDC_FAC, { SIDS_FACT } },
+    { IDC_REC, { SIDS_RECIPROCAL } },
+    { IDC_DMS, { L"", SIDS_DEGREES } },
+    { IDC_SIGN, { SIDS_NEGATE } },
+    { IDC_DEGREES, { SIDS_DEGREES } }
 };
 
 wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE angletype)
 {
-    if (nOpCode > IDC_STRING_MAPPED_VALUES)
-    {
-
-    }
-    // Special cases for Sign and Degrees
-    if (IDC_SIGN == nOpCode)
-    {
-        return GetString(IDS_NEGATE);
-    }
-    if (IDC_DEGREES == nOpCode)
-    {
-        return GetString(IDS_DEGREES);
-    }
-
     // Try to lookup the ID in the UFNE table
-
-    int ids = 0;
+    wstring ids = L"";
     auto pair = unaryOperatorStringTable.find(nOpCode);
     if (pair != unaryOperatorStringTable.end())
     {
@@ -917,7 +906,7 @@ wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE
                 ids = pair->second.inverseDegreeString;
             }
 
-            if (0 == ids)
+            if (ids.empty())
             {
                 ids = pair->second.degreeString;
             }
@@ -929,7 +918,7 @@ wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE
                 ids = pair->second.inverseRadString;
             }
 
-            if (0 == ids)
+            if (ids.empty())
             {
                 ids = pair->second.radString;
             }
@@ -941,7 +930,7 @@ wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE
                 ids = pair->second.inverseGradString;
             }
 
-            if (0 == ids)
+            if (ids.empty())
             {
                 ids = pair->second.gradString;
             }
@@ -950,12 +939,12 @@ wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE
 
 
     // If we didn't find an ID in the table, use the op code.
-    if (0 == ids)
+    if (!ids.empty())
     {
-        ids = IdStrFromCmdId(nOpCode);
+        return GetString(ids);
     }
 
-    return GetString(ids);
+    return GetString(IdStrFromCmdId(nOpCode));
 }
 
 bool CCalcEngine::IsCurrentTooBigForTrig()

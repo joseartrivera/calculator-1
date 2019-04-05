@@ -23,7 +23,6 @@ constexpr uint32_t MAX_GROUPING_SIZE = 16;
 constexpr wstring_view c_decPreSepStr = L"[+-]?(\\d*)[";
 constexpr wstring_view c_decPostSepStr = L"]?(\\d*)(?:e[+-]?(\\d*))?$";
 
-
 /****************************************************************************\
 * void DisplayNum(void)
 *
