@@ -167,9 +167,30 @@ inline constexpr auto SIDS_ERR_OUTPUT_OVERFLOW = L"120";
 inline constexpr auto SIDS_SECD = L"SecDeg";
 inline constexpr auto SIDS_SECR = L"SecRad";
 inline constexpr auto SIDS_SECG = L"SecGrad";
+inline constexpr auto SIDS_ASECD = L"InverseSecDeg";
+inline constexpr auto SIDS_ASECR = L"InverseSecRad";
+inline constexpr auto SIDS_ASECG = L"InverseSecGrad";
+inline constexpr auto SIDS_CSCD = L"CscDeg";
+inline constexpr auto SIDS_CSCR = L"CscRad";
+inline constexpr auto SIDS_CSCG = L"CscGrad";
+inline constexpr auto SIDS_ACSCD = L"InverseCscDeg";
+inline constexpr auto SIDS_ACSCR = L"InverseCscRad";
+inline constexpr auto SIDS_ACSCG = L"InverseCscGrad";
+inline constexpr auto SIDS_COTD = L"CotDeg";
+inline constexpr auto SIDS_COTR = L"CotRad";
+inline constexpr auto SIDS_COTG = L"CotGrad";
+inline constexpr auto SIDS_ACOTD = L"InverseCotDeg";
+inline constexpr auto SIDS_ACOTR = L"InverseCotRad";
+inline constexpr auto SIDS_ACOTG = L"InverseCotGrad";
+inline constexpr auto SIDS_SECH = L"Sech";
+inline constexpr auto SIDS_ASECH = L"InverseSech";
+inline constexpr auto SIDS_CSCH = L"Csch";
+inline constexpr auto SIDS_ACSCH = L"InverseCsch";
+inline constexpr auto SIDS_COTH = L"Coth";
+inline constexpr auto SIDS_ACOTH = L"InverseCoth";
 
 // Include the resource key ID from above into this vector to load it into memory for the engine to use
-inline constexpr std::array<std::wstring_view, 123> g_sids =
+inline constexpr std::array<std::wstring_view, 144> g_sids =
 {
     SIDS_PLUS_MINUS,
     SIDS_C,
@@ -293,5 +314,26 @@ inline constexpr std::array<std::wstring_view, 123> g_sids =
     SIDS_ERR_OUTPUT_OVERFLOW,
     SIDS_SECD,
     SIDS_SECG,
-    SIDS_SECR
+    SIDS_SECR,
+    SIDS_ASECD,
+    SIDS_ASECR,
+    SIDS_ASECG,
+    SIDS_CSCD,
+    SIDS_CSCR,
+    SIDS_CSCG,
+    SIDS_ACSCD,
+    SIDS_ACSCR,
+    SIDS_ACSCG,
+    SIDS_COTD,
+    SIDS_COTR,
+    SIDS_COTG,
+    SIDS_ACOTD,
+    SIDS_ACOTR,
+    SIDS_ACOTG,
+    SIDS_SECH,
+    SIDS_ASECH,
+    SIDS_CSCH,
+    SIDS_ACSCH,
+    SIDS_COTH,
+    SIDS_ACOTH
 };

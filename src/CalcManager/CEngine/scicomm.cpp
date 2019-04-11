@@ -890,7 +890,14 @@ static const std::unordered_map<int, FunctionNameElement> unaryOperatorStringTab
     { IDC_SINH, { L"", SIDS_ASINH } },
     { IDC_COSH, { L"", SIDS_ACOSH } },
     { IDC_TANH, { L"", SIDS_ATANH } },
-    { IDC_SEC, { SIDS_SECD, SIDS_SECD, SIDS_SECR, SIDS_SECR, SIDS_SECG, SIDS_SECG } },
+
+    { IDC_SEC, { SIDS_SECD, SIDS_ASECD, SIDS_SECR, SIDS_ASECR, SIDS_SECG, SIDS_ASECG } },
+    { IDC_CSC, { SIDS_CSCD, SIDS_ACSCD, SIDS_CSCR, SIDS_ACSCR, SIDS_CSCG, SIDS_ACSCG } },
+    { IDC_COT, { SIDS_COTD, SIDS_ACOTD, SIDS_COTR, SIDS_ACOTR, SIDS_COTG, SIDS_ACOTG } },
+
+    { IDC_SECH, { SIDS_SECH, SIDS_ASECH } },
+    { IDC_CSCH, { SIDS_CSCH, SIDS_ACSCH } },
+    { IDC_COTH, { SIDS_COTH, SIDS_ACOTH } },
     
     { IDC_LN , { L"", SIDS_POWE } },
     { IDC_SQR, { SIDS_SQR } },

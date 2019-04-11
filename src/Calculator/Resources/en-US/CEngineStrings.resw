@@ -429,4 +429,88 @@
     <value>sec₉</value>
     <comment>{Locked}The string that represents the function</comment>
   </data>
+  <data name="InverseSecDeg" xml:space="preserve">
+    <value>sec₀⁻¹</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="InverseSecRad" xml:space="preserve">
+    <value>secᵣ⁻¹</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="InverseSecGrad" xml:space="preserve">
+    <value>sec₉⁻¹</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="CscDeg" xml:space="preserve">
+    <value>csc₀</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="CscRad" xml:space="preserve">
+    <value>cscᵣ</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="CscGrad" xml:space="preserve">
+    <value>csc₉</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="InverseCscDeg" xml:space="preserve">
+    <value>csc₀⁻¹</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="InverseCscRad" xml:space="preserve">
+    <value>cscᵣ⁻¹</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="InverseCscGrad" xml:space="preserve">
+    <value>csc₉⁻¹</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="CotDeg" xml:space="preserve">
+    <value>cot₀</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="CotRad" xml:space="preserve">
+    <value>cotᵣ</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="CotGrad" xml:space="preserve">
+    <value>cot₉</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="InverseCotDeg" xml:space="preserve">
+    <value>cot₀⁻¹</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="InverseCotRad" xml:space="preserve">
+    <value>cotᵣ⁻¹</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="InverseCotGrad" xml:space="preserve">
+    <value>cot₉⁻¹</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="Sech" xml:space="preserve">
+    <value>sech</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="InverseSech" xml:space="preserve">
+    <value>sech⁻¹</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="Csch" xml:space="preserve">
+    <value>csch</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="InverseCsch" xml:space="preserve">
+    <value>csch⁻¹</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="Coth" xml:space="preserve">
+    <value>coth</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="InverseCoth" xml:space="preserve">
+    <value>coth⁻¹</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
 </root>
