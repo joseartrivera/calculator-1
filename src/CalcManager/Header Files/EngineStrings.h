@@ -164,12 +164,12 @@ inline constexpr auto SIDS_ERR_UNEX_END = L"117";
 inline constexpr auto SIDS_ERR_SG_INV_ERROR = L"118";
 inline constexpr auto SIDS_ERR_INPUT_OVERFLOW = L"119";
 inline constexpr auto SIDS_ERR_OUTPUT_OVERFLOW = L"120";
-#define SIDS_SECD L"SecDeg"
-#define SIDS_SECR L"SecRad"
-#define SIDS_SECG L"SecGrad"
+inline constexpr auto SIDS_SECD = L"SecDeg";
+inline constexpr auto SIDS_SECR = L"SecRad";
+inline constexpr auto SIDS_SECG = L"SecGrad";
 
 // Include the resource key ID from above into this vector to load it into memory for the engine to use
-inline constexpr std::array<std::wstring_view, 120> g_sids =
+inline constexpr std::array<std::wstring_view, 123> g_sids =
 {
     SIDS_PLUS_MINUS,
     SIDS_C,
@@ -290,8 +290,8 @@ inline constexpr std::array<std::wstring_view, 120> g_sids =
     SIDS_ERR_UNEX_END,
     SIDS_ERR_SG_INV_ERROR,
     SIDS_ERR_INPUT_OVERFLOW,
-    SIDS_ERR_OUTPUT_OVERFLOW
-    std::wstring(SIDS_SECD),
-    std::wstring(SIDS_SECG),
-    std::wstring(SIDS_SECR)
+    SIDS_ERR_OUTPUT_OVERFLOW,
+    SIDS_SECD,
+    SIDS_SECG,
+    SIDS_SECR
 };
