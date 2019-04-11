@@ -459,45 +459,12 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
             m_HistoryCollector.AddOpndToHistory(m_numberString, m_currentVal);
         }
 
-        do {
-
-            if (m_nOpCode) /* Is there a valid operation around?        */
-            {
-                /* If this is the first EQU in a string, set m_holdVal=m_currentVal */
-                /* Otherwise let m_currentVal=m_holdVal.  This keeps m_currentVal constant */
-                /* through all EQUs in a row.                     */
-                if (m_bNoPrevEqu)
-                {
-                    m_holdVal = m_currentVal;
-                }
-                else
-                {
-                    m_currentVal = m_holdVal;
-                    DisplayNum(); // to update the m_numberString
-                    m_HistoryCollector.AddBinOpToHistory(m_nOpCode, false);
-                    m_HistoryCollector.AddOpndToHistory(m_numberString, m_currentVal); // Adding the repeated last op to history
-                }
-
-                // Do the current or last operation.
-                m_currentVal = DoOperation(m_nOpCode, m_currentVal, m_lastVal);
-                m_nPrevOpCode = m_nOpCode;
-                m_lastVal = m_currentVal;
-
-                /* Check for errors.  If this wasn't done, DisplayNum */
-                /* would immediately overwrite any error message.     */
-                if (!m_bError)
-                    DisplayNum();
-
-                /* No longer the first EQU.                       */
-                m_bNoPrevEqu = false;
-            }
-            else if (!m_bError)
-                DisplayNum();
-
-            if (m_precedenceOpCount == 0 || !m_fPrecedence)
-                break;
-
-            m_nOpCode = m_nPrecOp[--m_precedenceOpCount];
+        // Evaluate the precedence stack.
+        ResolveHighestPrecedenceOperation();
+        while (m_fPrecedence && m_precedenceOpCount > 0)
+        {
+            m_precedenceOpCount--;
+            m_nOpCode = m_nPrecOp[m_precedenceOpCount];
             m_lastVal = m_precedenceVals[m_precedenceOpCount];
 
             // Precedence Inversion check
@@ -510,7 +477,9 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
             m_HistoryCollector.PopLastOpndStart();
 
             m_bNoPrevEqu = true;
-        } while (m_precedenceOpCount >= 0);
+
+            ResolveHighestPrecedenceOperation();
+        }
 
         if (!m_bError)
         {
@@ -785,6 +754,48 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
 
 }
 
+// Helper function to resolve one item on the precedence stack.
+void CCalcEngine::ResolveHighestPrecedenceOperation()
+{
+    // Is there a valid operation around?
+    if (m_nOpCode)
+    {
+        // If this is the first EQU in a string, set m_holdVal=m_currentVal 
+        // Otherwise let m_currentVal=m_holdVal.  This keeps m_currentVal constant 
+        // through all EQUs in a row.
+        if (m_bNoPrevEqu)
+        {
+            m_holdVal = m_currentVal;
+        }
+        else
+        {
+            m_currentVal = m_holdVal;
+            DisplayNum(); // to update the m_numberString
+            m_HistoryCollector.AddBinOpToHistory(m_nOpCode, false);
+            m_HistoryCollector.AddOpndToHistory(m_numberString, m_currentVal); // Adding the repeated last op to history
+        }
+
+        // Do the current or last operation.
+        m_currentVal = DoOperation(m_nOpCode, m_currentVal, m_lastVal);
+        m_nPrevOpCode = m_nOpCode;
+        m_lastVal = m_currentVal;
+
+        // Check for errors.  If this wasn't done, DisplayNum
+        // would immediately overwrite any error message.
+        if (!m_bError)
+        {
+            DisplayNum();
+        }
+
+        // No longer the first EQU.
+        m_bNoPrevEqu = false;
+    }
+    else if (!m_bError)
+    {
+        DisplayNum();
+    }
+}
+
 // CheckAndAddLastBinOpToHistory
 //
 //  This is a very confusing helper routine to add the last entered binary operator to the history. This is expected to
@@ -853,22 +864,22 @@ void CCalcEngine::DisplayAnnounceBinaryOperator()
 // Unary operator Function Name table Element
 // since unary operators button names aren't exactly friendly for history purpose,
 // we have this separate table to get its localized name and for its Inv function if it exists.
-typedef struct
+struct FunctionNameElement
 {
-    wstring degreeString;    // index of string for the unary op function. Can be 0, in which case it same as button name
-    wstring inverseDegreeString; // index of string for Inv of unary op. Can be 0, in case it is same as idsFunc
+    wstring degreeString; // Used by default if there are no rad or grad specific strings.
+    wstring inverseDegreeString; // Will fall back to degreeString if empty
 
-    wstring radString;    // index of string for the unary op function in rads. Can be 0, in which case it same as button name
-    wstring inverseRadString; // index of string for Inv of unary op in rads. Can be 0, in case it is same as idsFunc
+    wstring radString;
+    wstring inverseRadString; // Will fall back to radString if empty
 
-    wstring gradString;    // index of string for the unary op function in grads. Can be 0, in which case it same as button name
-    wstring inverseGradString; // index of string for Inv of unary op in grads. Can be 0, in case it is same as idsFunc
+    wstring gradString;
+    wstring inverseGradString; // Will fall back to gradString if empty
 
     bool hasAngleStrings = ((!radString.empty()) || (!inverseRadString.empty()) || (!gradString.empty()) || (!inverseGradString.empty()));
-} UFNE;
+};
 
 // Table for each unary operator
-static const std::unordered_map<int, UFNE> unaryOperatorStringTable =
+static const std::unordered_map<int, FunctionNameElement> unaryOperatorStringTable =
 {
     { IDC_CHOP, { L"", SIDS_FRAC} },
 
@@ -879,14 +890,13 @@ static const std::unordered_map<int, UFNE> unaryOperatorStringTable =
     { IDC_SINH, { L"", SIDS_ASINH } },
     { IDC_COSH, { L"", SIDS_ACOSH } },
     { IDC_TANH, { L"", SIDS_ATANH } },
-
     { IDC_SEC, { SIDS_SECD, SIDS_SECD, SIDS_SECR, SIDS_SECR, SIDS_SECG, SIDS_SECG } },
-
+    
     { IDC_LN , { L"", SIDS_POWE } },
     { IDC_SQR, { SIDS_SQR } },
     { IDC_CUB, { SIDS_CUBE } },
     { IDC_FAC, { SIDS_FACT } },
-    { IDC_REC, { SIDS_RECIPROCAL } },
+    { IDC_REC, { SIDS_RECIPROC } },
     { IDC_DMS, { L"", SIDS_DEGREES } },
     { IDC_SIGN, { SIDS_NEGATE } },
     { IDC_DEGREES, { SIDS_DEGREES } }
@@ -896,55 +906,53 @@ wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE
 {
     // Try to lookup the ID in the UFNE table
     wstring ids = L"";
-    auto pair = unaryOperatorStringTable.find(nOpCode);
-    if (pair != unaryOperatorStringTable.end())
+
+    if (auto pair = unaryOperatorStringTable.find(nOpCode); pair != unaryOperatorStringTable.end())
     {
-        if (!pair->second.hasAngleStrings || ANGLE_DEG == angletype)
+        const FunctionNameElement& element = pair->second;
+        if (!element.hasAngleStrings || ANGLE_DEG == angletype)
         {
             if (fInv)
             {
-                ids = pair->second.inverseDegreeString;
+                ids = element.inverseDegreeString;
             }
 
             if (ids.empty())
             {
-                ids = pair->second.degreeString;
+                ids = element.degreeString;
             }
         }
         else if (ANGLE_RAD == angletype)
         {
             if (fInv)
             {
-                ids = pair->second.inverseRadString;
+                ids = element.inverseRadString;
             }
-
             if (ids.empty())
             {
-                ids = pair->second.radString;
+                ids = element.radString;
             }
         }
         else if (ANGLE_GRAD == angletype)
         {
             if (fInv)
             {
-                ids = pair->second.inverseGradString;
+                ids = element.inverseGradString;
             }
-
             if (ids.empty())
             {
-                ids = pair->second.gradString;
+                ids = element.gradString;
             }
         }
     }
 
-
-    // If we didn't find an ID in the table, use the op code.
     if (!ids.empty())
     {
         return GetString(ids);
     }
 
-    return GetString(IdStrFromCmdId(nOpCode));
+    // If we didn't find an ID in the table, use the op code.
+    return OpCodeToString(nOpCode);
 }
 
 bool CCalcEngine::IsCurrentTooBigForTrig()
