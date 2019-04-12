@@ -164,9 +164,15 @@ namespace CalculatorApp
         Sec = (int)CM::Command::CommandSEC,
         Csc = (int)CM::Command::CommandCSC,
         Cot = (int)CM::Command::CommandCOT,
+        InvSec = (int)CM::Command::CommandASEC,
+        InvCsc = (int)CM::Command::CommandACSC,
+        InvCot = (int)CM::Command::CommandACOT,
         Sech = (int)CM::Command::CommandSECH,
         Csch = (int)CM::Command::CommandCSCH,
         Coth = (int)CM::Command::CommandCOTH,
+        InvSech = (int)CM::Command::CommandASECH,
+        InvCsch = (int)CM::Command::CommandACSCH,
+        InvCoth = (int)CM::Command::CommandACOTH,
     };
 
     // This contains list of functions whose usage we are tracelogging

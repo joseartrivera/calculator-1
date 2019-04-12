@@ -368,11 +368,46 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="tan⁻¹"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
+                                <controls:CalculatorButton x:Name="invsecButton"
+                                                           x:Uid="invsecButton"
+                                                           Grid.Row="1"
+                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           AutomationProperties.AutomationId="invsecButton"
+                                                           ButtonId="InvSec"
+                                                           Command="{x:Bind Model.ButtonPressed}"
+                                                           Content="sec⁻¹"
+                                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+                                <controls:CalculatorButton x:Name="invcscButton"
+                                                           x:Uid="invcscButton"
+                                                           Grid.Row="1"
+                                                           Grid.Column="1"
+                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           AutomationProperties.AutomationId="invcscButton"
+                                                           ButtonId="InvCsc"
+                                                           Command="{x:Bind Model.ButtonPressed}"
+                                                           Content="csc⁻¹"
+                                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+                                <controls:CalculatorButton x:Name="invcotButton"
+                                                           x:Uid="invcotButton"
+                                                           Grid.Row="1"
+                                                           Grid.Column="2"
+                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           AutomationProperties.AutomationId="invcotButton"
+                                                           ButtonId="InvCot"
+                                                           Command="{x:Bind Model.ButtonPressed}"
+                                                           Content="cot⁻¹"
+                                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
                             </Grid>
                             <Grid x:Name="HyperbolicTrigFunctions"
+                                  Grid.RowSpan="2"
                                   Grid.Column="1"
                                   Grid.ColumnSpan="3"
                                   Visibility="Collapsed">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*"/>
                                     <ColumnDefinition Width="1*"/>
@@ -405,11 +440,47 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="tanh"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
+                                <controls:CalculatorButton x:Name="sechButton"
+                                                           x:Uid="sechButton"
+                                                           Grid.Row="1"
+                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           AutomationProperties.AutomationId="sechButton"
+                                                           ButtonId="Sech"
+                                                           Click="flyoutButton_Clicked"
+                                                           Command="{x:Bind Model.ButtonPressed}"
+                                                           Content="sech"
+                                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+                                <controls:CalculatorButton x:Name="cschButton"
+                                                           x:Uid="cschButton"
+                                                           Grid.Row="1"
+                                                           Grid.Column="1"
+                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           AutomationProperties.AutomationId="cschButton"
+                                                           ButtonId="Csch"
+                                                           Command="{x:Bind Model.ButtonPressed}"
+                                                           Content="csch"
+                                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+                                <controls:CalculatorButton x:Name="cothButton"
+                                                           x:Uid="cothButton"
+                                                           Grid.Row="1"
+                                                           Grid.Column="2"
+                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           AutomationProperties.AutomationId="cothButton"
+                                                           ButtonId="Coth"
+                                                           Command="{x:Bind Model.ButtonPressed}"
+                                                           Content="coth"
+                                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
                             </Grid>
                             <Grid x:Name="InverseHyperbolicTrigFunctions"
+                                  Grid.RowSpan="2"
                                   Grid.Column="1"
                                   Grid.ColumnSpan="3"
                                   Visibility="Collapsed">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*"/>
                                     <ColumnDefinition Width="1*"/>
@@ -440,6 +511,37 @@
                                                            ButtonId="InvTanh"
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="tanh⁻¹"
+                                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
+                                <controls:CalculatorButton x:Name="invsechButton"
+                                                           x:Uid="invsechButton"
+                                                           Grid.Row="1"
+                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           AutomationProperties.AutomationId="invsechButton"
+                                                           ButtonId="InvSech"
+                                                           Click="flyoutButton_Clicked"
+                                                           Command="{x:Bind Model.ButtonPressed}"
+                                                           Content="sech⁻¹"
+                                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+                                <controls:CalculatorButton x:Name="invcschButton"
+                                                           x:Uid="invcschButton"
+                                                           Grid.Row="1"
+                                                           Grid.Column="1"
+                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           AutomationProperties.AutomationId="invcschButton"
+                                                           ButtonId="InvCsch"
+                                                           Command="{x:Bind Model.ButtonPressed}"
+                                                           Content="csch⁻¹"
+                                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+                                <controls:CalculatorButton x:Name="invcothButton"
+                                                           x:Uid="invcothButton"
+                                                           Grid.Row="1"
+                                                           Grid.Column="2"
+                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           AutomationProperties.AutomationId="invcothButton"
+                                                           ButtonId="InvCoth"
+                                                           Command="{x:Bind Model.ButtonPressed}"
+                                                           Content="coth⁻¹"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
                             </Grid>
                         </Grid>
