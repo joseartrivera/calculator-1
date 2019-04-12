@@ -343,7 +343,9 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
             ((wParam == IDC_CHOP) ||
             (wParam == IDC_SIN) || (wParam == IDC_COS) || (wParam == IDC_TAN) ||
                 (wParam == IDC_LN) || (wParam == IDC_DMS) || (wParam == IDC_DEGREES) ||
-                (wParam == IDC_SINH) || (wParam == IDC_COSH) || (wParam == IDC_TANH)))
+                (wParam == IDC_SINH) || (wParam == IDC_COSH) || (wParam == IDC_TANH) ||
+                (wParam == IDC_SEC) || (wParam == IDC_CSC) || (wParam == IDC_COT) ||
+                (wParam == IDC_SECH) || (wParam == IDC_CSCH) || (wParam == IDC_COTH)))
         {
             m_bInv = false;
         }

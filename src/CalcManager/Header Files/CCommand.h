@@ -138,15 +138,15 @@
 #define IDC_INV         146
 #define IDC_SET_RESULT  147
 
-#define IDC_STRING_MAPPED_VALUES  IDC_SEC // Values after this point are manually mapped to their resw counterparts
+#define IDC_STRING_MAPPED_VALUES  400
 #define IDC_UNARYEXTENDEDFIRST  IDC_STRING_MAPPED_VALUES
-#define IDC_SEC          148
-#define IDC_CSC          149
-#define IDC_COT         150
+#define IDC_SEC          400 // 401 reserved for inverse
+#define IDC_CSC          402 // 403 reserved for inverse
+#define IDC_COT          404 // 405 reserved for inverse
 
-#define IDC_SECH          151
-#define IDC_CSCH          152
-#define IDC_COTH         153
+#define IDC_SECH          406 // 407 reserved for inverse
+#define IDC_CSCH          408 // 409 reserved for inverse
+#define IDC_COTH          410 // 411 reserved for inverse
 
 #define IDC_UNARYEXTENDEDLAST  IDC_COTH
 

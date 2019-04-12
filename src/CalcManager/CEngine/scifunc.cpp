@@ -155,6 +155,27 @@ CalcEngine::Rational CCalcEngine::SciCalcFunctions(CalcEngine::Rational const& r
             }
             break;
 
+        case IDC_SECH:
+            if (!m_fIntegerMode)
+            {
+                result = m_bInv ? ACosh(Invert(rat)) : Invert(Cosh(rat));
+            }
+            break;
+
+        case IDC_CSCH:
+            if (!m_fIntegerMode)
+            {
+                result = m_bInv ? ASinh(Invert(rat)) : Invert(Sinh(rat));
+            }
+            break;
+
+        case IDC_COTH:
+            if (!m_fIntegerMode)
+            {
+                result = m_bInv ? ATanh(Invert(rat)) : Invert(Tanh(rat));
+            }
+            break;
+
         case IDC_REC: /* Reciprocal. */
             result = Invert(rat);
             break;
