@@ -147,6 +147,7 @@ namespace CalculationManager
         CommandACOTH = 411,
 
         CommandPOW2 = 412,  // 2 ^ x
+        CommandLogBaseX = 500,
 
         CommandAnd = 86,
         CommandOR = 87,

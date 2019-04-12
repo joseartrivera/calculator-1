@@ -76,6 +76,7 @@ public:
     static std::wstring_view GetString(std::wstring ids) { return s_engineStrings[ids]; }
     static std::wstring_view OpCodeToString(int nOpCode) { return GetString(IdStrFromCmdId(nOpCode)); }
     static std::wstring_view OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE angletype);
+    static std::wstring_view OpCodeToBinaryString(int nOpCode);
 
 private:
     bool m_fPrecedence;

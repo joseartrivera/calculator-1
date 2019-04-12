@@ -762,16 +762,13 @@
                                        AutomationProperties.AutomationId="TwoPowerXButton"
                                        ButtonId="TwoPowerX"
                                        Content="&#xF7CC;&#xF7CC;"/>
-            <!-- PLACEHOLDER -->
-            <!-- log base y goes here -->
-            <!--
-            <controls:CalculatorButton x:Name="logBaseY"
-                                       x:Uid="logBaseY"
+            <controls:CalculatorButton x:Name="logBaseX"
+                                       x:Uid="logBaseX"
                                        Grid.Row="4"
-                                       Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
-                                       AutomationProperties.AutomationId="logBaseY"
-                                       ButtonId="Sqrt"
-                                       Content="&#xF1AA;"/>-->
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="logBaseX"
+                                       ButtonId="LogBaseX"
+                                       Content="logₓ"/>
             <controls:CalculatorButton x:Name="powerOfEButton"
                                        x:Uid="powerOfEButton"
                                        Grid.Row="5"

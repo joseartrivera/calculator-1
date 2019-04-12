@@ -12,7 +12,7 @@ bool IsOpInRange(OpCode op, uint32_t x, uint32_t y)
 
 bool IsBinOpCode(OpCode opCode)
 {
-    return IsOpInRange(opCode, IDC_AND, IDC_PWR);
+    return IsOpInRange(opCode, IDC_AND, IDC_PWR) || IsOpInRange(opCode, IDC_BINARYEXTENDEDFIRST, IDC_BINARYEXTENDEDLAST);
 }
 
 // WARNING: IDC_SIGN is a special unary op but still this doesn't catch this. Caller has to be aware

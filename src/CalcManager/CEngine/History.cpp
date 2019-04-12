@@ -125,7 +125,7 @@ void CHistoryCollector::AddBinOpToHistory(int nOpCode, bool fNoRepetition)
     int iCommandEnd = AddCommand(std::make_shared<CBinaryCommand>(nOpCode));
     m_lastBinOpStartIndex = IchAddSzToEquationSz(L" ", -1);
 
-    IchAddSzToEquationSz(CCalcEngine::OpCodeToString(nOpCode), iCommandEnd);
+    IchAddSzToEquationSz(CCalcEngine::OpCodeToBinaryString(nOpCode), iCommandEnd);
     IchAddSzToEquationSz(L" ", -1);
 
     if (fNoRepetition)

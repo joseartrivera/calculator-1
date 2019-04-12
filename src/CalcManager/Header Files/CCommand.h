@@ -154,7 +154,9 @@
 
 #define IDC_LASTCONTROL IDC_POW2
 
-#define IDC_XLOGY         416 //logx(y)
+#define IDC_BINARYEXTENDEDFIRST 500
+#define IDC_LOGBASEX         500 //logx(y)
+#define IDC_BINARYEXTENDEDLAST 500
 
 #define IDC_BINEDITSTART    700
 #define IDC_BINPOS0         700

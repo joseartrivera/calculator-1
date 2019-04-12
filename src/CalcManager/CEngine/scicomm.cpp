@@ -26,9 +26,9 @@ namespace {
     // 0 is returned. Higher the number, higher the precedence of the operator.
     int NPrecedenceOfOp(int nopCode)
     {
-        static uint8_t rgbPrec[] = { 0,0,  IDC_OR,0, IDC_XOR,0,  IDC_AND,1,
+        static uint16_t rgbPrec[] = { 0,0,  IDC_OR,0, IDC_XOR,0,  IDC_AND,1,
             IDC_ADD,2, IDC_SUB,2,    IDC_RSHF,3, IDC_LSHF,3,
-            IDC_MOD,3, IDC_DIV,3, IDC_MUL,3,  IDC_PWR,4,   IDC_ROOT, 4 };
+            IDC_MOD,3, IDC_DIV,3, IDC_MUL,3,  IDC_PWR,4, IDC_ROOT,4, IDC_LOGBASEX,4 };
         unsigned int iPrec;
 
         iPrec = 0;
@@ -881,7 +881,7 @@ struct FunctionNameElement
 };
 
 // Table for each unary operator
-static const std::unordered_map<int, FunctionNameElement> unaryOperatorStringTable =
+static const std::unordered_map<int, FunctionNameElement> operatorStringTable =
 {
     { IDC_CHOP, { L"", SIDS_FRAC} },
 
@@ -910,6 +910,7 @@ static const std::unordered_map<int, FunctionNameElement> unaryOperatorStringTab
     { IDC_SIGN, { SIDS_NEGATE } },
     { IDC_DEGREES, { SIDS_DEGREES } },
     { IDC_POW2, { SIDS_TWOPOWX } },
+    { IDC_LOGBASEX, { SIDS_LOGBASEX } },
 };
 
 wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE angletype)
@@ -917,7 +918,7 @@ wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE
     // Try to lookup the ID in the UFNE table
     wstring ids = L"";
 
-    if (auto pair = unaryOperatorStringTable.find(nOpCode); pair != unaryOperatorStringTable.end())
+    if (auto pair = operatorStringTable.find(nOpCode); pair != operatorStringTable.end())
     {
         const FunctionNameElement& element = pair->second;
         if (!element.hasAngleStrings || ANGLE_DEG == angletype)
@@ -954,6 +955,25 @@ wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE
                 ids = element.gradString;
             }
         }
+    }
+
+    if (!ids.empty())
+    {
+        return GetString(ids);
+    }
+
+    // If we didn't find an ID in the table, use the op code.
+    return OpCodeToString(nOpCode);
+}
+
+wstring_view CCalcEngine::OpCodeToBinaryString(int nOpCode)
+{
+    // Try to lookup the ID in the UFNE table
+    wstring ids = L"";
+
+    if (auto pair = operatorStringTable.find(nOpCode); pair != operatorStringTable.end())
+    {
+        ids = pair->second.degreeString;
     }
 
     if (!ids.empty())
