@@ -908,7 +908,8 @@ static const std::unordered_map<int, FunctionNameElement> unaryOperatorStringTab
     { IDC_REC, { SIDS_RECIPROC } },
     { IDC_DMS, { L"", SIDS_DEGREES } },
     { IDC_SIGN, { SIDS_NEGATE } },
-    { IDC_DEGREES, { SIDS_DEGREES } }
+    { IDC_DEGREES, { SIDS_DEGREES } },
+    { IDC_POW2, { SIDS_TWOPOWX } },
 };
 
 wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE angletype)

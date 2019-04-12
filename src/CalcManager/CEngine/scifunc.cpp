@@ -201,6 +201,10 @@ CalcEngine::Rational CCalcEngine::SciCalcFunctions(CalcEngine::Rational const& r
             result = Pow(10, rat);
             break;
 
+        case IDC_POW2:
+            result = Pow(2, rat);
+            break;
+
         case IDC_LN: /* Functions for natural log. */
             result = m_bInv ? Exp(rat) : Log(rat);
             break;

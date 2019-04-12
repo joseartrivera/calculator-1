@@ -148,9 +148,13 @@
 #define IDC_CSCH          408 // 409 reserved for inverse
 #define IDC_COTH          410 // 411 reserved for inverse
 
-#define IDC_UNARYEXTENDEDLAST  IDC_COTH
+#define IDC_POW2          412 // 2 ^ x
 
-#define IDC_LASTCONTROL IDC_COTH
+#define IDC_UNARYEXTENDEDLAST  IDC_POW2
+
+#define IDC_LASTCONTROL IDC_POW2
+
+#define IDC_XLOGY         416 //logx(y)
 
 #define IDC_BINEDITSTART    700
 #define IDC_BINPOS0         700

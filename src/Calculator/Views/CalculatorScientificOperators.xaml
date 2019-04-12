@@ -740,16 +740,13 @@
                                        AutomationProperties.AutomationId="squareRootButton"
                                        ButtonId="Sqrt"
                                        Content="&#xE94B;"/>
-            <!-- cuberoot goes here PLACEHOLDER -->
-            <!--
             <controls:CalculatorButton x:Name="cubeRootButton"
                                        x:Uid="cubeRootButton"
                                        Grid.Row="1"
                                        Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
                                        AutomationProperties.AutomationId="cubeRootButton"
-                                       ButtonId="Sqrt"
-                                       Content="&#xF1AA;"/>
-            -->
+                                       ButtonId="CubeRoot"
+                                       Content="&#xE94B;&#xE94B;&#xE94B;"/>
             <!-- PLACEHOLDER -->
             <controls:CalculatorButton x:Name="ySquareRootButton"
                                        x:Uid="ySquareRootButton"
@@ -758,17 +755,13 @@
                                        AutomationProperties.AutomationId="ySquareRootButton"
                                        ButtonId="YRootX"
                                        Content="&#xf7cd;"/>
-            <!-- 2^x goes here -->
-            <!-- PLACEHOLDER -->
-            <!--
-            <controls:CalculatorButton x:Name="x2PowerButton"
-                                       x:Uid="x2PowerButton"
+            <controls:CalculatorButton x:Name="TwoPowerXButton"
+                                       x:Uid="TwoPowerXButton"
                                        Grid.Row="3"
                                        Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
-                                       AutomationProperties.AutomationId="x2PowerButton"
-                                       ButtonId="Sqrt"
-                                       Content="&#xF1AA;"/>
-            -->
+                                       AutomationProperties.AutomationId="TwoPowerXButton"
+                                       ButtonId="TwoPowerX"
+                                       Content="&#xF7CC;&#xF7CC;"/>
             <!-- PLACEHOLDER -->
             <!-- log base y goes here -->
             <!--

@@ -513,4 +513,8 @@
     <value>coth⁻¹</value>
     <comment>{Locked}The string that represents the function</comment>
   </data>
+  <data name="TwoPowX" xml:space="preserve">
+    <value>2^</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
 </root>
