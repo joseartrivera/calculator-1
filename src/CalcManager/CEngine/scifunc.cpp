@@ -141,7 +141,7 @@ CalcEngine::Rational CCalcEngine::SciCalcFunctions(CalcEngine::Rational const& r
             }
             break;
 
-        case IDC_CSC: 
+        case IDC_CSC:
             if (!m_fIntegerMode)
             {
                 result = m_bInv ? ASin(Invert(rat), m_angletype) : Invert(Sin(rat, m_angletype));
@@ -249,6 +249,15 @@ CalcEngine::Rational CCalcEngine::SciCalcFunctions(CalcEngine::Rational const& r
             }
             break;
         }
+        case IDC_CEIL:
+            result = (Frac(rat) > 0) ? Integer(rat + 1) : Integer(rat);
+            break;
+        case IDC_FLOOR:
+            result = (Frac(rat) < 0) ? Integer(rat - 1 ) : Integer(rat);
+            break;
+        case IDC_ABS:
+            result = Abs(rat);
+            break;
         }   // end switch( op )
     }
     catch (uint32_t nErrCode)

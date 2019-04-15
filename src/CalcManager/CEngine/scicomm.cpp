@@ -911,6 +911,9 @@ static const std::unordered_map<int, FunctionNameElement> operatorStringTable =
     { IDC_DEGREES, { SIDS_DEGREES } },
     { IDC_POW2, { SIDS_TWOPOWX } },
     { IDC_LOGBASEX, { SIDS_LOGBASEX } },
+    { IDC_ABS, { SIDS_ABS } },
+    { IDC_CEIL, { SIDS_CEIL } },
+    { IDC_FLOOR, { SIDS_FLOOR } },
 };
 
 wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE angletype)

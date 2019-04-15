@@ -564,8 +564,9 @@
                             Placement="Bottom">
                         <Grid x:Name="FuncGrid"
                               MinWidth="194"
-                              MinHeight="48">
+                              MinHeight="96">
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
@@ -573,9 +574,36 @@
                                 <ColumnDefinition Width="1*"/>
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
+                            <controls:CalculatorButton x:Name="absButton2"
+                                                       x:Uid="absButton"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="absButton"
+                                                       ButtonId="Abs"
+                                                       Command="{x:Bind Model.ButtonPressed}"
+                                                       Content="abs"
+                                                       IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
+                            <controls:CalculatorButton x:Name="floorButton"
+                                                       x:Uid="floorButton"
+                                                       Grid.Column="1"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="floorButton"
+                                                       ButtonId="Floor"
+                                                       Command="{x:Bind Model.ButtonPressed}"
+                                                       Content="floor"
+                                                       IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
+                            <controls:CalculatorButton x:Name="ceilButton"
+                                                       x:Uid="ceilButton"
+                                                       Grid.Column="2"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       AutomationProperties.AutomationId="ceilButton"
+                                                       ButtonId="Ceil"
+                                                       Command="{x:Bind Model.ButtonPressed}"
+                                                       Content="ceil"
+                                                       IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
                             <!-- place holder for rand -->
                             <controls:CalculatorButton x:Name="randButton"
                                                        x:Uid="randButton"
+                                                       Grid.Row="1"
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="randButton"
                                                        ButtonId="DMS"
@@ -584,6 +612,7 @@
                                                        IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
                             <controls:CalculatorButton x:Name="dmsButton"
                                                        x:Uid="dmsButton"
+                                                       Grid.Row="1"
                                                        Grid.Column="1"
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="dmsButton"
@@ -593,6 +622,7 @@
                                                        IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
                             <controls:CalculatorButton x:Name="degreesButton"
                                                        x:Uid="degreesButton"
+                                                       Grid.Row="1"
                                                        Grid.Column="2"
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="degreesButton"
@@ -796,16 +826,13 @@
                                        AutomationProperties.AutomationId="invertButton"
                                        ButtonId="Invert"
                                        Content="&#xf7c9;"/>
-            <!-- PLACEHOLDER -->
-            <!-- absoloute value goes here -->
-            <!--
-            <controls:CalculatorButton x:Name="absX"
-                                       x:Uid="absX"
+            <controls:CalculatorButton x:Name="absButton"
+                                       x:Uid="absButton"
                                        Grid.Column="1"
-                                       Style="{StaticResource SymbolOperatorButtonStyle}"
-                                       AutomationProperties.AutomationId="absX"
-                                       ButtonId="Sqrt"
-                                       Content="&#xF1AA;"/>-->
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       AutomationProperties.AutomationId="absButton"
+                                       ButtonId="Abs"
+                                       Content="|X|"/>
             <controls:CalculatorButton x:Name="expButton"
                                        x:Uid="expButton"
                                        Grid.Column="2"

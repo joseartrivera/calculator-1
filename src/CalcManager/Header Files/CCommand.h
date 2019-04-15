@@ -149,10 +149,13 @@
 #define IDC_COTH          410 // 411 reserved for inverse
 
 #define IDC_POW2          412 // 2 ^ x
+#define IDC_ABS           413
+#define IDC_FLOOR         414
+#define IDC_CEIL          415
 
-#define IDC_UNARYEXTENDEDLAST  IDC_POW2
+#define IDC_UNARYEXTENDEDLAST  IDC_CEIL
 
-#define IDC_LASTCONTROL IDC_POW2
+#define IDC_LASTCONTROL IDC_CEIL
 
 #define IDC_BINARYEXTENDEDFIRST 500
 #define IDC_LOGBASEX         500 //logx(y)

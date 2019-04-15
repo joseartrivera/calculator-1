@@ -521,4 +521,16 @@
     <value>logx</value>
     <comment>{Locked}The string that represents the function</comment>
   </data>
+  <data name="Abs" xml:space="preserve">
+    <value>abs</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="Ceil" xml:space="preserve">
+    <value>ceil</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="Floor" xml:space="preserve">
+    <value>floor</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
 </root>

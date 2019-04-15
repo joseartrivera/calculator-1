@@ -109,6 +109,9 @@ namespace CalculatorApp
         CubeRoot = (int) CM::Command::CommandCUBEROOT,
         TwoPowerX = (int) CM::Command::CommandPOW2,
         LogBaseX = (int) CM::Command::CommandLogBaseX,
+        Abs = (int) CM::Command::CommandAbs,
+        Floor = (int)CM::Command::CommandFloor,
+        Ceil = (int)CM::Command::CommandCeil,
 
         BINSTART = (int)CM::Command::CommandBINEDITSTART,
         BINPOS0 = (int)CM::Command::CommandBINPOS0,
