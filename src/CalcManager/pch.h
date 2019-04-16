@@ -27,3 +27,5 @@
 #include <intsafe.h>
 #include <array>
 #include <ppltasks.h>
+#include <random>
+#include <iomanip>

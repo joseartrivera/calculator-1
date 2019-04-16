@@ -133,7 +133,8 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
             IsOpInRange(wParam, IDM_DEG, IDM_GRAD) ||
             IsOpInRange(wParam, IDC_BINEDITSTART, IDC_BINEDITSTART + 63) ||
             (IDC_INV == wParam) ||
-            (IDC_SIGN == wParam && 10 != m_radix))
+            (IDC_SIGN == wParam && 10 != m_radix) ||
+            (IDC_RAND == wParam))
         {
             m_bRecord = false;
             m_currentVal = m_input.ToRational(m_radix, m_precision);
@@ -729,7 +730,24 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
         if (!m_fIntegerMode)
         {
             CheckAndAddLastBinOpToHistory(); // rand is like entering the number
-            m_currentVal = Rational{ rand() };
+
+            std::random_device rd;
+            std::mt19937 gen(rd());
+            std::uniform_real_distribution<> distr(0, 1);
+            auto random = distr(gen);
+            wstringstream str;
+            str << fixed << setprecision(m_precision) << random;
+
+            auto rat = StringToRat(false, str.str(), false, L"", m_radix, m_precision);
+            if (rat != nullptr)
+            {
+                m_currentVal = Rational{ rat };
+            }
+            else
+            {
+                m_currentVal = Rational{ 0 };
+            }
+            destroyrat(rat);
 
             DisplayNum();
             m_bInv = false;
