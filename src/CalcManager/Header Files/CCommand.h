@@ -161,6 +161,8 @@
 #define IDC_LOGBASEX         500 //logx(y)
 #define IDC_BINARYEXTENDEDLAST 500
 
+#define IDC_RAND            600
+
 #define IDC_BINEDITSTART    700
 #define IDC_BINPOS0         700
 #define IDC_BINPOS1         701

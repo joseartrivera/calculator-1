@@ -725,6 +725,18 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
         HandleErrorCommand(wParam);
         break;
 
+    case IDC_RAND:
+        if (!m_fIntegerMode)
+        {
+            CheckAndAddLastBinOpToHistory(); // rand is like entering the number
+            m_currentVal = Rational{ rand() };
+
+            DisplayNum();
+            m_bInv = false;
+            break;
+        }
+        HandleErrorCommand(wParam);
+        break;
     case IDC_FE:
         // Toggle exponential notation display.
         m_nFE = NUMOBJ_FMT(!(int)m_nFE);

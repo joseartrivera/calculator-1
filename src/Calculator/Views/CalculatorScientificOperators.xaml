@@ -97,19 +97,19 @@
                         <Setter Target="factorialButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="openParenthesisButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="closeParenthesisButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <!--
                         <Setter Target="sinButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="cosButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="tanButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="sinhButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="coshButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="tanhButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
-
                         <Setter Target="invsinButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="invcosButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="invtanButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="invsinhButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="invcoshButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="invtanhButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invtanhButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>-->
                         <Setter Target="powerButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="powerOf10Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="logBase10Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
@@ -147,6 +147,7 @@
                         <Setter Target="factorialButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="openParenthesisButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="closeParenthesisButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <!--
                         <Setter Target="sinButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="cosButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="tanButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
@@ -159,7 +160,7 @@
                         <Setter Target="invtanButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="invsinhButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="invcoshButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="invtanhButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invtanhButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>-->
                         <Setter Target="powerButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="powerOf10Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="logBase10Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
@@ -606,7 +607,7 @@
                                                        Grid.Row="1"
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="randButton"
-                                                       ButtonId="DMS"
+                                                       ButtonId="Rand"
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="rand"
                                                        IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
