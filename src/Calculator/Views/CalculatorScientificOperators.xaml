@@ -240,7 +240,6 @@
                                           Checked="trigFlyoutShift_Toggle"
                                           Content="2nd"
                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"
-                                          IsEnabledChanged="shiftButton_IsEnabledChanged"
                                           Unchecked="trigFlyoutShift_Toggle"/>
 
                             <ToggleButton x:Name="hypButton"
