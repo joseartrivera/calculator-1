@@ -58,6 +58,57 @@ void CalculatorProgrammerRadixOperators::bitwiseFlyout_Toggle(Platform::Object^ 
     }
 }
 
+void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+    if (rolButton == nullptr)
+    {
+        FindName("rolButton");
+        FindName("rorButton");
+        FindName("rolCarryButton");
+        FindName("rorCarryButton");
+        FindName("lshLogicalButton");
+        FindName("rshLogicalButton");
+    }
+
+    // Since arithmeticShiftButton defaults to IsChecked = true, this event an fire before we can load the deferred loaded controls. If that is the case, just return and do nothing.
+    if (rolButton == nullptr)
+    {
+        return;
+    }
+
+    RadioButton^ radioButton = static_cast<RadioButton^>(sender);
+
+    rolButton->Visibility = ::Visibility::Collapsed;
+    rorButton->Visibility = ::Visibility::Collapsed;
+    rolCarryButton->Visibility = ::Visibility::Collapsed;
+    rorCarryButton->Visibility = ::Visibility::Collapsed;
+    lshButton->Visibility = ::Visibility::Collapsed;
+    rshButton->Visibility = ::Visibility::Collapsed;
+    lshLogicalButton->Visibility = ::Visibility::Collapsed;
+    rshLogicalButton->Visibility = ::Visibility::Collapsed;
+
+    if (radioButton == arithmeticShiftButton)
+    {
+        lshButton->Visibility = ::Visibility::Visible;
+        rshButton->Visibility = ::Visibility::Visible;
+    }
+    else if (radioButton == logicalShiftButton)
+    {
+        lshLogicalButton->Visibility = ::Visibility::Visible;
+        rshLogicalButton->Visibility = ::Visibility::Visible;
+    }
+    else if (radioButton == rotateCircularButton)
+    {
+        rolButton->Visibility = ::Visibility::Visible;
+        rorButton->Visibility = ::Visibility::Visible;
+    }
+    else if (radioButton == rotateCarryShiftButton)
+    {
+        rolCarryButton->Visibility = ::Visibility::Visible;
+        rorCarryButton->Visibility = ::Visibility::Visible;
+    }
+}
+
 void CalculatorProgrammerRadixOperators::Shift_Clicked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
     bool isShiftChecked = static_cast<ToggleButton^>(sender)->IsChecked->Value;

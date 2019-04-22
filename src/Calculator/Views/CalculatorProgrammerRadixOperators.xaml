@@ -47,7 +47,6 @@
                         <Setter Target="notButton.IsEnabled" Value="False"/>
                         <Setter Target="andButton.IsEnabled" Value="False"/>
 
-                        <Setter Target="shiftButton.IsEnabled" Value="False"/>
                         <Setter Target="modButton.IsEnabled" Value="False"/>
 
                         <Setter Target="divideButton.IsEnabled" Value="False"/>
@@ -117,7 +116,6 @@
                         <Setter Target="eButton.Style" Value="{StaticResource NumericButtonStyle12}"/>
                         <Setter Target="fButton.Style" Value="{StaticResource NumericButtonStyle12}"/>
 
-                        <Setter Target="shiftButton.Style" Value="{StaticResource CaptionToggleButtonSmallStyle}"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -165,7 +163,7 @@
                             </Grid.ColumnDefinitions>
 
                             <ToggleButton x:Name="bitwiseShiftButton"
-                                          x:Uid="shiftButton"
+                                          x:Uid="bitwiseShiftButton"
                                           Style="{StaticResource CaptionToggleEmphasizedButtonStyle}"
                                           AutomationProperties.AutomationId="shiftButton"
                                           Checked="bitwiseFlyout_Toggle"
@@ -292,19 +290,29 @@
                     <Flyout x:Name="BitShiftFlyout"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
                             Placement="Bottom">
-                        <Grid x:Name="BitShiftGrid"
-                              MinWidth="194"
-                              MinHeight="96">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="1*"/>
-                                <RowDefinition Height="1*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                            </Grid.ColumnDefinitions>
-                        </Grid>
+                        <StackPanel Padding="6">
+                            <RadioButton x:Name="arithmeticShiftButton"
+                                         x:Uid="arithmeticShiftButton"
+                                         AutomationProperties.AutomationId="arithmeticShiftButton"
+                                         Checked="bitshiftFlyout_Checked"
+                                         Content="Arithmetic Shift"
+                                         IsChecked="True"/>
+                            <RadioButton x:Name="logicalShiftButton"
+                                         x:Uid="logicalShiftButton"
+                                         AutomationProperties.AutomationId="logicalShiftButton"
+                                         Checked="bitshiftFlyout_Checked"
+                                         Content="Logical Shift"/>
+                            <RadioButton x:Name="rotateCircularButton"
+                                         x:Uid="rotateCircularButton"
+                                         AutomationProperties.AutomationId="rotateCircularButton"
+                                         Checked="bitshiftFlyout_Checked"
+                                         Content="Rotate Circular Shift"/>
+                            <RadioButton x:Name="rotateCarryShiftButton"
+                                         x:Uid="rotateCarryShiftButton"
+                                         AutomationProperties.AutomationId="rotateCarryShiftButton"
+                                         Checked="bitshiftFlyout_Checked"
+                                         Content="Rotate Through Carry Circular Shift"/>
+                        </StackPanel>
                     </Flyout>
                 </Button.Flyout>
             </Button>
@@ -339,6 +347,28 @@
                                        ButtonId="Ror"
                                        Content="RoR"
                                        Visibility="Collapsed"/>
+
+            <controls:CalculatorButton x:Name="rolCarryButton"
+                                       x:Uid="rolCarryButton"
+                                       Grid.Column="0"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       FontSize="12"
+                                       x:DeferLoadStrategy="Lazy"
+                                       AutomationProperties.AutomationId="rolButton"
+                                       ButtonId="RolC"
+                                       Content="RoLc"
+                                       Visibility="Collapsed"/>
+            <controls:CalculatorButton x:Name="rorCarryButton"
+                                       x:Uid="rorCarryButton"
+                                       Grid.Column="1"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       FontSize="12"
+                                       x:DeferLoadStrategy="Lazy"
+                                       AutomationProperties.AutomationId="rorCarryButton"
+                                       ButtonId="RorC"
+                                       Content="RoRc"
+                                       Visibility="Collapsed"/>
+
             <controls:CalculatorButton x:Name="lshButton"
                                        x:Uid="lshButton"
                                        Grid.Column="0"
@@ -355,6 +385,27 @@
                                        AutomationProperties.AutomationId="rshButton"
                                        ButtonId="Rsh"
                                        Content="Rsh"/>
+
+            <controls:CalculatorButton x:Name="lshLogicalButton"
+                                       x:Uid="lshLogicalButton"
+                                       Grid.Column="0"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       FontSize="12"
+                                       x:DeferLoadStrategy="Lazy"
+                                       AutomationProperties.AutomationId="lshLogicalButton"
+                                       ButtonId="LshL"
+                                       Content="LshL"
+                                       Visibility="Collapsed"/>
+            <controls:CalculatorButton x:Name="rshLogicalButton"
+                                       x:Uid="rshLogicalButton"
+                                       Grid.Column="1"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       FontSize="12"
+                                       x:DeferLoadStrategy="Lazy"
+                                       AutomationProperties.AutomationId="rshLogicalButton"
+                                       ButtonId="RshL"
+                                       Content="Rshl"
+                                       Visibility="Collapsed"/>
         </Grid>
 
         <controls:CalculatorButton x:Name="modButton"

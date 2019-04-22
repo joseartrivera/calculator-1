@@ -28,7 +28,7 @@ namespace {
     {
         static uint16_t rgbPrec[] = { 0,0,  IDC_OR,0, IDC_XOR,0,  IDC_AND,1,
             IDC_NAND,1, IDC_NOR,1, IDC_XNOR,1,
-            IDC_ADD,2, IDC_SUB,2, IDC_RSHF,3, IDC_LSHF,3,
+            IDC_ADD,2, IDC_SUB,2, IDC_RSHF,3, IDC_LSHF,3, IDC_RSHFL,3, IDC_LSHFL,3,
             IDC_MOD,3, IDC_DIV,3, IDC_MUL,3,  IDC_PWR,4, IDC_ROOT,4, IDC_LOGBASEX,4 };
         unsigned int iPrec;
 
@@ -948,6 +948,10 @@ static const std::unordered_map<int, FunctionNameElement> operatorStringTable =
     { IDC_NAND, { SIDS_NAND } },
     { IDC_NOR, { SIDS_NOR } },
     { IDC_XNOR, { SIDS_XNOR } },
+    { IDC_LSHFL, { SIDS_LSH } },
+    { IDC_RSHFL, { SIDS_RSH } },
+    { IDC_RORC, { SIDS_ROR } },
+    { IDC_ROLC, { SIDS_ROL } },
 };
 
 wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE angletype)

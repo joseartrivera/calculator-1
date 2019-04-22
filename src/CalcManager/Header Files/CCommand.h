@@ -153,7 +153,10 @@
 #define IDC_FLOOR         414
 #define IDC_CEIL          415
 
-#define IDC_UNARYEXTENDEDLAST  IDC_CEIL
+#define IDC_ROLC          416
+#define IDC_RORC          417
+
+#define IDC_UNARYEXTENDEDLAST  IDC_RORC
 
 #define IDC_LASTCONTROL IDC_CEIL
 
@@ -162,7 +165,9 @@
 #define IDC_NAND                501
 #define IDC_NOR                 502
 #define IDC_XNOR                503
-#define IDC_BINARYEXTENDEDLAST  503
+#define IDC_LSHFL               504
+#define IDC_RSHFL               505
+#define IDC_BINARYEXTENDEDLAST  IDC_RSHFL
 
 #define IDC_RAND            600
 

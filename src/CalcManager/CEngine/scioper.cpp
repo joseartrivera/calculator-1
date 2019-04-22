@@ -65,8 +65,18 @@ CalcEngine::Rational CCalcEngine::DoOperation(int operation, CalcEngine::Rationa
             }
             break;
         }
+        case IDC_RSHFL:
+        {
+            if (m_fIntegerMode && result >= m_dwWordBitWidth) // Lsh/Rsh >= than current word size is always 0
+            {
+                throw CALC_E_NORESULT;
+            }
 
+            result = rhs >> result;
+            break;
+        }
         case IDC_LSHF:
+        case IDC_LSHFL:
             if (m_fIntegerMode && result >= m_dwWordBitWidth) // Lsh/Rsh >= than current word size is always 0
             {
                 throw CALC_E_NORESULT;

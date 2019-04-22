@@ -121,6 +121,8 @@ private:
     NUM_WIDTH m_numwidth;  // one of qword, dword, word or byte mode.
     int32_t m_dwWordBitWidth; // # of bits in currently selected word size
 
+    uint64_t m_carryBit;
+
     CHistoryCollector m_HistoryCollector; // Accumulator of each line of history as various commands are processed
 
     std::array<CalcEngine::Rational, NUM_WIDTH_LENGTH> m_chopNumbers; // word size enforcement
