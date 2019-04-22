@@ -158,8 +158,11 @@
 #define IDC_LASTCONTROL IDC_CEIL
 
 #define IDC_BINARYEXTENDEDFIRST 500
-#define IDC_LOGBASEX         500 //logx(y)
-#define IDC_BINARYEXTENDEDLAST 500
+#define IDC_LOGBASEX            500 //logx(y)
+#define IDC_NAND                501
+#define IDC_NOR                 502
+#define IDC_XNOR                503
+#define IDC_BINARYEXTENDEDLAST  503
 
 #define IDC_RAND            600
 

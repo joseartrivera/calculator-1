@@ -193,9 +193,12 @@ inline constexpr auto SIDS_LOGBASEX = L"LogBaseX";
 inline constexpr auto SIDS_ABS = L"Abs";
 inline constexpr auto SIDS_FLOOR = L"Floor";
 inline constexpr auto SIDS_CEIL = L"Ceil";
+inline constexpr auto SIDS_NAND = L"Nand";
+inline constexpr auto SIDS_NOR = L"Nor";
+inline constexpr auto SIDS_XNOR = L"Xnor";
 
 // Include the resource key ID from above into this vector to load it into memory for the engine to use
-inline constexpr std::array<std::wstring_view, 149> g_sids =
+inline constexpr std::array<std::wstring_view, 152> g_sids =
 {
     SIDS_PLUS_MINUS,
     SIDS_C,
@@ -346,4 +349,7 @@ inline constexpr std::array<std::wstring_view, 149> g_sids =
     SIDS_ABS,
     SIDS_FLOOR,
     SIDS_CEIL,
+    SIDS_NAND,
+    SIDS_NOR,
+    SIDS_XNOR,
 };

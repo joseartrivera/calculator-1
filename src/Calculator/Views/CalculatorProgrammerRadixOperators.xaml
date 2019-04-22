@@ -250,7 +250,7 @@
                                                            Style="{StaticResource OperatorButtonStyle}"
                                                            FontSize="12"
                                                            AutomationProperties.AutomationId="nandButton"
-                                                           ButtonId="And"
+                                                           ButtonId="Nand"
                                                            Content="NAND"/>
 
                                 <controls:CalculatorButton x:Name="norButton"
@@ -260,7 +260,7 @@
                                                            Style="{StaticResource OperatorButtonStyle}"
                                                            FontSize="12"
                                                            AutomationProperties.AutomationId="norButton"
-                                                           ButtonId="Or"
+                                                           ButtonId="Nor"
                                                            Content="NOR"/>
 
                                 <controls:CalculatorButton x:Name="xnorButton"
@@ -270,7 +270,7 @@
                                                            Style="{StaticResource OperatorButtonStyle}"
                                                            FontSize="12"
                                                            AutomationProperties.AutomationId="xnorButton"
-                                                           ButtonId="Xor"
+                                                           ButtonId="XNor"
                                                            Content="XNOR"/>
                             </Grid>
 

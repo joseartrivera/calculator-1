@@ -151,6 +151,9 @@ namespace CalculationManager
         CommandFloor = 414,
         CommandCeil = 415,
         CommandLogBaseX = 500,
+        CommandNand = 501,
+        CommandNor = 502,
+        CommandXNor = 503,
         CommandRand = 600,
 
         CommandAnd = 86,

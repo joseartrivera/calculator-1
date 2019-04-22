@@ -533,4 +533,16 @@
     <value>floor</value>
     <comment>{Locked}The string that represents the function</comment>
   </data>
+  <data name="Nand" xml:space="preserve">
+    <value>Nand</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="Nor" xml:space="preserve">
+    <value>Nor</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
+  <data name="Xnor" xml:space="preserve">
+    <value>Xnor</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
 </root>
