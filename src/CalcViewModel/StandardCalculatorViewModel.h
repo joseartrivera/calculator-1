@@ -106,6 +106,18 @@ namespace CalculatorApp
                 }
             }
 
+            property bool IsInputEmpty {
+                bool get() { return m_isInputEmpty;  }
+                void set(bool value)
+                {
+                    if (m_isInputEmpty != value)
+                    {
+                        m_isInputEmpty = value;
+                        RaisePropertyChanged(L"IsInputEmpty");
+                    }
+                }
+            }
+
             property bool IsBitFlipChecked {
                 bool get() { return m_isBitFlipChecked; }
                 void set(bool value)
@@ -278,6 +290,7 @@ namespace CalculatorApp
             void OnMemoryClear(_In_ Platform::Object^ memoryItemPosition);
             void OnPinUnpinCommand(Platform::Object^ parameter);
 
+            void OnInputChanged();
             void SetPrimaryDisplay(_In_ std::wstring const&displayString, _In_ bool isError);
             void DisplayPasteError();
             void SetTokens(_Inout_ std::shared_ptr<CalculatorVector<std::pair<std::wstring, int>>> const &tokens);
@@ -344,6 +357,7 @@ namespace CalculatorApp
             bool m_isScientific;
             bool m_isProgrammer;
             bool m_isBinaryBitFlippingEnabled;
+            bool m_isInputEmpty;
             bool m_isBitFlipChecked;
             bool m_isShiftChecked;
             bool m_isRtlLanguage;

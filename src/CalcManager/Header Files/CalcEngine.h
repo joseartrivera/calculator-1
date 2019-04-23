@@ -59,6 +59,7 @@ public:
     void PersistedMemObject(CalcEngine::Rational const& memObject);
     bool FInErrorState() { return m_bError; }
     bool FInRecordingState() { return m_bRecord; }
+    bool IsInputEmpty() { return m_input.IsEmpty() && (m_numberString.empty() || m_numberString == L"0"); }
     void SettingsChanged();
     bool IsCurrentTooBigForTrig();
     int GetCurrentRadix();

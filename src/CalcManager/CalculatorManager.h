@@ -100,7 +100,7 @@ namespace CalculationManager
         void MaxDigitsReached() override;
         void BinaryOperatorReceived() override;
         void MemoryItemChanged(unsigned int indexOfMemory) override;
-
+        void InputChanged() override;
 
         CalculatorManager(ICalcDisplay* displayCallback, IResourceProvider* resourceProvider);
         ~CalculatorManager();
@@ -128,6 +128,7 @@ namespace CalculationManager
         void MemorizedNumberClearAll();
 
         bool IsEngineRecording();
+        bool IsInputEmpty();
         std::vector<unsigned char> GetSavedCommands(){ return m_savedCommands; }
         void SetRadix(RADIX_TYPE iRadixType);
         void SetMemorizedNumbersString();

@@ -53,6 +53,7 @@ namespace CalcEngine
         bool TryBeginExponent();
         void Backspace();
         void SetDecimalSymbol(wchar_t decSymbol);
+        bool IsEmpty();
         std::wstring ToString(uint32_t radix);
         Rational ToRational(uint32_t radix, int32_t precision);
 
