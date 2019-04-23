@@ -116,6 +116,7 @@ namespace CalculatorApp
         Floor = (int) CM::Command::CommandFloor,
         Ceil = (int) CM::Command::CommandCeil,
         Rand = (int) CM::Command::CommandRand,
+        Euler = (int) CM::Command::CommandEuler,
         LshL = (int) CM::Command::CommandLSHFL,
         RshL = (int)CM::Command::CommandRSHFL,
         RolC = (int)CM::Command::CommandROLC,

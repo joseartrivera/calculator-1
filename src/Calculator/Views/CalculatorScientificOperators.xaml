@@ -658,6 +658,15 @@
                                    ButtonId="Pi"
                                    Content="&#xf7cf;"/>
 
+        <controls:CalculatorButton x:Name="eulerButton"
+                                   x:Uid="eulerButton"
+                                   Grid.Row="1"
+                                   Grid.Column="2"
+                                   Style="{StaticResource OperatorButtonStyle}"
+                                   FontSize="14"
+                                   AutomationProperties.AutomationId="eulerButton"
+                                   ButtonId="Euler"
+                                   Content="e"/>
         <Grid x:Name="DisplayControls"
               x:Uid="DisplayControls"
               Grid.Row="1"

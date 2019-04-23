@@ -170,6 +170,7 @@
 #define IDC_BINARYEXTENDEDLAST  IDC_RSHFL
 
 #define IDC_RAND            600
+#define IDC_EULER           601
 
 #define IDC_BINEDITSTART    700
 #define IDC_BINPOS0         700

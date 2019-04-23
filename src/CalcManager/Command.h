@@ -159,6 +159,7 @@ namespace CalculationManager
         CommandLSHFL = 504,
         CommandRSHFL = 505,
         CommandRand = 600,
+        CommandEuler = 601,
 
         CommandAnd = 86,
         CommandOR = 87,

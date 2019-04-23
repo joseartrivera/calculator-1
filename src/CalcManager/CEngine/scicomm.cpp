@@ -135,7 +135,8 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
             IsOpInRange(wParam, IDC_BINEDITSTART, IDC_BINEDITSTART + 63) ||
             (IDC_INV == wParam) ||
             (IDC_SIGN == wParam && 10 != m_radix) ||
-            (IDC_RAND == wParam))
+            (IDC_RAND == wParam) ||
+            (IDC_EULER == wParam))
         {
             m_bRecord = false;
             m_currentVal = m_input.ToRational(m_radix, m_precision);
@@ -749,6 +750,18 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
                 m_currentVal = Rational{ 0 };
             }
             destroyrat(rat);
+
+            DisplayNum();
+            m_bInv = false;
+            break;
+        }
+        HandleErrorCommand(wParam);
+        break;
+    case IDC_EULER:
+        if (!m_fIntegerMode)
+        {
+            CheckAndAddLastBinOpToHistory(); // pi is like entering the number
+            m_currentVal = Rational{ rat_exp };
 
             DisplayNum();
             m_bInv = false;
