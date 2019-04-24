@@ -220,6 +220,11 @@
                    TargetType="Controls:CalculatorButton">
                 <Setter Property="FontSize" Value="12"/>
             </Style>
+            <Style x:Key="NumericButtonStyle14"
+                   BasedOn="{StaticResource NumericButtonStyle}"
+                   TargetType="Controls:CalculatorButton">
+                <Setter Property="FontSize" Value="14"/>
+            </Style>
             <Style x:Key="NumericButtonStyle18"
                    BasedOn="{StaticResource NumericButtonStyle}"
                    TargetType="Controls:CalculatorButton">
@@ -228,7 +233,7 @@
             <Style x:Key="NumericButtonStyle24"
                    BasedOn="{StaticResource NumericButtonStyle}"
                    TargetType="Controls:CalculatorButton">
-                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontSize" Value="24"/>
             </Style>
             <Style x:Key="NumericButtonStyle28"
                    BasedOn="{StaticResource NumericButtonStyle}"
@@ -244,6 +249,11 @@
                    BasedOn="{StaticResource NumericButtonStyle}"
                    TargetType="Controls:CalculatorButton">
                 <Setter Property="FontSize" Value="46"/>
+            </Style>
+            <Style x:Key="NumericButtonStyle48"
+                   BasedOn="{StaticResource NumericButtonStyle}"
+                   TargetType="Controls:CalculatorButton">
+                <Setter Property="FontSize" Value="48"/>
             </Style>
 
             <Style x:Key="SymbolOperatorKeypadButtonStyle"
@@ -1250,6 +1260,7 @@
             <Style x:Key="OverflowFlyoutStyle" TargetType="FlyoutPresenter">
                 <Setter Property="Padding" Value="0"/>
                 <Setter Property="Margin" Value="0,-3,0,0"/>
+                <Setter Property="MaxWidth" Value="Infinity"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="FlyoutPresenter">
