@@ -153,7 +153,7 @@
                               FontFamily="{StaticResource CalculatorFontFamily}"
                               FontSize="12"
                               Glyph="&#xF1AA;"/>
-                    <TextBlock Text="BITWISE"/>
+                    <TextBlock x:Uid="bitwiseTextBlock" VerticalAlignment="Center"/>
                     <FontIcon Margin="6,0,6,0"
                               VerticalAlignment="Center"
                               FontFamily="{StaticResource CalculatorFontFamily}"
@@ -297,7 +297,7 @@
                               FontFamily="{StaticResource CalculatorFontFamily}"
                               FontSize="12"
                               Glyph="&#xF1AA;"/>
-                    <TextBlock Text="BIT SHIFTS"/>
+                    <TextBlock x:Uid="bitShiftTextBlock" VerticalAlignment="Center"/>
                     <FontIcon Margin="6,0,6,0"
                               FontFamily="{StaticResource CalculatorFontFamily}"
                               FontSize="12"

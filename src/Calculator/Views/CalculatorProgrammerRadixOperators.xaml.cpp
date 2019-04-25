@@ -87,25 +87,42 @@ void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object
     lshLogicalButton->Visibility = ::Visibility::Collapsed;
     rshLogicalButton->Visibility = ::Visibility::Collapsed;
 
+    rolButton->IsEnabled = false;
+    rorButton->IsEnabled = false;
+    rolCarryButton->IsEnabled = false;
+    rorCarryButton->IsEnabled = false;
+    lshButton->IsEnabled = false;
+    rshButton->IsEnabled = false;
+    lshLogicalButton->IsEnabled = false;
+    rshLogicalButton->IsEnabled = false;
+
     if (radioButton == arithmeticShiftButton)
     {
         lshButton->Visibility = ::Visibility::Visible;
         rshButton->Visibility = ::Visibility::Visible;
+        lshButton->IsEnabled = true;
+        rshButton->IsEnabled = true;
     }
     else if (radioButton == logicalShiftButton)
     {
         lshLogicalButton->Visibility = ::Visibility::Visible;
         rshLogicalButton->Visibility = ::Visibility::Visible;
+        lshLogicalButton->IsEnabled = true;
+        rshLogicalButton->IsEnabled = true;
     }
     else if (radioButton == rotateCircularButton)
     {
         rolButton->Visibility = ::Visibility::Visible;
         rorButton->Visibility = ::Visibility::Visible;
+        rolButton->IsEnabled = true;
+        rorButton->IsEnabled = true;
     }
     else if (radioButton == rotateCarryShiftButton)
     {
         rolCarryButton->Visibility = ::Visibility::Visible;
         rorCarryButton->Visibility = ::Visibility::Visible;
+        rolCarryButton->IsEnabled = true;
+        rorCarryButton->IsEnabled = true;
     }
 }
 

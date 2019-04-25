@@ -284,7 +284,7 @@
                               FontFamily="{StaticResource CalculatorFontFamily}"
                               FontSize="12"
                               Glyph="&#xF1AA;"/>
-                    <TextBlock Text="TRIG"/>
+                    <TextBlock x:Uid="trigTextBlock" VerticalAlignment="Center"/>
                     <FontIcon Margin="6,0,6,0"
                               VerticalAlignment="Center"
                               FontFamily="{StaticResource CalculatorFontFamily}"
@@ -310,7 +310,7 @@
                             </Grid.ColumnDefinitions>
 
                             <ToggleButton x:Name="trigShiftButton"
-                                          x:Uid="shiftButton"
+                                          x:Uid="trigShiftButton"
                                           Style="{StaticResource CaptionToggleEmphasizedButtonStyle}"
                                           AutomationProperties.AutomationId="shiftButton"
                                           Checked="trigFlyoutShift_Toggle"
@@ -631,7 +631,7 @@
                               FontFamily="{StaticResource CalculatorFontFamily}"
                               FontSize="12"
                               Glyph="&#xF1AA;"/>
-                    <TextBlock VerticalAlignment="Center" Text="FUNCTIONS"/>
+                    <TextBlock x:Uid="functionTextBlock" VerticalAlignment="Center"/>
                     <FontIcon Margin="6,0,6,0"
                               VerticalAlignment="Center"
                               FontFamily="{StaticResource CalculatorFontFamily}"
