@@ -149,13 +149,16 @@
         <controls:OverflowListView Grid.ColumnSpan="5">
             <Button x:Name="bitwiseButton" Style="{StaticResource OverflowButtonStyle}">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="6,2,6,0"
-                               FontFamily="{StaticResource CalculatorFontFamily}"
-                               Text="&#xF1AA;"/>
+                    <FontIcon Margin="6,0,6,0"
+                              FontFamily="{StaticResource CalculatorFontFamily}"
+                              FontSize="12"
+                              Glyph="&#xF1AA;"/>
                     <TextBlock Text="BITWISE"/>
-                    <TextBlock Margin="6,3,6,0"
-                               FontFamily="{StaticResource CalculatorFontFamily}"
-                               Text="&#xE70D;"/>
+                    <FontIcon Margin="6,0,6,0"
+                              VerticalAlignment="Center"
+                              FontFamily="{StaticResource CalculatorFontFamily}"
+                              FontSize="12"
+                              Glyph="&#xE70D;"/>
                 </StackPanel>
                 <Button.Flyout>
                     <Flyout x:Name="BitwiseFlyout"
@@ -290,13 +293,15 @@
             </Button>
             <Button x:Name="bitShiftButton" Style="{StaticResource OverflowButtonStyle}">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="6,2,6,0"
-                               FontFamily="{StaticResource CalculatorFontFamily}"
-                               Text="&#xF1AA;"/>
+                    <FontIcon Margin="6,0,6,0"
+                              FontFamily="{StaticResource CalculatorFontFamily}"
+                              FontSize="12"
+                              Glyph="&#xF1AA;"/>
                     <TextBlock Text="BIT SHIFTS"/>
-                    <TextBlock Margin="6,3,6,0"
-                               FontFamily="{StaticResource CalculatorFontFamily}"
-                               Text="&#xE70D;"/>
+                    <FontIcon Margin="6,0,6,0"
+                              FontFamily="{StaticResource CalculatorFontFamily}"
+                              FontSize="12"
+                              Glyph="&#xE70D;"/>
                 </StackPanel>
                 <Button.Flyout>
                     <Flyout x:Name="BitShiftFlyout"
