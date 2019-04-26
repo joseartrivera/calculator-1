@@ -20,7 +20,7 @@
 
     <Grid x:Name="ProgRadixOps">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition x:Name="overflowRow" Height="Auto"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -110,6 +110,7 @@
                         <Setter Target="notButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
 
+                        <Setter Target="overflowRow.Height" Value="Auto"/>
                         <Setter Target="bitwiseButton.MinHeight" Value="32"/>
                         <Setter Target="bitShiftButton.MinHeight" Value="32"/>
                         <Setter Target="bitwiseGrid.MinWidth" Value="194"/>
@@ -160,14 +161,7 @@
                         <Setter Target="notButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
 
-                        <Setter Target="bitwiseTextBlock.FontWeight" Value="SemiBold"/>
-                        <Setter Target="bitwiseFontIcon.FontWeight" Value="SemiBold"/>
-                        <Setter Target="bitwiseChevron.FontWeight" Value="SemiBold"/>
-
-                        <Setter Target="bitShiftTextBlock.FontWeight" Value="SemiBold"/>
-                        <Setter Target="bitShiftFontIcon.FontWeight" Value="SemiBold"/>
-                        <Setter Target="bitShiftChevron.FontWeight" Value="SemiBold"/>
-
+                        <Setter Target="overflowRow.Height" Value="0.6*"/>
                         <Setter Target="bitwiseButton.MinHeight" Value="32"/>
                         <Setter Target="bitShiftButton.MinHeight" Value="32"/>
                         <Setter Target="bitwiseGrid.MinWidth" Value="288"/>
@@ -218,14 +212,7 @@
                         <Setter Target="notButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
 
-                        <Setter Target="bitwiseTextBlock.FontWeight" Value="SemiBold"/>
-                        <Setter Target="bitwiseFontIcon.FontWeight" Value="SemiBold"/>
-                        <Setter Target="bitwiseChevron.FontWeight" Value="SemiBold"/>
-
-                        <Setter Target="bitShiftTextBlock.FontWeight" Value="SemiBold"/>
-                        <Setter Target="bitShiftFontIcon.FontWeight" Value="SemiBold"/>
-                        <Setter Target="bitShiftChevron.FontWeight" Value="SemiBold"/>
-
+                        <Setter Target="overflowRow.Height" Value="0.8*"/>
                         <Setter Target="bitwiseButton.MinHeight" Value="32"/>
                         <Setter Target="bitShiftButton.MinHeight" Value="32"/>
                         <Setter Target="bitwiseGrid.MinWidth" Value="387"/>

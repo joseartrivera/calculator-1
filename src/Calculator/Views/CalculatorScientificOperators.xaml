@@ -19,7 +19,7 @@
     </UserControl.Resources>
     <Grid x:Name="ScientificOperators">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition x:Name="overflowRow" Height="Auto"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -173,6 +173,7 @@
                         <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
 
+                        <Setter Target="overflowRow.Height" Value="Auto"/>
                         <Setter Target="trigButton.MinHeight" Value="32"/>
                         <Setter Target="funcButton.MinHeight" Value="32"/>
                         <Setter Target="TrigGrid.MinWidth" Value="258"/>
@@ -260,14 +261,7 @@
                         <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
 
-                        <Setter Target="trigTextBlock.FontWeight" Value="SemiBold"/>
-                        <Setter Target="trigFontIcon.FontWeight" Value="SemiBold"/>
-                        <Setter Target="trigChevron.FontWeight" Value="SemiBold"/>
-
-                        <Setter Target="functionTextBlock.FontWeight" Value="SemiBold"/>
-                        <Setter Target="funcFontIcon.FontWeight" Value="SemiBold"/>
-                        <Setter Target="funcChevron.FontWeight" Value="SemiBold"/>
-
+                        <Setter Target="overflowRow.Height" Value="0.6*"/>
                         <Setter Target="trigButton.MinHeight" Value="32"/>
                         <Setter Target="funcButton.MinHeight" Value="32"/>
                         <Setter Target="TrigGrid.MinWidth" Value="384"/>
@@ -355,14 +349,7 @@
                         <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="trigTextBlock.FontWeight" Value="SemiBold"/>
-                        <Setter Target="trigFontIcon.FontWeight" Value="SemiBold"/>
-                        <Setter Target="trigChevron.FontWeight" Value="SemiBold"/>
-
-                        <Setter Target="functionTextBlock.FontWeight" Value="SemiBold"/>
-                        <Setter Target="funcFontIcon.FontWeight" Value="SemiBold"/>
-                        <Setter Target="funcChevron.FontWeight" Value="SemiBold"/>
-
+                        <Setter Target="overflowRow.Height" Value="0.8*"/>
                         <Setter Target="trigButton.MinHeight" Value="32"/>
                         <Setter Target="funcButton.MinHeight" Value="32"/>
                         <Setter Target="TrigGrid.MinWidth" Value="516"/>
