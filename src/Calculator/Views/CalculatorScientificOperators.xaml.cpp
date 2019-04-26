@@ -89,6 +89,7 @@ void CalculatorScientificOperators::trigFlyoutHyp_Toggle(_In_ Platform::Object^ 
 void CalculatorScientificOperators::flyoutButton_Clicked(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
 {
     this->Trigflyout->Hide();
+    this->FuncFlyout->Hide();
 }
 
 void CalculatorScientificOperators::shiftButton_IsEnabledChanged(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ /*e*/)

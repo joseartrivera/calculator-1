@@ -58,6 +58,12 @@ void CalculatorProgrammerRadixOperators::bitwiseFlyout_Toggle(Platform::Object^ 
     }
 }
 
+void CalculatorProgrammerRadixOperators::flyoutButton_Clicked(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
+{
+    this->BitwiseFlyout->Hide();
+}
+
+
 void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
     if (rolButton == nullptr)
