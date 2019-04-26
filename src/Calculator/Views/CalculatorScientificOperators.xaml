@@ -134,18 +134,16 @@
                         <Setter Target="squareRootButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="invertButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
 
-                        <Setter Target="clearEntryButton.FontSize" Value="{ThemeResource CaptionFontSize}"/>
-                        <Setter Target="clearButton.FontSize" Value="{ThemeResource CaptionFontSize}"/>
+                        <Setter Target="clearEntryButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="clearButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="backSpaceButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="divideButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="multiplyButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="minusButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="plusButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="equalButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="NumberPad.ButtonStyle" Value="{ThemeResource NumericButtonStyle18}"/>
+                        <Setter Target="NumberPad.ButtonStyle" Value="{ThemeResource NumericButtonStyle14}"/>
 
-                        <Setter Target="trigButton.FontSize" Value="{ThemeResource CaptionFontSize}"/>
-                        <Setter Target="funcButton.FontSize" Value="{ThemeResource CaptionFontSize}"/>
                         <Setter Target="eulerButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="absButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="logBaseX.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
@@ -184,12 +182,107 @@
 
                     </VisualState.Setters>
                 </VisualState>
+                <VisualState x:Name="Medium">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="640" MinWindowWidth="640"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="negateButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSizeLarge}"/>
+                        <Setter Target="piButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="factorialButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="openParenthesisButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="closeParenthesisButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+
+                        <Setter Target="sinButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="cosButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="tanButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="sinhButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="coshButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="tanhButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invsinButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invcosButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invtanButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invsinhButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invcoshButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invtanhButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+
+                        <Setter Target="powerButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="powerOf10Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="logBase10Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="expButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="modButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="ySquareRootButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="powerOfEButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="logBaseEButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="xpower2Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="xpower3Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="squareRootButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invertButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+
+                        <Setter Target="clearEntryButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="clearButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="backSpaceButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="divideButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="multiplyButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="minusButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="plusButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="equalButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="NumberPad.ButtonStyle" Value="{ThemeResource NumericButtonStyle24}"/>
+
+                        <Setter Target="eulerButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="absButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="logBaseX.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="twoPowerXButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="cubeRootButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+
+                        <Setter Target="shiftButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="trigShiftButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="hypButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="secButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="cscButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="cotButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invsecButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invcscButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invcotButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="sechButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="cschButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="cothButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invsechButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invcschButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="invcothButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+
+                        <Setter Target="absFlyoutButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="floorButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="ceilButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="randButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+
+                        <Setter Target="trigTextBlock.FontWeight" Value="SemiBold"/>
+                        <Setter Target="trigFontIcon.FontWeight" Value="SemiBold"/>
+                        <Setter Target="trigChevron.FontWeight" Value="SemiBold"/>
+
+                        <Setter Target="functionTextBlock.FontWeight" Value="SemiBold"/>
+                        <Setter Target="funcFontIcon.FontWeight" Value="SemiBold"/>
+                        <Setter Target="funcChevron.FontWeight" Value="SemiBold"/>
+
+                        <Setter Target="trigButton.MinHeight" Value="32"/>
+                        <Setter Target="funcButton.MinHeight" Value="32"/>
+                        <Setter Target="TrigGrid.MinWidth" Value="384"/>
+                        <Setter Target="TrigGrid.MinHeight" Value="128"/>
+                        <Setter Target="FuncGrid.MinWidth" Value="288"/>
+                        <Setter Target="FuncGrid.MinHeight" Value="128"/>
+
+                    </VisualState.Setters>
+                </VisualState>
                 <VisualState x:Name="Large">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowHeight="1080" MinWindowWidth="1080"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="negateButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="negateButton.FontSize" Value="48"/>
                         <Setter Target="piButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="factorialButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="openParenthesisButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
@@ -233,8 +326,6 @@
                         <Setter Target="equalButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="NumberPad.ButtonStyle" Value="{ThemeResource NumericButtonStyle48}"/>
 
-                        <Setter Target="trigButton.FontSize" Value="{ThemeResource TitleFontSize}"/>
-                        <Setter Target="funcButton.FontSize" Value="{ThemeResource TitleFontSize}"/>
                         <Setter Target="eulerButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="absButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="logBaseX.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
@@ -264,8 +355,16 @@
                         <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="trigButton.MinHeight" Value="48"/>
-                        <Setter Target="funcButton.MinHeight" Value="48"/>
+                        <Setter Target="trigTextBlock.FontWeight" Value="SemiBold"/>
+                        <Setter Target="trigFontIcon.FontWeight" Value="SemiBold"/>
+                        <Setter Target="trigChevron.FontWeight" Value="SemiBold"/>
+
+                        <Setter Target="functionTextBlock.FontWeight" Value="SemiBold"/>
+                        <Setter Target="funcFontIcon.FontWeight" Value="SemiBold"/>
+                        <Setter Target="funcChevron.FontWeight" Value="SemiBold"/>
+
+                        <Setter Target="trigButton.MinHeight" Value="32"/>
+                        <Setter Target="funcButton.MinHeight" Value="32"/>
                         <Setter Target="TrigGrid.MinWidth" Value="516"/>
                         <Setter Target="TrigGrid.MinHeight" Value="192"/>
                         <Setter Target="FuncGrid.MinWidth" Value="387"/>
@@ -280,12 +379,16 @@
         <controls:OverflowListView Grid.ColumnSpan="5">
             <Button x:Name="trigButton" Style="{StaticResource OverflowButtonStyle}">
                 <StackPanel Orientation="Horizontal">
-                    <FontIcon Margin="6,0,6,0"
+                    <FontIcon x:Name="trigFontIcon"
+                              Margin="6,0,6,0"
                               FontFamily="{StaticResource CalculatorFontFamily}"
                               FontSize="12"
                               Glyph="&#xF1AA;"/>
-                    <TextBlock x:Uid="trigTextBlock" VerticalAlignment="Center"/>
-                    <FontIcon Margin="6,0,6,0"
+                    <TextBlock x:Name="trigTextBlock"
+                               x:Uid="trigTextBlock"
+                               VerticalAlignment="Center"/>
+                    <FontIcon x:Name="trigChevron"
+                              Margin="6,0,6,0"
                               VerticalAlignment="Center"
                               FontFamily="{StaticResource CalculatorFontFamily}"
                               FontSize="12"
@@ -424,7 +527,7 @@
 
                                 <controls:CalculatorButton x:Name="invsinButton"
                                                            x:Uid="invsinButton"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="invsinButton"
                                                            ButtonId="InvSin"
                                                            Click="flyoutButton_Clicked"
@@ -434,7 +537,7 @@
                                 <controls:CalculatorButton x:Name="invcosButton"
                                                            x:Uid="invcosButton"
                                                            Grid.Column="1"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="invcosButton"
                                                            ButtonId="InvCos"
                                                            Click="flyoutButton_Clicked"
@@ -444,7 +547,7 @@
                                 <controls:CalculatorButton x:Name="invtanButton"
                                                            x:Uid="invtanButton"
                                                            Grid.Column="2"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="invtanButton"
                                                            ButtonId="InvTan"
                                                            Click="flyoutButton_Clicked"
@@ -455,7 +558,7 @@
                                 <controls:CalculatorButton x:Name="invsecButton"
                                                            x:Uid="invsecButton"
                                                            Grid.Row="1"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="invsecButton"
                                                            ButtonId="InvSec"
                                                            Click="flyoutButton_Clicked"
@@ -466,7 +569,7 @@
                                                            x:Uid="invcscButton"
                                                            Grid.Row="1"
                                                            Grid.Column="1"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="invcscButton"
                                                            ButtonId="InvCsc"
                                                            Click="flyoutButton_Clicked"
@@ -477,7 +580,7 @@
                                                            x:Uid="invcotButton"
                                                            Grid.Row="1"
                                                            Grid.Column="2"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="invcotButton"
                                                            ButtonId="InvCot"
                                                            Click="flyoutButton_Clicked"
@@ -502,7 +605,7 @@
 
                                 <controls:CalculatorButton x:Name="sinhButton"
                                                            x:Uid="sinhButton"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="sinhButton"
                                                            ButtonId="Sinh"
                                                            Click="flyoutButton_Clicked"
@@ -512,7 +615,7 @@
                                 <controls:CalculatorButton x:Name="coshButton"
                                                            x:Uid="coshButton"
                                                            Grid.Column="1"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="coshButton"
                                                            ButtonId="Cosh"
                                                            Click="flyoutButton_Clicked"
@@ -522,7 +625,7 @@
                                 <controls:CalculatorButton x:Name="tanhButton"
                                                            x:Uid="tanhButton"
                                                            Grid.Column="2"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="tanhButton"
                                                            ButtonId="Tanh"
                                                            Click="flyoutButton_Clicked"
@@ -533,7 +636,7 @@
                                 <controls:CalculatorButton x:Name="sechButton"
                                                            x:Uid="sechButton"
                                                            Grid.Row="1"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="sechButton"
                                                            ButtonId="Sech"
                                                            Click="flyoutButton_Clicked"
@@ -544,7 +647,7 @@
                                                            x:Uid="cschButton"
                                                            Grid.Row="1"
                                                            Grid.Column="1"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="cschButton"
                                                            ButtonId="Csch"
                                                            Click="flyoutButton_Clicked"
@@ -555,7 +658,7 @@
                                                            x:Uid="cothButton"
                                                            Grid.Row="1"
                                                            Grid.Column="2"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="cothButton"
                                                            ButtonId="Coth"
                                                            Click="flyoutButton_Clicked"
@@ -579,7 +682,7 @@
                                 </Grid.ColumnDefinitions>
                                 <controls:CalculatorButton x:Name="invsinhButton"
                                                            x:Uid="invsinhButton"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="invsinhButton"
                                                            ButtonId="InvSinh"
                                                            Click="flyoutButton_Clicked"
@@ -589,7 +692,7 @@
                                 <controls:CalculatorButton x:Name="invcoshButton"
                                                            x:Uid="invcoshButton"
                                                            Grid.Column="1"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="invcoshButton"
                                                            ButtonId="InvCosh"
                                                            Click="flyoutButton_Clicked"
@@ -599,7 +702,7 @@
                                 <controls:CalculatorButton x:Name="invtanhButton"
                                                            x:Uid="invtanhButton"
                                                            Grid.Column="2"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="invtanhButton"
                                                            ButtonId="InvTanh"
                                                            Click="flyoutButton_Clicked"
@@ -610,7 +713,7 @@
                                 <controls:CalculatorButton x:Name="invsechButton"
                                                            x:Uid="invsechButton"
                                                            Grid.Row="1"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="invsechButton"
                                                            ButtonId="InvSech"
                                                            Click="flyoutButton_Clicked"
@@ -621,7 +724,7 @@
                                                            x:Uid="invcschButton"
                                                            Grid.Row="1"
                                                            Grid.Column="1"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="invcschButton"
                                                            ButtonId="InvCsch"
                                                            Click="flyoutButton_Clicked"
@@ -632,7 +735,7 @@
                                                            x:Uid="invcothButton"
                                                            Grid.Row="1"
                                                            Grid.Column="2"
-                                                           Style="{StaticResource OperatorButtonStyle}"
+                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                                            AutomationProperties.AutomationId="invcothButton"
                                                            ButtonId="InvCoth"
                                                            Click="flyoutButton_Clicked"
@@ -646,13 +749,17 @@
             </Button>
             <Button x:Name="funcButton" Style="{StaticResource OverflowButtonStyle}">
                 <StackPanel Orientation="Horizontal">
-                    <FontIcon Margin="6,0,6,0"
+                    <FontIcon x:Name="funcFontIcon"
+                              Margin="6,0,6,0"
                               VerticalAlignment="Center"
                               FontFamily="{StaticResource CalculatorFontFamily}"
                               FontSize="12"
                               Glyph="&#xF1AA;"/>
-                    <TextBlock x:Uid="functionTextBlock" VerticalAlignment="Center"/>
-                    <FontIcon Margin="6,0,6,0"
+                    <TextBlock x:Name="functionTextBlock"
+                               x:Uid="functionTextBlock"
+                               VerticalAlignment="Center"/>
+                    <FontIcon x:Name="funcChevron"
+                              Margin="6,0,6,0"
                               VerticalAlignment="Center"
                               FontFamily="{StaticResource CalculatorFontFamily}"
                               FontSize="12"
@@ -913,7 +1020,7 @@
             <controls:CalculatorButton x:Name="logBaseX"
                                        x:Uid="logBaseX"
                                        Grid.Row="4"
-                                       Style="{StaticResource OperatorButtonStyle}"
+                                       Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
                                        AutomationProperties.AutomationId="logBaseX"
                                        ButtonId="LogBaseX"
                                        Content="logₓ"/>

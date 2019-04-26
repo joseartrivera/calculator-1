@@ -134,7 +134,7 @@
             <!-- Numpad Standard/Scientific in Fill/Full -->
             <x:Double x:Key="CalcStandardOperatorCaptionSize">20</x:Double>
             <!-- Standard Operators Standard/Scientific in Fill/Full -->
-            <x:Double x:Key="CalcOperatorCaptionSize">15</x:Double>
+            <x:Double x:Key="CalcOperatorCaptionSize">14</x:Double>
 
             <!-- Base style for calc buttons -->
             <Style x:Key="CalcButtonStyle" TargetType="Controls:CalculatorButton">
@@ -358,6 +358,16 @@
 
             <Style x:Key="AccentEmphasizedCalcButtonStyle"
                    BasedOn="{StaticResource SymbolOperatorButtonStyle}"
+                   TargetType="Controls:CalculatorButton">
+                <Setter Property="HoverBackground" Value="{ThemeResource SystemControlHighlightAltListAccentHighBrush}"/>
+                <Setter Property="HoverForeground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                <Setter Property="PressBackground" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
+                <Setter Property="PressForeground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                <Setter Property="Background" Value="{ThemeResource SystemControlHighlightAltListAccentLowBrush}"/>
+            </Style>
+
+            <Style x:Key="AccentEmphasizedOperatorCalcButtonStyle"
+                   BasedOn="{StaticResource OperatorButtonStyle}"
                    TargetType="Controls:CalculatorButton">
                 <Setter Property="HoverBackground" Value="{ThemeResource SystemControlHighlightAltListAccentHighBrush}"/>
                 <Setter Property="HoverForeground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
@@ -796,8 +806,6 @@
                                         <VisualState x:Name="Checked">
                                             <VisualState.Setters>
                                                 <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
-                                                <Setter Target="SelectionBorder.Background" Value="{ThemeResource SystemControlHighlightTransparentBrush}"/>
-                                                <Setter Target="SelectionBorder.BorderBrush" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
                                                 <Setter Target="RootGrid.Background" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
                                             </VisualState.Setters>
                                         </VisualState>
@@ -806,8 +814,6 @@
                                                 <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
                                                 <Setter Target="RootGrid.(RevealBrush.State)" Value="PointerOver"/>
                                                 <Setter Target="RootGrid.Background" Value="{ThemeResource SystemControlHighlightAltListAccentHighBrush}"/>
-                                                <Setter Target="SelectionBorder.Background" Value="{ThemeResource SystemControlHighlightTransparentBrush}"/>
-                                                <Setter Target="SelectionBorder.BorderBrush" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
                                             </VisualState.Setters>
                                         </VisualState>
                                         <VisualState x:Name="CheckedPressed">
@@ -815,8 +821,6 @@
                                                 <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
                                                 <Setter Target="RootGrid.(RevealBrush.State)" Value="Pressed"/>
                                                 <Setter Target="RootGrid.Background" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
-                                                <Setter Target="SelectionBorder.Background" Value="{ThemeResource SystemControlHighlightTransparentBrush}"/>
-                                                <Setter Target="SelectionBorder.BorderBrush" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
                                             </VisualState.Setters>
                                         </VisualState>
                                         <VisualState x:Name="CheckedDisabled">
@@ -839,8 +843,6 @@
                                         </VisualState>
                                     </VisualStateGroup>
                                 </VisualStateManager.VisualStateGroups>
-
-                                <Border x:Name="SelectionBorder" BorderThickness="0,0,0,2"/>
 
                                 <ContentPresenter x:Name="ContentPresenter"
                                                   Margin="{TemplateBinding Padding}"

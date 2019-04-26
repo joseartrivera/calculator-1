@@ -60,7 +60,7 @@ void CalculatorProgrammerRadixOperators::bitwiseFlyout_Toggle(Platform::Object^ 
 
 void CalculatorProgrammerRadixOperators::flyoutButton_Clicked(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
 {
-    this->BitwiseFlyout->Hide();
+    this->bitwiseFlyout->Hide();
 }
 
 
