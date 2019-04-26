@@ -161,7 +161,7 @@
                         <Setter Target="notButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
 
-                        <Setter Target="overflowRow.Height" Value="0.6*"/>
+                        <Setter Target="overflowRow.Height" Value="0.7*"/>
                         <Setter Target="bitwiseButton.MinHeight" Value="32"/>
                         <Setter Target="bitShiftButton.MinHeight" Value="32"/>
                         <Setter Target="bitwiseGrid.MinWidth" Value="288"/>

@@ -261,7 +261,7 @@
                         <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
 
-                        <Setter Target="overflowRow.Height" Value="0.6*"/>
+                        <Setter Target="overflowRow.Height" Value="0.7*"/>
                         <Setter Target="trigButton.MinHeight" Value="32"/>
                         <Setter Target="funcButton.MinHeight" Value="32"/>
                         <Setter Target="TrigGrid.MinWidth" Value="384"/>
