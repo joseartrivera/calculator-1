@@ -3595,7 +3595,6 @@
     <value>Xnor</value>
     <comment>Auditory feedback for Screen Reader users. Users will hear "Display is 7 xnor" when the button is pressed. NAND is a mathematical operation on two binary values.</comment>
   </data>
-
   <data name="rolCarryButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Rotate on left with carry</value>
     <comment>Screen reader prompt for the Calculator button rol with carry in the scientific flyout keypad</comment>
@@ -3604,7 +3603,6 @@
     <value>J</value>
     <comment>{Locked}This is the character that should trigger this button. Note that it is a character and not a key, so it does not come from the Windows::System::VirtualKey enum.</comment>
   </data>
-
   <data name="rorCarryButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Rotate on right with carry</value>
     <comment>Screen reader prompt for the Calculator button ror with carry in the scientific flyout keypad</comment>
@@ -3613,7 +3611,6 @@
     <value>K</value>
     <comment>{Locked}This is the character that should trigger this button. Note that it is a character and not a key, so it does not come from the Windows::System::VirtualKey enum.</comment>
   </data>
-
   <data name="lshLogicalButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Left Shift</value>
     <comment>Screen reader prompt for the Calculator button lshLogical in the scientific flyout keypad</comment>
@@ -3626,7 +3623,6 @@
     <value>Left shift</value>
     <comment>Auditory feedback for Screen Reader users. Users will hear "Display is 7 left shift" when the button is pressed. NAND is a mathematical operation on two binary values.</comment>
   </data>
-
   <data name="rshLogicalButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Right Shift</value>
     <comment>Screen reader prompt for the Calculator button rshLogical in the scientific flyout keypad</comment>
@@ -3638,5 +3634,21 @@
   <data name="rshLogicalButton.[using:CalculatorApp.Controls]CalculatorButton.AuditoryFeedback" xml:space="preserve">
     <value>Right shift</value>
     <comment>Auditory feedback for Screen Reader users. Users will hear "Display is 7 right shift" when the button is pressed. NAND is a mathematical operation on two binary values.</comment>
+  </data>
+  <data name="arithmeticShiftButton.Content" xml:space="preserve">
+    <value>Arithmetic Shift</value>
+    <comment>Label for a radio button that toggles arithmetic shift behavior for the shift operations.</comment>
+  </data>
+  <data name="logicalShiftButton.Content" xml:space="preserve">
+    <value>Logical Shift</value>
+    <comment>Label for a radio button that toggles logical shift behavior for the shift operations.</comment>
+  </data>
+  <data name="rotateCircularButton.Content" xml:space="preserve">
+    <value>Rotate Circular Shift</value>
+    <comment>Label for a radio button that toggles rotate circular behavior for the shift operations.</comment>
+  </data>
+  <data name="rotateCarryShiftButton.Content" xml:space="preserve">
+    <value>Rotate Through Carry Circular Shift</value>
+    <comment>Label for a radio button that toggles rotate circular with carry behavior for the shift operations.</comment>
   </data>
 </root>

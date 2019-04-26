@@ -312,23 +312,19 @@
                                          x:Uid="arithmeticShiftButton"
                                          AutomationProperties.AutomationId="arithmeticShiftButton"
                                          Checked="bitshiftFlyout_Checked"
-                                         Content="Arithmetic Shift"
                                          IsChecked="True"/>
                             <RadioButton x:Name="logicalShiftButton"
                                          x:Uid="logicalShiftButton"
                                          AutomationProperties.AutomationId="logicalShiftButton"
-                                         Checked="bitshiftFlyout_Checked"
-                                         Content="Logical Shift"/>
+                                         Checked="bitshiftFlyout_Checked"/>
                             <RadioButton x:Name="rotateCircularButton"
                                          x:Uid="rotateCircularButton"
                                          AutomationProperties.AutomationId="rotateCircularButton"
-                                         Checked="bitshiftFlyout_Checked"
-                                         Content="Rotate Circular Shift"/>
+                                         Checked="bitshiftFlyout_Checked"/>
                             <RadioButton x:Name="rotateCarryShiftButton"
                                          x:Uid="rotateCarryShiftButton"
                                          AutomationProperties.AutomationId="rotateCarryShiftButton"
-                                         Checked="bitshiftFlyout_Checked"
-                                         Content="Rotate Through Carry Circular Shift"/>
+                                         Checked="bitshiftFlyout_Checked"/>
                         </StackPanel>
                     </Flyout>
                 </Button.Flyout>
