@@ -253,7 +253,8 @@
                             Placement="Bottom">
                         <Grid x:Name="bitwiseGrid"
                               MinWidth="258"
-                              MinHeight="96">
+                              MinHeight="96"
+                              XYFocusKeyboardNavigation="Enabled">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1*"/>
                                 <RowDefinition Height="1*"/>
