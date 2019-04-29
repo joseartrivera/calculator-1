@@ -63,9 +63,14 @@ void CalculatorProgrammerRadixOperators::flyoutButton_Clicked(_In_ Platform::Obj
     this->bitwiseFlyout->Hide();
 }
 
+void CalculatorProgrammerRadixOperators::checkDefaultBitShift()
+{
+    this->arithmeticShiftButton->IsChecked = true;
+}
 
 void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
+    // Load deferred load buttons
     if (rolButton == nullptr)
     {
         FindName("rolButton");
@@ -84,6 +89,7 @@ void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object
 
     RadioButton^ radioButton = static_cast<RadioButton^>(sender);
 
+    // Set all buttons to collapsed initially
     rolButton->Visibility = ::Visibility::Collapsed;
     rorButton->Visibility = ::Visibility::Collapsed;
     rolCarryButton->Visibility = ::Visibility::Collapsed;
@@ -93,6 +99,7 @@ void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object
     lshLogicalButton->Visibility = ::Visibility::Collapsed;
     rshLogicalButton->Visibility = ::Visibility::Collapsed;
 
+    // We need to set the collapsed buttons to disabled so that the KeyboardShortcutManager can skip the keybinds for the disabled buttons
     rolButton->IsEnabled = false;
     rorButton->IsEnabled = false;
     rolCarryButton->IsEnabled = false;
@@ -129,34 +136,6 @@ void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object
         rorCarryButton->Visibility = ::Visibility::Visible;
         rolCarryButton->IsEnabled = true;
         rorCarryButton->IsEnabled = true;
-    }
-}
-
-void CalculatorProgrammerRadixOperators::Shift_Clicked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
-    bool isShiftChecked = static_cast<ToggleButton^>(sender)->IsChecked->Value;
-    auto scvm = safe_cast<StandardCalculatorViewModel^>(this->DataContext);
-    scvm->IsShiftProgrammerChecked = isShiftChecked;
-
-    if (rolButton == nullptr)
-    {
-        FindName("rolButton");
-        FindName("rorButton");
-    }
-
-    if (isShiftChecked)
-    {
-        rolButton->Visibility = ::Visibility::Visible;
-        rorButton->Visibility = ::Visibility::Visible;
-        lshButton->Visibility = ::Visibility::Collapsed;
-        rshButton->Visibility = ::Visibility::Collapsed;
-    }
-    else
-    {
-        rolButton->Visibility = ::Visibility::Collapsed;
-        rorButton->Visibility = ::Visibility::Collapsed;
-        lshButton->Visibility = ::Visibility::Visible;
-        rshButton->Visibility = ::Visibility::Visible;
     }
 }
 

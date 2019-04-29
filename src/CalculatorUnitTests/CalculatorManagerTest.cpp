@@ -93,6 +93,10 @@ namespace CalculatorManagerTest
             m_maxDigitsCalledCount++;
         }
 
+        void InputChanged() override
+        {
+        }
+
         int GetMaxDigitsCalledCount()
         {
             return m_maxDigitsCalledCount;

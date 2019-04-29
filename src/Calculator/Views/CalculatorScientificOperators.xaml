@@ -264,9 +264,9 @@
                         <Setter Target="overflowRow.Height" Value="0.7*"/>
                         <Setter Target="trigButton.MinHeight" Value="32"/>
                         <Setter Target="funcButton.MinHeight" Value="32"/>
-                        <Setter Target="TrigGrid.MinWidth" Value="384"/>
+                        <Setter Target="TrigGrid.MinWidth" Value="336"/>
                         <Setter Target="TrigGrid.MinHeight" Value="128"/>
-                        <Setter Target="FuncGrid.MinWidth" Value="288"/>
+                        <Setter Target="FuncGrid.MinWidth" Value="252"/>
                         <Setter Target="FuncGrid.MinHeight" Value="128"/>
 
                     </VisualState.Setters>
@@ -989,7 +989,6 @@
                                        AutomationProperties.AutomationId="cubeRootButton"
                                        ButtonId="CubeRoot"
                                        Content="&#xE94B;&#xE94B;&#xE94B;"/>
-            <!-- PLACEHOLDER -->
             <controls:CalculatorButton x:Name="ySquareRootButton"
                                        x:Uid="ySquareRootButton"
                                        Grid.Row="2"

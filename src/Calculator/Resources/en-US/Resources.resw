@@ -3651,4 +3651,12 @@
     <value>Rotate Through Carry Circular Shift</value>
     <comment>Label for a radio button that toggles rotate circular with carry behavior for the shift operations.</comment>
   </data>
+  <data name="cubeRootButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Cube root</value>
+    <comment>Screen reader prompt for the cube root button on the scientific operator keypad</comment>
+  </data>
+  <data name="cubeRootButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKey" xml:space="preserve">
+    <value>B</value>
+    <comment>{Locked}This is the character that should trigger this button. Note that it is a character and not a key, so it does not come from the Windows::System::VirtualKey enum.</comment>
+  </data>
 </root>

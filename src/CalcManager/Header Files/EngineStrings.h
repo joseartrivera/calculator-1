@@ -79,7 +79,6 @@ inline constexpr auto SIDS_XPOW3 = L"32";
 inline constexpr auto SIDS_NFACTORIAL = L"33";
 inline constexpr auto SIDS_RECIPROCAL = L"34";
 inline constexpr auto SIDS_DMS = L"35";
-inline constexpr auto SIDS_CUBEROOT = L"36";
 inline constexpr auto SIDS_POWTEN = L"37";
 inline constexpr auto SIDS_PERCENT = L"38";
 inline constexpr auto SIDS_SCIENTIFIC_NOTATION = L"39";
@@ -196,6 +195,7 @@ inline constexpr auto SIDS_CEIL = L"Ceil";
 inline constexpr auto SIDS_NAND = L"Nand";
 inline constexpr auto SIDS_NOR = L"Nor";
 inline constexpr auto SIDS_XNOR = L"Xnor";
+inline constexpr auto SIDS_CUBEROOT = L"CubeRoot";
 
 // Include the resource key ID from above into this vector to load it into memory for the engine to use
 inline constexpr std::array<std::wstring_view, 152> g_sids =
@@ -236,7 +236,6 @@ inline constexpr std::array<std::wstring_view, 152> g_sids =
     SIDS_NFACTORIAL,
     SIDS_RECIPROCAL,
     SIDS_DMS,
-    SIDS_CUBEROOT,
     SIDS_POWTEN,
     SIDS_PERCENT,
     SIDS_SCIENTIFIC_NOTATION,
@@ -352,4 +351,5 @@ inline constexpr std::array<std::wstring_view, 152> g_sids =
     SIDS_NAND,
     SIDS_NOR,
     SIDS_XNOR,
+    SIDS_CUBEROOT,
 };

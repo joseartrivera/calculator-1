@@ -62,6 +62,8 @@
                         <Setter Target="openParenthesisButton.IsEnabled" Value="False"/>
                         <Setter Target="closeParenthesisButton.IsEnabled" Value="False"/>
                         <Setter Target="negateButton.IsEnabled" Value="False"/>
+                        <Setter Target="bitShiftButton.IsEnabled" Value="False"/>
+                        <Setter Target="bitwiseButton.IsEnabled" Value="False"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -164,7 +166,7 @@
                         <Setter Target="overflowRow.Height" Value="0.7*"/>
                         <Setter Target="bitwiseButton.MinHeight" Value="32"/>
                         <Setter Target="bitShiftButton.MinHeight" Value="32"/>
-                        <Setter Target="bitwiseGrid.MinWidth" Value="288"/>
+                        <Setter Target="bitwiseGrid.MinWidth" Value="252"/>
                         <Setter Target="bitwiseGrid.MinHeight" Value="128"/>
                     </VisualState.Setters>
                 </VisualState>
@@ -604,7 +606,6 @@
                                        x:Uid="clearButton"
                                        Style="{StaticResource OperatorButtonStyle}"
                                        FontSize="12"
-                                       FontWeight="SemiBold"
                                        AutomationProperties.AutomationId="clearButton"
                                        ButtonId="Clear"
                                        Content="C"
@@ -613,7 +614,6 @@
                                        x:Uid="clearEntryButton"
                                        Style="{StaticResource OperatorButtonStyle}"
                                        FontSize="12"
-                                       FontWeight="SemiBold"
                                        AutomationProperties.AutomationId="clearEntryButton"
                                        ButtonId="ClearEntry"
                                        Content="CE"
