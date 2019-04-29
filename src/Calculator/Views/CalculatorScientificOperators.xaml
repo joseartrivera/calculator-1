@@ -11,6 +11,7 @@
              d:DesignWidth="315"
              Loaded="OnLoaded"
              Unloaded="OnUnloaded"
+             XYFocusKeyboardNavigation="Enabled"
              mc:Ignorable="d">
     <UserControl.Resources>
         <converters:BooleanNegationConverter x:Key="BooleanNegationConverter"/>
@@ -363,8 +364,12 @@
         </VisualStateManager.VisualStateGroups>
 
 
-        <controls:OverflowListView Grid.ColumnSpan="5">
-            <Button x:Name="trigButton" Style="{StaticResource OverflowButtonStyle}">
+        <controls:OverflowListView x:Uid="ScientificOverflow"
+                                   Grid.ColumnSpan="5"
+                                   AutomationProperties.HeadingLevel="Level1">
+            <Button x:Name="trigButton"
+                    x:Uid="trigButton"
+                    Style="{StaticResource OverflowButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <FontIcon x:Name="trigFontIcon"
                               Margin="6,0,6,0"
@@ -734,7 +739,9 @@
                     </Flyout>
                 </Button.Flyout>
             </Button>
-            <Button x:Name="funcButton" Style="{StaticResource OverflowButtonStyle}">
+            <Button x:Name="funcButton"
+                    x:Uid="funcButton"
+                    Style="{StaticResource OverflowButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <FontIcon x:Name="funcFontIcon"
                               Margin="6,0,6,0"
@@ -907,118 +914,117 @@
                                        Content="&#xE94F;"/>
         </Grid>
 
-        <!-- Scientific Row 1 -->
-        <Grid x:Name="Row1"
-              Grid.Row="2"
-              Grid.RowSpan="6">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            <controls:CalculatorButton x:Name="xpower2Button"
-                                       x:Uid="xpower2Button"
-                                       Style="{StaticResource SymbolOperatorButtonStyle}"
-                                       AutomationProperties.AutomationId="xpower2Button"
-                                       ButtonId="XPower2"
-                                       Content="&#xf7c8;"/>
-            <controls:CalculatorButton x:Name="xpower3Button"
-                                       x:Uid="xpower3Button"
-                                       Grid.Row="1"
-                                       Style="{StaticResource SymbolOperatorButtonStyle}"
-                                       AutomationProperties.AutomationId="xpower3Button"
-                                       ButtonId="Cube"
-                                       Content="&#xf7cb;"/>
-            <controls:CalculatorButton x:Name="powerButton"
-                                       x:Uid="powerButton"
-                                       Grid.Row="2"
-                                       Style="{StaticResource SymbolOperatorButtonStyle}"
-                                       AutomationProperties.AutomationId="powerButton"
-                                       ButtonId="XPowerY"
-                                       Content="&#xf7ca;"/>
-            <controls:CalculatorButton x:Name="powerOf10Button"
-                                       x:Uid="powerOf10Button"
-                                       Grid.Row="3"
-                                       Style="{StaticResource SymbolOperatorButtonStyle}"
-                                       AutomationProperties.AutomationId="powerOf10Button"
-                                       ButtonId="TenPowerX"
-                                       Content="&#xF7CC;"/>
-            <controls:CalculatorButton x:Name="logBase10Button"
-                                       x:Uid="logBase10Button"
-                                       Grid.Row="4"
-                                       Style="{StaticResource OperatorButtonStyle}"
-                                       AutomationProperties.AutomationId="logBase10Button"
-                                       ButtonId="LogBase10"
-                                       Content="log"/>
-            <controls:CalculatorButton x:Name="logBaseEButton"
-                                       x:Uid="logBaseEButton"
-                                       Grid.Row="5"
-                                       Style="{StaticResource OperatorButtonStyle}"
-                                       AutomationProperties.AutomationId="logBaseEButton"
-                                       ButtonId="LogBaseE"
-                                       Content="ln"/>
-        </Grid>
-
-        <!-- Scientific INV Row 1 -->
-        <Grid x:Name="InvRow1"
+        <Grid x:Uid="ScientificFunctions"
               Grid.Row="2"
               Grid.RowSpan="6"
-              Visibility="Collapsed">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <controls:CalculatorButton x:Name="squareRootButton"
-                                       x:Uid="squareRootButton"
-                                       Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
-                                       AutomationProperties.AutomationId="squareRootButton"
-                                       ButtonId="Sqrt"
-                                       Content="&#xE94B;"/>
-            <controls:CalculatorButton x:Name="cubeRootButton"
-                                       x:Uid="cubeRootButton"
-                                       Grid.Row="1"
-                                       Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
-                                       AutomationProperties.AutomationId="cubeRootButton"
-                                       ButtonId="CubeRoot"
-                                       Content="&#xE94B;&#xE94B;&#xE94B;"/>
-            <controls:CalculatorButton x:Name="ySquareRootButton"
-                                       x:Uid="ySquareRootButton"
-                                       Grid.Row="2"
-                                       Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
-                                       AutomationProperties.AutomationId="ySquareRootButton"
-                                       ButtonId="YRootX"
-                                       Content="&#xf7cd;"/>
-            <controls:CalculatorButton x:Name="twoPowerXButton"
-                                       x:Uid="twoPowerXButton"
-                                       Grid.Row="3"
-                                       Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
-                                       AutomationProperties.AutomationId="twoPowerXButton"
-                                       ButtonId="TwoPowerX"
-                                       Content="&#xF7CC;&#xF7CC;"/>
-            <controls:CalculatorButton x:Name="logBaseX"
-                                       x:Uid="logBaseX"
-                                       Grid.Row="4"
-                                       Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
-                                       AutomationProperties.AutomationId="logBaseX"
-                                       ButtonId="LogBaseX"
-                                       Content="logₓ"/>
-            <controls:CalculatorButton x:Name="powerOfEButton"
-                                       x:Uid="powerOfEButton"
-                                       Grid.Row="5"
-                                       Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
-                                       AutomationProperties.AutomationId="powerOfEButton"
-                                       ButtonId="EPowerX"
-                                       Content="&#xf7ce;"/>
-        </Grid>
+              AutomationProperties.HeadingLevel="Level1">
+            <!-- Scientific Row 1 -->
+            <Grid x:Name="Row1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
+                <controls:CalculatorButton x:Name="xpower2Button"
+                                           x:Uid="xpower2Button"
+                                           Style="{StaticResource SymbolOperatorButtonStyle}"
+                                           AutomationProperties.AutomationId="xpower2Button"
+                                           ButtonId="XPower2"
+                                           Content="&#xf7c8;"/>
+                <controls:CalculatorButton x:Name="xpower3Button"
+                                           x:Uid="xpower3Button"
+                                           Grid.Row="1"
+                                           Style="{StaticResource SymbolOperatorButtonStyle}"
+                                           AutomationProperties.AutomationId="xpower3Button"
+                                           ButtonId="Cube"
+                                           Content="&#xf7cb;"/>
+                <controls:CalculatorButton x:Name="powerButton"
+                                           x:Uid="powerButton"
+                                           Grid.Row="2"
+                                           Style="{StaticResource SymbolOperatorButtonStyle}"
+                                           AutomationProperties.AutomationId="powerButton"
+                                           ButtonId="XPowerY"
+                                           Content="&#xf7ca;"/>
+                <controls:CalculatorButton x:Name="powerOf10Button"
+                                           x:Uid="powerOf10Button"
+                                           Grid.Row="3"
+                                           Style="{StaticResource SymbolOperatorButtonStyle}"
+                                           AutomationProperties.AutomationId="powerOf10Button"
+                                           ButtonId="TenPowerX"
+                                           Content="&#xF7CC;"/>
+                <controls:CalculatorButton x:Name="logBase10Button"
+                                           x:Uid="logBase10Button"
+                                           Grid.Row="4"
+                                           Style="{StaticResource OperatorButtonStyle}"
+                                           AutomationProperties.AutomationId="logBase10Button"
+                                           ButtonId="LogBase10"
+                                           Content="log"/>
+                <controls:CalculatorButton x:Name="logBaseEButton"
+                                           x:Uid="logBaseEButton"
+                                           Grid.Row="5"
+                                           Style="{StaticResource OperatorButtonStyle}"
+                                           AutomationProperties.AutomationId="logBaseEButton"
+                                           ButtonId="LogBaseE"
+                                           Content="ln"/>
+            </Grid>
+
+            <!-- Scientific INV Row 1 -->
+            <Grid x:Name="InvRow1" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <controls:CalculatorButton x:Name="squareRootButton"
+                                           x:Uid="squareRootButton"
+                                           Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
+                                           AutomationProperties.AutomationId="squareRootButton"
+                                           ButtonId="Sqrt"
+                                           Content="&#xE94B;"/>
+                <controls:CalculatorButton x:Name="cubeRootButton"
+                                           x:Uid="cubeRootButton"
+                                           Grid.Row="1"
+                                           Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
+                                           AutomationProperties.AutomationId="cubeRootButton"
+                                           ButtonId="CubeRoot"
+                                           Content="&#xE94B;&#xE94B;&#xE94B;"/>
+                <controls:CalculatorButton x:Name="ySquareRootButton"
+                                           x:Uid="ySquareRootButton"
+                                           Grid.Row="2"
+                                           Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
+                                           AutomationProperties.AutomationId="ySquareRootButton"
+                                           ButtonId="YRootX"
+                                           Content="&#xf7cd;"/>
+                <controls:CalculatorButton x:Name="twoPowerXButton"
+                                           x:Uid="twoPowerXButton"
+                                           Grid.Row="3"
+                                           Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
+                                           AutomationProperties.AutomationId="twoPowerXButton"
+                                           ButtonId="TwoPowerX"
+                                           Content="&#xF7CC;&#xF7CC;"/>
+                <controls:CalculatorButton x:Name="logBaseX"
+                                           x:Uid="logBaseX"
+                                           Grid.Row="4"
+                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
+                                           AutomationProperties.AutomationId="logBaseX"
+                                           ButtonId="LogBaseX"
+                                           Content="logₓ"/>
+                <controls:CalculatorButton x:Name="powerOfEButton"
+                                           x:Uid="powerOfEButton"
+                                           Grid.Row="5"
+                                           Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
+                                           AutomationProperties.AutomationId="powerOfEButton"
+                                           ButtonId="EPowerX"
+                                           Content="&#xf7ce;"/>
+            </Grid>
+        </Grid>
         <!-- Scientific Row 2 -->
         <Grid x:Name="Row2"
               Grid.Row="2"

@@ -12,6 +12,7 @@
              d:DesignWidth="315"
              Loaded="OnLoaded"
              Unloaded="OnUnloaded"
+             XYFocusKeyboardNavigation="Enabled"
              mc:Ignorable="d">
     <UserControl.Resources>
         <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
@@ -224,8 +225,12 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <controls:OverflowListView Grid.ColumnSpan="5">
-            <Button x:Name="bitwiseButton" Style="{StaticResource OverflowButtonStyle}">
+        <controls:OverflowListView x:Uid="ProgrammerOverflow"
+                                   Grid.ColumnSpan="5"
+                                   AutomationProperties.HeadingLevel="Level1">
+            <Button x:Name="bitwiseButton"
+                    x:Uid="bitwiseButton"
+                    Style="{StaticResource OverflowButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <FontIcon x:Name="bitwiseFontIcon"
                               Margin="6,0,6,0"
@@ -394,7 +399,9 @@
                     </Flyout>
                 </Button.Flyout>
             </Button>
-            <Button x:Name="bitShiftButton" Style="{StaticResource OverflowButtonStyle}">
+            <Button x:Name="bitShiftButton"
+                    x:Uid="bitShiftButton"
+                    Style="{StaticResource OverflowButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <FontIcon x:Name="bitShiftFontIcon"
                               Margin="6,0,6,0"
@@ -529,6 +536,62 @@
                                        Visibility="Collapsed"/>
         </Grid>
 
+        <Grid x:Uid="DisplayControls"
+              Grid.Row="1"
+              Grid.Column="4"
+              Grid.ColumnSpan="2"
+              AutomationProperties.HeadingLevel="Level1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <controls:CalculatorButton x:Name="clearButton"
+                                       x:Uid="clearButton"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       FontSize="12"
+                                       AutomationProperties.AutomationId="clearButton"
+                                       ButtonId="Clear"
+                                       Content="C"
+                                       Visibility="{x:Bind Model.IsInputEmpty, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <controls:CalculatorButton x:Name="clearEntryButton"
+                                       x:Uid="clearEntryButton"
+                                       Style="{StaticResource OperatorButtonStyle}"
+                                       FontSize="12"
+                                       AutomationProperties.AutomationId="clearEntryButton"
+                                       ButtonId="ClearEntry"
+                                       Content="CE"
+                                       Visibility="{x:Bind Model.IsInputEmpty, Mode=OneWay, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
+            <controls:CalculatorButton x:Name="backSpaceButton"
+                                       x:Uid="backSpaceButton"
+                                       Grid.Column="1"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
+                                       FontSize="12"
+                                       AutomationProperties.AutomationId="backSpaceButton"
+                                       ButtonId="Backspace"
+                                       Content="&#xE94F;"/>
+        </Grid>
+
+        <controls:CalculatorButton x:Name="openParenthesisButton"
+                                   x:Uid="openParenthesisButton"
+                                   Grid.Row="2"
+                                   Grid.Column="2"
+                                   Style="{StaticResource ParenthesisCalcButtonStyle}"
+                                   FontSize="18"
+                                   AutomationProperties.AutomationId="openParenthesisButton"
+                                   AutomationProperties.Name="{Binding LeftParenthesisAutomationName}"
+                                   ButtonId="OpenParenthesis"
+                                   Content="("
+                                   Tag="{x:Bind Model.OpenParenthesisCount, Mode=OneWay}"/>
+        <controls:CalculatorButton x:Name="closeParenthesisButton"
+                                   x:Uid="closeParenthesisButton"
+                                   Grid.Row="2"
+                                   Grid.Column="3"
+                                   Style="{StaticResource OperatorButtonStyle}"
+                                   FontSize="18"
+                                   AutomationProperties.AutomationId="closeParenthesisButton"
+                                   ButtonId="CloseParenthesis"
+                                   Content=")"/>
+
         <controls:CalculatorButton x:Name="modButton"
                                    x:Uid="modButton"
                                    Grid.Row="2"
@@ -593,41 +656,6 @@
                                        Content="&#xE94E;"/>
         </Grid>
 
-        <Grid x:Uid="DisplayControls"
-              Grid.Row="1"
-              Grid.Column="4"
-              Grid.ColumnSpan="2"
-              AutomationProperties.HeadingLevel="Level1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <controls:CalculatorButton x:Name="clearButton"
-                                       x:Uid="clearButton"
-                                       Style="{StaticResource OperatorButtonStyle}"
-                                       FontSize="12"
-                                       AutomationProperties.AutomationId="clearButton"
-                                       ButtonId="Clear"
-                                       Content="C"
-                                       Visibility="{x:Bind Model.IsInputEmpty, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-            <controls:CalculatorButton x:Name="clearEntryButton"
-                                       x:Uid="clearEntryButton"
-                                       Style="{StaticResource OperatorButtonStyle}"
-                                       FontSize="12"
-                                       AutomationProperties.AutomationId="clearEntryButton"
-                                       ButtonId="ClearEntry"
-                                       Content="CE"
-                                       Visibility="{x:Bind Model.IsInputEmpty, Mode=OneWay, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
-            <controls:CalculatorButton x:Name="backSpaceButton"
-                                       x:Uid="backSpaceButton"
-                                       Grid.Column="1"
-                                       Style="{StaticResource SymbolOperatorButtonStyle}"
-                                       FontSize="12"
-                                       AutomationProperties.AutomationId="backSpaceButton"
-                                       ButtonId="Backspace"
-                                       Content="&#xE94F;"/>
-        </Grid>
-
         <Grid x:Uid="NumberPad"
               Grid.Row="1"
               Grid.RowSpan="6"
@@ -650,13 +678,6 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <local:NumberPad x:Name="NumberPad"
-                             Grid.Row="2"
-                             Grid.RowSpan="4"
-                             Grid.Column="1"
-                             Grid.ColumnSpan="3"
-                             ButtonStyle="{StaticResource NumericButtonStyle18}"/>
-
             <controls:CalculatorButton x:Name="aButton"
                                        x:Uid="aButton"
                                        Grid.Row="0"
@@ -711,28 +732,15 @@
                                        ButtonId="F"
                                        Content="F"
                                        IsEnabled="{x:Bind Model.AreHEXButtonsEnabled, Mode=OneWay}"/>
+
+            <local:NumberPad x:Name="NumberPad"
+                             Grid.Row="2"
+                             Grid.RowSpan="4"
+                             Grid.Column="1"
+                             Grid.ColumnSpan="3"
+                             ButtonStyle="{StaticResource NumericButtonStyle18}"/>
         </Grid>
 
-        <controls:CalculatorButton x:Name="openParenthesisButton"
-                                   x:Uid="openParenthesisButton"
-                                   Grid.Row="2"
-                                   Grid.Column="2"
-                                   Style="{StaticResource ParenthesisCalcButtonStyle}"
-                                   FontSize="18"
-                                   AutomationProperties.AutomationId="openParenthesisButton"
-                                   AutomationProperties.Name="{Binding LeftParenthesisAutomationName}"
-                                   ButtonId="OpenParenthesis"
-                                   Content="("
-                                   Tag="{x:Bind Model.OpenParenthesisCount, Mode=OneWay}"/>
-        <controls:CalculatorButton x:Name="closeParenthesisButton"
-                                   x:Uid="closeParenthesisButton"
-                                   Grid.Row="2"
-                                   Grid.Column="3"
-                                   Style="{StaticResource OperatorButtonStyle}"
-                                   FontSize="18"
-                                   AutomationProperties.AutomationId="closeParenthesisButton"
-                                   ButtonId="CloseParenthesis"
-                                   Content=")"/>
         <controls:CalculatorButton x:Name="negateButton"
                                    x:Uid="negateButton"
                                    Grid.Row="6"
