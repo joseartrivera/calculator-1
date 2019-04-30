@@ -284,7 +284,7 @@
                                                        ButtonId="Not"
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
-                                                       Content="NOT"
+                                                       Content="Not"
                                                        IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
 
 
@@ -312,7 +312,7 @@
                                                            ButtonId="And"
                                                            Click="flyoutButton_Clicked"
                                                            Command="{x:Bind Model.ButtonPressed}"
-                                                           Content="AND"
+                                                           Content="And"
                                                            IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="orButton"
@@ -325,7 +325,7 @@
                                                            ButtonId="Or"
                                                            Click="flyoutButton_Clicked"
                                                            Command="{x:Bind Model.ButtonPressed}"
-                                                           Content="OR"
+                                                           Content="Or"
                                                            IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="xorButton"
@@ -338,7 +338,7 @@
                                                            ButtonId="Xor"
                                                            Click="flyoutButton_Clicked"
                                                            Command="{x:Bind Model.ButtonPressed}"
-                                                           Content="XOR"
+                                                           Content="Xor"
                                                            IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
 
                             </Grid>
@@ -367,7 +367,7 @@
                                                            ButtonId="Nand"
                                                            Click="flyoutButton_Clicked"
                                                            Command="{x:Bind Model.ButtonPressed}"
-                                                           Content="NAND"
+                                                           Content="Nand"
                                                            IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="norButton"
@@ -380,7 +380,7 @@
                                                            ButtonId="Nor"
                                                            Click="flyoutButton_Clicked"
                                                            Command="{x:Bind Model.ButtonPressed}"
-                                                           Content="NOR"
+                                                           Content="Nor"
                                                            IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="xnorButton"
@@ -393,7 +393,7 @@
                                                            ButtonId="XNor"
                                                            Click="flyoutButton_Clicked"
                                                            Command="{x:Bind Model.ButtonPressed}"
-                                                           Content="XNOR"
+                                                           Content="Xnor"
                                                            IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
                             </Grid>
 
