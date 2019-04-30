@@ -9,6 +9,7 @@
 #include "pch.h"
 #include "CalculatorScientificOperators.xaml.h"
 #include "CalcViewModel/Common/KeyboardShortcutManager.h"
+#include "CalcViewModel/Common/TraceLogger.h"
 #include "Controls/CalculatorButton.h"
 #include "CalcViewModel/StandardCalculatorViewModel.h"
 
@@ -19,16 +20,17 @@ using namespace CalculatorApp::ViewModel;
 using namespace Platform;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
+using namespace Windows::UI::Core;
+using namespace Windows::UI::ViewManagement;
 using namespace Windows::UI::Xaml;
 using namespace Windows::UI::Xaml::Controls;
 using namespace Windows::UI::Xaml::Controls::Primitives;
 using namespace Windows::UI::Xaml::Data;
 using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::Xaml::Media;
-using namespace Windows::UI::Xaml::Navigation;
+using namespace Windows::UI::Xaml::Navigation;using namespace Windows::UI::Core;
 
 DEPENDENCY_PROPERTY_INITIALIZATION(CalculatorScientificOperators, IsErrorVisualState);
-DEPENDENCY_PROPERTY_INITIALIZATION(CalculatorScientificOperators, IsWideLayout);
 
 CalculatorScientificOperators::CalculatorScientificOperators()
 {
@@ -47,20 +49,6 @@ void CalculatorScientificOperators::OnUnloaded(Object^, RoutedEventArgs^)
     Model->PropertyChanged -= m_propertyChangedToken;
 }
 
-void CalculatorScientificOperators::ShortLayout_Completed(_In_ Platform::Object^ /*sender*/, _In_ Platform::Object^ /*e*/)
-{
-    IsWideLayout = false;
-    SetOperatorRowVisibility();
-    Common::KeyboardShortcutManager::ShiftButtonChecked(Model->IsShiftChecked);
-}
-
-void CalculatorScientificOperators::WideLayout_Completed(_In_ Platform::Object^ /*sender*/, _In_ Platform::Object^ /*e*/)
-{
-    IsWideLayout = true;
-    SetOperatorRowVisibility();
-    Common::KeyboardShortcutManager::ShiftButtonChecked(Model->IsShiftChecked);
-}
-
 void CalculatorScientificOperators::OnIsErrorVisualStatePropertyChanged(bool /*oldValue*/, bool newValue)
 {
     String^ newState = newValue ? L"ErrorLayout" : L"NoErrorLayout";
@@ -70,8 +58,6 @@ void CalculatorScientificOperators::OnIsErrorVisualStatePropertyChanged(bool /*o
 
 void CalculatorScientificOperators::shiftButton_Check(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
 {
-    bool isChecked = shiftButton->IsChecked->Value;
-    Model->IsShiftChecked = isChecked;
     SetOperatorRowVisibility();
 }
 
@@ -83,6 +69,7 @@ void CalculatorScientificOperators::trigFlyoutShift_Toggle(_In_ Platform::Object
 
 void CalculatorScientificOperators::trigFlyoutHyp_Toggle(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
 {
+    TraceLogger::GetInstance().LogHypButtonUsed(ApplicationView::GetApplicationViewIdForWindow(CoreWindow::GetForCurrentThread()));
     SetTrigRowVisibility();
 }
 

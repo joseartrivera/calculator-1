@@ -30,13 +30,8 @@ namespace CalculatorApp
 
         DEPENDENCY_PROPERTY_OWNER(CalculatorScientificOperators);
         DEPENDENCY_PROPERTY_WITH_DEFAULT_AND_CALLBACK(bool, IsErrorVisualState, false);
-        DEPENDENCY_PROPERTY_WITH_DEFAULT(bool, IsWideLayout, false);
-
-        bool IsShiftEnabled(bool isWideLayout, bool isErrorState) { return !(isWideLayout || isErrorState); }
 
     private:
-        void ShortLayout_Completed(_In_ Platform::Object^ sender, _In_ Platform::Object^ e);
-        void WideLayout_Completed(_In_ Platform::Object^ sender, _In_ Platform::Object^ e);
         void OnIsErrorVisualStatePropertyChanged(bool oldValue, bool newValue);
         void shiftButton_Check(_In_ Platform::Object^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs^ e);
         void trigFlyoutShift_Toggle(_In_ Platform::Object^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs^ e);

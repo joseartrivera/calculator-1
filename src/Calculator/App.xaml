@@ -24,6 +24,9 @@
                     <SolidColorBrush x:Key="SystemControlBackgroundTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="SystemControlHighlightTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="AppBackgroundAltMediumLowBrush" Color="{ThemeResource SystemAltMediumLowColor}"/>
+                    <SolidColorBrush x:Key="AppOverflowOperatorBackground"
+                                     Opacity="0.4"
+                                     Color="{ThemeResource SystemAltMediumLowColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextBaseMediumHighBrush" Color="{StaticResource SystemBaseMediumHighColor}"/>
                     <RevealBackgroundBrush x:Key="AppControlHoverButtonFaceBrush" Color="#18FFFFFF"/>
                     <RevealBackgroundBrush x:Key="AppControlPressedButtonFaceBrush" Color="#30FFFFFF"/>
@@ -61,7 +64,10 @@
                     <SolidColorBrush x:Key="SystemControlBackgroundTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="SystemControlHighlightTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="AppBackgroundAltMediumLowBrush" Color="{ThemeResource SystemAltMediumLowColor}"/>
-                    <SolidColorBrush x:Key="AppControlPageTextBaseMediumHighBrush" Color="{StaticResource SystemBaseMediumHighColor}"/>
+                    <SolidColorBrush x:Key="AppOverflowOperatorBackground"
+                                     Opacity="0.4"
+                                     Color="{ThemeResource SystemAltMediumLowColor}"/>
+                    <SolidColorBrush x:Key="AppControlPageTextBaseMediumHighBrush" Color="{StaticResource SystemAltMediumLowColor}"/>
                     <RevealBackgroundBrush x:Key="AppControlHoverButtonFaceBrush" Color="#17000000"/>
                     <RevealBackgroundBrush x:Key="AppControlPressedButtonFaceBrush" Color="#30000000"/>
                     <SolidColorBrush x:Key="AppControlTransparentAccentColorBrush" Color="{ThemeResource SystemAccentColor}"/>
@@ -96,6 +102,7 @@
                     <SolidColorBrush x:Key="SystemControlBackgroundTransparentBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
                     <SolidColorBrush x:Key="SystemControlHighlightTransparentBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
                     <SolidColorBrush x:Key="AppBackgroundAltMediumLowBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
+                    <SolidColorBrush x:Key="AppOverflowOperatorBackground" Color="{ThemeResource SystemColorButtonFaceColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextBaseMediumHighBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
                     <SolidColorBrush x:Key="AppControlHoverButtonFaceBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
                     <SolidColorBrush x:Key="AppControlPressedButtonFaceBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>

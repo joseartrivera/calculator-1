@@ -226,7 +226,8 @@
         </VisualStateManager.VisualStateGroups>
 
         <controls:OverflowListView x:Uid="ProgrammerOverflow"
-                                   Grid.ColumnSpan="5"
+                                   Grid.ColumnSpan="6"
+                                   Background="{ThemeResource AppOverflowOperatorBackground}"
                                    AutomationProperties.HeadingLevel="Level1">
             <Button x:Name="bitwiseButton"
                     x:Uid="bitwiseButton"

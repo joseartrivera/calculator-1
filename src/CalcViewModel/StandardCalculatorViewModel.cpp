@@ -70,7 +70,6 @@ StandardCalculatorViewModel::StandardCalculatorViewModel() :
     m_MemorizedNumbers(ref new Vector<MemoryItemViewModel^>()),
     m_IsMemoryEmpty(true),
     m_IsFToEChecked(false),
-    m_isShiftChecked(false),
     m_IsShiftProgrammerChecked(false),
     m_IsQwordEnabled(true),
     m_IsDwordEnabled(true),

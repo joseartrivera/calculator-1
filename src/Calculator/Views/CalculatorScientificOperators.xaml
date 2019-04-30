@@ -366,6 +366,7 @@
 
         <controls:OverflowListView x:Uid="ScientificOverflow"
                                    Grid.ColumnSpan="5"
+                                   Background="{ThemeResource AppOverflowOperatorBackground}"
                                    AutomationProperties.HeadingLevel="Level1">
             <Button x:Name="trigButton"
                     x:Uid="trigButton"
