@@ -1382,31 +1382,41 @@
                                                         HeaderTransitions="{TemplateBinding HeaderTransitions}"/>
                                     </ScrollViewer>
                                     <Button x:Name="ScrollLeft"
-                                            Width="24"
+                                            Width="20"
                                             Padding="0"
                                             HorizontalAlignment="Left"
                                             VerticalAlignment="Stretch"
-                                            Background="Gray"
-                                            Content="&lt;"
+                                            Background="{ThemeResource SystemBaseMediumLowColor}"
+                                            Foreground="{ThemeResource SystemAltMediumHighColor}"
+                                            FontFamily="{ThemeResource SymbolThemeFontFamily}"
+                                            FontSize="12"
+                                            Content="&#xE76B;"
                                             IsTabStop="False"
                                             Visibility="Collapsed">
                                         <Button.Resources>
-                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver">Gray</SolidColorBrush>
-                                            <SolidColorBrush x:Key="ButtonBackgroundPressed">Gray</SolidColorBrush>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource SystemBaseMediumLowColor}"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemBaseMediumLowColor}"/>
+                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="{ThemeResource SystemAltMediumHighColor}"/>
+                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="{ThemeResource SystemAltMediumHighColor}"/>
                                         </Button.Resources>
                                     </Button>
                                     <Button x:Name="ScrollRight"
-                                            Width="24"
+                                            Width="20"
                                             Padding="0"
                                             HorizontalAlignment="Right"
                                             VerticalAlignment="Stretch"
-                                            Background="Gray"
-                                            Content="&gt;"
+                                            Background="{ThemeResource SystemBaseMediumLowColor}"
+                                            Foreground="{ThemeResource SystemAltMediumHighColor}"
+                                            FontFamily="{ThemeResource SymbolThemeFontFamily}"
+                                            FontSize="12"
+                                            Content="&#xE76C;"
                                             IsTabStop="False"
                                             Visibility="Collapsed">
                                         <Button.Resources>
-                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver">Gray</SolidColorBrush>
-                                            <SolidColorBrush x:Key="ButtonBackgroundPressed">Gray</SolidColorBrush>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource SystemBaseMediumLowColor}"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemBaseMediumLowColor}"/>
+                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="{ThemeResource SystemAltMediumHighColor}"/>
+                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="{ThemeResource SystemAltMediumHighColor}"/>
                                         </Button.Resources>
                                     </Button>
                                 </Grid>
