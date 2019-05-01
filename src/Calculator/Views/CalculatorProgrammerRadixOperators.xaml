@@ -229,25 +229,10 @@
                                    Grid.ColumnSpan="6"
                                    Background="{ThemeResource AppOverflowOperatorBackground}"
                                    AutomationProperties.HeadingLevel="Level1">
-            <Button x:Name="bitwiseButton"
-                    x:Uid="bitwiseButton"
-                    Style="{StaticResource OverflowButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <FontIcon x:Name="bitwiseFontIcon"
-                              Margin="6,0,6,0"
-                              FontFamily="{StaticResource CalculatorFontFamily}"
-                              FontSize="12"
-                              Glyph="&#xF1AA;"/>
-                    <TextBlock x:Name="bitwiseTextBlock"
-                               x:Uid="bitwiseTextBlock"
-                               VerticalAlignment="Center"/>
-                    <FontIcon x:Name="bitwiseChevron"
-                              Margin="6,0,6,0"
-                              VerticalAlignment="Center"
-                              FontFamily="{StaticResource CalculatorFontFamily}"
-                              FontSize="12"
-                              Glyph="&#xE70D;"/>
-                </StackPanel>
+            <controls:OverflowButton x:Name="bitwiseButton"
+                                     x:Uid="bitwiseButton"
+                                     Style="{StaticResource OverflowButtonStyle}"
+                                     Glyph="&#xF1AA;">
                 <Button.Flyout>
                     <Flyout x:Name="bitwiseFlyout"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
@@ -400,25 +385,11 @@
                         </Grid>
                     </Flyout>
                 </Button.Flyout>
-            </Button>
-            <Button x:Name="bitShiftButton"
-                    x:Uid="bitShiftButton"
-                    Style="{StaticResource OverflowButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <FontIcon x:Name="bitShiftFontIcon"
-                              Margin="6,0,6,0"
-                              FontFamily="{StaticResource CalculatorFontFamily}"
-                              FontSize="12"
-                              Glyph="&#xF1AA;"/>
-                    <TextBlock x:Name="bitShiftTextBlock"
-                               x:Uid="bitShiftTextBlock"
-                               VerticalAlignment="Center"/>
-                    <FontIcon x:Name="bitShiftChevron"
-                              Margin="6,0,6,0"
-                              FontFamily="{StaticResource CalculatorFontFamily}"
-                              FontSize="12"
-                              Glyph="&#xE70D;"/>
-                </StackPanel>
+            </controls:OverflowButton>
+            <controls:OverflowButton x:Name="bitShiftButton"
+                                     x:Uid="bitShiftButton"
+                                     Style="{StaticResource OverflowButtonStyle}"
+                                     Glyph="&#xF1AA;">
                 <Button.Flyout>
                     <Flyout x:Name="BitShiftFlyout"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
@@ -444,7 +415,7 @@
                         </StackPanel>
                     </Flyout>
                 </Button.Flyout>
-            </Button>
+            </controls:OverflowButton>
         </controls:OverflowListView>
 
         <Grid x:Uid="ProgrammerOperators"

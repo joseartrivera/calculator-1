@@ -314,6 +314,9 @@
     <ClCompile Include="Controls\HorizontalNoOverflowStackPanel.cpp">
       <Filter>Controls</Filter>
     </ClCompile>
+    <ClCompile Include="Controls\OverflowButton.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -417,6 +420,9 @@
       <Filter>Controls</Filter>
     </ClInclude>
     <ClInclude Include="Controls\HorizontalNoOverflowStackPanel.h">
+      <Filter>Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Controls\OverflowButton.h">
       <Filter>Controls</Filter>
     </ClInclude>
   </ItemGroup>

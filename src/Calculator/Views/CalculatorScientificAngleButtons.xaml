@@ -47,8 +47,6 @@
                         <Setter Target="degreeButton.Style" Value="{StaticResource CaptionButtonSmallStyle}"/>
                         <Setter Target="radianButton.Style" Value="{StaticResource CaptionButtonSmallStyle}"/>
                         <Setter Target="gradsButton.Style" Value="{StaticResource CaptionButtonSmallStyle}"/>
-
-                        <Setter Target="hyperbolicButton.Style" Value="{StaticResource CaptionToggleButtonSmallStyle}"/>
                         <Setter Target="ftoeButton.Style" Value="{StaticResource CaptionToggleButtonSmallStyle}"/>
                     </VisualState.Setters>
                 </VisualState>
@@ -60,7 +58,6 @@
                         <Setter Target="degreeButton.IsEnabled" Value="False"/>
                         <Setter Target="radianButton.IsEnabled" Value="False"/>
                         <Setter Target="gradsButton.IsEnabled" Value="False"/>
-                        <Setter Target="hyperbolicButton.IsEnabled" Value="False"/>
                         <Setter Target="ftoeButton.IsEnabled" Value="False"/>
                     </VisualState.Setters>
                 </VisualState>

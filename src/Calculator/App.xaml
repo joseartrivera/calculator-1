@@ -492,11 +492,11 @@
 
             <Style x:Key="OverflowButtonStyle"
                    BasedOn="{StaticResource CaptionButtonStyle}"
-                   TargetType="Button">
+                   TargetType="Controls:OverflowButton">
                 <Setter Property="FontSize" Value="{StaticResource CaptionFontSize}"/>
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="Controls:OverflowButton">
                             <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
                                 <VisualStateManager.VisualStateGroups>
                                     <VisualStateGroup x:Name="CommonStates">
@@ -535,9 +535,23 @@
                                                   FontSize="{TemplateBinding FontSize}"
                                                   FontWeight="Normal"
                                                   AutomationProperties.AccessibilityView="Raw"
-                                                  Content="{TemplateBinding Content}"
                                                   ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                  ContentTransitions="{TemplateBinding ContentTransitions}"/>
+                                                  ContentTransitions="{TemplateBinding ContentTransitions}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <FontIcon Margin="6,0,6,0"
+                                                  FontFamily="{StaticResource CalculatorFontFamily}"
+                                                  FontSize="12"
+                                                  Glyph="{TemplateBinding Glyph}"/>
+                                        <TextBlock x:Name="trigTextBlock"
+                                                   VerticalAlignment="Center"
+                                                   Text="{TemplateBinding Text}"/>
+                                        <FontIcon Margin="6,0,6,0"
+                                                  VerticalAlignment="Center"
+                                                  FontFamily="{StaticResource CalculatorFontFamily}"
+                                                  FontSize="12"
+                                                  Glyph="&#xE70D;"/>
+                                    </StackPanel>
+                                </ContentPresenter>
                             </Grid>
                         </ControlTemplate>
                     </Setter.Value>
