@@ -34,6 +34,7 @@ namespace CalculatorApp
     private:
         void OnIsErrorVisualStatePropertyChanged(bool oldValue, bool newValue);
         void shiftButton_Check(_In_ Platform::Object^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs^ e);
+        void shiftButton_Uncheck(_In_ Platform::Object^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs^ e);
         void trigFlyoutShift_Toggle(_In_ Platform::Object^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs^ e);
         void trigFlyoutHyp_Toggle(_In_ Platform::Object^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs^ e);
         void flyoutButton_Clicked(_In_ Platform::Object^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs^ e);

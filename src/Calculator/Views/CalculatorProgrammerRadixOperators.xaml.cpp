@@ -137,6 +137,8 @@ void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object
         rolCarryButton->IsEnabled = true;
         rorCarryButton->IsEnabled = true;
     }
+
+    this->BitShiftFlyout->Hide();
 }
 
 void CalculatorProgrammerRadixOperators::SetVisibilityBinding(FrameworkElement^ element, String^ path, IValueConverter^ converter)

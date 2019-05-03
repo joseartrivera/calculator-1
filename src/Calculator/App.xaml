@@ -32,6 +32,13 @@
                     <RevealBackgroundBrush x:Key="AppControlPressedButtonFaceBrush" Color="#30FFFFFF"/>
                     <SolidColorBrush x:Key="AppControlTransparentAccentColorBrush" Color="{ThemeResource SystemAccentColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextBaseHighColorBrush" Color="{StaticResource SystemBaseHighColor}"/>
+                    <SolidColorBrush x:Key="AppControlHighlightCalcButtonBrush"
+                                     Opacity="0.4"
+                                     Color="{ThemeResource SystemAccentColor}"/>
+
+                    <SolidColorBrush x:Key="AppControlHighlightCalcButtonHoverBrush"
+                                     Opacity="0.9"
+                                     Color="{ThemeResource SystemAccentColor}"/>
 
                     <SolidColorBrush x:Key="AppControlPageTextRedColorBrush" Color="Red"/>
                     <RevealBorderBrush x:Key="AppControlForegroundTransparentRevealBorderBrush"
@@ -51,6 +58,11 @@
                                   FallbackColor="{ThemeResource SystemChromeMediumColor}"
                                   TintColor="{ThemeResource SystemChromeLowColor}"
                                   TintOpacity="0.7"/>
+                    <AcrylicBrush x:Key="AppChromeAcrylicOperatorFlyoutBackgroundBrush"
+                                  BackgroundSource="HostBackdrop"
+                                  FallbackColor="{ThemeResource SystemChromeMediumColor}"
+                                  TintColor="{ThemeResource SystemChromeLowColor}"
+                                  TintOpacity="0.2"/>
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Light">
                     <Thickness x:Key="HighContrastThicknessTop">0,0,0,0</Thickness>
@@ -73,6 +85,12 @@
                     <SolidColorBrush x:Key="AppControlTransparentAccentColorBrush" Color="{ThemeResource SystemAccentColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextBaseHighColorBrush" Color="{StaticResource SystemBaseHighColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextRedColorBrush" Color="Red"/>
+                    <SolidColorBrush x:Key="AppControlHighlightCalcButtonBrush"
+                                     Opacity="0.4"
+                                     Color="{ThemeResource SystemAccentColor}"/>
+                    <SolidColorBrush x:Key="AppControlHighlightCalcButtonHoverBrush"
+                                     Opacity="0.7"
+                                     Color="{ThemeResource SystemAccentColor}"/>
 
                     <RevealBorderBrush x:Key="AppControlForegroundTransparentRevealBorderBrush"
                                        FallbackColor="Transparent"
@@ -91,6 +109,11 @@
                                   FallbackColor="{ThemeResource SystemChromeMediumColor}"
                                   TintColor="{ThemeResource SystemChromeLowColor}"
                                   TintOpacity="0.7"/>
+                    <AcrylicBrush x:Key="AppChromeAcrylicOperatorFlyoutBackgroundBrush"
+                                  BackgroundSource="HostBackdrop"
+                                  FallbackColor="{ThemeResource SystemChromeMediumColor}"
+                                  TintColor="{ThemeResource SystemChromeLowColor}"
+                                  TintOpacity="0.2"/>
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="HighContrast">
                     <Thickness x:Key="HighContrastThicknessTop">0,1,0,0</Thickness>
@@ -114,6 +137,9 @@
                     <SolidColorBrush x:Key="AppControlBackgroundListAccentHighRevealBackgroundBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
                     <SolidColorBrush x:Key="AppControlListLowRevealHighlightBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
                     <SolidColorBrush x:Key="AppChromeAcrylicHostBackdropMediumLowBrush" Color="{ThemeResource SystemColorWindowColor}"/>
+                    <SolidColorBrush x:Key="AppChromeAcrylicOperatorFlyoutBackgroundBrush" Color="{ThemeResource SystemColorWindowColor}"/>
+                    <SolidColorBrush x:Key="AppControlHighlightCalcButtonBrush" Color="{ThemeResource SystemColorWindowColor}"/>
+                    <SolidColorBrush x:Key="AppControlHighlightCalcButtonHoverBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
 
@@ -354,33 +380,24 @@
                 </Setter>
             </Style>
 
-            <Style x:Key="AccentCalcButtonStyle"
-                   BasedOn="{StaticResource SymbolOperatorButtonStyle}"
-                   TargetType="Controls:CalculatorButton">
-                <Setter Property="HoverBackground" Value="{ThemeResource AppControlHighlightAccentRevealBackgroundBrush}"/>
-                <Setter Property="HoverForeground" Value="{ThemeResource SystemControlHighlightAltAltHighBrush}"/>
-                <Setter Property="PressBackground" Value="{ThemeResource AppControlBackgroundListAccentHighRevealBackgroundBrush}"/>
-                <Setter Property="PressForeground" Value="{ThemeResource SystemControlHighlightAltAltHighBrush}"/>
-            </Style>
-
             <Style x:Key="AccentEmphasizedCalcButtonStyle"
                    BasedOn="{StaticResource SymbolOperatorButtonStyle}"
                    TargetType="Controls:CalculatorButton">
-                <Setter Property="HoverBackground" Value="{ThemeResource SystemControlHighlightAltListAccentHighBrush}"/>
+                <Setter Property="HoverBackground" Value="{ThemeResource AppControlHighlightCalcButtonHoverBrush}"/>
                 <Setter Property="HoverForeground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
                 <Setter Property="PressBackground" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
                 <Setter Property="PressForeground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
-                <Setter Property="Background" Value="{ThemeResource SystemControlHighlightAltListAccentLowBrush}"/>
+                <Setter Property="Background" Value="{ThemeResource AppControlHighlightCalcButtonBrush}"/>
             </Style>
 
             <Style x:Key="AccentEmphasizedOperatorCalcButtonStyle"
                    BasedOn="{StaticResource OperatorButtonStyle}"
                    TargetType="Controls:CalculatorButton">
-                <Setter Property="HoverBackground" Value="{ThemeResource SystemControlHighlightAltListAccentHighBrush}"/>
+                <Setter Property="HoverBackground" Value="{ThemeResource AppControlHighlightCalcButtonHoverBrush}"/>
                 <Setter Property="HoverForeground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
                 <Setter Property="PressBackground" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
                 <Setter Property="PressForeground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
-                <Setter Property="Background" Value="{ThemeResource SystemControlHighlightAltListAccentLowBrush}"/>
+                <Setter Property="Background" Value="{ThemeResource AppControlHighlightCalcButtonBrush}"/>
             </Style>
 
             <!-- RESULTS -->
@@ -494,6 +511,12 @@
                    BasedOn="{StaticResource CaptionButtonStyle}"
                    TargetType="Controls:OverflowButton">
                 <Setter Property="FontSize" Value="{StaticResource CaptionFontSize}"/>
+                <Setter Property="Padding" Value="6"/>
+                <Setter Property="MinWidth" Value="0"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Controls:OverflowButton">
@@ -525,7 +548,7 @@
                                 </VisualStateManager.VisualStateGroups>
 
                                 <ContentPresenter x:Name="ContentPresenter"
-                                                  Margin="{TemplateBinding Padding}"
+                                                  Padding="{TemplateBinding Padding}"
                                                   HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                                                   VerticalAlignment="{TemplateBinding VerticalAlignment}"
                                                   HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -538,17 +561,17 @@
                                                   ContentTemplate="{TemplateBinding ContentTemplate}"
                                                   ContentTransitions="{TemplateBinding ContentTransitions}">
                                     <StackPanel Orientation="Horizontal">
-                                        <FontIcon Margin="6,0,6,0"
+                                        <FontIcon Margin="0,0,6,0"
                                                   FontFamily="{StaticResource CalculatorFontFamily}"
                                                   FontSize="12"
                                                   Glyph="{TemplateBinding Glyph}"/>
                                         <TextBlock x:Name="trigTextBlock"
                                                    VerticalAlignment="Center"
                                                    Text="{TemplateBinding Text}"/>
-                                        <FontIcon Margin="6,0,6,0"
+                                        <FontIcon Margin="6,0,0,0"
                                                   VerticalAlignment="Center"
                                                   FontFamily="{StaticResource CalculatorFontFamily}"
-                                                  FontSize="12"
+                                                  FontSize="8"
                                                   Glyph="&#xE70D;"/>
                                     </StackPanel>
                                 </ContentPresenter>
@@ -796,7 +819,7 @@
             <Style x:Key="CaptionToggleEmphasizedButtonStyle"
                    BasedOn="{StaticResource CaptionToggleButtonStyle}"
                    TargetType="ToggleButton">
-                <Setter Property="Background" Value="{ThemeResource SystemControlHighlightAltListAccentLowBrush}"/>
+                <Setter Property="Background" Value="{ThemeResource AppControlHighlightCalcButtonBrush}"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="ToggleButton">
@@ -808,7 +831,7 @@
                                             <VisualState.Setters>
                                                 <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
                                                 <Setter Target="RootGrid.(RevealBrush.State)" Value="PointerOver"/>
-                                                <Setter Target="RootGrid.Background" Value="{ThemeResource SystemControlHighlightAltListAccentHighBrush}"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource AppControlHighlightCalcButtonHoverBrush}"/>
                                             </VisualState.Setters>
                                         </VisualState>
                                         <VisualState x:Name="Pressed">
@@ -834,7 +857,7 @@
                                             <VisualState.Setters>
                                                 <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
                                                 <Setter Target="RootGrid.(RevealBrush.State)" Value="PointerOver"/>
-                                                <Setter Target="RootGrid.Background" Value="{ThemeResource SystemControlHighlightAltListAccentHighBrush}"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource AppControlHighlightCalcButtonHoverBrush}"/>
                                             </VisualState.Setters>
                                         </VisualState>
                                         <VisualState x:Name="CheckedPressed">
@@ -1282,6 +1305,7 @@
 
             <Style x:Key="OverflowFlyoutStyle" TargetType="FlyoutPresenter">
                 <Setter Property="Padding" Value="0"/>
+                <Setter Property="Background" Value="{ThemeResource AppChromeAcrylicOperatorFlyoutBackgroundBrush}"/>
                 <Setter Property="Margin" Value="0,-3,0,0"/>
                 <Setter Property="MaxWidth" Value="Infinity"/>
                 <Setter Property="Template">
@@ -1342,9 +1366,11 @@
                     <Setter.Value>
                         <Style TargetType="ListViewItem">
                             <Setter Property="MinHeight" Value="0"/>
+                            <Setter Property="MinWidth" Value="0"/>
                             <Setter Property="Padding" Value="0"/>
+                            <Setter Property="Margin" Value="0"/>
                             <Setter Property="IsTabStop" Value="False"/>
-                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Left"/>
                             <Setter Property="VerticalContentAlignment" Value="Stretch"/>
                         </Style>
                     </Setter.Value>

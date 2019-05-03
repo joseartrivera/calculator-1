@@ -322,7 +322,7 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="GutterTop.Height" Value="0.5*"/>
-                        <Setter Target="GutterBottom.Height" Value="0.5*"/>
+                        <Setter Target="ConverterLeftPadding.Width" Value="0.25*"/>
                         <Setter Target="GutterLeft.Width" Value="48"/>
                         <Setter Target="GutterRight.Width" Value="48"/>
                         <Setter Target="ColumnLeft.Width" Value="1*"/>
@@ -645,7 +645,7 @@
         <Grid x:Name="ConverterNumPad"
               Grid.Row="6"
               Grid.Column="1"
-              Margin="0,0,0,6"
+              Margin="3,3,3,3"
               FlowDirection="LeftToRight"
               RenderTransformOrigin="0.5,0.5"
               XYFocusKeyboardNavigation="Enabled">
@@ -662,11 +662,10 @@
                 <RowDefinition x:Name="GutterBottom" Height="0"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition x:Name="ConverterLeftPadding" Width="0"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="0.25*"/>
             </Grid.ColumnDefinitions>
             <Grid x:Uid="DisplayControls"
                   Grid.Row="1"
