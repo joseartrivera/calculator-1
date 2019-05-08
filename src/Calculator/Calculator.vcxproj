@@ -302,6 +302,7 @@
       <DependentUpon>Views\OperatorsPanel.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="Views\StateTriggers\AspectRatioTrigger.h" />
+    <ClInclude Include="Views\StateTriggers\ControlSizeTrigger.h" />
     <ClInclude Include="Views\SupplementaryResults.xaml.h">
       <DependentUpon>Views\SupplementaryResults.xaml</DependentUpon>
     </ClInclude>
@@ -444,6 +445,7 @@
       <DependentUpon>Views\OperatorsPanel.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="Views\StateTriggers\AspectRatioTrigger.cpp" />
+    <ClCompile Include="Views\StateTriggers\ControlSizeTrigger.cpp" />
     <ClCompile Include="Views\SupplementaryResults.xaml.cpp">
       <DependentUpon>Views\SupplementaryResults.xaml</DependentUpon>
     </ClCompile>

@@ -7,6 +7,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="using:CalculatorApp"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:triggers="using:CalculatorApp.Views.StateTriggers"
              x:Name="ControlRoot"
              d:DesignHeight="400"
              d:DesignWidth="315"
@@ -99,96 +100,103 @@
                 </VisualState>
             </VisualStateGroup>
             <VisualStateGroup x:Name="SizeLayouts">
-                <VisualState x:Name="Small">
+                <VisualState x:Name="Large">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="0" MinWindowWidth="0"/>
+                        <triggers:ControlSizeTrigger MinWidth="1080"
+                                                     MinHeight="620"
+                                                     Source="{x:Bind ScientificOperators}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="negateButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="piButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="factorialButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="openParenthesisButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="closeParenthesisButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="negateButton.FontSize" Value="48"/>
+                        <Setter Target="piButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="factorialButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="openParenthesisButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="closeParenthesisButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="sinButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="cosButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="tanButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="sinhButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="coshButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="tanhButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="invsinButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="invcosButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="invtanButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="invsinhButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="invcoshButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="invtanhButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="sinButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="cosButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="tanButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="sinhButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="coshButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="tanhButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="invsinButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="invcosButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="invtanButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="invsinhButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="invcoshButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="invtanhButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="powerButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="powerOf10Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="logBase10Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="expButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="modButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="ySquareRootButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="powerOfEButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="logBaseEButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="xpower2Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="xpower3Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="squareRootButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="invertButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="powerButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="powerOf10Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="logBase10Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="expButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="modButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="ySquareRootButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="powerOfEButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="logBaseEButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="xpower2Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="xpower3Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="squareRootButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="invertButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="clearEntryButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="clearButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="backSpaceButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="divideButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="multiplyButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="minusButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="plusButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="equalButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="NumberPad.ButtonStyle" Value="{ThemeResource NumericButtonStyle14}"/>
+                        <Setter Target="clearEntryButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="clearButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="backSpaceButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="divideButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="multiplyButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="minusButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="plusButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="equalButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="NumberPad.ButtonStyle" Value="{ThemeResource NumericButtonStyle48}"/>
 
-                        <Setter Target="eulerButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="absButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="logBaseX.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="twoPowerXButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="cubeRootButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="eulerButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="absButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="logBaseX.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="twoPowerXButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="cubeRootButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="shiftButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="trigShiftButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="hypButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="secButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="cscButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="cotButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="invsecButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="invcscButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="invcotButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="sechButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="cschButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="cothButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="invsechButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="invcschButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="invcothButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="shiftButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="trigShiftButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="hypButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="secButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="cscButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="cotButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="invsecButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="invcscButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="invcotButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="sechButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="cschButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="cothButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="invsechButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="invcschButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="invcothButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="absFlyoutButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="floorButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="ceilButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="randButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="absFlyoutButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="floorButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="ceilButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="randButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
 
                         <Setter Target="trigButton.MinHeight" Value="32"/>
                         <Setter Target="funcButton.MinHeight" Value="32"/>
-                        <Setter Target="TrigGrid.MinWidth" Value="258"/>
-                        <Setter Target="TrigGrid.MinHeight" Value="96"/>
-                        <Setter Target="FuncGrid.MinWidth" Value="194"/>
-                        <Setter Target="FuncGrid.MinHeight" Value="96"/>
+                        <Setter Target="TrigGrid.MinWidth" Value="516"/>
+                        <Setter Target="TrigGrid.MinHeight" Value="192"/>
+                        <Setter Target="FuncGrid.MinWidth" Value="387"/>
+                        <Setter Target="FuncGrid.MinHeight" Value="192"/>
 
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Medium">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="640" MinWindowWidth="640"/>
+                        <triggers:ControlSizeTrigger MinWidth="460"
+                                                     MinHeight="0"
+                                                     Source="{x:Bind ScientificOperators}"/>
+                        <triggers:ControlSizeTrigger MinWidth="0"
+                                                     MinHeight="420"
+                                                     Source="{x:Bind ScientificOperators}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="negateButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSizeLarge}"/>
@@ -273,90 +281,90 @@
 
                     </VisualState.Setters>
                 </VisualState>
-                <VisualState x:Name="Large">
+                <VisualState x:Name="Small">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="1080" MinWindowWidth="1080"/>
+                        <AdaptiveTrigger MinWindowHeight="0" MinWindowWidth="0"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="negateButton.FontSize" Value="48"/>
-                        <Setter Target="piButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="factorialButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="openParenthesisButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="closeParenthesisButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="negateButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="piButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="factorialButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="openParenthesisButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="closeParenthesisButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
 
-                        <Setter Target="sinButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="cosButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="tanButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="sinhButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="coshButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="tanhButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="invsinButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="invcosButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="invtanButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="invsinhButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="invcoshButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="invtanhButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="sinButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="cosButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="tanButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="sinhButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="coshButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="tanhButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="invsinButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="invcosButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="invtanButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="invsinhButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="invcoshButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="invtanhButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
 
-                        <Setter Target="powerButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="powerOf10Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="logBase10Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="expButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="modButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="ySquareRootButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="powerOfEButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="logBaseEButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="xpower2Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="xpower3Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="squareRootButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="invertButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="powerButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="powerOf10Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="logBase10Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="expButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="modButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="ySquareRootButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="powerOfEButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="logBaseEButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="xpower2Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="xpower3Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="squareRootButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="invertButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
 
-                        <Setter Target="clearEntryButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="clearButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="backSpaceButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="divideButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="multiplyButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="minusButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="plusButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="equalButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="NumberPad.ButtonStyle" Value="{ThemeResource NumericButtonStyle48}"/>
+                        <Setter Target="clearEntryButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="clearButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="backSpaceButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="divideButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="multiplyButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="minusButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="plusButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="equalButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="NumberPad.ButtonStyle" Value="{ThemeResource NumericButtonStyle14}"/>
 
-                        <Setter Target="eulerButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="absButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="logBaseX.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="twoPowerXButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="cubeRootButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="eulerButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="absButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="logBaseX.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="twoPowerXButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="cubeRootButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
 
-                        <Setter Target="shiftButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="trigShiftButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="hypButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="secButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="cscButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="cotButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="invsecButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="invcscButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="invcotButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="sechButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="cschButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="cothButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="invsechButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="invcschButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="invcothButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="shiftButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="trigShiftButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="hypButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="secButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="cscButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="cotButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="invsecButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="invcscButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="invcotButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="sechButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="cschButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="cothButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="invsechButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="invcschButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="invcothButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
 
-                        <Setter Target="absFlyoutButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="floorButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="ceilButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="randButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="absFlyoutButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="floorButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="ceilButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="randButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
 
                         <Setter Target="trigButton.MinHeight" Value="32"/>
                         <Setter Target="funcButton.MinHeight" Value="32"/>
-                        <Setter Target="TrigGrid.MinWidth" Value="516"/>
-                        <Setter Target="TrigGrid.MinHeight" Value="192"/>
-                        <Setter Target="FuncGrid.MinWidth" Value="387"/>
-                        <Setter Target="FuncGrid.MinHeight" Value="192"/>
+                        <Setter Target="TrigGrid.MinWidth" Value="258"/>
+                        <Setter Target="TrigGrid.MinHeight" Value="96"/>
+                        <Setter Target="FuncGrid.MinWidth" Value="194"/>
+                        <Setter Target="FuncGrid.MinHeight" Value="96"/>
 
                     </VisualState.Setters>
                 </VisualState>

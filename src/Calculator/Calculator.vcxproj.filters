@@ -317,6 +317,9 @@
     <ClCompile Include="Controls\OverflowButton.cpp">
       <Filter>Controls</Filter>
     </ClCompile>
+    <ClCompile Include="Views\StateTriggers\ControlSizeTrigger.cpp">
+      <Filter>Views\StateTriggers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -424,6 +427,9 @@
     </ClInclude>
     <ClInclude Include="Controls\OverflowButton.h">
       <Filter>Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Views\StateTriggers\ControlSizeTrigger.h">
+      <Filter>Views\StateTriggers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
