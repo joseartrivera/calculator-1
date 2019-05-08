@@ -562,9 +562,9 @@ namespace CalculatorManagerTest
 
         Command commands5[] = { Command::Command8, Command::CommandCUB, Command::CommandNULL };
         TestDriver::Test(L"512", L"cube(8)", commands5, true, true);
-/*
+
         Command commands6[] = { Command::Command8, Command::CommandCUB, Command::CommandCUBEROOT, Command::CommandNULL };
-        TestDriver::Test(L"8", L"cuberoot(cube(8))", commands6, true, true);*/
+        TestDriver::Test(L"8", L"cuberoot(cube(8))", commands6, true, true);
 
         Command commands7[] = { Command::Command1, Command::Command0, Command::CommandLOG, Command::CommandNULL };
         TestDriver::Test(L"1", L"log(10)", commands7, true, true);
@@ -797,6 +797,34 @@ namespace CalculatorManagerTest
         Command commands3[] = { Command::ModeProgrammer, Command::Command5, Command::Command3, Command::CommandXNor,
             Command::Command8, Command::Command3, Command::CommandAnd, Command::CommandNULL };
         TestDriver::Test(L"-103", L"53 Xnor 83 And ", commands3, true, false);
+
+        Command commands4[] = { Command::ModeProgrammer, Command::Command5, Command::CommandLSHF,
+            Command::Command1, Command::CommandAnd, Command::CommandNULL };
+        TestDriver::Test(L"10", L"5 Lsh 1 And ", commands4, true, false);
+
+        Command commands5[] = { Command::ModeProgrammer, Command::Command5, Command::CommandLSHFL,
+            Command::Command1, Command::CommandAnd, Command::CommandNULL };
+        TestDriver::Test(L"10", L"5 Lsh 1 And ", commands5, true, false);
+
+        Command commands6[] = { Command::ModeProgrammer, Command::Command5, Command::CommandRSHFL,
+            Command::Command1, Command::CommandAnd, Command::CommandNULL };
+        TestDriver::Test(L"2", L"5 Rsh 1 And ", commands6, true, false);
+
+        Command commands7[] = { Command::ModeProgrammer, Command::CommandBINPOS63, Command::CommandRSHF,
+            Command::Command5, Command::Command6, Command::CommandAnd, Command::CommandNULL };
+        TestDriver::Test(L"-128", L"-9223372036854775808 Rsh 56 And ", commands7, true, false);
+
+        Command commands8[] = { Command::ModeProgrammer, Command::Command1, Command::CommandROL, Command::CommandNULL };
+        TestDriver::Test(L"2", L"RoL(1)", commands8, true, false);
+
+        Command commands9[] = { Command::ModeProgrammer, Command::Command1, Command::CommandROR, Command::CommandNULL };
+        TestDriver::Test(L"-9,223,372,036,854,775,808", L"RoR(1)", commands9, true, false);
+
+        Command commands10[] = { Command::ModeProgrammer, Command::Command1, Command::CommandRORC, Command::CommandNULL };
+        TestDriver::Test(L"0", L"RoR(1)", commands10, true, false);
+
+        Command commands11[] = { Command::ModeProgrammer, Command::Command1, Command::CommandRORC, Command::CommandRORC, Command::CommandNULL };
+        TestDriver::Test(L"-9,223,372,036,854,775,808", L"RoR(RoR(1))", commands11, true, false);
     }
 
     void CalculatorManagerTest::CalculatorManagerTestMemory()

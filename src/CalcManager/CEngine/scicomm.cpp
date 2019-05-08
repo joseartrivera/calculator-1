@@ -392,6 +392,7 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
         m_precedenceOpCount = m_nTempCom = m_nLastCom = m_nOpCode = m_openParenCount = 0;
         m_nPrevOpCode = 0;
         m_bNoPrevEqu = true;
+        m_carryBit = 0;
 
 
         /* clear the parenthesis status box indicator, this will not be
