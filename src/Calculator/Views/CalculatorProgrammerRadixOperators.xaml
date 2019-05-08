@@ -22,7 +22,9 @@
 
     <Grid x:Name="ProgRadixOps">
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="overflowRow" Height="Auto"/>
+            <RowDefinition x:Name="overflowRow"
+                           Height="0.8*"
+                           MinHeight="34"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -114,7 +116,6 @@
                         <Setter Target="notButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
 
-                        <Setter Target="overflowRow.Height" Value="Auto"/>
                         <Setter Target="bitwiseButton.MinHeight" Value="32"/>
                         <Setter Target="bitShiftButton.MinHeight" Value="32"/>
                         <Setter Target="bitwiseGrid.MinWidth" Value="194"/>
@@ -165,7 +166,6 @@
                         <Setter Target="notButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
 
-                        <Setter Target="overflowRow.Height" Value="0.7*"/>
                         <Setter Target="bitwiseButton.MinHeight" Value="32"/>
                         <Setter Target="bitShiftButton.MinHeight" Value="32"/>
                         <Setter Target="bitwiseGrid.MinWidth" Value="252"/>
@@ -216,7 +216,6 @@
                         <Setter Target="notButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
 
-                        <Setter Target="overflowRow.Height" Value="0.8*"/>
                         <Setter Target="bitwiseButton.MinHeight" Value="32"/>
                         <Setter Target="bitShiftButton.MinHeight" Value="32"/>
                         <Setter Target="bitwiseGrid.MinWidth" Value="387"/>

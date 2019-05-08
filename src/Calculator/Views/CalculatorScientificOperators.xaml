@@ -21,7 +21,9 @@
     </UserControl.Resources>
     <Grid x:Name="ScientificOperators">
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="overflowRow" Height="Auto"/>
+            <RowDefinition x:Name="overflowRow"
+                           Height="0.8*"
+                           MinHeight="34"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -175,7 +177,6 @@
                         <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
 
-                        <Setter Target="overflowRow.Height" Value="Auto"/>
                         <Setter Target="trigButton.MinHeight" Value="32"/>
                         <Setter Target="funcButton.MinHeight" Value="32"/>
                         <Setter Target="TrigGrid.MinWidth" Value="258"/>
@@ -263,7 +264,6 @@
                         <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
 
-                        <Setter Target="overflowRow.Height" Value="0.7*"/>
                         <Setter Target="trigButton.MinHeight" Value="32"/>
                         <Setter Target="funcButton.MinHeight" Value="32"/>
                         <Setter Target="TrigGrid.MinWidth" Value="336"/>
@@ -351,7 +351,6 @@
                         <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="overflowRow.Height" Value="0.8*"/>
                         <Setter Target="trigButton.MinHeight" Value="32"/>
                         <Setter Target="funcButton.MinHeight" Value="32"/>
                         <Setter Target="TrigGrid.MinWidth" Value="516"/>

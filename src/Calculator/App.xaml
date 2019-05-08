@@ -511,7 +511,7 @@
                    BasedOn="{StaticResource CaptionButtonStyle}"
                    TargetType="Controls:OverflowButton">
                 <Setter Property="FontSize" Value="{StaticResource CaptionFontSize}"/>
-                <Setter Property="Padding" Value="6"/>
+                <Setter Property="Padding" Value="8"/>
                 <Setter Property="MinWidth" Value="0"/>
                 <Setter Property="HorizontalAlignment" Value="Left"/>
                 <Setter Property="VerticalAlignment" Value="Stretch"/>
