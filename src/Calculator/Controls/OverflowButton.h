@@ -20,6 +20,15 @@ namespace CalculatorApp
 
             DEPENDENCY_PROPERTY(Platform::String^, Text);
             DEPENDENCY_PROPERTY(Platform::String^, Glyph);
+
+        protected:
+            virtual void OnApplyTemplate() override;
+
+        private:
+            void FlyoutOpened(Platform::Object^ sender, Platform::Object^ args);
+            void FlyoutClosed(Platform::Object^ sender, Platform::Object^ args);
+
+            Windows::UI::Xaml::Controls::FontIcon^ m_chevronIcon;
         };
     }
 }

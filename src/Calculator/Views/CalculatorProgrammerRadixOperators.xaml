@@ -8,6 +8,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="using:CalculatorApp"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:triggers="using:CalculatorApp.Views.StateTriggers"
              x:Name="ControlRoot"
              d:DesignHeight="395"
              d:DesignWidth="315"
@@ -72,6 +73,113 @@
                 </VisualState>
             </VisualStateGroup>
             <VisualStateGroup>
+                <VisualState x:Name="Large">
+                    <VisualState.StateTriggers>
+                        <triggers:ControlSizeTrigger MinWidth="1080"
+                                                     MinHeight="592"
+                                                     Source="{x:Bind ProgRadixOps}"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="NumberPad.ButtonStyle" Value="{StaticResource NumericButtonStyle48}"/>
+                        <Setter Target="aButton.FontSize" Value="48"/>
+                        <Setter Target="bButton.FontSize" Value="48"/>
+                        <Setter Target="cButton.FontSize" Value="48"/>
+                        <Setter Target="dButton.FontSize" Value="48"/>
+                        <Setter Target="eButton.FontSize" Value="48"/>
+                        <Setter Target="fButton.FontSize" Value="48"/>
+
+                        <Setter Target="modButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="divideButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="multiplyButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="minusButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="plusButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="equalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="clearButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="clearEntryButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="backSpaceButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="negateButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="openParenthesisButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="closeParenthesisButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+
+                        <Setter Target="andButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="orButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="xorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="nandButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="norButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="xnorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="rolButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="rorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="rolCarryButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="rorCarryButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="lshButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="rshButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="lshLogicalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="rshLogicalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="bitwiseShiftButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="notButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
+
+                        <Setter Target="bitwiseButton.MinHeight" Value="32"/>
+                        <Setter Target="bitShiftButton.MinHeight" Value="32"/>
+                        <Setter Target="bitwiseGrid.MinWidth" Value="387"/>
+                        <Setter Target="bitwiseGrid.MinHeight" Value="192"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Medium">
+                    <VisualState.StateTriggers>
+                        <triggers:ControlSizeTrigger MinWidth="464"
+                                                     MinHeight="0"
+                                                     Source="{x:Bind ProgRadixOps}"/>
+                        <triggers:ControlSizeTrigger MinWidth="0"
+                                                     MinHeight="424"
+                                                     Source="{x:Bind ProgRadixOps}"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="NumberPad.ButtonStyle" Value="{StaticResource NumericButtonStyle24}"/>
+                        <Setter Target="aButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
+                        <Setter Target="bButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
+                        <Setter Target="cButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
+                        <Setter Target="dButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
+                        <Setter Target="eButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
+                        <Setter Target="fButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
+
+                        <Setter Target="modButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="divideButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="multiplyButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="minusButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="plusButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="equalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="clearButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="clearEntryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="backSpaceButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="negateButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSizeLarge}"/>
+                        <Setter Target="openParenthesisButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="closeParenthesisButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+
+                        <Setter Target="andButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="orButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="xorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="nandButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="norButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="xnorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="rolButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="rorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="rolCarryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="rorCarryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="lshButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="rshButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="lshLogicalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="rshLogicalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="bitwiseShiftButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="notButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
+
+                        <Setter Target="bitwiseButton.MinHeight" Value="32"/>
+                        <Setter Target="bitShiftButton.MinHeight" Value="32"/>
+                        <Setter Target="bitwiseGrid.MinWidth" Value="252"/>
+                        <Setter Target="bitwiseGrid.MinHeight" Value="128"/>
+                    </VisualState.Setters>
+                </VisualState>
                 <VisualState x:Name="Small">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowHeight="{StaticResource AppMinWindowHeight}" MinWindowWidth="{StaticResource AppMinWindowWidth}"/>
@@ -120,106 +228,6 @@
                         <Setter Target="bitShiftButton.MinHeight" Value="32"/>
                         <Setter Target="bitwiseGrid.MinWidth" Value="194"/>
                         <Setter Target="bitwiseGrid.MinHeight" Value="96"/>
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="Medium">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="640" MinWindowWidth="640"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="NumberPad.ButtonStyle" Value="{StaticResource NumericButtonStyle24}"/>
-                        <Setter Target="aButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
-                        <Setter Target="bButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
-                        <Setter Target="cButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
-                        <Setter Target="dButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
-                        <Setter Target="eButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
-                        <Setter Target="fButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
-
-                        <Setter Target="modButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="divideButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="multiplyButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="minusButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="plusButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="equalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="clearButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="clearEntryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="backSpaceButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="negateButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSizeLarge}"/>
-                        <Setter Target="openParenthesisButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="closeParenthesisButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-
-                        <Setter Target="andButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="orButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="xorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="nandButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="norButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="xnorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="rolButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="rorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="rolCarryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="rorCarryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="lshButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="rshButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="lshLogicalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="rshLogicalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="bitwiseShiftButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="notButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
-
-                        <Setter Target="bitwiseButton.MinHeight" Value="32"/>
-                        <Setter Target="bitShiftButton.MinHeight" Value="32"/>
-                        <Setter Target="bitwiseGrid.MinWidth" Value="252"/>
-                        <Setter Target="bitwiseGrid.MinHeight" Value="128"/>
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="Large">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="1080" MinWindowWidth="1080"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="NumberPad.ButtonStyle" Value="{StaticResource NumericButtonStyle48}"/>
-                        <Setter Target="aButton.FontSize" Value="48"/>
-                        <Setter Target="bButton.FontSize" Value="48"/>
-                        <Setter Target="cButton.FontSize" Value="48"/>
-                        <Setter Target="dButton.FontSize" Value="48"/>
-                        <Setter Target="eButton.FontSize" Value="48"/>
-                        <Setter Target="fButton.FontSize" Value="48"/>
-
-                        <Setter Target="modButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="divideButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="multiplyButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="minusButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="plusButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="equalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="clearButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="clearEntryButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="backSpaceButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="negateButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="openParenthesisButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="closeParenthesisButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-
-                        <Setter Target="andButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="orButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="xorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="nandButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="norButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="xnorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="rolButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="rorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="rolCarryButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="rorCarryButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="lshButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="rshButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="lshLogicalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="rshLogicalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="bitwiseShiftButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="notButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
-
-                        <Setter Target="bitwiseButton.MinHeight" Value="32"/>
-                        <Setter Target="bitShiftButton.MinHeight" Value="32"/>
-                        <Setter Target="bitwiseGrid.MinWidth" Value="387"/>
-                        <Setter Target="bitwiseGrid.MinHeight" Value="192"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>

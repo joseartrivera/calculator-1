@@ -103,7 +103,7 @@
                 <VisualState x:Name="Large">
                     <VisualState.StateTriggers>
                         <triggers:ControlSizeTrigger MinWidth="1080"
-                                                     MinHeight="620"
+                                                     MinHeight="624"
                                                      Source="{x:Bind ScientificOperators}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
@@ -191,11 +191,11 @@
                 </VisualState>
                 <VisualState x:Name="Medium">
                     <VisualState.StateTriggers>
-                        <triggers:ControlSizeTrigger MinWidth="460"
+                        <triggers:ControlSizeTrigger MinWidth="464"
                                                      MinHeight="0"
                                                      Source="{x:Bind ScientificOperators}"/>
                         <triggers:ControlSizeTrigger MinWidth="0"
-                                                     MinHeight="420"
+                                                     MinHeight="424"
                                                      Source="{x:Bind ScientificOperators}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
