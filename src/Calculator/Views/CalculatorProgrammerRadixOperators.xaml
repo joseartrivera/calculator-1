@@ -245,7 +245,7 @@
                     <Flyout x:Name="bitwiseFlyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
-                            Placement="Bottom">
+                            Placement="BottomEdgeAlignedLeft">
                         <Grid x:Name="bitwiseGrid"
                               MinWidth="258"
                               MinHeight="96"
@@ -404,7 +404,7 @@
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
                             Placement="Bottom">
-                        <StackPanel Padding="6">
+                        <StackPanel MaxWidth="192" Padding="12">
                             <RadioButton x:Name="arithmeticShiftButton"
                                          x:Uid="arithmeticShiftButton"
                                          AutomationProperties.AutomationId="arithmeticShiftButton"

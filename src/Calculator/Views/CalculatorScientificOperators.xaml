@@ -384,7 +384,7 @@
                     <Flyout x:Name="Trigflyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
-                            Placement="Bottom">
+                            Placement="BottomEdgeAlignedLeft">
                         <Grid x:Name="TrigGrid"
                               MinWidth="258"
                               MinHeight="96"
