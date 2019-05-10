@@ -568,8 +568,7 @@
                                         <TextBlock x:Name="trigTextBlock"
                                                    VerticalAlignment="Center"
                                                    Text="{TemplateBinding Text}"/>
-                                        <FontIcon x:Name="ChevronFontIcon"
-                                                  Margin="6,0,0,0"
+                                        <FontIcon Margin="6,0,0,0"
                                                   VerticalAlignment="Center"
                                                   FontFamily="{StaticResource CalculatorFontFamily}"
                                                   FontSize="8"

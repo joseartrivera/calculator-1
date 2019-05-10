@@ -28,7 +28,8 @@ namespace CalculatorApp
             void FlyoutOpened(Platform::Object^ sender, Platform::Object^ args);
             void FlyoutClosed(Platform::Object^ sender, Platform::Object^ args);
 
-            Windows::UI::Xaml::Controls::FontIcon^ m_chevronIcon;
+            Windows::UI::Xaml::Media::Brush^ m_flyoutOpenBackgroundBrush;
+            Windows::UI::Xaml::Media::Brush^ m_flyoutClosedBackgroundBrush;
         };
     }
 }

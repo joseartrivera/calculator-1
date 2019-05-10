@@ -128,7 +128,7 @@
                 <VisualState x:Name="Medium">
                     <VisualState.StateTriggers>
                         <triggers:ControlSizeTrigger MinWidth="464"
-                                                     MinHeight="0"
+                                                     MinHeight="300"
                                                      Source="{x:Bind ProgRadixOps}"/>
                         <triggers:ControlSizeTrigger MinWidth="0"
                                                      MinHeight="424"
