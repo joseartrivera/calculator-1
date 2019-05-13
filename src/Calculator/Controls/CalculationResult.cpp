@@ -421,6 +421,7 @@ void CalculationResult::ProgrammaticSelect()
     RaiseSelectedEvent();
 }
 
+
 void CalculationResult::RaiseSelectedEvent()
 {
     Selected(this);

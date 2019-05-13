@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #include "pch.h"
@@ -21,23 +21,32 @@ OverflowListView::OverflowListView()
 
 void OverflowListView::OnApplyTemplate()
 {
-    m_scrollViewer = safe_cast<ScrollViewer^>(GetTemplateChild("ScrollViewer"));
-    m_scrollLeft = safe_cast<Button^>(GetTemplateChild("ScrollLeft"));
-    m_scrollRight = safe_cast<Button^>(GetTemplateChild("ScrollRight"));
-    m_border = safe_cast<Border^>(GetTemplateChild("Border"));
-    m_content = safe_cast<ItemsPresenter^>(GetTemplateChild("Content"));
-    m_grid = safe_cast<Grid^>(GetTemplateChild("Grid"));
+    m_scrollViewer = dynamic_cast<ScrollViewer^>(GetTemplateChild("ScrollViewer"));
+    m_scrollLeft = dynamic_cast<Button^>(GetTemplateChild("ScrollLeft"));
+    m_scrollRight = dynamic_cast<Button^>(GetTemplateChild("ScrollRight"));
+    m_border = dynamic_cast<Border^>(GetTemplateChild("Border"));
+    m_content = dynamic_cast<ItemsPresenter^>(GetTemplateChild("Content"));
+    m_grid = dynamic_cast<Grid^>(GetTemplateChild("Grid"));
 
-    m_scrollLeft->Click += ref new RoutedEventHandler(this, &OverflowListView::OnScrollClick);
-    m_scrollRight->Click += ref new RoutedEventHandler(this, &OverflowListView::OnScrollClick);
+    if (m_scrollLeft != nullptr)
+    {
+        m_scrollLeft->Click += ref new RoutedEventHandler(this, &OverflowListView::OnScrollClick);
+        m_scrollLeft->PointerExited += ref new PointerEventHandler(this, &OverflowListView::OnButtonPointerExited);
+    }
 
-    m_scrollViewer->ViewChanged += ref new EventHandler<ScrollViewerViewChangedEventArgs^>(this, &OverflowListView::ScrollViewChanged);
+    if (m_scrollRight != nullptr)
+    {
+        m_scrollRight->Click += ref new RoutedEventHandler(this, &OverflowListView::OnScrollClick);
+        m_scrollRight->PointerExited += ref new PointerEventHandler(this, &OverflowListView::OnButtonPointerExited);
+    }
+
+    if (m_scrollViewer != nullptr)
+    {
+        m_scrollViewer->ViewChanged += ref new EventHandler<ScrollViewerViewChangedEventArgs^>(this, &OverflowListView::ScrollViewChanged);
+    }
 
     this->PointerEntered += ref new PointerEventHandler(this, &OverflowListView::OnPointerEntered);
     this->PointerExited += ref new PointerEventHandler(this, &OverflowListView::OnPointerExited);
-
-    m_scrollLeft->PointerExited += ref new PointerEventHandler(this, &OverflowListView::OnButtonPointerExited);
-    m_scrollRight->PointerExited += ref new PointerEventHandler(this, &OverflowListView::OnButtonPointerExited);
 
     ListView::OnApplyTemplate();
 }
@@ -52,7 +61,7 @@ void OverflowListView::ScrollViewChanged(_In_ Object^, _In_ ScrollViewerViewChan
 
 void OverflowListView::OnScrollClick(_In_ Object^ sender, _In_ RoutedEventArgs^)
 {
-    auto clicked = safe_cast<Button^>(sender);
+    auto clicked = dynamic_cast<Button^>(sender);
     if (clicked == m_scrollLeft)
     {
         ScrollLeft();
@@ -66,7 +75,7 @@ void OverflowListView::OnScrollClick(_In_ Object^ sender, _In_ RoutedEventArgs^)
 
 void OverflowListView::OnButtonPointerExited(_In_ Object^ sender, _In_ PointerRoutedEventArgs^ e)
 {
-    auto button = static_cast<Button^>(sender);
+    auto button = dynamic_cast<Button^>(sender);
 
     // Do not bubble up the pointer exit event to the control if the button being exited was not visible
     if (button->Visibility == ::Visibility::Collapsed)
@@ -106,6 +115,11 @@ void OverflowListView::ScrollRight()
 
 void OverflowListView::UpdateScrollButtons()
 {
+    if (m_content == nullptr || m_scrollViewer == nullptr)
+    {
+        return;
+    }
+
     // When the width is smaller than the container, don't show any
     if (m_content->ActualWidth <= m_scrollViewer->ActualWidth)
     {

@@ -40,6 +40,7 @@ namespace CalculatorApp
         void OnUnloaded(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
         void ProgModeRadixChange();
         void OnViewModelPropertyChanged(Platform::Object^ sender, Windows::UI::Xaml::Data::PropertyChangedEventArgs ^ e);
+        void collapseBitshiftButtons();
 
         bool m_isErrorVisualState;
         Windows::Foundation::EventRegistrationToken m_progModeRadixChangeToken;

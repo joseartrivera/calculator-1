@@ -266,6 +266,30 @@ void CHistoryCollector::AddUnaryOpToHistory(int nOpCode, bool fInv, ANGLE_TYPE a
                 command = fInv ? static_cast<int>(CalculationManager::Command::CommandATANH) : IDC_TANH;
                 spExpressionCommand = std::make_shared<CUnaryCommand>(command);
                 break;
+            case IDC_SEC:
+                command = fInv ? static_cast<int>(CalculationManager::Command::CommandASEC) : IDC_SEC;
+                spExpressionCommand = std::make_shared<CUnaryCommand>(static_cast<int>(angleOpCode), command);
+                break;
+            case IDC_CSC:
+                command = fInv ? static_cast<int>(CalculationManager::Command::CommandACSC) : IDC_CSC;
+                spExpressionCommand = std::make_shared<CUnaryCommand>(static_cast<int>(angleOpCode), command);
+                break;
+            case IDC_COT:
+                command = fInv ? static_cast<int>(CalculationManager::Command::CommandACOT) : IDC_COT;
+                spExpressionCommand = std::make_shared<CUnaryCommand>(static_cast<int>(angleOpCode), command);
+                break;
+            case IDC_SECH:
+                command = fInv ? static_cast<int>(CalculationManager::Command::CommandASECH) : IDC_SECH;
+                spExpressionCommand = std::make_shared<CUnaryCommand>(command);
+                break;
+            case IDC_CSCH:
+                command = fInv ? static_cast<int>(CalculationManager::Command::CommandACSCH) : IDC_CSCH;
+                spExpressionCommand = std::make_shared<CUnaryCommand>(command);
+                break;
+            case IDC_COTH:
+                command = fInv ? static_cast<int>(CalculationManager::Command::CommandACOTH) : IDC_COTH;
+                spExpressionCommand = std::make_shared<CUnaryCommand>(command);
+                break;
             case IDC_LN:
                 command = fInv ? static_cast<int>(CalculationManager::Command::CommandPOWE) : IDC_LN;
                 spExpressionCommand = std::make_shared<CUnaryCommand>(command);

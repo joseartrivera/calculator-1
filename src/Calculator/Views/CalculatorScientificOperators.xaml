@@ -107,7 +107,7 @@
                                                      Source="{x:Bind ScientificOperators}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="negateButton.FontSize" Value="48"/>
+                        <Setter Target="negateButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSizeExtraLarge}"/>
                         <Setter Target="piButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="factorialButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="openParenthesisButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
@@ -370,7 +370,6 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-
 
         <controls:OverflowListView x:Uid="ScientificOverflow"
                                    Grid.ColumnSpan="5"
@@ -786,7 +785,6 @@
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="ceil"
                                                        IsEnabled="{x:Bind funcButton.IsEnabled, Mode=OneWay}"/>
-                            <!-- place holder for rand -->
                             <controls:CalculatorButton x:Name="randButton"
                                                        x:Uid="randButton"
                                                        Grid.Row="1"

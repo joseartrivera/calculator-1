@@ -81,12 +81,12 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="NumberPad.ButtonStyle" Value="{StaticResource NumericButtonStyle48}"/>
-                        <Setter Target="aButton.FontSize" Value="48"/>
-                        <Setter Target="bButton.FontSize" Value="48"/>
-                        <Setter Target="cButton.FontSize" Value="48"/>
-                        <Setter Target="dButton.FontSize" Value="48"/>
-                        <Setter Target="eButton.FontSize" Value="48"/>
-                        <Setter Target="fButton.FontSize" Value="48"/>
+                        <Setter Target="aButton.Style" Value="{StaticResource NumericButtonStyle48}"/>
+                        <Setter Target="bButton.Style" Value="{StaticResource NumericButtonStyle48}"/>
+                        <Setter Target="cButton.Style" Value="{StaticResource NumericButtonStyle48}"/>
+                        <Setter Target="dButton.Style" Value="{StaticResource NumericButtonStyle48}"/>
+                        <Setter Target="eButton.Style" Value="{StaticResource NumericButtonStyle48}"/>
+                        <Setter Target="fButton.Style" Value="{StaticResource NumericButtonStyle}"/>
 
                         <Setter Target="modButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="divideButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
@@ -117,7 +117,6 @@
                         <Setter Target="rshLogicalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="bitwiseShiftButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="notButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
 
                         <Setter Target="bitwiseButton.MinHeight" Value="32"/>
                         <Setter Target="bitShiftButton.MinHeight" Value="32"/>
@@ -172,7 +171,6 @@
                         <Setter Target="rshLogicalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="bitwiseShiftButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="notButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
 
                         <Setter Target="bitwiseButton.MinHeight" Value="32"/>
                         <Setter Target="bitShiftButton.MinHeight" Value="32"/>
@@ -222,7 +220,6 @@
                         <Setter Target="rshLogicalButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="bitwiseShiftButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="notButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="bitShiftButton.FontSize" Value="{StaticResource CaptionFontSize}"/>
 
                         <Setter Target="bitwiseButton.MinHeight" Value="32"/>
                         <Setter Target="bitShiftButton.MinHeight" Value="32"/>
@@ -461,7 +458,6 @@
 
             <controls:CalculatorButton x:Name="rolCarryButton"
                                        x:Uid="rolCarryButton"
-                                       Grid.Column="0"
                                        Style="{StaticResource OperatorButtonStyle}"
                                        FontSize="12"
                                        x:DeferLoadStrategy="Lazy"
@@ -482,7 +478,6 @@
 
             <controls:CalculatorButton x:Name="lshButton"
                                        x:Uid="lshButton"
-                                       Grid.Column="0"
                                        Style="{StaticResource OperatorButtonStyle}"
                                        FontSize="12"
                                        AutomationProperties.AutomationId="lshButton"
@@ -499,7 +494,6 @@
 
             <controls:CalculatorButton x:Name="lshLogicalButton"
                                        x:Uid="lshLogicalButton"
-                                       Grid.Column="0"
                                        Style="{StaticResource OperatorButtonStyle}"
                                        FontSize="12"
                                        x:DeferLoadStrategy="Lazy"

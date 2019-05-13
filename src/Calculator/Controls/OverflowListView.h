@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
@@ -24,18 +24,12 @@ namespace CalculatorApp
             void OnButtonPointerExited(_In_ Platform::Object^ sender, _In_ Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e);
             void ScrollViewChanged(_In_ Platform::Object^ sender, _In_ Windows::UI::Xaml::Controls::ScrollViewerViewChangedEventArgs^ args);
             void ShowHideScrollButtons(Windows::UI::Xaml::Visibility vLeft, Windows::UI::Xaml::Visibility vRight);
-            void OnTokensUpdatedPropertyChanged(bool oldValue, bool newValue);
             void UpdateScrollButtons();
 
-            void UpdateVisualState();
-            void UpdateExpressionState();
-            void UpdateAllState();
             void ScrollLeft();
             void ScrollRight();
 
             double scrollRatio = 0.7;
-            bool m_scrollingLeft;
-            bool m_scrollingRight;
 
             bool m_isPointerEntered;
 
@@ -45,11 +39,6 @@ namespace CalculatorApp
             Windows::UI::Xaml::Controls::Button^ m_scrollLeft;
             Windows::UI::Xaml::Controls::Button^ m_scrollRight;
             Windows::UI::Xaml::Controls::Grid^ m_grid;
-
-            Windows::Foundation::EventRegistrationToken m_scrollLeftClickEventToken;
-            Windows::Foundation::EventRegistrationToken m_scrollRightClickEventToken;
-            Windows::Foundation::EventRegistrationToken m_pointerEnteredEventToken;
-            Windows::Foundation::EventRegistrationToken m_pointerExitedEventToken;
         };
     }
 }

@@ -87,27 +87,9 @@ void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object
         return;
     }
 
-    RadioButton^ radioButton = static_cast<RadioButton^>(sender);
+    collapseBitshiftButtons();
 
-    // Set all buttons to collapsed initially
-    rolButton->Visibility = ::Visibility::Collapsed;
-    rorButton->Visibility = ::Visibility::Collapsed;
-    rolCarryButton->Visibility = ::Visibility::Collapsed;
-    rorCarryButton->Visibility = ::Visibility::Collapsed;
-    lshButton->Visibility = ::Visibility::Collapsed;
-    rshButton->Visibility = ::Visibility::Collapsed;
-    lshLogicalButton->Visibility = ::Visibility::Collapsed;
-    rshLogicalButton->Visibility = ::Visibility::Collapsed;
-
-    // We need to set the collapsed buttons to disabled so that the KeyboardShortcutManager can skip the keybinds for the disabled buttons
-    rolButton->IsEnabled = false;
-    rorButton->IsEnabled = false;
-    rolCarryButton->IsEnabled = false;
-    rorCarryButton->IsEnabled = false;
-    lshButton->IsEnabled = false;
-    rshButton->IsEnabled = false;
-    lshLogicalButton->IsEnabled = false;
-    rshLogicalButton->IsEnabled = false;
+    auto radioButton = static_cast<RadioButton^>(sender);
 
     if (radioButton == arithmeticShiftButton)
     {
@@ -139,6 +121,28 @@ void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object
     }
 
     this->BitShiftFlyout->Hide();
+}
+
+void CalculatorProgrammerRadixOperators::collapseBitshiftButtons()
+{
+    rolButton->Visibility = ::Visibility::Collapsed;
+    rorButton->Visibility = ::Visibility::Collapsed;
+    rolCarryButton->Visibility = ::Visibility::Collapsed;
+    rorCarryButton->Visibility = ::Visibility::Collapsed;
+    lshButton->Visibility = ::Visibility::Collapsed;
+    rshButton->Visibility = ::Visibility::Collapsed;
+    lshLogicalButton->Visibility = ::Visibility::Collapsed;
+    rshLogicalButton->Visibility = ::Visibility::Collapsed;
+
+    // We need to set the collapsed buttons to disabled so that the KeyboardShortcutManager can skip the keybinds for the disabled buttons
+    rolButton->IsEnabled = false;
+    rorButton->IsEnabled = false;
+    rolCarryButton->IsEnabled = false;
+    rorCarryButton->IsEnabled = false;
+    lshButton->IsEnabled = false;
+    rshButton->IsEnabled = false;
+    lshLogicalButton->IsEnabled = false;
+    rshLogicalButton->IsEnabled = false;
 }
 
 void CalculatorProgrammerRadixOperators::SetVisibilityBinding(FrameworkElement^ element, String^ path, IValueConverter^ converter)

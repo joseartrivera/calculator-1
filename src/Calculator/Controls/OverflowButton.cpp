@@ -17,16 +17,16 @@ using namespace CalculatorApp::Controls;
 DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, Text);
 DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, Glyph);
 
-inline constexpr auto BUTTON_PRESSED_BACKGROUND = L"AppControlPressedButtonFaceBrush";
-inline constexpr auto BUTTON_REST_BACKGROUND = L"SystemControlBackgroundTransparentBrush";
-
 void OverflowButton::OnApplyTemplate()
 {
-    m_flyoutOpenBackgroundBrush = dynamic_cast<Brush^>(Application::Current->Resources->Lookup("AppControlPressedButtonFaceBrush"));
-    m_flyoutClosedBackgroundBrush = dynamic_cast<Brush^>(Application::Current->Resources->Lookup("SystemControlBackgroundTransparentBrush"));
+    if (Flyout != nullptr)
+    {
+        m_flyoutOpenBackgroundBrush = dynamic_cast<Brush^>(Application::Current->Resources->Lookup("AppControlPressedButtonFaceBrush"));
+        m_flyoutClosedBackgroundBrush = dynamic_cast<Brush^>(Application::Current->Resources->Lookup("SystemControlBackgroundTransparentBrush"));
 
-    Flyout->Opened += ref new EventHandler<Object^>(this, &OverflowButton::FlyoutOpened);
-    Flyout->Closed += ref new EventHandler<Object^>(this, &OverflowButton::FlyoutClosed);
+        Flyout->Opened += ref new EventHandler<Object^>(this, &OverflowButton::FlyoutOpened);
+        Flyout->Closed += ref new EventHandler<Object^>(this, &OverflowButton::FlyoutClosed);
+    }
 }
 
 void OverflowButton::FlyoutOpened(Object^ sender, Object^ args)

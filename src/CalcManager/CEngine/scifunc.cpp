@@ -47,36 +47,7 @@ CalcEngine::Rational CCalcEngine::SciCalcFunctions(CalcEngine::Rational const& r
             }
             break;
 
-            // Rotate Left with hi bit wrapped over to lo bit
         case IDC_ROL:
-            if (m_fIntegerMode)
-            {
-                result = Integer(rat);
-
-                uint64_t w64Bits = result.ToUInt64_t();
-                uint64_t msb = (w64Bits >> (m_dwWordBitWidth - 1)) & 1;
-                w64Bits <<= 1; // LShift by 1
-                w64Bits |= msb; // Set the prev Msb as the current Lsb
-
-                result = w64Bits;
-            }
-            break;
-
-            // Rotate right with carry bit
-        case IDC_ROR:
-            if (m_fIntegerMode)
-            {
-                result = Integer(rat);
-
-                uint64_t w64Bits = result.ToUInt64_t();
-                uint64_t lsb = ((w64Bits & 0x01) == 1) ? 1 : 0;
-                w64Bits >>= 1; // RShift by 1
-                w64Bits |= (lsb << (m_dwWordBitWidth - 1));
-
-                result = w64Bits;
-            }
-            break;
-
         case IDC_ROLC:
             if (m_fIntegerMode)
             {
@@ -84,17 +55,23 @@ CalcEngine::Rational CCalcEngine::SciCalcFunctions(CalcEngine::Rational const& r
 
                 uint64_t w64Bits = result.ToUInt64_t();
                 uint64_t msb = (w64Bits >> (m_dwWordBitWidth - 1)) & 1;
-
                 w64Bits <<= 1; // LShift by 1
-                w64Bits |= m_carryBit; // Set the carry bit as the LSB
 
-                m_carryBit = msb; // Store the msb as the next carry bit
+                if (op == IDC_ROL)
+                {
+                    w64Bits |= msb; // Set the prev Msb as the current Lsb
+                }
+                else
+                {
+                    w64Bits |= m_carryBit; // Set the carry bit as the LSB
+                    m_carryBit = msb; // Store the msb as the next carry bit
+                }
 
                 result = w64Bits;
             }
             break;
 
-            // Rotate right with carry bit
+        case IDC_ROR:
         case IDC_RORC:
             if (m_fIntegerMode)
             {
@@ -103,9 +80,16 @@ CalcEngine::Rational CCalcEngine::SciCalcFunctions(CalcEngine::Rational const& r
                 uint64_t w64Bits = result.ToUInt64_t();
                 uint64_t lsb = ((w64Bits & 0x01) == 1) ? 1 : 0;
                 w64Bits >>= 1; // RShift by 1
-                w64Bits |= (m_carryBit << (m_dwWordBitWidth - 1));
 
-                m_carryBit = lsb;
+                if (op == IDC_ROR)
+                {
+                    w64Bits |= (lsb << (m_dwWordBitWidth - 1));
+                }
+                else
+                {
+                    w64Bits |= (m_carryBit << (m_dwWordBitWidth - 1));
+                    m_carryBit = lsb;
+                }
 
                 result = w64Bits;
             }

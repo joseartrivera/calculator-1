@@ -28,7 +28,8 @@ using namespace Windows::UI::Xaml::Controls::Primitives;
 using namespace Windows::UI::Xaml::Data;
 using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::Xaml::Media;
-using namespace Windows::UI::Xaml::Navigation;using namespace Windows::UI::Core;
+using namespace Windows::UI::Xaml::Navigation;
+using namespace Windows::UI::Core;
 
 DEPENDENCY_PROPERTY_INITIALIZATION(CalculatorScientificOperators, IsErrorVisualState);
 
