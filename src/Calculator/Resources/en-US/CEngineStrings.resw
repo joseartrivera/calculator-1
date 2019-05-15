@@ -549,4 +549,8 @@
     <value>cuberoot</value>
     <comment>{Locked}The string that represents the function</comment>
   </data>
+  <data name="ProgrammerMod" xml:space="preserve">
+    <value>%</value>
+    <comment>{Locked}The string that represents the function</comment>
+  </data>
 </root>

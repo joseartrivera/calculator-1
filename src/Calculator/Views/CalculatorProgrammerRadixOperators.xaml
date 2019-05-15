@@ -577,7 +577,7 @@
                                    FontSize="12"
                                    AutomationProperties.AutomationId="modButton"
                                    ButtonId="Mod"
-                                   Content="Mod"/>
+                                   Content="%"/>
 
         <Grid x:Uid="StandardOperators"
               Grid.Row="2"

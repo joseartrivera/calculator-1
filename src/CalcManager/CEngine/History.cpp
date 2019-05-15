@@ -120,12 +120,12 @@ void CHistoryCollector::RemoveLastOpndFromHistory()
     // This will not restore the m_lastBinOpStartIndex, as it isn't possible to remove that also later
 }
 
-void CHistoryCollector::AddBinOpToHistory(int nOpCode, bool fNoRepetition)
+void CHistoryCollector::AddBinOpToHistory(int nOpCode, bool isIntgerMode, bool fNoRepetition)
 {
     int iCommandEnd = AddCommand(std::make_shared<CBinaryCommand>(nOpCode));
     m_lastBinOpStartIndex = IchAddSzToEquationSz(L" ", -1);
 
-    IchAddSzToEquationSz(CCalcEngine::OpCodeToBinaryString(nOpCode), iCommandEnd);
+    IchAddSzToEquationSz(CCalcEngine::OpCodeToBinaryString(nOpCode, isIntgerMode), iCommandEnd);
     IchAddSzToEquationSz(L" ", -1);
 
     if (fNoRepetition)
@@ -138,14 +138,14 @@ void CHistoryCollector::AddBinOpToHistory(int nOpCode, bool fNoRepetition)
 // This is expected to be called when a binary op in the last say 1+2+ is changing to another one say 1+2* (+ changed to *)
 // It needs to know by this change a Precedence inversion happened. i.e. previous op was lower or equal to its previous op, but the new
 // one isn't. (Eg. 1*2* to 1*2^). It can add explicit brackets to ensure the precedence is inverted. (Eg. (1*2) ^)
-void CHistoryCollector::ChangeLastBinOp(int nOpCode, bool fPrecInvToHigher)
+void CHistoryCollector::ChangeLastBinOp(int nOpCode, bool fPrecInvToHigher, bool isIntgerMode)
 {
     TruncateEquationSzFromIch(m_lastBinOpStartIndex);
     if (fPrecInvToHigher)
     {
         EnclosePrecInversionBrackets();
     }
-    AddBinOpToHistory(nOpCode);
+    AddBinOpToHistory(nOpCode, isIntgerMode);
 }
 
 void CHistoryCollector::PushLastOpndStart(int ichOpndStart)

@@ -203,7 +203,7 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
                     m_nPrevOpCode = 0; // Once the precedence inversion has put additional brackets, its no longer required
                 }
             }
-            m_HistoryCollector.ChangeLastBinOp(m_nOpCode, fPrecInvToHigher);
+            m_HistoryCollector.ChangeLastBinOp(m_nOpCode, fPrecInvToHigher, m_fIntegerMode);
             DisplayAnnounceBinaryOperator();
             return;
         }
@@ -281,10 +281,9 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
         }
 
         DisplayAnnounceBinaryOperator();
-
         m_lastVal = m_currentVal;
         m_nOpCode = (int)wParam;
-        m_HistoryCollector.AddBinOpToHistory(m_nOpCode);
+        m_HistoryCollector.AddBinOpToHistory(m_nOpCode, m_fIntegerMode);
         m_bNoPrevEqu = m_bChangeOp = true;
         return;
     }
@@ -818,7 +817,7 @@ void CCalcEngine::ResolveHighestPrecedenceOperation()
         {
             m_currentVal = m_holdVal;
             DisplayNum(); // to update the m_numberString
-            m_HistoryCollector.AddBinOpToHistory(m_nOpCode, false);
+            m_HistoryCollector.AddBinOpToHistory(m_nOpCode, m_fIntegerMode, false);
             m_HistoryCollector.AddOpndToHistory(m_numberString, m_currentVal); // Adding the repeated last op to history
         }
 
@@ -922,6 +921,8 @@ struct FunctionNameElement
     wstring gradString;
     wstring inverseGradString; // Will fall back to gradString if empty
 
+    wstring programmerModeString;
+
     bool hasAngleStrings = ((!radString.empty()) || (!inverseRadString.empty()) || (!gradString.empty()) || (!inverseGradString.empty()));
 };
 
@@ -967,6 +968,7 @@ static const std::unordered_map<int, FunctionNameElement> operatorStringTable =
     { IDC_RORC, { SIDS_ROR } },
     { IDC_ROLC, { SIDS_ROL } },
     { IDC_CUBEROOT, {SIDS_CUBEROOT} },
+    { IDC_MOD, {SIDS_MOD, L"", L"", L"", L"", L"", SIDS_PROGRAMMER_MOD} },
 };
 
 wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE angletype)
@@ -1022,14 +1024,21 @@ wstring_view CCalcEngine::OpCodeToUnaryString(int nOpCode, bool fInv, ANGLE_TYPE
     return OpCodeToString(nOpCode);
 }
 
-wstring_view CCalcEngine::OpCodeToBinaryString(int nOpCode)
+wstring_view CCalcEngine::OpCodeToBinaryString(int nOpCode, bool isIntegerMode)
 {
     // Try to lookup the ID in the UFNE table
     wstring ids = L"";
 
     if (auto pair = operatorStringTable.find(nOpCode); pair != operatorStringTable.end())
     {
-        ids = pair->second.degreeString;
+        if (isIntegerMode && !pair->second.programmerModeString.empty())
+        {
+            ids = pair->second.programmerModeString;
+        }
+        else
+        {
+            ids = pair->second.degreeString;
+        }
     }
 
     if (!ids.empty())
