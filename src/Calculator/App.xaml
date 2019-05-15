@@ -79,7 +79,7 @@
                     <SolidColorBrush x:Key="AppOverflowOperatorBackground"
                                      Opacity="0.4"
                                      Color="{ThemeResource SystemAltMediumLowColor}"/>
-                    <SolidColorBrush x:Key="AppControlPageTextBaseMediumHighBrush" Color="{StaticResource SystemAltMediumLowColor}"/>
+                    <SolidColorBrush x:Key="AppControlPageTextBaseMediumHighBrush" Color="{StaticResource SystemBaseMediumHighColor}"/>
                     <RevealBackgroundBrush x:Key="AppControlHoverButtonFaceBrush" Color="#17000000"/>
                     <RevealBackgroundBrush x:Key="AppControlPressedButtonFaceBrush" Color="#30000000"/>
                     <SolidColorBrush x:Key="AppControlTransparentAccentColorBrush" Color="{ThemeResource SystemAccentColor}"/>
