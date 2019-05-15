@@ -564,10 +564,11 @@
                                     <StackPanel Orientation="Horizontal">
                                         <FontIcon Margin="0,0,6,0"
                                                   FontFamily="{StaticResource CalculatorFontFamily}"
-                                                  FontSize="12"
+                                                  FontSize="{TemplateBinding FontSize}"
                                                   Glyph="{TemplateBinding Glyph}"/>
                                         <TextBlock x:Name="trigTextBlock"
                                                    VerticalAlignment="Center"
+                                                   FontSize="{TemplateBinding FontSize}"
                                                    Text="{TemplateBinding Text}"/>
                                         <FontIcon Margin="6,0,0,0"
                                                   VerticalAlignment="Center"
