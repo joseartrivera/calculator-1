@@ -153,6 +153,7 @@ CalcEngine::Rational CCalcEngine::DoOperation(int operation, CalcEngine::Rationa
         case IDC_ROOT: // Calculates rhs to the result(th) root.
             result = Root(rhs, result);
             break;
+
         case IDC_LOGBASEX:
             result = (Log(result) / Log(rhs));
             break;

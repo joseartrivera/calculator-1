@@ -270,12 +270,15 @@ CalcEngine::Rational CCalcEngine::SciCalcFunctions(CalcEngine::Rational const& r
         case IDC_CEIL:
             result = (Frac(rat) > 0) ? Integer(rat + 1) : Integer(rat);
             break;
+
         case IDC_FLOOR:
             result = (Frac(rat) < 0) ? Integer(rat - 1 ) : Integer(rat);
             break;
+
         case IDC_ABS:
             result = Abs(rat);
             break;
+
         }   // end switch( op )
     }
     catch (uint32_t nErrCode)

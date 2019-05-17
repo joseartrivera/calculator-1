@@ -66,6 +66,7 @@ void CalculatorScientificOperators::shiftButton_Uncheck(_In_ Platform::Object^ /
 {
     shiftButton->IsChecked = false;
     SetOperatorRowVisibility();
+    shiftButton->Focus(::FocusState::Programmatic);
 }
 
 void CalculatorScientificOperators::trigFlyoutShift_Toggle(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
@@ -82,6 +83,8 @@ void CalculatorScientificOperators::trigFlyoutHyp_Toggle(_In_ Platform::Object^ 
 
 void CalculatorScientificOperators::flyoutButton_Clicked(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
 {
+    this->hypButton->IsChecked = false;
+    this->trigShiftButton->IsChecked = false;
     this->Trigflyout->Hide();
     this->FuncFlyout->Hide();
 }

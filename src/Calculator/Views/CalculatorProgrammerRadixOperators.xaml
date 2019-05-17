@@ -264,22 +264,102 @@
                                           Checked="bitwiseFlyout_Toggle"
                                           Content="2nd"
                                           IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"
-                                          Unchecked="bitwiseFlyout_Toggle"/>
+                                          Unchecked="bitwiseFlyout_Toggle"
+                                          Visibility="Collapsed"/>
+
+
+                            <controls:CalculatorButton x:Name="andButton"
+                                                       x:Uid="andButton"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       FontSize="12"
+                                                       AutomationProperties.AutomationId="andButton"
+                                                       ButtonId="And"
+                                                       Click="flyoutButton_Clicked"
+                                                       Command="{x:Bind Model.ButtonPressed}"
+                                                       Content="AND"
+                                                       IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
+
+                            <controls:CalculatorButton x:Name="orButton"
+                                                       x:Uid="orButton"
+                                                       Grid.Column="1"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       FontSize="12"
+                                                       AutomationProperties.AutomationId="orButton"
+                                                       ButtonId="Or"
+                                                       Click="flyoutButton_Clicked"
+                                                       Command="{x:Bind Model.ButtonPressed}"
+                                                       Content="OR"
+                                                       IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
 
                             <controls:CalculatorButton x:Name="notButton"
                                                        x:Uid="notButton"
-                                                       Grid.Column="1"
+                                                       Grid.Column="2"
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        FontSize="12"
                                                        AutomationProperties.AutomationId="notButton"
                                                        ButtonId="Not"
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
-                                                       Content="Not"
+                                                       Content="NOT"
                                                        IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
 
 
-                            <Grid x:Name="BitwiseFunctions"
+
+                            <controls:CalculatorButton x:Name="xorButton"
+                                                       x:Uid="xorButton"
+                                                       Grid.Row="1"
+                                                       Grid.Column="2"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       FontSize="12"
+                                                       AutomationProperties.AutomationId="xorButton"
+                                                       ButtonId="Xor"
+                                                       Click="flyoutButton_Clicked"
+                                                       Command="{x:Bind Model.ButtonPressed}"
+                                                       Content="XOR"
+                                                       IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
+
+
+                            <controls:CalculatorButton x:Name="nandButton"
+                                                       x:Uid="nandButton"
+                                                       Grid.Row="1"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       FontSize="12"
+                                                       AutomationProperties.AutomationId="nandButton"
+                                                       ButtonId="Nand"
+                                                       Click="flyoutButton_Clicked"
+                                                       Command="{x:Bind Model.ButtonPressed}"
+                                                       Content="NAND"
+                                                       IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
+
+                            <controls:CalculatorButton x:Name="norButton"
+                                                       x:Uid="norButton"
+                                                       Grid.Row="1"
+                                                       Grid.Column="1"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       FontSize="12"
+                                                       AutomationProperties.AutomationId="norButton"
+                                                       ButtonId="Nor"
+                                                       Click="flyoutButton_Clicked"
+                                                       Command="{x:Bind Model.ButtonPressed}"
+                                                       Content="NOR"
+                                                       IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
+
+                            <controls:CalculatorButton x:Name="xnorButton"
+                                                       x:Uid="xnorButton"
+                                                       Grid.Row="1"
+                                                       Grid.Column="2"
+                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       FontSize="12"
+                                                       AutomationProperties.AutomationId="xnorButton"
+                                                       ButtonId="XNor"
+                                                       Click="flyoutButton_Clicked"
+                                                       Command="{x:Bind Model.ButtonPressed}"
+                                                       Content="XNOR"
+                                                       IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"
+                                                       Visibility="Collapsed"/>
+
+
+                            <!--<Grid x:Name="BitwiseFunctions"
                                   Grid.RowSpan="2"
                                   Grid.Column="0"
                                   Grid.ColumnSpan="3">
@@ -293,44 +373,6 @@
                                     <ColumnDefinition Width="1*"/>
                                     <ColumnDefinition Width="1*"/>
                                 </Grid.ColumnDefinitions>
-
-                                <controls:CalculatorButton x:Name="andButton"
-                                                           x:Uid="andButton"
-                                                           Grid.Row="1"
-                                                           Style="{StaticResource OperatorButtonStyle}"
-                                                           FontSize="12"
-                                                           AutomationProperties.AutomationId="andButton"
-                                                           ButtonId="And"
-                                                           Click="flyoutButton_Clicked"
-                                                           Command="{x:Bind Model.ButtonPressed}"
-                                                           Content="And"
-                                                           IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
-
-                                <controls:CalculatorButton x:Name="orButton"
-                                                           x:Uid="orButton"
-                                                           Grid.Row="1"
-                                                           Grid.Column="1"
-                                                           Style="{StaticResource OperatorButtonStyle}"
-                                                           FontSize="12"
-                                                           AutomationProperties.AutomationId="orButton"
-                                                           ButtonId="Or"
-                                                           Click="flyoutButton_Clicked"
-                                                           Command="{x:Bind Model.ButtonPressed}"
-                                                           Content="Or"
-                                                           IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
-
-                                <controls:CalculatorButton x:Name="xorButton"
-                                                           x:Uid="xorButton"
-                                                           Grid.Row="1"
-                                                           Grid.Column="2"
-                                                           Style="{StaticResource OperatorButtonStyle}"
-                                                           FontSize="12"
-                                                           AutomationProperties.AutomationId="xorButton"
-                                                           ButtonId="Xor"
-                                                           Click="flyoutButton_Clicked"
-                                                           Command="{x:Bind Model.ButtonPressed}"
-                                                           Content="Xor"
-                                                           IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
 
                             </Grid>
                             <Grid x:Name="InverseBitwiseFunctions"
@@ -348,45 +390,7 @@
                                     <ColumnDefinition Width="1*"/>
                                     <ColumnDefinition Width="1*"/>
                                 </Grid.ColumnDefinitions>
-
-                                <controls:CalculatorButton x:Name="nandButton"
-                                                           x:Uid="nandButton"
-                                                           Grid.Row="1"
-                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
-                                                           FontSize="12"
-                                                           AutomationProperties.AutomationId="nandButton"
-                                                           ButtonId="Nand"
-                                                           Click="flyoutButton_Clicked"
-                                                           Command="{x:Bind Model.ButtonPressed}"
-                                                           Content="Nand"
-                                                           IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
-
-                                <controls:CalculatorButton x:Name="norButton"
-                                                           x:Uid="norButton"
-                                                           Grid.Row="1"
-                                                           Grid.Column="1"
-                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
-                                                           FontSize="12"
-                                                           AutomationProperties.AutomationId="norButton"
-                                                           ButtonId="Nor"
-                                                           Click="flyoutButton_Clicked"
-                                                           Command="{x:Bind Model.ButtonPressed}"
-                                                           Content="Nor"
-                                                           IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
-
-                                <controls:CalculatorButton x:Name="xnorButton"
-                                                           x:Uid="xnorButton"
-                                                           Grid.Row="1"
-                                                           Grid.Column="2"
-                                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
-                                                           FontSize="12"
-                                                           AutomationProperties.AutomationId="xnorButton"
-                                                           ButtonId="XNor"
-                                                           Click="flyoutButton_Clicked"
-                                                           Command="{x:Bind Model.ButtonPressed}"
-                                                           Content="Xnor"
-                                                           IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
-                            </Grid>
+                            </Grid>-->
 
                         </Grid>
                     </Flyout>

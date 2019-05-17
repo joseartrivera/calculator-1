@@ -48,13 +48,13 @@ void CalculatorProgrammerRadixOperators::bitwiseFlyout_Toggle(Platform::Object^ 
     bool isShiftChecked = static_cast<ToggleButton^>(sender)->IsChecked->Value;
     if (isShiftChecked)
     {
-        BitwiseFunctions->Visibility = ::Visibility::Collapsed;
-        InverseBitwiseFunctions->Visibility = ::Visibility::Visible;
+        //BitwiseFunctions->Visibility = ::Visibility::Collapsed;
+        //InverseBitwiseFunctions->Visibility = ::Visibility::Visible;
     }
     else
     {
-        BitwiseFunctions->Visibility = ::Visibility::Visible;
-        InverseBitwiseFunctions->Visibility = ::Visibility::Collapsed;
+        //BitwiseFunctions->Visibility = ::Visibility::Visible;
+       // InverseBitwiseFunctions->Visibility = ::Visibility::Collapsed;
     }
 }
 

@@ -198,7 +198,7 @@
     <comment>{Locked}The string that represents the function</comment>
   </data>
   <data name="21" xml:space="preserve">
-    <value>Not</value>
+    <value>NOT</value>
     <comment>{Locked}The string that represents the function</comment>
   </data>
   <data name="22" xml:space="preserve">
@@ -274,7 +274,7 @@
     <comment>{Locked}The string that represents the function</comment>
   </data>
   <data name="6" xml:space="preserve">
-    <value>And</value>
+    <value>AND</value>
     <comment>{Locked}The string that represents the function</comment>
   </data>
   <data name="66" xml:space="preserve">
@@ -338,7 +338,7 @@
     <comment>{Locked}The string that represents the function</comment>
   </data>
   <data name="8" xml:space="preserve">
-    <value>Xor</value>
+    <value>XOR</value>
     <comment>{Locked}The string that represents the function</comment>
   </data>
   <data name="80" xml:space="preserve">
@@ -518,7 +518,7 @@
     <comment>{Locked}The string that represents the function</comment>
   </data>
   <data name="LogBaseX" xml:space="preserve">
-    <value>logx</value>
+    <value>base log</value>
     <comment>{Locked}The string that represents the function</comment>
   </data>
   <data name="Abs" xml:space="preserve">
@@ -534,15 +534,15 @@
     <comment>{Locked}The string that represents the function</comment>
   </data>
   <data name="Nand" xml:space="preserve">
-    <value>Nand</value>
+    <value>NAND</value>
     <comment>{Locked}The string that represents the function</comment>
   </data>
   <data name="Nor" xml:space="preserve">
-    <value>Nor</value>
+    <value>NOR</value>
     <comment>{Locked}The string that represents the function</comment>
   </data>
   <data name="Xnor" xml:space="preserve">
-    <value>Xnor</value>
+    <value>XNOR</value>
     <comment>{Locked}The string that represents the function</comment>
   </data>
   <data name="CubeRoot" xml:space="preserve">

@@ -3339,6 +3339,114 @@
     <value>inverse hyperbolic tangent</value>
     <comment>Name for the inverse hyperbolic tangent function. Used by screen readers.</comment>
   </data>
+  <data name="SecantDegrees" xml:space="preserve">
+    <value>secant degrees</value>
+    <comment>Name for the secant function in degrees mode. Used by screen readers.</comment>
+  </data>
+  <data name="SecantRadians" xml:space="preserve">
+    <value>secant radians</value>
+    <comment>Name for the secant function in radians mode. Used by screen readers.</comment>
+  </data>
+  <data name="SecantGradians" xml:space="preserve">
+    <value>secant gradians</value>
+    <comment>Name for the secant function in gradians mode. Used by screen readers.</comment>
+  </data>
+  <data name="InverseSecantDegrees" xml:space="preserve">
+    <value>inverse secant degrees</value>
+    <comment>Name for the inverse secant function in degrees mode. Used by screen readers.</comment>
+  </data>
+  <data name="InverseSecantRadians" xml:space="preserve">
+    <value>inverse secant radians</value>
+    <comment>Name for the inverse secant function in radians mode. Used by screen readers.</comment>
+  </data>
+  <data name="InverseSecantGradians" xml:space="preserve">
+    <value>inverse secant gradians</value>
+    <comment>Name for the inverse secant function in gradians mode. Used by screen readers.</comment>
+  </data>
+  <data name="HyperbolicSecant" xml:space="preserve">
+    <value>hyperbolic secant</value>
+    <comment>Name for the hyperbolic secant function. Used by screen readers.</comment>
+  </data>
+  <data name="InverseHyperbolicSecant" xml:space="preserve">
+    <value>inverse hyperbolic secant</value>
+    <comment>Name for the inverse hyperbolic secant function. Used by screen readers.</comment>
+  </data>
+  <data name="CosecantDegrees" xml:space="preserve">
+    <value>cosecant degrees</value>
+    <comment>Name for the cosecant function in degrees mode. Used by screen readers.</comment>
+  </data>
+  <data name="CosecantRadians" xml:space="preserve">
+    <value>cosecant radians</value>
+    <comment>Name for the cosecant function in radians mode. Used by screen readers.</comment>
+  </data>
+  <data name="CosecantGradians" xml:space="preserve">
+    <value>cosecant gradians</value>
+    <comment>Name for the cosecant function in gradians mode. Used by screen readers.</comment>
+  </data>
+  <data name="InverseCosecantDegrees" xml:space="preserve">
+    <value>inverse cosecant degrees</value>
+    <comment>Name for the inverse cosecant function in degrees mode. Used by screen readers.</comment>
+  </data>
+  <data name="InverseCosecantRadians" xml:space="preserve">
+    <value>inverse cosecant radians</value>
+    <comment>Name for the inverse cosecant function in radians mode. Used by screen readers.</comment>
+  </data>
+  <data name="InverseCosecantGradians" xml:space="preserve">
+    <value>inverse cosecant gradians</value>
+    <comment>Name for the inverse cosecant function in gradians mode. Used by screen readers.</comment>
+  </data>
+  <data name="HyperbolicCosecant" xml:space="preserve">
+    <value>hyperbolic cosecant</value>
+    <comment>Name for the hyperbolic cosecant function. Used by screen readers.</comment>
+  </data>
+  <data name="InverseHyperbolicCosecant" xml:space="preserve">
+    <value>inverse hyperbolic cosecant</value>
+    <comment>Name for the inverse hyperbolic cosecant function. Used by screen readers.</comment>
+  </data>
+  <data name="CotangentDegrees" xml:space="preserve">
+    <value>cotangent degrees</value>
+    <comment>Name for the cotangent function in degrees mode. Used by screen readers.</comment>
+  </data>
+  <data name="CotangentRadians" xml:space="preserve">
+    <value>Cotangent radians</value>
+    <comment>Name for the cotangent function in radians mode. Used by screen readers.</comment>
+  </data>
+  <data name="CotangentGradians" xml:space="preserve">
+    <value>cotangent gradians</value>
+    <comment>Name for the cotangent function in gradians mode. Used by screen readers.</comment>
+  </data>
+  <data name="InverseCotangentDegrees" xml:space="preserve">
+    <value>inverse cotangent degrees</value>
+    <comment>Name for the inverse cotangent function in degrees mode. Used by screen readers.</comment>
+  </data>
+  <data name="InverseCotangentRadians" xml:space="preserve">
+    <value>inverse cotangent radians</value>
+    <comment>Name for the inverse cotangent function in radians mode. Used by screen readers.</comment>
+  </data>
+  <data name="InverseCotangentGradians" xml:space="preserve">
+    <value>inverse cotangent gradians</value>
+    <comment>Name for the inverse cotangent function in gradians mode. Used by screen readers.</comment>
+  </data>
+  <data name="HyperbolicCotangent" xml:space="preserve">
+    <value>hyperbolic cotangent</value>
+    <comment>Name for the hyperbolic cotangent function. Used by screen readers.</comment>
+  </data>
+  <data name="InverseHyperbolicCotangent" xml:space="preserve">
+    <value>inverse hyperbolic cotangent</value>
+    <comment>Name for the inverse hyperbolic cotangent function. Used by screen readers.</comment>
+  </data>
+  <data name="CubeRoot" xml:space="preserve">
+    <value>Cube Root</value>
+    <comment>Name for the cube root function. Used by screen readers.</comment>
+  </data>
+  <data name="Logx" xml:space="preserve">
+    <value>Base Log</value>
+    <comment>Name for the logbasex function. Used by screen readers.</comment>
+  </data>
+  <data name="AbsoluteValue" xml:space="preserve">
+    <value>Absolute Value</value>
+    <comment>Name for the absolute value function. Used by screen readers.</comment>
+  </data>
   <data name="LeftShift" xml:space="preserve">
     <value>left shift</value>
     <comment>Name for the programmer function that shifts bits to the left. Used by screen readers.</comment>
