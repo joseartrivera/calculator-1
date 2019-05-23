@@ -391,6 +391,16 @@
                 <Setter Property="Background" Value="{ThemeResource AppControlHighlightCalcButtonBrush}"/>
             </Style>
 
+            <Style x:Key="EmphasizedCalcButtonStyle"
+                   BasedOn="{StaticResource SymbolOperatorButtonStyle}"
+                   TargetType="Controls:CalculatorButton">
+                <Setter Property="HoverBackground" Value="{ThemeResource AppControlHighlightCalcButtonHoverBrush}"/>
+                <Setter Property="HoverForeground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                <Setter Property="PressBackground" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
+                <Setter Property="PressForeground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                <Setter Property="Background" Value="#99FFFFFF"/>
+            </Style>
+
             <Style x:Key="AccentEmphasizedOperatorCalcButtonStyle"
                    BasedOn="{StaticResource OperatorButtonStyle}"
                    TargetType="Controls:CalculatorButton">
@@ -821,7 +831,7 @@
             <Style x:Key="CaptionToggleEmphasizedButtonStyle"
                    BasedOn="{StaticResource CaptionToggleButtonStyle}"
                    TargetType="ToggleButton">
-                <Setter Property="Background" Value="{ThemeResource AppControlHighlightCalcButtonBrush}"/>
+                <Setter Property="Background" Value="{ThemeResource AppBackgroundAltMediumLowBrush}"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="ToggleButton">
@@ -833,14 +843,14 @@
                                             <VisualState.Setters>
                                                 <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
                                                 <Setter Target="RootGrid.(RevealBrush.State)" Value="PointerOver"/>
-                                                <Setter Target="RootGrid.Background" Value="{ThemeResource AppControlHighlightCalcButtonHoverBrush}"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource AppControlHoverButtonFaceBrush}"/>
                                             </VisualState.Setters>
                                         </VisualState>
                                         <VisualState x:Name="Pressed">
                                             <VisualState.Setters>
                                                 <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
                                                 <Setter Target="RootGrid.(RevealBrush.State)" Value="Pressed"/>
-                                                <Setter Target="RootGrid.Background" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource AppControlPressedButtonFaceBrush}"/>
                                             </VisualState.Setters>
                                         </VisualState>
                                         <VisualState x:Name="Disabled">
@@ -852,7 +862,7 @@
                                         <VisualState x:Name="Checked">
                                             <VisualState.Setters>
                                                 <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
-                                                <Setter Target="RootGrid.Background" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource AppControlHighlightCalcButtonBrush}"/>
                                             </VisualState.Setters>
                                         </VisualState>
                                         <VisualState x:Name="CheckedPointerOver">
