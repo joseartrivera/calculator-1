@@ -23,7 +23,7 @@
     <Grid x:Name="ScientificOperators">
         <Grid.RowDefinitions>
             <RowDefinition x:Name="overflowRow"
-                           Height="0.8*"
+                           Height="Auto"
                            MinHeight="34"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -134,8 +134,6 @@
                         <Setter Target="ySquareRootButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="powerOfEButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="logBaseEButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="xpower2Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="xpower3Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="squareRootButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
@@ -173,12 +171,14 @@
                         <Setter Target="invcschButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="invcothButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="absFlyoutButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="floorButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="ceilButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="absFlyoutButton.FontSize" Value="38"/>
+                        <Setter Target="floorButton.FontSize" Value="38"/>
+                        <Setter Target="ceilButton.FontSize" Value="38"/>
                         <Setter Target="randButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="dmsButton.FontSize" Value="38"/>
+                        <Setter Target="degreesButton.FontSize" Value="38"/>
+
+                        <Setter Target="overflowRow.MinHeight" Value="64"/>
 
                         <Setter Target="trigButton.MinHeight" Value="32"/>
                         <Setter Target="funcButton.MinHeight" Value="32"/>
@@ -226,8 +226,6 @@
                         <Setter Target="ySquareRootButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="powerOfEButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="logBaseEButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="xpower2Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="xpower3Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="squareRootButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
@@ -265,12 +263,14 @@
                         <Setter Target="invcschButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="invcothButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
 
-                        <Setter Target="absFlyoutButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="floorButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="ceilButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="absFlyoutButton.FontSize" Value="22"/>
+                        <Setter Target="floorButton.FontSize" Value="22"/>
+                        <Setter Target="ceilButton.FontSize" Value="22"/>
                         <Setter Target="randButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="dmsButton.FontSize" Value="22"/>
+                        <Setter Target="degreesButton.FontSize" Value="22"/>
+
+                        <Setter Target="overflowRow.MinHeight" Value="48"/>
 
                         <Setter Target="trigButton.MinHeight" Value="32"/>
                         <Setter Target="funcButton.MinHeight" Value="32"/>
@@ -313,8 +313,6 @@
                         <Setter Target="ySquareRootButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="powerOfEButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="logBaseEButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="xpower2Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="xpower3Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="squareRootButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
@@ -332,7 +330,7 @@
 
                         <Setter Target="eulerButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="absButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="logBaseX.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="logBaseX.FontSize" Value="16"/>
                         <Setter Target="twoPowerXButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="cubeRootButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
 
@@ -352,12 +350,14 @@
                         <Setter Target="invcschButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="invcothButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
 
-                        <Setter Target="absFlyoutButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="floorButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="ceilButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="absFlyoutButton.FontSize" Value="16"/>
+                        <Setter Target="floorButton.FontSize" Value="16"/>
+                        <Setter Target="ceilButton.FontSize" Value="16"/>
                         <Setter Target="randButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="dmsButton.FontSize" Value="16"/>
+                        <Setter Target="degreesButton.FontSize" Value="16"/>
+
+                        <Setter Target="overflowRow.MinHeight" Value="34"/>
 
                         <Setter Target="trigButton.MinHeight" Value="32"/>
                         <Setter Target="funcButton.MinHeight" Value="32"/>
@@ -378,7 +378,7 @@
             <controls:OverflowButton x:Name="trigButton"
                                      x:Uid="trigButton"
                                      Style="{StaticResource OverflowButtonStyle}"
-                                     Glyph="&#xF1AA;">
+                                     Glyph="&#xF892;">
                 <Button.Flyout>
                     <Flyout x:Name="Trigflyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
@@ -402,9 +402,10 @@
                             <ToggleButton x:Name="trigShiftButton"
                                           x:Uid="trigShiftButton"
                                           Style="{StaticResource CaptionToggleEmphasizedButtonStyle}"
+                                          FontFamily="{StaticResource CalculatorFontFamily}"
                                           AutomationProperties.AutomationId="shiftButton"
                                           Checked="trigFlyoutShift_Toggle"
-                                          Content="2nd"
+                                          Content="&#xF897;"
                                           IsEnabled="{x:Bind trigButton.IsEnabled, Mode=OneWay}"
                                           Unchecked="trigFlyoutShift_Toggle"/>
 
@@ -414,7 +415,7 @@
                                           Style="{StaticResource CaptionToggleEmphasizedButtonStyle}"
                                           AutomationProperties.AutomationId="shiftButton"
                                           Checked="trigFlyoutHyp_Toggle"
-                                          Content="Hyp"
+                                          Content="hyp"
                                           IsEnabled="{x:Bind trigButton.IsEnabled, Mode=OneWay}"
                                           IsEnabledChanged="shiftButton_IsEnabledChanged"
                                           Unchecked="trigFlyoutHyp_Toggle"/>
@@ -737,7 +738,7 @@
             <controls:OverflowButton x:Name="funcButton"
                                      x:Uid="funcButton"
                                      Style="{StaticResource OverflowButtonStyle}"
-                                     Glyph="&#xF1AA;">
+                                     Glyph="&#xF893;">
                 <Button.Flyout>
                     <Flyout x:Name="FuncFlyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
@@ -758,32 +759,32 @@
                             </Grid.ColumnDefinitions>
                             <controls:CalculatorButton x:Name="absFlyoutButton"
                                                        x:Uid="absButton"
-                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="absButton"
                                                        ButtonId="Abs"
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
-                                                       Content="abs"
+                                                       Content="&#xF884;"
                                                        IsEnabled="{x:Bind funcButton.IsEnabled, Mode=OneWay}"/>
                             <controls:CalculatorButton x:Name="floorButton"
                                                        x:Uid="floorButton"
                                                        Grid.Column="1"
-                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="floorButton"
                                                        ButtonId="Floor"
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
-                                                       Content="floor"
+                                                       Content="&#xF885;"
                                                        IsEnabled="{x:Bind funcButton.IsEnabled, Mode=OneWay}"/>
                             <controls:CalculatorButton x:Name="ceilButton"
                                                        x:Uid="ceilButton"
                                                        Grid.Column="2"
-                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="ceilButton"
                                                        ButtonId="Ceil"
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
-                                                       Content="ceil"
+                                                       Content="&#xF886;"
                                                        IsEnabled="{x:Bind funcButton.IsEnabled, Mode=OneWay}"/>
                             <controls:CalculatorButton x:Name="randButton"
                                                        x:Uid="randButton"
@@ -799,23 +800,23 @@
                                                        x:Uid="dmsButton"
                                                        Grid.Row="1"
                                                        Grid.Column="1"
-                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="dmsButton"
                                                        ButtonId="DMS"
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
-                                                       Content="dms"
+                                                       Content="&#xF890;"
                                                        IsEnabled="{x:Bind funcButton.IsEnabled, Mode=OneWay}"/>
                             <controls:CalculatorButton x:Name="degreesButton"
                                                        x:Uid="degreesButton"
                                                        Grid.Row="1"
                                                        Grid.Column="2"
-                                                       Style="{StaticResource OperatorButtonStyle}"
+                                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="degreesButton"
                                                        ButtonId="Degrees"
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
-                                                       Content="deg"
+                                                       Content="&#xF891;"
                                                        IsEnabled="{x:Bind funcButton.IsEnabled, Mode=OneWay}"/>
                         </Grid>
                     </Flyout>
@@ -827,10 +828,11 @@
                       x:Uid="shiftButton"
                       Grid.Row="1"
                       Style="{StaticResource CaptionToggleEmphasizedButtonStyle}"
+                      FontFamily="{StaticResource CalculatorFontFamily}"
                       FontSize="20"
                       AutomationProperties.AutomationId="shiftButton"
                       Checked="shiftButton_Check"
-                      Content="2nd"
+                      Content="&#xF897;"
                       IsEnabledChanged="shiftButton_IsEnabledChanged"
                       Unchecked="shiftButton_Check"/>
 
@@ -967,7 +969,7 @@
                                            AutomationProperties.AutomationId="squareRootButton"
                                            ButtonId="Sqrt"
                                            Click="shiftButton_Uncheck"
-                                           Content="&#xE94B;"/>
+                                           Content="&#xF899;"/>
                 <controls:CalculatorButton x:Name="cubeRootButton"
                                            x:Uid="cubeRootButton"
                                            Grid.Row="1"
@@ -975,7 +977,7 @@
                                            AutomationProperties.AutomationId="cubeRootButton"
                                            ButtonId="CubeRoot"
                                            Click="shiftButton_Uncheck"
-                                           Content="&#xE94B;&#xE94B;&#xE94B;"/>
+                                           Content="&#xF881;"/>
                 <controls:CalculatorButton x:Name="ySquareRootButton"
                                            x:Uid="ySquareRootButton"
                                            Grid.Row="2"
@@ -991,16 +993,16 @@
                                            AutomationProperties.AutomationId="twoPowerXButton"
                                            ButtonId="TwoPowerX"
                                            Click="shiftButton_Uncheck"
-                                           Content="&#xF7CC;&#xF7CC;"/>
+                                           Content="&#xF882;"/>
                 <controls:CalculatorButton x:Name="logBaseX"
                                            x:Uid="logBaseX"
                                            Grid.Row="4"
-                                           Style="{StaticResource AccentEmphasizedOperatorCalcButtonStyle}"
+                                           Style="{StaticResource EmphasizedCalcButtonStyle}"
                                            Background="#99FFFFFF"
                                            AutomationProperties.AutomationId="logBaseX"
                                            ButtonId="LogBaseX"
                                            Click="shiftButton_Uncheck"
-                                           Content="logₓ"/>
+                                           Content="&#xF883;"/>
                 <controls:CalculatorButton x:Name="powerOfEButton"
                                            x:Uid="powerOfEButton"
                                            Grid.Row="5"
@@ -1032,10 +1034,10 @@
             <controls:CalculatorButton x:Name="absButton"
                                        x:Uid="absButton"
                                        Grid.Column="1"
-                                       Style="{StaticResource OperatorButtonStyle}"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="absButton"
                                        ButtonId="Abs"
-                                       Content="|X|"/>
+                                       Content="&#xF884;"/>
             <controls:CalculatorButton x:Name="expButton"
                                        x:Uid="expButton"
                                        Grid.Column="2"
@@ -1076,11 +1078,11 @@
                                    x:Uid="factorialButton"
                                    Grid.Row="3"
                                    Grid.Column="3"
-                                   Style="{StaticResource OperatorButtonStyle}"
+                                   Style="{StaticResource SymbolOperatorButtonStyle}"
                                    FontSize="18"
                                    AutomationProperties.AutomationId="factorialButton"
                                    ButtonId="Factorial"
-                                   Content="x!"/>
+                                   Content="&#xF887;"/>
 
         <Grid x:Name="StandardOperators"
               x:Uid="StandardOperators"
@@ -1138,9 +1140,10 @@
                                    Grid.Column="1"
                                    Style="{StaticResource SymbolOperatorKeypadButtonStyle}"
                                    FontSize="16"
+                                   FontWeight="Normal"
                                    AutomationProperties.AutomationId="negateButton"
                                    ButtonId="Negate"
-                                   Content="&#xE94D;"
+                                   Content="&#xF898;"
                                    IsEnabled="{x:Bind Model.IsNegateEnabled, Mode=OneWay}"/>
 
         <local:NumberPad x:Name="NumberPad"

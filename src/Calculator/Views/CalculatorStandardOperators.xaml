@@ -209,7 +209,7 @@
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="squareRootButton"
                                        ButtonId="Sqrt"
-                                       Content="&#xE94B;"/>
+                                       Content="&#xF899;"/>
         </Grid>
 
         <Grid x:Name="StandardOperators"
@@ -276,8 +276,9 @@
                                    Grid.Row="5"
                                    Grid.Column="2"
                                    Style="{StaticResource SymbolOperatorKeypadButtonStyle}"
+                                   FontWeight="Normal"
                                    AutomationProperties.AutomationId="negateButton"
                                    ButtonId="Negate"
-                                   Content="&#xE94D;"/>
+                                   Content="&#xF898;"/>
     </Grid>
 </UserControl>

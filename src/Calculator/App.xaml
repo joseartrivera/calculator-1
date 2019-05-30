@@ -522,7 +522,7 @@
                    BasedOn="{StaticResource CaptionButtonStyle}"
                    TargetType="Controls:OverflowButton">
                 <Setter Property="FontSize" Value="{StaticResource CaptionFontSize}"/>
-                <Setter Property="Padding" Value="8"/>
+                <Setter Property="Padding" Value="8,0,8,0"/>
                 <Setter Property="MinWidth" Value="0"/>
                 <Setter Property="HorizontalAlignment" Value="Left"/>
                 <Setter Property="VerticalAlignment" Value="Stretch"/>
@@ -574,7 +574,7 @@
                                     <StackPanel Orientation="Horizontal">
                                         <FontIcon Margin="0,0,6,0"
                                                   FontFamily="{StaticResource CalculatorFontFamily}"
-                                                  FontSize="{TemplateBinding FontSize}"
+                                                  FontSize="14"
                                                   Glyph="{TemplateBinding Glyph}"/>
                                         <TextBlock x:Name="trigTextBlock"
                                                    VerticalAlignment="Center"
@@ -909,6 +909,7 @@
                                                   Foreground="{TemplateBinding Foreground}"
                                                   BorderBrush="{ThemeResource AppControlForegroundTransparentRevealBorderBrush}"
                                                   BorderThickness="{TemplateBinding BorderThickness}"
+                                                  FontFamily="{TemplateBinding FontFamily}"
                                                   FontSize="{TemplateBinding FontSize}"
                                                   AutomationProperties.AccessibilityView="Raw"
                                                   Content="{TemplateBinding Content}"

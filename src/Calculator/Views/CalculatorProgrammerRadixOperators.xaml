@@ -237,7 +237,7 @@
             <controls:OverflowButton x:Name="bitwiseButton"
                                      x:Uid="bitwiseButton"
                                      Style="{StaticResource OverflowButtonStyle}"
-                                     Glyph="&#xF1AA;">
+                                     Glyph="&#xF895;">
                 <Button.Flyout>
                     <Flyout x:Name="bitwiseFlyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
@@ -260,9 +260,10 @@
                             <ToggleButton x:Name="bitwiseShiftButton"
                                           x:Uid="bitwiseShiftButton"
                                           Style="{StaticResource CaptionToggleEmphasizedButtonStyle}"
+                                          FontFamily="{StaticResource CalculatorFontFamily}"
                                           AutomationProperties.AutomationId="shiftButton"
                                           Checked="bitwiseFlyout_Toggle"
-                                          Content="2nd"
+                                          Content="&#xF897;"
                                           IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"
                                           Unchecked="bitwiseFlyout_Toggle"
                                           Visibility="Collapsed"/>
@@ -442,78 +443,78 @@
             <controls:CalculatorButton x:Name="rolButton"
                                        x:Uid="rolButton"
                                        Grid.Column="0"
-                                       Style="{StaticResource OperatorButtonStyle}"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                        FontSize="12"
                                        x:DeferLoadStrategy="Lazy"
                                        AutomationProperties.AutomationId="rolButton"
                                        ButtonId="Rol"
-                                       Content="RoL"
+                                       Content="&#xF88E;"
                                        Visibility="Collapsed"/>
             <controls:CalculatorButton x:Name="rorButton"
                                        x:Uid="rorButton"
                                        Grid.Column="1"
-                                       Style="{StaticResource OperatorButtonStyle}"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                        FontSize="12"
                                        x:DeferLoadStrategy="Lazy"
                                        AutomationProperties.AutomationId="rorButton"
                                        ButtonId="Ror"
-                                       Content="RoR"
+                                       Content="&#xF88F;"
                                        Visibility="Collapsed"/>
 
             <controls:CalculatorButton x:Name="rolCarryButton"
                                        x:Uid="rolCarryButton"
-                                       Style="{StaticResource OperatorButtonStyle}"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                        FontSize="12"
                                        x:DeferLoadStrategy="Lazy"
                                        AutomationProperties.AutomationId="rolButton"
                                        ButtonId="RolC"
-                                       Content="RoLc"
+                                       Content="&#xF88E;"
                                        Visibility="Collapsed"/>
             <controls:CalculatorButton x:Name="rorCarryButton"
                                        x:Uid="rorCarryButton"
                                        Grid.Column="1"
-                                       Style="{StaticResource OperatorButtonStyle}"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                        FontSize="12"
                                        x:DeferLoadStrategy="Lazy"
                                        AutomationProperties.AutomationId="rorCarryButton"
                                        ButtonId="RorC"
-                                       Content="RoRc"
+                                       Content="&#xF88F;"
                                        Visibility="Collapsed"/>
 
             <controls:CalculatorButton x:Name="lshButton"
                                        x:Uid="lshButton"
-                                       Style="{StaticResource OperatorButtonStyle}"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                        FontSize="12"
                                        AutomationProperties.AutomationId="lshButton"
                                        ButtonId="Lsh"
-                                       Content="Lsh"/>
+                                       Content="&#xF88E;"/>
             <controls:CalculatorButton x:Name="rshButton"
                                        x:Uid="rshButton"
                                        Grid.Column="1"
-                                       Style="{StaticResource OperatorButtonStyle}"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                        FontSize="12"
                                        AutomationProperties.AutomationId="rshButton"
                                        ButtonId="Rsh"
-                                       Content="Rsh"/>
+                                       Content="&#xF88F;"/>
 
             <controls:CalculatorButton x:Name="lshLogicalButton"
                                        x:Uid="lshLogicalButton"
-                                       Style="{StaticResource OperatorButtonStyle}"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                        FontSize="12"
                                        x:DeferLoadStrategy="Lazy"
                                        AutomationProperties.AutomationId="lshLogicalButton"
                                        ButtonId="LshL"
-                                       Content="LshL"
+                                       Content="&#xF88E;"
                                        Visibility="Collapsed"/>
             <controls:CalculatorButton x:Name="rshLogicalButton"
                                        x:Uid="rshLogicalButton"
                                        Grid.Column="1"
-                                       Style="{StaticResource OperatorButtonStyle}"
+                                       Style="{StaticResource SymbolOperatorButtonStyle}"
                                        FontSize="12"
                                        x:DeferLoadStrategy="Lazy"
                                        AutomationProperties.AutomationId="rshLogicalButton"
                                        ButtonId="RshL"
-                                       Content="Rshl"
+                                       Content="&#xF88F;"
                                        Visibility="Collapsed"/>
         </Grid>
 
@@ -728,8 +729,9 @@
                                    Grid.Column="2"
                                    Style="{StaticResource SymbolOperatorKeypadButtonStyle}"
                                    FontSize="12"
+                                   FontWeight="Normal"
                                    AutomationProperties.AutomationId="negateButton"
                                    ButtonId="Negate"
-                                   Content="&#xE94D;"/>
+                                   Content="&#xF898;"/>
     </Grid>
 </UserControl>
