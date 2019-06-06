@@ -24,6 +24,7 @@
                     <SolidColorBrush x:Key="SystemControlBackgroundTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="SystemControlHighlightTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="AppBackgroundAltMediumLowBrush" Color="{ThemeResource SystemAltMediumLowColor}"/>
+                    <SolidColorBrush x:Key="AppBackgroundAltMediumHighBrush" Color="#CCFFFFFF"/>
                     <SolidColorBrush x:Key="AppOverflowOperatorBackground"
                                      Opacity="0.4"
                                      Color="{ThemeResource SystemAltMediumLowColor}"/>
@@ -75,7 +76,8 @@
                     <SolidColorBrush x:Key="TitleBarForegroundBaseHighBrush" Color="{StaticResource SystemBaseHighColor}"/>
                     <SolidColorBrush x:Key="SystemControlBackgroundTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="SystemControlHighlightTransparentBrush" Color="Transparent"/>
-                    <SolidColorBrush x:Key="AppBackgroundAltMediumLowBrush" Color="{ThemeResource SystemAltMediumLowColor}"/>
+                    <SolidColorBrush x:Key="AppBackgroundAltMediumLowBrush" Color="#66FFFFFF"/>
+                    <SolidColorBrush x:Key="AppBackgroundAltMediumHighBrush" Color="#E6FFFFFF"/>
                     <SolidColorBrush x:Key="AppOverflowOperatorBackground"
                                      Opacity="0.4"
                                      Color="{ThemeResource SystemAltMediumLowColor}"/>
@@ -123,6 +125,7 @@
                     <SolidColorBrush x:Key="TitleBarBackgroundTransparentBrush" Color="{ThemeResource SystemColorActiveCaptionColor}"/>
                     <SolidColorBrush x:Key="TitleBarForegroundBaseHighBrush" Color="{ThemeResource SystemColorCaptionTextColor}"/>
                     <SolidColorBrush x:Key="SystemControlBackgroundTransparentBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
+                    <SolidColorBrush x:Key="AppBackgroundAltMediumHighBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
                     <SolidColorBrush x:Key="SystemControlHighlightTransparentBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
                     <SolidColorBrush x:Key="AppBackgroundAltMediumLowBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
                     <SolidColorBrush x:Key="AppOverflowOperatorBackground" Color="{ThemeResource SystemColorButtonFaceColor}"/>
@@ -194,7 +197,7 @@
                 <Setter Property="Padding" Value="0"/>
                 <Setter Property="MinHeight" Value="12"/>
                 <Setter Property="Margin" Value="1"/>
-                <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundAltMediumHighBrush}"/>
+                <Setter Property="Background" Value="{ThemeResource AppBackgroundAltMediumHighBrush}"/>
                 <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
                 <Setter Property="HoverBackground" Value="{ThemeResource AppControlHoverButtonFaceBrush}"/>
                 <Setter Property="HoverForeground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
@@ -416,7 +419,7 @@
                 <Setter Property="HoverForeground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
                 <Setter Property="PressBackground" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
                 <Setter Property="PressForeground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
-                <Setter Property="Background" Value="#99FFFFFF"/>
+                <Setter Property="Background" Value="#BFFFFFFF"/>
             </Style>
 
             <Style x:Key="AccentEmphasizedOperatorCalcButtonStyle"

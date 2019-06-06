@@ -1012,7 +1012,7 @@
                                            x:Uid="logBaseX"
                                            Grid.Row="4"
                                            Style="{StaticResource EmphasizedCalcButtonStyle}"
-                                           Background="#99FFFFFF"
+                                           Background="#BFFFFFFF"
                                            AutomationProperties.AutomationId="logBaseX"
                                            ButtonId="LogBaseX"
                                            Click="shiftButton_Uncheck"
