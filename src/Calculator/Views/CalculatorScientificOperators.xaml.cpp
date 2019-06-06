@@ -147,3 +147,14 @@ void CalculatorScientificOperators::OnViewModelPropertyChanged(Object^ sender, P
         Model->SetOpenParenthesisCountNarratorAnnouncement();
     }
 }
+
+
+//void CalculatorApp::CalculatorScientificOperators::ScientificOperators_SizeChanged(Platform::Object^ sender, Windows::UI::Xaml::SizeChangedEventArgs^ e)
+//{
+//    OutputDebugStringW(L"\n");
+//    OutputDebugStringW(L"\n");
+//    OutputDebugStringW((L"Keyboard size width: " + this->ScientificOperators->ActualWidth + L" height: " + this->ScientificOperators->ActualHeight)->Data());
+//    OutputDebugStringW(L"\n");
+//    OutputDebugStringW((L"shiftbutton size width: " + this->shiftButton->ActualWidth + L" height: " + this->shiftButton->ActualHeight)->Data());
+//    OutputDebugStringW(L"\n");
+//}

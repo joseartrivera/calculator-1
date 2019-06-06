@@ -16,6 +16,8 @@ using namespace CalculatorApp::Controls;
 
 DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, Text);
 DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, Glyph);
+DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, GlyphFontSize);
+DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, ChevronFontSize);
 
 void OverflowButton::OnApplyTemplate()
 {

@@ -24,7 +24,7 @@
     <Grid x:Name="ProgRadixOps">
         <Grid.RowDefinitions>
             <RowDefinition x:Name="overflowRow"
-                           Height="0.8*"
+                           Height="Auto"
                            MinHeight="34"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -76,7 +76,7 @@
                 <VisualState x:Name="Large">
                     <VisualState.StateTriggers>
                         <triggers:ControlSizeTrigger MinWidth="1080"
-                                                     MinHeight="592"
+                                                     MinHeight="948"
                                                      Source="{x:Bind ProgRadixOps}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
@@ -118,19 +118,24 @@
                         <Setter Target="bitwiseShiftButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="notButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="bitwiseButton.MinHeight" Value="32"/>
-                        <Setter Target="bitShiftButton.MinHeight" Value="32"/>
+                        <Setter Target="overflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeLarge}"/>
+
+                        <Setter Target="bitwiseButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeLarge}"/>
+                        <Setter Target="bitwiseButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeLarge}"/>
+                        <Setter Target="bitwiseButton.FontSize" Value="{ThemeResource OverflowFontSizeLarge}"/>
+
+                        <Setter Target="bitShiftButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeLarge}"/>
+                        <Setter Target="bitShiftButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeLarge}"/>
+                        <Setter Target="bitShiftButton.FontSize" Value="{ThemeResource OverflowFontSizeLarge}"/>
+
                         <Setter Target="bitwiseGrid.MinWidth" Value="387"/>
                         <Setter Target="bitwiseGrid.MinHeight" Value="192"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Medium">
                     <VisualState.StateTriggers>
-                        <triggers:ControlSizeTrigger MinWidth="464"
-                                                     MinHeight="300"
-                                                     Source="{x:Bind ProgRadixOps}"/>
-                        <triggers:ControlSizeTrigger MinWidth="0"
-                                                     MinHeight="424"
+                        <triggers:ControlSizeTrigger MinWidth="580"
+                                                     MinHeight="552"
                                                      Source="{x:Bind ProgRadixOps}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
@@ -172,8 +177,16 @@
                         <Setter Target="bitwiseShiftButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="notButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
 
-                        <Setter Target="bitwiseButton.MinHeight" Value="32"/>
-                        <Setter Target="bitShiftButton.MinHeight" Value="32"/>
+                        <Setter Target="overflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeMedium}"/>
+
+                        <Setter Target="bitwiseButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeMedium}"/>
+                        <Setter Target="bitwiseButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
+                        <Setter Target="bitwiseButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
+
+                        <Setter Target="bitShiftButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeMedium}"/>
+                        <Setter Target="bitShiftButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
+                        <Setter Target="bitShiftButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
+
                         <Setter Target="bitwiseGrid.MinWidth" Value="252"/>
                         <Setter Target="bitwiseGrid.MinHeight" Value="128"/>
                     </VisualState.Setters>
@@ -183,7 +196,7 @@
                         <AdaptiveTrigger MinWindowHeight="{StaticResource AppMinWindowHeight}" MinWindowWidth="{StaticResource AppMinWindowWidth}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="NumberPad.ButtonStyle" Value="{StaticResource NumericButtonStyle14}"/>
+                        <Setter Target="NumberPad.ButtonStyle" Value="{StaticResource NumericButtonStyle18}"/>
                         <Setter Target="aButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
                         <Setter Target="bButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
                         <Setter Target="cButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
@@ -221,8 +234,16 @@
                         <Setter Target="bitwiseShiftButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="notButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
 
-                        <Setter Target="bitwiseButton.MinHeight" Value="32"/>
-                        <Setter Target="bitShiftButton.MinHeight" Value="32"/>
+                        <Setter Target="overflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeSmall}"/>
+
+                        <Setter Target="bitwiseButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeSmall}"/>
+                        <Setter Target="bitwiseButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeSmall}"/>
+                        <Setter Target="bitwiseButton.FontSize" Value="{ThemeResource OverflowFontSizeSmall}"/>
+
+                        <Setter Target="bitShiftButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeSmall}"/>
+                        <Setter Target="bitShiftButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeSmall}"/>
+                        <Setter Target="bitShiftButton.FontSize" Value="{ThemeResource OverflowFontSizeSmall}"/>
+
                         <Setter Target="bitwiseGrid.MinWidth" Value="194"/>
                         <Setter Target="bitwiseGrid.MinHeight" Value="96"/>
                     </VisualState.Setters>

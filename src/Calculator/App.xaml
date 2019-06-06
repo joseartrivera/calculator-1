@@ -154,6 +154,21 @@
             <x:Double x:Key="PivotHeaderItemFontSize">15</x:Double>
             <FontWeight x:Key="PivotHeaderItemThemeFontWeight">SemiBold</FontWeight>
 
+            <x:Double x:Key="OverflowButtonRowSizeLarge">64</x:Double>
+            <x:Double x:Key="OverflowFontSizeLarge">24</x:Double>
+            <x:Double x:Key="OverflowGlyphFontSizeLarge">20</x:Double>
+            <x:Double x:Key="OverflowChevronFontSizeLarge">16</x:Double>
+
+            <x:Double x:Key="OverflowButtonRowSizeMedium">48</x:Double>
+            <x:Double x:Key="OverflowFontSizeMedium">16</x:Double>
+            <x:Double x:Key="OverflowGlyphFontSizeMedium">14</x:Double>
+            <x:Double x:Key="OverflowChevronFontSizeMedium">10</x:Double>
+
+            <x:Double x:Key="OverflowButtonRowSizeSmall">36</x:Double>
+            <x:Double x:Key="OverflowFontSizeSmall">12</x:Double>
+            <x:Double x:Key="OverflowGlyphFontSizeSmall">12</x:Double>
+            <x:Double x:Key="OverflowChevronFontSizeSmall">8</x:Double>
+
             <x:Double x:Key="CaptionFontSize">12</x:Double>
             <x:Double x:Key="BodyFontSize">15</x:Double>
             <x:Double x:Key="TitleFontSize">24</x:Double>
@@ -163,12 +178,15 @@
             <GridLength x:Key="HamburgerHeightGridLength">40</GridLength>
 
             <x:Double x:Key="CalcButtonCaptionSize">34</x:Double>
+            <x:Double x:Key="CalcButtonTextIconCaptionSize">38</x:Double>
             <x:Double x:Key="CalcStandardOperatorCaptionSizeExtraLarge">48</x:Double>
             <x:Double x:Key="CalcStandardOperatorCaptionSizeLarge">24</x:Double>
             <!-- Numpad Standard/Scientific in Fill/Full -->
             <x:Double x:Key="CalcStandardOperatorCaptionSize">20</x:Double>
+            <x:Double x:Key="CalcStandardOperatorTextIconCaptionSize">22</x:Double>
             <!-- Standard Operators Standard/Scientific in Fill/Full -->
             <x:Double x:Key="CalcOperatorCaptionSize">14</x:Double>
+            <x:Double x:Key="CalcOperatorTextIconCaptionSize">16</x:Double>
 
             <!-- Base style for calc buttons -->
             <Style x:Key="CalcButtonStyle" TargetType="Controls:CalculatorButton">
@@ -522,8 +540,10 @@
                    BasedOn="{StaticResource CaptionButtonStyle}"
                    TargetType="Controls:OverflowButton">
                 <Setter Property="FontSize" Value="{StaticResource CaptionFontSize}"/>
+                <Setter Property="GlyphFontSize" Value="{StaticResource CaptionFontSize}"/>
+                <Setter Property="ChevronFontSize" Value="{StaticResource CaptionFontSize}"/>
                 <Setter Property="Padding" Value="8,0,8,0"/>
-                <Setter Property="MinWidth" Value="0"/>
+                <Setter Property="MinWidth" Value="32"/>
                 <Setter Property="HorizontalAlignment" Value="Left"/>
                 <Setter Property="VerticalAlignment" Value="Stretch"/>
                 <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -574,7 +594,7 @@
                                     <StackPanel Orientation="Horizontal">
                                         <FontIcon Margin="0,0,6,0"
                                                   FontFamily="{StaticResource CalculatorFontFamily}"
-                                                  FontSize="14"
+                                                  FontSize="{TemplateBinding GlyphFontSize}"
                                                   Glyph="{TemplateBinding Glyph}"/>
                                         <TextBlock x:Name="trigTextBlock"
                                                    VerticalAlignment="Center"
@@ -583,7 +603,7 @@
                                         <FontIcon Margin="6,0,0,0"
                                                   VerticalAlignment="Center"
                                                   FontFamily="{StaticResource CalculatorFontFamily}"
-                                                  FontSize="8"
+                                                  FontSize="{TemplateBinding ChevronFontSize}"
                                                   Glyph="&#xE70D;"/>
                                     </StackPanel>
                                 </ContentPresenter>

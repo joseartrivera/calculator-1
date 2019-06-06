@@ -50,8 +50,8 @@
             <VisualStateGroup>
                 <VisualState x:Name="Large">
                     <VisualState.StateTriggers>
-                        <triggers:ControlSizeTrigger MinWidth="1080"
-                                                     MinHeight="624"
+                        <triggers:ControlSizeTrigger MinWidth="864"
+                                                     MinHeight="902"
                                                      Source="{x:Bind Root}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
@@ -74,11 +74,8 @@
                 </VisualState>
                 <VisualState x:Name="Medium">
                     <VisualState.StateTriggers>
-                        <triggers:ControlSizeTrigger MinWidth="464"
-                                                     MinHeight="0"
-                                                     Source="{x:Bind Root}"/>
-                        <triggers:ControlSizeTrigger MinWidth="0"
-                                                     MinHeight="424"
+                        <triggers:ControlSizeTrigger MinWidth="468"
+                                                     MinHeight="500"
                                                      Source="{x:Bind Root}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>

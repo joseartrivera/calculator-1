@@ -20,6 +20,8 @@ namespace CalculatorApp
 
             DEPENDENCY_PROPERTY(Platform::String^, Text);
             DEPENDENCY_PROPERTY(Platform::String^, Glyph);
+            DEPENDENCY_PROPERTY(double, GlyphFontSize);
+            DEPENDENCY_PROPERTY(double, ChevronFontSize);
 
         protected:
             virtual void OnApplyTemplate() override;

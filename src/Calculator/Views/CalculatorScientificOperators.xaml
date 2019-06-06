@@ -22,9 +22,7 @@
     </UserControl.Resources>
     <Grid x:Name="ScientificOperators">
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="overflowRow"
-                           Height="Auto"
-                           MinHeight="34"/>
+            <RowDefinition x:Name="overflowRow" Height="Auto"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -103,7 +101,7 @@
                 <VisualState x:Name="Large">
                     <VisualState.StateTriggers>
                         <triggers:ControlSizeTrigger MinWidth="1080"
-                                                     MinHeight="624"
+                                                     MinHeight="1114"
                                                      Source="{x:Bind ScientificOperators}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
@@ -171,17 +169,24 @@
                         <Setter Target="invcschButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="invcothButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="absFlyoutButton.FontSize" Value="38"/>
-                        <Setter Target="floorButton.FontSize" Value="38"/>
-                        <Setter Target="ceilButton.FontSize" Value="38"/>
+                        <Setter Target="absFlyoutButton.FontSize" Value="{ThemeResource CalcButtonTextIconCaptionSize}"/>
+                        <Setter Target="floorButton.FontSize" Value="{ThemeResource CalcButtonTextIconCaptionSize}"/>
+                        <Setter Target="ceilButton.FontSize" Value="{ThemeResource CalcButtonTextIconCaptionSize}"/>
                         <Setter Target="randButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="dmsButton.FontSize" Value="38"/>
-                        <Setter Target="degreesButton.FontSize" Value="38"/>
+                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcButtonTextIconCaptionSize}"/>
+                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcButtonTextIconCaptionSize}"/>
 
-                        <Setter Target="overflowRow.MinHeight" Value="64"/>
+                        <Setter Target="overflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeLarge}"/>
 
-                        <Setter Target="trigButton.MinHeight" Value="32"/>
-                        <Setter Target="funcButton.MinHeight" Value="32"/>
+                        <Setter Target="trigButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeLarge}"/>
+                        <Setter Target="trigButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeLarge}"/>
+                        <Setter Target="trigButton.FontSize" Value="{ThemeResource OverflowFontSizeLarge}"/>
+
+
+                        <Setter Target="funcButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeLarge}"/>
+                        <Setter Target="funcButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeLarge}"/>
+                        <Setter Target="funcButton.FontSize" Value="{ThemeResource OverflowFontSizeLarge}"/>
+
                         <Setter Target="TrigGrid.MinWidth" Value="516"/>
                         <Setter Target="TrigGrid.MinHeight" Value="192"/>
                         <Setter Target="FuncGrid.MinWidth" Value="387"/>
@@ -191,11 +196,8 @@
                 </VisualState>
                 <VisualState x:Name="Medium">
                     <VisualState.StateTriggers>
-                        <triggers:ControlSizeTrigger MinWidth="464"
-                                                     MinHeight="0"
-                                                     Source="{x:Bind ScientificOperators}"/>
-                        <triggers:ControlSizeTrigger MinWidth="0"
-                                                     MinHeight="424"
+                        <triggers:ControlSizeTrigger MinWidth="576"
+                                                     MinHeight="624"
                                                      Source="{x:Bind ScientificOperators}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
@@ -263,17 +265,23 @@
                         <Setter Target="invcschButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="invcothButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
 
-                        <Setter Target="absFlyoutButton.FontSize" Value="22"/>
-                        <Setter Target="floorButton.FontSize" Value="22"/>
-                        <Setter Target="ceilButton.FontSize" Value="22"/>
+                        <Setter Target="absFlyoutButton.FontSize" Value="{ThemeResource CalcStandardOperatorTextIconCaptionSize}"/>
+                        <Setter Target="floorButton.FontSize" Value="{ThemeResource CalcStandardOperatorTextIconCaptionSize}"/>
+                        <Setter Target="ceilButton.FontSize" Value="{ThemeResource CalcStandardOperatorTextIconCaptionSize}"/>
                         <Setter Target="randButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="dmsButton.FontSize" Value="22"/>
-                        <Setter Target="degreesButton.FontSize" Value="22"/>
+                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcStandardOperatorTextIconCaptionSize}"/>
+                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcStandardOperatorTextIconCaptionSize}"/>
 
-                        <Setter Target="overflowRow.MinHeight" Value="48"/>
+                        <Setter Target="overflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeMedium}"/>
 
-                        <Setter Target="trigButton.MinHeight" Value="32"/>
-                        <Setter Target="funcButton.MinHeight" Value="32"/>
+                        <Setter Target="trigButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeMedium}"/>
+                        <Setter Target="trigButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
+                        <Setter Target="trigButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
+
+                        <Setter Target="funcButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeMedium}"/>
+                        <Setter Target="funcButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
+                        <Setter Target="funcButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
+
                         <Setter Target="TrigGrid.MinWidth" Value="336"/>
                         <Setter Target="TrigGrid.MinHeight" Value="128"/>
                         <Setter Target="FuncGrid.MinWidth" Value="252"/>
@@ -326,7 +334,7 @@
                         <Setter Target="minusButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="plusButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="equalButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="NumberPad.ButtonStyle" Value="{ThemeResource NumericButtonStyle14}"/>
+                        <Setter Target="NumberPad.ButtonStyle" Value="{ThemeResource NumericButtonStyle18}"/>
 
                         <Setter Target="eulerButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="absButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
@@ -350,17 +358,23 @@
                         <Setter Target="invcschButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="invcothButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
 
-                        <Setter Target="absFlyoutButton.FontSize" Value="16"/>
-                        <Setter Target="floorButton.FontSize" Value="16"/>
-                        <Setter Target="ceilButton.FontSize" Value="16"/>
+                        <Setter Target="absFlyoutButton.FontSize" Value="{ThemeResource CalcOperatorTextIconCaptionSize}"/>
+                        <Setter Target="floorButton.FontSize" Value="{ThemeResource CalcOperatorTextIconCaptionSize}"/>
+                        <Setter Target="ceilButton.FontSize" Value="{ThemeResource CalcOperatorTextIconCaptionSize}"/>
                         <Setter Target="randButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="dmsButton.FontSize" Value="16"/>
-                        <Setter Target="degreesButton.FontSize" Value="16"/>
+                        <Setter Target="dmsButton.FontSize" Value="{ThemeResource CalcOperatorTextIconCaptionSize}"/>
+                        <Setter Target="degreesButton.FontSize" Value="{ThemeResource CalcOperatorTextIconCaptionSize}"/>
 
-                        <Setter Target="overflowRow.MinHeight" Value="34"/>
+                        <Setter Target="overflowRow.MinHeight" Value="{ThemeResource OverflowButtonRowSizeSmall}"/>
 
-                        <Setter Target="trigButton.MinHeight" Value="32"/>
-                        <Setter Target="funcButton.MinHeight" Value="32"/>
+                        <Setter Target="trigButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeSmall}"/>
+                        <Setter Target="trigButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeSmall}"/>
+                        <Setter Target="trigButton.FontSize" Value="{ThemeResource OverflowFontSizeSmall}"/>
+
+                        <Setter Target="funcButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeSmall}"/>
+                        <Setter Target="funcButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeSmall}"/>
+                        <Setter Target="funcButton.FontSize" Value="{ThemeResource OverflowFontSizeSmall}"/>
+
                         <Setter Target="TrigGrid.MinWidth" Value="258"/>
                         <Setter Target="TrigGrid.MinHeight" Value="96"/>
                         <Setter Target="FuncGrid.MinWidth" Value="194"/>
