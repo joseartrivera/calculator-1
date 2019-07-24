@@ -159,17 +159,17 @@
 
             <x:Double x:Key="OverflowButtonRowSizeLarge">64</x:Double>
             <x:Double x:Key="OverflowFontSizeLarge">24</x:Double>
-            <x:Double x:Key="OverflowGlyphFontSizeLarge">20</x:Double>
+            <x:Double x:Key="OverflowGlyphFontSizeLarge">24</x:Double>
             <x:Double x:Key="OverflowChevronFontSizeLarge">16</x:Double>
 
             <x:Double x:Key="OverflowButtonRowSizeMedium">48</x:Double>
             <x:Double x:Key="OverflowFontSizeMedium">16</x:Double>
-            <x:Double x:Key="OverflowGlyphFontSizeMedium">14</x:Double>
+            <x:Double x:Key="OverflowGlyphFontSizeMedium">20</x:Double>
             <x:Double x:Key="OverflowChevronFontSizeMedium">10</x:Double>
 
             <x:Double x:Key="OverflowButtonRowSizeSmall">36</x:Double>
             <x:Double x:Key="OverflowFontSizeSmall">12</x:Double>
-            <x:Double x:Key="OverflowGlyphFontSizeSmall">12</x:Double>
+            <x:Double x:Key="OverflowGlyphFontSizeSmall">16</x:Double>
             <x:Double x:Key="OverflowChevronFontSizeSmall">8</x:Double>
 
             <x:Double x:Key="CaptionFontSize">12</x:Double>
@@ -299,6 +299,11 @@
                    BasedOn="{StaticResource NumericButtonStyle}"
                    TargetType="Controls:CalculatorButton">
                 <Setter Property="FontSize" Value="34"/>
+            </Style>
+            <Style x:Key="NumericButtonStyle38"
+                   BasedOn="{StaticResource NumericButtonStyle}"
+                   TargetType="Controls:CalculatorButton">
+                <Setter Property="FontSize" Value="38"/>
             </Style>
             <Style x:Key="NumericButtonStyle46"
                    BasedOn="{StaticResource NumericButtonStyle}"

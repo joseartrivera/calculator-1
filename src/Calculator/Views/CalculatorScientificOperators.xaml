@@ -100,8 +100,8 @@
             <VisualStateGroup x:Name="SizeLayouts">
                 <VisualState x:Name="Large">
                     <VisualState.StateTriggers>
-                        <triggers:ControlSizeTrigger MinWidth="1080"
-                                                     MinHeight="1114"
+                        <triggers:ControlSizeTrigger MinWidth="975"
+                                                     MinHeight="945"
                                                      Source="{x:Bind ScientificOperators}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
@@ -145,7 +145,7 @@
                         <Setter Target="minusButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="plusButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="equalButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="NumberPad.ButtonStyle" Value="{ThemeResource NumericButtonStyle48}"/>
+                        <Setter Target="NumberPad.ButtonStyle" Value="{ThemeResource NumericButtonStyle38}"/>
 
                         <Setter Target="eulerButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="absButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
@@ -196,8 +196,8 @@
                 </VisualState>
                 <VisualState x:Name="Medium">
                     <VisualState.StateTriggers>
-                        <triggers:ControlSizeTrigger MinWidth="576"
-                                                     MinHeight="624"
+                        <triggers:ControlSizeTrigger MinWidth="585"
+                                                     MinHeight="581"
                                                      Source="{x:Bind ScientificOperators}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>

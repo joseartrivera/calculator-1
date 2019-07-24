@@ -75,18 +75,18 @@
             <VisualStateGroup>
                 <VisualState x:Name="Large">
                     <VisualState.StateTriggers>
-                        <triggers:ControlSizeTrigger MinWidth="1080"
-                                                     MinHeight="948"
+                        <triggers:ControlSizeTrigger MinWidth="1170"
+                                                     MinHeight="810"
                                                      Source="{x:Bind ProgRadixOps}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="NumberPad.ButtonStyle" Value="{StaticResource NumericButtonStyle48}"/>
-                        <Setter Target="aButton.Style" Value="{StaticResource NumericButtonStyle48}"/>
-                        <Setter Target="bButton.Style" Value="{StaticResource NumericButtonStyle48}"/>
-                        <Setter Target="cButton.Style" Value="{StaticResource NumericButtonStyle48}"/>
-                        <Setter Target="dButton.Style" Value="{StaticResource NumericButtonStyle48}"/>
-                        <Setter Target="eButton.Style" Value="{StaticResource NumericButtonStyle48}"/>
-                        <Setter Target="fButton.Style" Value="{StaticResource NumericButtonStyle}"/>
+                        <Setter Target="NumberPad.ButtonStyle" Value="{StaticResource NumericButtonStyle38}"/>
+                        <Setter Target="aButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
+                        <Setter Target="bButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
+                        <Setter Target="cButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
+                        <Setter Target="dButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
+                        <Setter Target="eButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
+                        <Setter Target="fButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
 
                         <Setter Target="modButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="divideButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
@@ -134,8 +134,8 @@
                 </VisualState>
                 <VisualState x:Name="Medium">
                     <VisualState.StateTriggers>
-                        <triggers:ControlSizeTrigger MinWidth="580"
-                                                     MinHeight="552"
+                        <triggers:ControlSizeTrigger MinWidth="700"
+                                                     MinHeight="485"
                                                      Source="{x:Bind ProgRadixOps}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
@@ -421,7 +421,7 @@
             <controls:OverflowButton x:Name="bitShiftButton"
                                      x:Uid="bitShiftButton"
                                      Style="{StaticResource OverflowButtonStyle}"
-                                     Glyph="&#xF1AA;">
+                                     Glyph="&#xE301;">
                 <Button.Flyout>
                     <Flyout x:Name="BitShiftFlyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
