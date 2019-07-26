@@ -282,10 +282,10 @@
                         <Setter Target="funcButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
                         <Setter Target="funcButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
 
-                        <Setter Target="TrigGrid.MinWidth" Value="336"/>
-                        <Setter Target="TrigGrid.MinHeight" Value="128"/>
-                        <Setter Target="FuncGrid.MinWidth" Value="252"/>
-                        <Setter Target="FuncGrid.MinHeight" Value="128"/>
+                        <Setter Target="TrigGrid.MinWidth" Value="480"/>
+                        <Setter Target="TrigGrid.MinHeight" Value="144"/>
+                        <Setter Target="FuncGrid.MinWidth" Value="360"/>
+                        <Setter Target="FuncGrid.MinHeight" Value="144"/>
 
                     </VisualState.Setters>
                 </VisualState>

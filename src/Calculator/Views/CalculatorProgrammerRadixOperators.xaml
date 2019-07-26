@@ -187,8 +187,8 @@
                         <Setter Target="bitShiftButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
                         <Setter Target="bitShiftButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
 
-                        <Setter Target="bitwiseGrid.MinWidth" Value="252"/>
-                        <Setter Target="bitwiseGrid.MinHeight" Value="128"/>
+                        <Setter Target="bitwiseGrid.MinWidth" Value="416"/>
+                        <Setter Target="bitwiseGrid.MinHeight" Value="144"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Small">

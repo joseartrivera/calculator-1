@@ -3496,19 +3496,19 @@
     <comment>{Locked}This is the character that should trigger this button. Note that it is a character and not a key, so it does not come from the Windows::System::VirtualKey enum.</comment>
   </data>
   <data name="trigButton.Text" xml:space="preserve">
-    <value>TRIG</value>
+    <value>Trigonometry</value>
     <comment>Displayed on the button that contains a flyout for the trig functions in scientific mode.</comment>
   </data>
   <data name="funcButton.Text" xml:space="preserve">
-    <value>FUNCTION</value>
+    <value>Function</value>
     <comment>Displayed on the button that contains a flyout for the general functions in scientific mode.</comment>
   </data>
-    <data name="bitwiseButton.Text" xml:space="preserve">
-    <value>BITWISE</value>
+  <data name="bitwiseButton.Text" xml:space="preserve">
+    <value>Bitwise</value>
     <comment>Displayed on the button that contains a flyout for the bitwise functions in programmer mode.</comment>
   </data>
-    <data name="bitShiftButton.Text" xml:space="preserve">
-    <value>BIT SHIFT</value>
+  <data name="bitShiftButton.Text" xml:space="preserve">
+    <value>Bit Shift</value>
     <comment>Displayed on the button that contains a flyout for the bit shift functions in programmer mode.</comment>
   </data>
   <data name="trigShiftButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
