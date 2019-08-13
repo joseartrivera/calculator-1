@@ -19,7 +19,6 @@
                     <Color x:Key="ChromeMediumLowColor">#FF2B2B2B</Color>
                     <SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{StaticResource AltHighColor}"/>
                     <SolidColorBrush x:Key="SystemControlBackgroundChromeMediumLowBrush" Color="{StaticResource ChromeMediumLowColor}"/>
-                    <SolidColorBrush x:Key="TitleBarBackgroundTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="TitleBarForegroundBaseHighBrush" Color="{StaticResource SystemBaseHighColor}"/>
                     <SolidColorBrush x:Key="SystemControlBackgroundTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="SystemControlHighlightTransparentBrush" Color="Transparent"/>
@@ -72,7 +71,6 @@
                     <Color x:Key="ChromeMediumLowColor">#FFE0E0E0</Color>
                     <SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{StaticResource SystemAltHighColor}"/>
                     <SolidColorBrush x:Key="SystemControlBackgroundChromeMediumLowBrush" Color="{StaticResource ChromeMediumLowColor}"/>
-                    <SolidColorBrush x:Key="TitleBarBackgroundTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="TitleBarForegroundBaseHighBrush" Color="{StaticResource SystemBaseHighColor}"/>
                     <SolidColorBrush x:Key="SystemControlBackgroundTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="SystemControlHighlightTransparentBrush" Color="Transparent"/>
@@ -122,7 +120,6 @@
                     <x:Double x:Key="HighContrastStrokeThickness">2</x:Double>
                     <SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
                     <SolidColorBrush x:Key="SystemControlBackgroundChromeMediumLowBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
-                    <SolidColorBrush x:Key="TitleBarBackgroundTransparentBrush" Color="{ThemeResource SystemColorActiveCaptionColor}"/>
                     <SolidColorBrush x:Key="TitleBarForegroundBaseHighBrush" Color="{ThemeResource SystemColorCaptionTextColor}"/>
                     <SolidColorBrush x:Key="SystemControlBackgroundTransparentBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
                     <SolidColorBrush x:Key="AppBackgroundAltMediumHighBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
@@ -187,6 +184,8 @@
             <!-- Numpad Standard/Scientific in Fill/Full -->
             <x:Double x:Key="CalcStandardOperatorCaptionSize">20</x:Double>
             <x:Double x:Key="CalcStandardOperatorTextIconCaptionSize">22</x:Double>
+            <x:Double x:Key="CalcStandardOperatorCaptionSizeSmall">15</x:Double>
+            <x:Double x:Key="CalcStandardOperatorCaptionSizeTiny">12</x:Double>
             <!-- Standard Operators Standard/Scientific in Fill/Full -->
             <x:Double x:Key="CalcOperatorCaptionSize">14</x:Double>
             <x:Double x:Key="CalcOperatorTextIconCaptionSize">16</x:Double>
@@ -270,6 +269,11 @@
                    TargetType="Controls:CalculatorButton">
                 <Setter Property="FontWeight" Value="SemiBold"/>
             </Style>
+            <Style x:Key="NumericButtonStyle10"
+                   BasedOn="{StaticResource NumericButtonStyle}"
+                   TargetType="Controls:CalculatorButton">
+                <Setter Property="FontSize" Value="10"/>
+            </Style>
             <Style x:Key="NumericButtonStyle12"
                    BasedOn="{StaticResource NumericButtonStyle}"
                    TargetType="Controls:CalculatorButton">
@@ -279,6 +283,11 @@
                    BasedOn="{StaticResource NumericButtonStyle}"
                    TargetType="Controls:CalculatorButton">
                 <Setter Property="FontSize" Value="14"/>
+            </Style>
+            <Style x:Key="NumericButtonStyle16"
+                   BasedOn="{StaticResource NumericButtonStyle}"
+                   TargetType="Controls:CalculatorButton">
+                <Setter Property="FontSize" Value="16"/>
             </Style>
             <Style x:Key="NumericButtonStyle18"
                    BasedOn="{StaticResource NumericButtonStyle}"
@@ -468,7 +477,7 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Controls:CalculationResult">
-                            <Grid x:Name="border" Background="{TemplateBinding Background}">
+                            <Grid x:Name="Border" Background="{TemplateBinding Background}">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="12"/>
                                     <ColumnDefinition/>
@@ -478,19 +487,19 @@
                                     <VisualStateGroup x:Name="ActiveStates">
                                         <VisualState x:Name="Active">
                                             <VisualState.Setters>
-                                                <Setter Target="normalOutput.FontWeight" Value="SemiBold"/>
-                                                <Setter Target="normalOutput.IsTextSelectionEnabled" Value="True"/>
+                                                <Setter Target="NormalOutput.FontWeight" Value="SemiBold"/>
+                                                <Setter Target="NormalOutput.IsTextSelectionEnabled" Value="True"/>
                                             </VisualState.Setters>
                                         </VisualState>
                                         <VisualState x:Name="Normal"/>
                                     </VisualStateGroup>
                                 </VisualStateManager.VisualStateGroups>
-                                <ScrollViewer x:Name="textContainer"
+                                <ScrollViewer x:Name="TextContainer"
                                               Grid.Column="1"
                                               Padding="0,0,0,0"
                                               Style="{ThemeResource ResultsScrollerSnapped}"
                                               AutomationProperties.AccessibilityView="Raw">
-                                    <TextBlock x:Name="normalOutput"
+                                    <TextBlock x:Name="NormalOutput"
                                                Margin="{TemplateBinding DisplayMargin}"
                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -502,7 +511,8 @@
                                                TextAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                TextWrapping="NoWrap"/>
                                 </ScrollViewer>
-                                <HyperlinkButton x:Name="scrollLeft"
+                                <HyperlinkButton x:Name="ScrollLeft"
+                                                 x:Uid="CalculationResultScrollLeft"
                                                  Grid.Column="0"
                                                  Width="20"
                                                  MinWidth="20"
@@ -514,13 +524,15 @@
                                                  VerticalContentAlignment="Center"
                                                  Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
                                                  BorderThickness="0"
+                                                 AutomationProperties.AutomationId="CalculationResultScrollLeft"
                                                  Visibility="Collapsed">
-                                    <FontIcon x:Name="scrollLeftText"
+                                    <FontIcon x:Name="ScrollLeftText"
                                               FontFamily="{ThemeResource SymbolThemeFontFamily}"
                                               FontSize="12"
                                               Glyph="&#xE26C;"/>
                                 </HyperlinkButton>
-                                <HyperlinkButton x:Name="scrollRight"
+                                <HyperlinkButton x:Name="ScrollRight"
+                                                 x:Uid="CalculationResultScrollRight"
                                                  Grid.Column="2"
                                                  Width="20"
                                                  MinWidth="20"
@@ -532,8 +544,9 @@
                                                  VerticalContentAlignment="Center"
                                                  Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
                                                  BorderThickness="0"
+                                                 AutomationProperties.AutomationId="CalculationResultScrollRight"
                                                  Visibility="Collapsed">
-                                    <FontIcon x:Name="scrollRightText"
+                                    <FontIcon x:Name="ScrollRightText"
                                               FontFamily="{ThemeResource SymbolThemeFontFamily}"
                                               FontSize="12"
                                               Glyph="&#xE26B;"/>

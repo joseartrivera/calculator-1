@@ -3,7 +3,6 @@
 
 #pragma once
 
-
 #include "targetver.h"
 
 #ifndef WIN32_LEAN_AND_MEAN
@@ -31,6 +30,7 @@
 #include <concrt.h>
 #include <regex>
 #include <iterator>
+#include <intsafe.h>
 // C++\WinRT Headers
 #include "winrt/base.h"
 #include "winrt/Windows.Foundation.Diagnostics.h"
@@ -45,5 +45,7 @@
 // Once the app switches to min version RS3, the namespaces can be removed.
 // TODO - MSFT 12735088
 namespace StandardPeers = Windows::UI::Xaml::Automation::Peers;
-namespace CalculatorApp::Common::Automation {}
+namespace CalculatorApp::Common::Automation
+{
+}
 namespace CustomPeers = CalculatorApp::Common::Automation;

@@ -12,8 +12,8 @@
 #include "Converters/BooleanToVisibilityConverter.h"
 #include "Views/NumberPad.xaml.h"
 
+using namespace std;
 using namespace CalculatorApp;
-
 using namespace CalculatorApp::ViewModel;
 using namespace Platform;
 using namespace Windows::UI::Xaml;
@@ -23,8 +23,8 @@ using namespace Windows::UI::Xaml::Data;
 using namespace CalculatorApp::Common;
 using namespace Windows::UI::Xaml::Media;
 
-CalculatorProgrammerRadixOperators::CalculatorProgrammerRadixOperators() :
-    m_isErrorVisualState(false)
+CalculatorProgrammerRadixOperators::CalculatorProgrammerRadixOperators()
+    : m_isErrorVisualState(false)
 {
     InitializeComponent();
 
@@ -32,20 +32,19 @@ CalculatorProgrammerRadixOperators::CalculatorProgrammerRadixOperators() :
     SetVisibilityBinding(ProgRadixOps, L"IsBinaryBitFlippingEnabled", booleanToVisibilityNegationConverter);
 }
 
-void CalculatorProgrammerRadixOperators::OnLoaded(Object^, RoutedEventArgs^)
+void CalculatorProgrammerRadixOperators::OnLoaded(Object ^, RoutedEventArgs ^)
 {
-    m_progModeRadixChangeToken = Model->ProgModeRadixChange += ref new ProgModeRadixChangeHandler(this, &CalculatorProgrammerRadixOperators::ProgModeRadixChange);
-    m_propertyChangedToken = Model->PropertyChanged += ref new PropertyChangedEventHandler(this, &CalculatorProgrammerRadixOperators::OnViewModelPropertyChanged);
+    m_progModeRadixChangeToken = Model->ProgModeRadixChange +=
+        ref new ProgModeRadixChangeHandler(this, &CalculatorProgrammerRadixOperators::ProgModeRadixChange);
 }
-void CalculatorProgrammerRadixOperators::OnUnloaded(Object^, RoutedEventArgs^)
+void CalculatorProgrammerRadixOperators::OnUnloaded(Object ^, RoutedEventArgs ^)
 {
     Model->ProgModeRadixChange -= m_progModeRadixChangeToken;
-    Model->PropertyChanged -=  m_propertyChangedToken;
 }
 
-void CalculatorProgrammerRadixOperators::bitwiseFlyout_Toggle(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+void CalculatorProgrammerRadixOperators::bitwiseFlyout_Toggle(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e)
 {
-    bool isShiftChecked = static_cast<ToggleButton^>(sender)->IsChecked->Value;
+    bool isShiftChecked = static_cast<ToggleButton ^>(sender)->IsChecked->Value;
     if (isShiftChecked)
     {
         //BitwiseFunctions->Visibility = ::Visibility::Collapsed;
@@ -73,8 +72,8 @@ void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object
     // Load deferred load buttons
     if (rolButton == nullptr)
     {
-        FindName("rolButton");
-        FindName("rorButton");
+        FindName("RolButton");
+        FindName("RorButton");
         FindName("rolCarryButton");
         FindName("rorCarryButton");
         FindName("lshLogicalButton");
@@ -107,8 +106,8 @@ void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object
     }
     else if (radioButton == rotateCircularButton)
     {
-        rolButton->Visibility = ::Visibility::Visible;
-        rorButton->Visibility = ::Visibility::Visible;
+        RolButton->Visibility = ::Visibility::Visible;
+        RorButton->Visibility = ::Visibility::Visible;
         rolButton->IsEnabled = true;
         rorButton->IsEnabled = true;
     }
@@ -125,8 +124,8 @@ void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object
 
 void CalculatorProgrammerRadixOperators::collapseBitshiftButtons()
 {
-    rolButton->Visibility = ::Visibility::Collapsed;
-    rorButton->Visibility = ::Visibility::Collapsed;
+    RolButton->Visibility = ::Visibility::Collapsed;
+    RorButton->Visibility = ::Visibility::Collapsed;
     rolCarryButton->Visibility = ::Visibility::Collapsed;
     rorCarryButton->Visibility = ::Visibility::Collapsed;
     lshButton->Visibility = ::Visibility::Collapsed;
@@ -145,9 +144,9 @@ void CalculatorProgrammerRadixOperators::collapseBitshiftButtons()
     rshLogicalButton->IsEnabled = false;
 }
 
-void CalculatorProgrammerRadixOperators::SetVisibilityBinding(FrameworkElement^ element, String^ path, IValueConverter^ converter)
+void CalculatorProgrammerRadixOperators::SetVisibilityBinding(FrameworkElement ^ element, String ^ path, IValueConverter ^ converter)
 {
-    Binding^ commandBinding = ref new Binding();
+    Binding ^ commandBinding = ref new Binding();
     commandBinding->Path = ref new PropertyPath(path);
     commandBinding->Converter = converter;
     element->SetBinding(VisibilityProperty, commandBinding);
@@ -168,16 +167,18 @@ void CalculatorProgrammerRadixOperators::IsErrorVisualState::set(bool value)
     if (m_isErrorVisualState != value)
     {
         m_isErrorVisualState = value;
-        String^ newState = m_isErrorVisualState ? L"ErrorLayout" : L"NoErrorLayout";
+        String ^ newState = m_isErrorVisualState ? L"ErrorLayout" : L"NoErrorLayout";
         VisualStateManager::GoToState(this, newState, false);
         NumberPad->IsErrorVisualState = m_isErrorVisualState;
     }
 }
 
-void CalculatorProgrammerRadixOperators::OnViewModelPropertyChanged(Object^ sender, PropertyChangedEventArgs^ e)
+String ^ CalculatorProgrammerRadixOperators::ParenthesisCountToString(unsigned int count)
 {
-    if (e->PropertyName == StandardCalculatorViewModel::OpenParenthesisCountPropertyName && closeParenthesisButton->FocusState != ::FocusState::Unfocused)
-    {
-        Model->SetOpenParenthesisCountNarratorAnnouncement();
-    }
+    return (count == 0) ? ref new String() : ref new String(to_wstring(count).data());
+}
+
+void CalculatorProgrammerRadixOperators::CalculatorProgrammerRadixOperators::OpenParenthesisButton_GotFocus(Object ^ sender, RoutedEventArgs ^ e)
+{
+    Model->SetOpenParenthesisCountNarratorAnnouncement();
 }

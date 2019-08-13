@@ -13,8 +13,7 @@
 
 namespace CalculatorApp
 {
-    [Windows::Foundation::Metadata::WebHostHidden]
-    public ref class CalculatorScientificAngleButtons sealed
+    [Windows::Foundation::Metadata::WebHostHidden] public ref class CalculatorScientificAngleButtons sealed
     {
     public:
         CalculatorScientificAngleButtons();
@@ -27,15 +26,16 @@ namespace CalculatorApp
 
         COMMAND_FOR_METHOD(ButtonPressed, CalculatorScientificAngleButtons::OnAngleButtonPressed)
 
-        property bool IsErrorVisualState {
+        property bool IsErrorVisualState
+        {
             bool get();
             void set(bool value);
         }
 
     private:
-        void OnAngleButtonPressed(_In_ Platform::Object^ commandParameter);
-        void FToEButton_Toggled(_In_ Platform::Object^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs^ e);
+        void OnAngleButtonPressed(_In_ Platform::Object ^ commandParameter);
+        void FToEButton_Toggled(_In_ Platform::Object ^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs ^ e);
 
         bool m_isErrorVisualState;
-	};
+    };
 }

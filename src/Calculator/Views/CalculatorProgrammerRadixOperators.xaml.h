@@ -9,8 +9,7 @@
 
 namespace CalculatorApp
 {
-    [Windows::Foundation::Metadata::WebHostHidden]
-    public ref class CalculatorProgrammerRadixOperators sealed
+    [Windows::Foundation::Metadata::WebHostHidden] public ref class CalculatorProgrammerRadixOperators sealed
     {
     public:
         CalculatorProgrammerRadixOperators();
@@ -22,28 +21,29 @@ namespace CalculatorApp
             }
         }
 
-        property bool IsErrorVisualState {
+        property bool IsErrorVisualState
+        {
             bool get();
             void set(bool value);
         }
+        Platform::String ^ ParenthesisCountToString(unsigned int count);
 
         DEPENDENCY_PROPERTY_OWNER(CalculatorProgrammerRadixOperators);
 
         void checkDefaultBitShift();
 
     private:
-        void bitwiseFlyout_Toggle(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
-        void bitshiftFlyout_Checked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
-        void flyoutButton_Clicked(_In_ Platform::Object^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs^ e);
-        void SetVisibilityBinding(Windows::UI::Xaml::FrameworkElement^ element, Platform::String^ path, Windows::UI::Xaml::Data::IValueConverter^ converter);
-        void OnLoaded(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
-        void OnUnloaded(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+        void bitwiseFlyout_Toggle(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
+        void bitshiftFlyout_Checked(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
+        void flyoutButton_Clicked(_In_ Platform::Object ^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs ^ e);
+        void SetVisibilityBinding(Windows::UI::Xaml::FrameworkElement ^ element, Platform::String ^ path, Windows::UI::Xaml::Data::IValueConverter ^ converter);
+        void OnLoaded(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
+        void OnUnloaded(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
         void ProgModeRadixChange();
-        void OnViewModelPropertyChanged(Platform::Object^ sender, Windows::UI::Xaml::Data::PropertyChangedEventArgs ^ e);
         void collapseBitshiftButtons();
 
         bool m_isErrorVisualState;
         Windows::Foundation::EventRegistrationToken m_progModeRadixChangeToken;
-        Windows::Foundation::EventRegistrationToken m_propertyChangedToken;
+        void OpenParenthesisButton_GotFocus(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
     };
 }

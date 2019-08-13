@@ -13,6 +13,14 @@
 * Created: 13-Feb-2008
 *
 \****************************************************************************/
+
+#pragma once
+
+#include <array>
+#include <string>
+#include <string_view>
+#include <unordered_map>
+
 inline constexpr auto IDS_ERRORS_FIRST = 99;
 
 // This is the list of error strings corresponding to SCERR_DIVIDEZERO..

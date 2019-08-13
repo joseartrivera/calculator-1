@@ -48,25 +48,25 @@
                 <VisualState x:Name="NoErrorLayout"/>
                 <VisualState x:Name="ErrorLayout">
                     <VisualState.Setters>
-                        <Setter Target="rolButton.IsEnabled" Value="False"/>
-                        <Setter Target="rorButton.IsEnabled" Value="False"/>
-                        <Setter Target="lshButton.IsEnabled" Value="False"/>
-                        <Setter Target="rshButton.IsEnabled" Value="False"/>
-                        <Setter Target="orButton.IsEnabled" Value="False"/>
-                        <Setter Target="xorButton.IsEnabled" Value="False"/>
-                        <Setter Target="notButton.IsEnabled" Value="False"/>
-                        <Setter Target="andButton.IsEnabled" Value="False"/>
+                        <Setter Target="RolButton.IsEnabled" Value="False"/>
+                        <Setter Target="RorButton.IsEnabled" Value="False"/>
+                        <Setter Target="LshButton.IsEnabled" Value="False"/>
+                        <Setter Target="RshButton.IsEnabled" Value="False"/>
+                        <Setter Target="OrButton.IsEnabled" Value="False"/>
+                        <Setter Target="XorButton.IsEnabled" Value="False"/>
+                        <Setter Target="NotButton.IsEnabled" Value="False"/>
+                        <Setter Target="AndButton.IsEnabled" Value="False"/>
 
-                        <Setter Target="modButton.IsEnabled" Value="False"/>
+                        <Setter Target="ModButton.IsEnabled" Value="False"/>
 
-                        <Setter Target="divideButton.IsEnabled" Value="False"/>
-                        <Setter Target="multiplyButton.IsEnabled" Value="False"/>
-                        <Setter Target="minusButton.IsEnabled" Value="False"/>
-                        <Setter Target="plusButton.IsEnabled" Value="False"/>
+                        <Setter Target="DivideButton.IsEnabled" Value="False"/>
+                        <Setter Target="MultiplyButton.IsEnabled" Value="False"/>
+                        <Setter Target="MinusButton.IsEnabled" Value="False"/>
+                        <Setter Target="PlusButton.IsEnabled" Value="False"/>
 
-                        <Setter Target="openParenthesisButton.IsEnabled" Value="False"/>
-                        <Setter Target="closeParenthesisButton.IsEnabled" Value="False"/>
-                        <Setter Target="negateButton.IsEnabled" Value="False"/>
+                        <Setter Target="OpenParenthesisButton.IsEnabled" Value="False"/>
+                        <Setter Target="CloseParenthesisButton.IsEnabled" Value="False"/>
+                        <Setter Target="NegateButton.IsEnabled" Value="False"/>
                         <Setter Target="bitShiftButton.IsEnabled" Value="False"/>
                         <Setter Target="bitwiseButton.IsEnabled" Value="False"/>
                     </VisualState.Setters>
@@ -460,8 +460,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
-            <controls:CalculatorButton x:Name="rolButton"
+            <controls:CalculatorButton x:Name="RolButton"
                                        x:Uid="rolButton"
                                        Grid.Column="0"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
@@ -471,7 +470,7 @@
                                        ButtonId="Rol"
                                        Content="&#xF88E;"
                                        Visibility="Collapsed"/>
-            <controls:CalculatorButton x:Name="rorButton"
+            <controls:CalculatorButton x:Name="RorButton"
                                        x:Uid="rorButton"
                                        Grid.Column="1"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
@@ -509,7 +508,7 @@
                                        AutomationProperties.AutomationId="lshButton"
                                        ButtonId="Lsh"
                                        Content="&#xF88E;"/>
-            <controls:CalculatorButton x:Name="rshButton"
+            <controls:CalculatorButton x:Name="RshButton"
                                        x:Uid="rshButton"
                                        Grid.Column="1"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
@@ -617,7 +616,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <controls:CalculatorButton x:Name="divideButton"
+            <controls:CalculatorButton x:Name="DivideButton"
                                        x:Uid="divideButton"
                                        Grid.Row="0"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
@@ -625,7 +624,7 @@
                                        AutomationProperties.AutomationId="divideButton"
                                        ButtonId="Divide"
                                        Content="&#xE94A;"/>
-            <controls:CalculatorButton x:Name="multiplyButton"
+            <controls:CalculatorButton x:Name="MultiplyButton"
                                        x:Uid="multiplyButton"
                                        Grid.Row="1"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
@@ -633,7 +632,7 @@
                                        AutomationProperties.AutomationId="multiplyButton"
                                        ButtonId="Multiply"
                                        Content="&#xE947;"/>
-            <controls:CalculatorButton x:Name="minusButton"
+            <controls:CalculatorButton x:Name="MinusButton"
                                        x:Uid="minusButton"
                                        Grid.Row="2"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
@@ -641,7 +640,7 @@
                                        AutomationProperties.AutomationId="minusButton"
                                        ButtonId="Subtract"
                                        Content="&#xE949;"/>
-            <controls:CalculatorButton x:Name="plusButton"
+            <controls:CalculatorButton x:Name="PlusButton"
                                        x:Uid="plusButton"
                                        Grid.Row="3"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
@@ -649,7 +648,7 @@
                                        AutomationProperties.AutomationId="plusButton"
                                        ButtonId="Add"
                                        Content="&#xE948;"/>
-            <controls:CalculatorButton x:Name="equalButton"
+            <controls:CalculatorButton x:Name="EqualButton"
                                        x:Uid="equalButton"
                                        Grid.Row="4"
                                        Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
@@ -681,7 +680,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <controls:CalculatorButton x:Name="aButton"
+            <controls:CalculatorButton x:Name="AButton"
                                        x:Uid="aButton"
                                        Grid.Row="0"
                                        Grid.Column="0"
@@ -690,7 +689,7 @@
                                        ButtonId="A"
                                        Content="A"
                                        IsEnabled="{x:Bind Model.AreHEXButtonsEnabled, Mode=OneWay}"/>
-            <controls:CalculatorButton x:Name="bButton"
+            <controls:CalculatorButton x:Name="BButton"
                                        x:Uid="bButton"
                                        Grid.Row="1"
                                        Grid.Column="0"
@@ -699,7 +698,7 @@
                                        ButtonId="B"
                                        Content="B"
                                        IsEnabled="{x:Bind Model.AreHEXButtonsEnabled, Mode=OneWay}"/>
-            <controls:CalculatorButton x:Name="cButton"
+            <controls:CalculatorButton x:Name="CButton"
                                        x:Uid="cButton"
                                        Grid.Row="2"
                                        Grid.Column="0"
@@ -708,7 +707,7 @@
                                        ButtonId="C"
                                        Content="C"
                                        IsEnabled="{x:Bind Model.AreHEXButtonsEnabled, Mode=OneWay}"/>
-            <controls:CalculatorButton x:Name="dButton"
+            <controls:CalculatorButton x:Name="DButton"
                                        x:Uid="dButton"
                                        Grid.Row="3"
                                        Grid.Column="0"
@@ -717,7 +716,7 @@
                                        ButtonId="D"
                                        Content="D"
                                        IsEnabled="{x:Bind Model.AreHEXButtonsEnabled, Mode=OneWay}"/>
-            <controls:CalculatorButton x:Name="eButton"
+            <controls:CalculatorButton x:Name="EButton"
                                        x:Uid="eButton"
                                        Grid.Row="4"
                                        Grid.Column="0"
@@ -726,7 +725,7 @@
                                        ButtonId="E"
                                        Content="E"
                                        IsEnabled="{x:Bind Model.AreHEXButtonsEnabled, Mode=OneWay}"/>
-            <controls:CalculatorButton x:Name="fButton"
+            <controls:CalculatorButton x:Name="FButton"
                                        x:Uid="fButton"
                                        Grid.Row="5"
                                        Grid.Column="0"
@@ -744,7 +743,7 @@
                              ButtonStyle="{StaticResource NumericButtonStyle18}"/>
         </Grid>
 
-        <controls:CalculatorButton x:Name="negateButton"
+        <controls:CalculatorButton x:Name="NegateButton"
                                    x:Uid="negateButton"
                                    Grid.Row="6"
                                    Grid.Column="2"

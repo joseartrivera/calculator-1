@@ -17,6 +17,7 @@ using namespace CalculatorApp;
 using namespace CalculatorApp::Common;
 using namespace CalculatorApp::ViewModel;
 
+using namespace std;
 using namespace Platform;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
@@ -37,22 +38,13 @@ CalculatorScientificOperators::CalculatorScientificOperators()
 {
     InitializeComponent();
 
-    expButton->SetValue(Common::KeyboardShortcutManager::VirtualKeyProperty, Common::MyVirtualKey::E);
+    ExpButton->SetValue(Common::KeyboardShortcutManager::VirtualKeyProperty, Common::MyVirtualKey::E);
     Common::KeyboardShortcutManager::ShiftButtonChecked(false);
-}
-
-void CalculatorScientificOperators::OnLoaded(Object^, RoutedEventArgs^)
-{
-    m_propertyChangedToken = Model->PropertyChanged += ref new PropertyChangedEventHandler(this, &CalculatorScientificOperators::OnViewModelPropertyChanged);
-}
-void CalculatorScientificOperators::OnUnloaded(Object^, RoutedEventArgs^)
-{
-    Model->PropertyChanged -= m_propertyChangedToken;
 }
 
 void CalculatorScientificOperators::OnIsErrorVisualStatePropertyChanged(bool /*oldValue*/, bool newValue)
 {
-    String^ newState = newValue ? L"ErrorLayout" : L"NoErrorLayout";
+    String ^ newState = newValue ? L"ErrorLayout" : L"NoErrorLayout";
     VisualStateManager::GoToState(this, newState, false);
     NumberPad->IsErrorVisualState = newValue;
 }
@@ -89,7 +81,9 @@ void CalculatorScientificOperators::flyoutButton_Clicked(_In_ Platform::Object^ 
     this->FuncFlyout->Hide();
 }
 
-void CalculatorScientificOperators::shiftButton_IsEnabledChanged(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ /*e*/)
+void CalculatorScientificOperators::shiftButton_IsEnabledChanged(
+    _In_ Platform::Object ^ /*sender*/,
+    _In_ Windows::UI::Xaml::DependencyPropertyChangedEventArgs ^ /*e*/)
 {
     SetOperatorRowVisibility();
 }
@@ -140,21 +134,12 @@ void CalculatorScientificOperators::SetOperatorRowVisibility()
     InvRow1->Visibility = invRowVis;
 }
 
-void CalculatorScientificOperators::OnViewModelPropertyChanged(Object^ sender, PropertyChangedEventArgs^ e)
+void CalculatorScientificOperators::OpenParenthesisButton_GotFocus(Object ^ sender, RoutedEventArgs ^ e)
 {
-    if (e->PropertyName == StandardCalculatorViewModel::OpenParenthesisCountPropertyName && closeParenthesisButton->FocusState != ::FocusState::Unfocused)
-    {
-        Model->SetOpenParenthesisCountNarratorAnnouncement();
-    }
+    Model->SetOpenParenthesisCountNarratorAnnouncement();
 }
 
-
-//void CalculatorApp::CalculatorScientificOperators::ScientificOperators_SizeChanged(Platform::Object^ sender, Windows::UI::Xaml::SizeChangedEventArgs^ e)
-//{
-//    OutputDebugStringW(L"\n");
-//    OutputDebugStringW(L"\n");
-//    OutputDebugStringW((L"Keyboard size width: " + this->ScientificOperators->ActualWidth + L" height: " + this->ScientificOperators->ActualHeight)->Data());
-//    OutputDebugStringW(L"\n");
-//    OutputDebugStringW((L"shiftbutton size width: " + this->shiftButton->ActualWidth + L" height: " + this->shiftButton->ActualHeight)->Data());
-//    OutputDebugStringW(L"\n");
-//}
+String ^ CalculatorScientificOperators::ParenthesisCountToString(unsigned int count)
+{
+    return (count == 0) ? ref new String() : ref new String(to_wstring(count).data());
+}

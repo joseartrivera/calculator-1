@@ -12,14 +12,16 @@
 *
 * Author:
 \****************************************************************************/
-#include "pch.h"
+
+#include <string>
 #include "Header Files/CalcEngine.h"
 #include "Header Files/CalcUtils.h"
 
 using namespace std;
 using namespace CalcEngine;
 
-namespace {
+namespace
+{
     // NPrecedenceOfOp
     //
     // returns a virtual number for precedence for the operator. We expect binary operator only, otherwise the lowest number
@@ -42,7 +44,6 @@ namespace {
             iPrec = 0;
         }
         return rgbPrec[iPrec + 1];
-
     }
 }
 
@@ -90,7 +91,7 @@ void CCalcEngine::ProcessCommand(OpCode wParam)
 
 void CCalcEngine::ProcessCommandWorker(OpCode wParam)
 {
-    int            nx, ni;
+    int nx, ni;
 
     // Save the last command.  Some commands are not saved in this manor, these
     // commands are:
@@ -140,7 +141,7 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
         {
             m_bRecord = false;
             m_currentVal = m_input.ToRational(m_radix, m_precision);
-            DisplayNum();   // Causes 3.000 to shrink to 3. on first op.
+            DisplayNum(); // Causes 3.000 to shrink to 3. on first op.
         }
     }
     else
@@ -245,9 +246,9 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
             else
             {
                 /* do the last operation and then if the precedence array is not
-                * empty or the top is not the '(' demarcator then pop the top
-                * of the array and recheck precedence against the new operator
-                */
+                 * empty or the top is not the '(' demarcator then pop the top
+                 * of the array and recheck precedence against the new operator
+                 */
                 m_currentVal = DoOperation(m_nOpCode, m_currentVal, m_lastVal);
                 m_nPrevOpCode = m_nOpCode;
 
@@ -276,7 +277,6 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
                     m_HistoryCollector.PopLastOpndStart();
                     goto DoPrecedenceCheckAgain;
                 }
-
             }
         }
 
@@ -381,25 +381,26 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
     {
         if (!m_bChangeOp)
         {
-            // A special goody we are doing to preserve the history, if all was done was serious of unary operations last
+            // Preserve history, if everything done before was a series of unary operations.
             CheckAndAddLastBinOpToHistory(false);
         }
 
         m_lastVal = 0;
 
         m_bChangeOp = false;
-        m_precedenceOpCount = m_nTempCom = m_nLastCom = m_nOpCode = m_openParenCount = 0;
+        m_openParenCount = 0;
+        m_precedenceOpCount = m_nTempCom = m_nLastCom = m_nOpCode = 0;
         m_nPrevOpCode = 0;
         m_bNoPrevEqu = true;
         m_carryBit = 0;
-
 
         /* clear the parenthesis status box indicator, this will not be
         cleared for CENTR */
         if (nullptr != m_pCalcDisplay)
         {
-            m_pCalcDisplay->SetParenDisplayText(L"");
-            m_pCalcDisplay->SetExpressionDisplay(make_shared<CalculatorVector<pair<wstring, int>>>(), make_shared<CalculatorVector<shared_ptr<IExpressionCommand>>>());
+            m_pCalcDisplay->SetParenthesisNumber(0);
+            m_pCalcDisplay->SetExpressionDisplay(
+                make_shared<CalculatorVector<pair<wstring, int>>>(), make_shared<CalculatorVector<shared_ptr<IExpressionCommand>>>());
         }
 
         m_HistoryCollector.ClearHistoryLine(wstring());
@@ -442,7 +443,7 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
             // automatic closing of all the parenthesis to get a meaningful result as well as ensure data integrity
             m_nTempCom = m_nLastCom; // Put back this last saved command to the prev state so ) can be handled properly
             ProcessCommand(IDC_CLOSEP);
-            m_nLastCom = m_nTempCom; // Actually this is IDC_CLOSEP
+            m_nLastCom = m_nTempCom;  // Actually this is IDC_CLOSEP
             m_nTempCom = (int)wParam; // put back in the state where last op seen was IDC_CLOSEP, and current op is IDC_EQU
         }
 
@@ -492,7 +493,8 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
             m_HistoryCollector.CompleteHistoryLine(groupedString);
             if (nullptr != m_pCalcDisplay)
             {
-                m_pCalcDisplay->SetExpressionDisplay(make_shared<CalculatorVector<pair<wstring, int>>>(), make_shared<CalculatorVector<shared_ptr<IExpressionCommand>>>());
+                m_pCalcDisplay->SetExpressionDisplay(
+                    make_shared<CalculatorVector<pair<wstring, int>>>(), make_shared<CalculatorVector<shared_ptr<IExpressionCommand>>>());
             }
         }
 
@@ -602,7 +604,7 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
         // Set the "(=xx" indicator.
         if (nullptr != m_pCalcDisplay)
         {
-            m_pCalcDisplay->SetParenDisplayText(m_openParenCount ? to_wstring(m_openParenCount) : L"");
+            m_pCalcDisplay->SetParenthesisNumber(m_openParenCount >= 0 ? static_cast<unsigned int>(m_openParenCount) : 0);
         }
 
         if (!m_bError)
@@ -797,7 +799,6 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
         m_bInv = !m_bInv;
         break;
     }
-
 }
 
 // Helper function to resolve one item on the precedence stack.
@@ -806,8 +807,8 @@ void CCalcEngine::ResolveHighestPrecedenceOperation()
     // Is there a valid operation around?
     if (m_nOpCode)
     {
-        // If this is the first EQU in a string, set m_holdVal=m_currentVal 
-        // Otherwise let m_currentVal=m_holdVal.  This keeps m_currentVal constant 
+        // If this is the first EQU in a string, set m_holdVal=m_currentVal
+        // Otherwise let m_currentVal=m_holdVal.  This keeps m_currentVal constant
         // through all EQUs in a row.
         if (m_bNoPrevEqu)
         {
@@ -862,7 +863,6 @@ void CCalcEngine::CheckAndAddLastBinOpToHistory(bool addToHistory)
             // So erase the last operand
             m_HistoryCollector.RemoveLastOpndFromHistory();
         }
-
     }
     else if (m_HistoryCollector.FOpndAddedToHistory() && !m_bError)
     {
@@ -871,8 +871,7 @@ void CCalcEngine::CheckAndAddLastBinOpToHistory(bool addToHistory)
         // Let us make a current value =. So in case of 4 SQRT (or a equation under braces) and then a new equation is started, we can just form
         // a useful equation of sqrt(4) = 2 and continue a new equation from now on. But no point in doing this for things like
         // MR, SUM etc. All you will get is 5 = 5 kind of no useful equation.
-        if ((IsUnaryOpCode(m_nLastCom) || IDC_SIGN == m_nLastCom || IDC_CLOSEP == m_nLastCom) &&
-            0 == m_openParenCount)
+        if ((IsUnaryOpCode(m_nLastCom) || IDC_SIGN == m_nLastCom || IDC_CLOSEP == m_nLastCom) && 0 == m_openParenCount)
         {
             if (addToHistory)
             {
@@ -912,7 +911,7 @@ void CCalcEngine::DisplayAnnounceBinaryOperator()
 // we have this separate table to get its localized name and for its Inv function if it exists.
 struct FunctionNameElement
 {
-    wstring degreeString; // Used by default if there are no rad or grad specific strings.
+    wstring degreeString;        // Used by default if there are no rad or grad specific strings.
     wstring inverseDegreeString; // Will fall back to degreeString if empty
 
     wstring radString;
@@ -929,7 +928,7 @@ struct FunctionNameElement
 // Table for each unary operator
 static const std::unordered_map<int, FunctionNameElement> operatorStringTable =
 {
-    { IDC_CHOP, { L"", SIDS_FRAC} },
+    { IDC_CHOP, { L"", SIDS_FRAC } },
 
     { IDC_SIN, { SIDS_SIND, SIDS_ASIND, SIDS_SINR, SIDS_ASINR, SIDS_SING, SIDS_ASING } },
     { IDC_COS, { SIDS_COSD, SIDS_ACOSD, SIDS_COSR, SIDS_ACOSR, SIDS_COSG, SIDS_ACOSG } },
@@ -947,7 +946,7 @@ static const std::unordered_map<int, FunctionNameElement> operatorStringTable =
     { IDC_CSCH, { SIDS_CSCH, SIDS_ACSCH } },
     { IDC_COTH, { SIDS_COTH, SIDS_ACOTH } },
     
-    { IDC_LN , { L"", SIDS_POWE } },
+    { IDC_LN, { L"", SIDS_POWE } },
     { IDC_SQR, { SIDS_SQR } },
     { IDC_CUB, { SIDS_CUBE } },
     { IDC_FAC, { SIDS_FACT } },

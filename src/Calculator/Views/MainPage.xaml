@@ -10,10 +10,9 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
       xmlns:vm="using:CalculatorApp.ViewModel"
-      x:Name="pageRoot"
+      x:Name="PageRoot"
       Background="{ThemeResource AppChromeAcrylicHostBackdropMediumLowBrush}"
       Loaded="OnPageLoaded"
-      Unloaded="OnPageUnLoaded"
       mc:Ignorable="d">
 
     <Page.Resources>
@@ -33,16 +32,14 @@
         <Style x:Key="NavViewItemStyle" TargetType="muxc:NavigationViewItem">
             <Setter Property="KeyTipPlacementMode" Value="Right"/>
         </Style>
+
+        <converters:BooleanToVisibilityNegationConverter x:Key="BooleanToVisibilityNegationConverter"/>
+        <converters:BooleanNegationConverter x:Key="BooleanNegationConverter"/>
     </Page.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!--
-                This row is padding for the SystemFocusVisuals,
-                otherwise the focus rectangles render under the title bar controls.
-            -->
-            <RowDefinition x:Name="FocusVisualMargin" Height="3"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -75,32 +72,44 @@
                 These buttons are only here to serve as the target for copy/paste commands
                 they are not to be shown, only to have the command and shortcut assigned to them.
             -->
-            <Button x:Name="copyButton"
+            <Button x:Name="CopyButton"
                     x:Uid="copyButton"
                     Command="{x:Bind Model.CopyCommand}"/>
-            <Button x:Name="pasteButton"
+            <Button x:Name="PasteButton"
                     x:Uid="pasteButton"
                     Command="{x:Bind Model.PasteCommand}"/>
-            <Button x:Name="copyButtonAlternate"
+            <Button x:Name="CopyButtonAlternate"
                     x:Uid="copyButtonAlternate"
                     Command="{x:Bind Model.CopyCommand}"/>
-            <Button x:Name="pasteButtonAlternate"
+            <Button x:Name="PasteButtonAlternate"
                     x:Uid="pasteButtonAlternate"
                     Command="{x:Bind Model.PasteCommand}"/>
         </StackPanel>
 
-        <!-- Title Bar -->
-        <local:TitleBar x:Name="CustomTitleBar"
-                        Grid.Row="0"
-                        Visibility="Collapsed"/>
-
+        <local:TitleBar x:Name="CustomTitleBar" Grid.Row="0"
+                        ApplicationViewModel="{x:Bind Model}"/>
+        
+        <Grid Grid.Row="1">
+            <Border x:Name="CalcHolder">
+                <!-- PLACEHOLDER!!!! This is where the calculator goes when it is delay loaded -->
+            </Border>
+            <Border x:Name="DateCalcHolder">
+                <!-- PLACEHOLDER!!!! This is where the date calculator goes when it is delay loaded -->
+            </Border>
+            <Border x:Name="ConverterHolder">
+                <!-- PLACEHOLDER!!!! This is where the converter goes when it is delay loaded -->
+            </Border>
+        </Grid>
+        
         <muxc:NavigationView x:Name="NavView"
                              x:Uid="NavView"
-                             Grid.Row="2"
+                             Grid.Row="1"
                              CompactModeThresholdWidth="Infinity"
                              DataContext="{x:Bind Model}"
                              ExpandedModeThresholdWidth="Infinity"
                              IsBackButtonVisible="Collapsed"
+                             IsPaneToggleButtonVisible="{x:Bind Model.IsAlwaysOnTop, Converter={StaticResource BooleanNegationConverter}, Mode=OneWay}"
+                             IsEnabled="{x:Bind Model.IsAlwaysOnTop, Converter={StaticResource BooleanNegationConverter}, Mode=OneWay}"
                              IsSettingsVisible="False"
                              Loaded="OnNavLoaded"
                              MenuItemsSource="{x:Bind CreateUIElementsForCategories(Model.Categories), Mode=OneWay}"
@@ -109,8 +118,10 @@
                              PaneOpened="OnNavPaneOpened"
                              PaneOpening="OnNavPaneOpening"
                              SelectionChanged="OnNavSelectionChanged"
+                             ItemInvoked="OnNavItemInvoked"
                              TabIndex="1"
                              UseSystemFocusVisuals="True">
+
             <muxc:NavigationView.PaneFooter>
                 <StackPanel HorizontalAlignment="Stretch" Orientation="Vertical">
                     <muxc:NavigationViewList x:Name="NavFooter"
@@ -118,6 +129,10 @@
                                              x:Load="False"
                                              IsItemClickEnabled="True"
                                              ItemClick="OnAboutButtonClick">
+                        <muxc:NavigationViewList.ItemContainerTransitions>
+                            <!-- Remove EntranceThemeTransition which is a default transition for NavigationViewList -->
+                            <TransitionCollection/>
+                        </muxc:NavigationViewList.ItemContainerTransitions>
                         <muxc:NavigationViewList.Items>
                             <muxc:NavigationViewItem x:Name="AboutButton"
                                                      x:Uid="AboutButton"
@@ -139,24 +154,31 @@
                     </muxc:NavigationViewList>
                 </StackPanel>
             </muxc:NavigationView.PaneFooter>
-
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
                 <TextBlock x:Name="Header"
                            Margin="52,6,12,0"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Top"
+                           Visibility="{x:Bind Model.IsAlwaysOnTop, Converter={StaticResource BooleanToVisibilityNegationConverter}, Mode=OneWay}"
                            Style="{StaticResource SubtitleTextBlockStyle}"
-                           Text="{x:Bind Model.CategoryName, Mode=OneWay}"/>
-
-                <Border x:Name="CalcHolder">
-                    <!-- PLACEHOLDER!!!! This is where the calculator goes when it is delay loaded -->
-                </Border>
-                <Border x:Name="DateCalcHolder">
-                    <!-- PLACEHOLDER!!!! This is where the date calculator goes when it is delay loaded -->
-                </Border>
-                <Border x:Name="ConverterHolder">
-                    <!-- PLACEHOLDER!!!! This is where the converter goes when it is delay loaded -->
-                </Border>
+                           Text="{x:Bind Model.CategoryName, Mode=OneWay}"
+                           Grid.Column="0"/>
+                <Button x:Name="NormalAlwaysOnTopButton"
+                        x:Uid="EnterAlwaysOnTopButton"
+                        FontFamily="{StaticResource CalculatorFontFamily}"
+                        Style="{StaticResource SquareIconButtonStyle}"
+                        Content="&#xEE49;"
+                        Click="AlwaysOnTopButtonClick"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        Background="Transparent"
+                        Visibility="{x:Bind Model.DisplayNormalAlwaysOnTopOption, Mode=OneWay}"
+                        AutomationProperties.AutomationId="NormalAlwaysOnTopButton"
+                        Grid.Column="1"/>
             </Grid>
         </muxc:NavigationView>
     </Grid>
