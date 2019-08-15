@@ -30,6 +30,9 @@ namespace CalculatorApp
         DEPENDENCY_PROPERTY_OWNER(CalculatorScientificOperators);
         DEPENDENCY_PROPERTY_WITH_DEFAULT_AND_CALLBACK(bool, IsErrorVisualState, false);
 
+        void OpenParenthesisButton_GotFocus(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
+        Platform::String ^ ParenthesisCountToString(unsigned int count);
+
     private:
         void OnIsErrorVisualStatePropertyChanged(bool oldValue, bool newValue);
         void shiftButton_Check(_In_ Platform::Object ^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs ^ e);

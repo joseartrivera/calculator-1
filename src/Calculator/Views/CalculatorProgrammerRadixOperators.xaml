@@ -23,7 +23,7 @@
 
     <Grid x:Name="ProgRadixOps">
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="overflowRow"
+            <RowDefinition x:Name="OverflowRow"
                            Height="Auto"
                            MinHeight="34"/>
             <RowDefinition Height="1*"/>
@@ -67,8 +67,8 @@
                         <Setter Target="OpenParenthesisButton.IsEnabled" Value="False"/>
                         <Setter Target="CloseParenthesisButton.IsEnabled" Value="False"/>
                         <Setter Target="NegateButton.IsEnabled" Value="False"/>
-                        <Setter Target="bitShiftButton.IsEnabled" Value="False"/>
-                        <Setter Target="bitwiseButton.IsEnabled" Value="False"/>
+                        <Setter Target="BitShiftButton.IsEnabled" Value="False"/>
+                        <Setter Target="BitwiseButton.IsEnabled" Value="False"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -81,55 +81,55 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="NumberPad.ButtonStyle" Value="{StaticResource NumericButtonStyle38}"/>
-                        <Setter Target="aButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
-                        <Setter Target="bButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
-                        <Setter Target="cButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
-                        <Setter Target="dButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
-                        <Setter Target="eButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
-                        <Setter Target="fButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
+                        <Setter Target="AButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
+                        <Setter Target="BButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
+                        <Setter Target="CButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
+                        <Setter Target="DButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
+                        <Setter Target="EButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
+                        <Setter Target="FButton.Style" Value="{StaticResource NumericButtonStyle38}"/>
 
-                        <Setter Target="modButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="divideButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="multiplyButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="minusButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="plusButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="equalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="clearButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="clearEntryButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="backSpaceButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="negateButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="openParenthesisButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="closeParenthesisButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="ModButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="DivideButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="MultiplyButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="MinusButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="PlusButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="EqualButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="ClearButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="ClearEntryButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="BackSpaceButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="NegateButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="OpenParenthesisButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="CloseParenthesisButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="andButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="orButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="xorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="nandButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="norButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="xnorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="rolButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="rorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="rolCarryButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="rorCarryButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="lshButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="rshButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="lshLogicalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="rshLogicalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="bitwiseShiftButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="notButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="AndButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="OrButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="XorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="NandButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="NorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="XnorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="RolButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="RorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="RolCarryButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="RorCarryButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="LshButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="RshButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="LshLogicalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="RshLogicalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="BitwiseShiftButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
+                        <Setter Target="NotButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="overflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeLarge}"/>
+                        <Setter Target="OverflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeLarge}"/>
 
-                        <Setter Target="bitwiseButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeLarge}"/>
-                        <Setter Target="bitwiseButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeLarge}"/>
-                        <Setter Target="bitwiseButton.FontSize" Value="{ThemeResource OverflowFontSizeLarge}"/>
+                        <Setter Target="BitwiseButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeLarge}"/>
+                        <Setter Target="BitwiseButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeLarge}"/>
+                        <Setter Target="BitwiseButton.FontSize" Value="{ThemeResource OverflowFontSizeLarge}"/>
 
-                        <Setter Target="bitShiftButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeLarge}"/>
-                        <Setter Target="bitShiftButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeLarge}"/>
-                        <Setter Target="bitShiftButton.FontSize" Value="{ThemeResource OverflowFontSizeLarge}"/>
+                        <Setter Target="BitShiftButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeLarge}"/>
+                        <Setter Target="BitShiftButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeLarge}"/>
+                        <Setter Target="BitShiftButton.FontSize" Value="{ThemeResource OverflowFontSizeLarge}"/>
 
-                        <Setter Target="bitwiseGrid.MinWidth" Value="387"/>
-                        <Setter Target="bitwiseGrid.MinHeight" Value="192"/>
+                        <Setter Target="BitwiseGrid.MinWidth" Value="387"/>
+                        <Setter Target="BitwiseGrid.MinHeight" Value="192"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Medium">
@@ -140,55 +140,55 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="NumberPad.ButtonStyle" Value="{StaticResource NumericButtonStyle24}"/>
-                        <Setter Target="aButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
-                        <Setter Target="bButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
-                        <Setter Target="cButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
-                        <Setter Target="dButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
-                        <Setter Target="eButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
-                        <Setter Target="fButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
+                        <Setter Target="AButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
+                        <Setter Target="BButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
+                        <Setter Target="CButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
+                        <Setter Target="DButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
+                        <Setter Target="EButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
+                        <Setter Target="FButton.Style" Value="{StaticResource NumericButtonStyle24}"/>
 
-                        <Setter Target="modButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="divideButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="multiplyButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="minusButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="plusButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="equalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="clearButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="clearEntryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="backSpaceButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="negateButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSizeLarge}"/>
-                        <Setter Target="openParenthesisButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="closeParenthesisButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="ModButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="DivideButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="MultiplyButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="MinusButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="PlusButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="EqualButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="ClearButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="ClearEntryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="BackSpaceButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="NegateButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSizeLarge}"/>
+                        <Setter Target="OpenParenthesisButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="CloseParenthesisButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
 
-                        <Setter Target="andButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="orButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="xorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="nandButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="norButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="xnorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="rolButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="rorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="rolCarryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="rorCarryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="lshButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="rshButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="lshLogicalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="rshLogicalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="bitwiseShiftButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="notButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="AndButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="OrButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="XorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="NandButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="NorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="XnorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="RolButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="RorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="RolCarryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="RorCarryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="LshButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="RshButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="LshLogicalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="RshLogicalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="BitwiseShiftButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="NotButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
 
-                        <Setter Target="overflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeMedium}"/>
+                        <Setter Target="OverflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeMedium}"/>
 
-                        <Setter Target="bitwiseButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeMedium}"/>
-                        <Setter Target="bitwiseButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
-                        <Setter Target="bitwiseButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
+                        <Setter Target="BitwiseButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeMedium}"/>
+                        <Setter Target="BitwiseButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
+                        <Setter Target="BitwiseButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
 
-                        <Setter Target="bitShiftButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeMedium}"/>
-                        <Setter Target="bitShiftButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
-                        <Setter Target="bitShiftButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
+                        <Setter Target="BitShiftButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeMedium}"/>
+                        <Setter Target="BitShiftButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
+                        <Setter Target="BitShiftButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
 
-                        <Setter Target="bitwiseGrid.MinWidth" Value="416"/>
-                        <Setter Target="bitwiseGrid.MinHeight" Value="144"/>
+                        <Setter Target="BitwiseGrid.MinWidth" Value="416"/>
+                        <Setter Target="BitwiseGrid.MinHeight" Value="144"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Small">
@@ -197,55 +197,55 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="NumberPad.ButtonStyle" Value="{StaticResource NumericButtonStyle18}"/>
-                        <Setter Target="aButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
-                        <Setter Target="bButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
-                        <Setter Target="cButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
-                        <Setter Target="dButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
-                        <Setter Target="eButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
-                        <Setter Target="fButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
+                        <Setter Target="AButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
+                        <Setter Target="BButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
+                        <Setter Target="CButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
+                        <Setter Target="DButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
+                        <Setter Target="EButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
+                        <Setter Target="FButton.Style" Value="{StaticResource NumericButtonStyle14}"/>
 
-                        <Setter Target="modButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="divideButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="multiplyButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="minusButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="plusButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="equalButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="clearButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="clearEntryButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="backSpaceButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="negateButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="openParenthesisButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="closeParenthesisButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="ModButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="DivideButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="MultiplyButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="MinusButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="PlusButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="EqualButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="ClearButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="ClearEntryButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="BackSpaceButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="NegateButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="OpenParenthesisButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="CloseParenthesisButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
 
-                        <Setter Target="andButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="orButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="xorButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="nandButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="norButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="xnorButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="rolButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="rorButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="rolCarryButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="rorCarryButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="lshButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="rshButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="lshLogicalButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="rshLogicalButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="bitwiseShiftButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="notButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="AndButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="OrButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="XorButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="NandButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="NorButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="XnorButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="RolButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="RorButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="RolCarryButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="RorCarryButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="LshButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="RshButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="LshLogicalButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="RshLogicalButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="BitwiseShiftButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="NotButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
 
-                        <Setter Target="overflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeSmall}"/>
+                        <Setter Target="OverflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeSmall}"/>
 
-                        <Setter Target="bitwiseButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeSmall}"/>
-                        <Setter Target="bitwiseButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeSmall}"/>
-                        <Setter Target="bitwiseButton.FontSize" Value="{ThemeResource OverflowFontSizeSmall}"/>
+                        <Setter Target="BitwiseButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeSmall}"/>
+                        <Setter Target="BitwiseButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeSmall}"/>
+                        <Setter Target="BitwiseButton.FontSize" Value="{ThemeResource OverflowFontSizeSmall}"/>
 
-                        <Setter Target="bitShiftButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeSmall}"/>
-                        <Setter Target="bitShiftButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeSmall}"/>
-                        <Setter Target="bitShiftButton.FontSize" Value="{ThemeResource OverflowFontSizeSmall}"/>
+                        <Setter Target="BitShiftButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeSmall}"/>
+                        <Setter Target="BitShiftButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeSmall}"/>
+                        <Setter Target="BitShiftButton.FontSize" Value="{ThemeResource OverflowFontSizeSmall}"/>
 
-                        <Setter Target="bitwiseGrid.MinWidth" Value="194"/>
-                        <Setter Target="bitwiseGrid.MinHeight" Value="96"/>
+                        <Setter Target="BitwiseGrid.MinWidth" Value="194"/>
+                        <Setter Target="BitwiseGrid.MinHeight" Value="96"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -255,16 +255,16 @@
                                    Grid.ColumnSpan="6"
                                    Background="{ThemeResource AppOverflowOperatorBackground}"
                                    AutomationProperties.HeadingLevel="Level1">
-            <controls:OverflowButton x:Name="bitwiseButton"
+            <controls:OverflowButton x:Name="BitwiseButton"
                                      x:Uid="bitwiseButton"
                                      Style="{StaticResource OverflowButtonStyle}"
                                      Glyph="&#xF895;">
                 <Button.Flyout>
-                    <Flyout x:Name="bitwiseFlyout"
+                    <Flyout x:Name="BitwiseFlyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
                             Placement="BottomEdgeAlignedLeft">
-                        <Grid x:Name="bitwiseGrid"
+                        <Grid x:Name="BitwiseGrid"
                               MinWidth="258"
                               MinHeight="96"
                               XYFocusKeyboardNavigation="Enabled">
@@ -278,19 +278,19 @@
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
 
-                            <ToggleButton x:Name="bitwiseShiftButton"
+                            <ToggleButton x:Name="BitwiseShiftButton"
                                           x:Uid="bitwiseShiftButton"
                                           Style="{StaticResource CaptionToggleEmphasizedButtonStyle}"
                                           FontFamily="{StaticResource CalculatorFontFamily}"
                                           AutomationProperties.AutomationId="shiftButton"
                                           Checked="bitwiseFlyout_Toggle"
                                           Content="&#xF897;"
-                                          IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"
+                                          IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"
                                           Unchecked="bitwiseFlyout_Toggle"
                                           Visibility="Collapsed"/>
 
 
-                            <controls:CalculatorButton x:Name="andButton"
+                            <controls:CalculatorButton x:Name="AndButton"
                                                        x:Uid="andButton"
                                                        Style="{StaticResource OperatorButtonStyle}"
                                                        FontSize="12"
@@ -299,9 +299,9 @@
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="AND"
-                                                       IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
+                                                       IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"/>
 
-                            <controls:CalculatorButton x:Name="orButton"
+                            <controls:CalculatorButton x:Name="OrButton"
                                                        x:Uid="orButton"
                                                        Grid.Column="1"
                                                        Style="{StaticResource OperatorButtonStyle}"
@@ -311,9 +311,9 @@
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="OR"
-                                                       IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
+                                                       IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"/>
 
-                            <controls:CalculatorButton x:Name="notButton"
+                            <controls:CalculatorButton x:Name="NotButton"
                                                        x:Uid="notButton"
                                                        Grid.Column="2"
                                                        Style="{StaticResource OperatorButtonStyle}"
@@ -323,11 +323,11 @@
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="NOT"
-                                                       IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
+                                                       IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"/>
 
 
 
-                            <controls:CalculatorButton x:Name="xorButton"
+                            <controls:CalculatorButton x:Name="XorButton"
                                                        x:Uid="xorButton"
                                                        Grid.Row="1"
                                                        Grid.Column="2"
@@ -338,10 +338,10 @@
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="XOR"
-                                                       IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
+                                                       IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"/>
 
 
-                            <controls:CalculatorButton x:Name="nandButton"
+                            <controls:CalculatorButton x:Name="NandButton"
                                                        x:Uid="nandButton"
                                                        Grid.Row="1"
                                                        Style="{StaticResource OperatorButtonStyle}"
@@ -351,9 +351,9 @@
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="NAND"
-                                                       IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
+                                                       IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"/>
 
-                            <controls:CalculatorButton x:Name="norButton"
+                            <controls:CalculatorButton x:Name="NorButton"
                                                        x:Uid="norButton"
                                                        Grid.Row="1"
                                                        Grid.Column="1"
@@ -364,9 +364,9 @@
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="NOR"
-                                                       IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"/>
+                                                       IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"/>
 
-                            <controls:CalculatorButton x:Name="xnorButton"
+                            <controls:CalculatorButton x:Name="XnorButton"
                                                        x:Uid="xnorButton"
                                                        Grid.Row="1"
                                                        Grid.Column="2"
@@ -377,7 +377,7 @@
                                                        Click="flyoutButton_Clicked"
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="XNOR"
-                                                       IsEnabled="{x:Bind bitwiseButton.IsEnabled, Mode=OneWay}"
+                                                       IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="Collapsed"/>
 
 
@@ -418,7 +418,7 @@
                     </Flyout>
                 </Button.Flyout>
             </controls:OverflowButton>
-            <controls:OverflowButton x:Name="bitShiftButton"
+            <controls:OverflowButton x:Name="BitShiftButton"
                                      x:Uid="bitShiftButton"
                                      Style="{StaticResource OverflowButtonStyle}"
                                      Glyph="&#xE301;">
@@ -428,20 +428,20 @@
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
                             Placement="Bottom">
                         <StackPanel MaxWidth="192" Padding="12">
-                            <RadioButton x:Name="arithmeticShiftButton"
+                            <RadioButton x:Name="ArithmeticShiftButton"
                                          x:Uid="arithmeticShiftButton"
                                          AutomationProperties.AutomationId="arithmeticShiftButton"
                                          Checked="bitshiftFlyout_Checked"
                                          IsChecked="True"/>
-                            <RadioButton x:Name="logicalShiftButton"
+                            <RadioButton x:Name="LogicalShiftButton"
                                          x:Uid="logicalShiftButton"
                                          AutomationProperties.AutomationId="logicalShiftButton"
                                          Checked="bitshiftFlyout_Checked"/>
-                            <RadioButton x:Name="rotateCircularButton"
+                            <RadioButton x:Name="RotateCircularButton"
                                          x:Uid="rotateCircularButton"
                                          AutomationProperties.AutomationId="rotateCircularButton"
                                          Checked="bitshiftFlyout_Checked"/>
-                            <RadioButton x:Name="rotateCarryShiftButton"
+                            <RadioButton x:Name="RotateCarryShiftButton"
                                          x:Uid="rotateCarryShiftButton"
                                          AutomationProperties.AutomationId="rotateCarryShiftButton"
                                          Checked="bitshiftFlyout_Checked"/>
@@ -481,7 +481,7 @@
                                        Content="&#xF88F;"
                                        Visibility="Collapsed"/>
 
-            <controls:CalculatorButton x:Name="rolCarryButton"
+            <controls:CalculatorButton x:Name="RolCarryButton"
                                        x:Uid="rolCarryButton"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                        FontSize="12"
@@ -490,7 +490,7 @@
                                        ButtonId="RolC"
                                        Content="&#xF88E;"
                                        Visibility="Collapsed"/>
-            <controls:CalculatorButton x:Name="rorCarryButton"
+            <controls:CalculatorButton x:Name="RorCarryButton"
                                        x:Uid="rorCarryButton"
                                        Grid.Column="1"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
@@ -501,7 +501,7 @@
                                        Content="&#xF88F;"
                                        Visibility="Collapsed"/>
 
-            <controls:CalculatorButton x:Name="lshButton"
+            <controls:CalculatorButton x:Name="LshButton"
                                        x:Uid="lshButton"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                        FontSize="12"
@@ -517,8 +517,8 @@
                                        ButtonId="Rsh"
                                        Content="&#xF88F;"/>
 
-            <controls:CalculatorButton x:Name="lshLogicalButton"
-                                       x:Uid="lshLogicalButton"
+            <controls:CalculatorButton x:Name="LshLogicalButton"
+                                       x:Uid="LshLogicalButton"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                        FontSize="12"
                                        x:DeferLoadStrategy="Lazy"
@@ -526,7 +526,7 @@
                                        ButtonId="LshL"
                                        Content="&#xF88E;"
                                        Visibility="Collapsed"/>
-            <controls:CalculatorButton x:Name="rshLogicalButton"
+            <controls:CalculatorButton x:Name="RshLogicalButton"
                                        x:Uid="rshLogicalButton"
                                        Grid.Column="1"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
@@ -547,7 +547,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <controls:CalculatorButton x:Name="clearButton"
+            <controls:CalculatorButton x:Name="ClearButton"
                                        x:Uid="clearButton"
                                        Style="{StaticResource OperatorButtonStyle}"
                                        FontSize="12"
@@ -555,7 +555,7 @@
                                        ButtonId="Clear"
                                        Content="C"
                                        Visibility="{x:Bind Model.IsInputEmpty, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-            <controls:CalculatorButton x:Name="clearEntryButton"
+            <controls:CalculatorButton x:Name="ClearEntryButton"
                                        x:Uid="clearEntryButton"
                                        Style="{StaticResource OperatorButtonStyle}"
                                        FontSize="12"
@@ -563,7 +563,7 @@
                                        ButtonId="ClearEntry"
                                        Content="CE"
                                        Visibility="{x:Bind Model.IsInputEmpty, Mode=OneWay, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
-            <controls:CalculatorButton x:Name="backSpaceButton"
+            <controls:CalculatorButton x:Name="BackSpaceButton"
                                        x:Uid="backSpaceButton"
                                        Grid.Column="1"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
@@ -573,18 +573,18 @@
                                        Content="&#xE94F;"/>
         </Grid>
 
-        <controls:CalculatorButton x:Name="openParenthesisButton"
+        <controls:CalculatorButton x:Name="OpenParenthesisButton"
                                    x:Uid="openParenthesisButton"
                                    Grid.Row="2"
                                    Grid.Column="2"
                                    Style="{StaticResource ParenthesisCalcButtonStyle}"
                                    FontSize="18"
                                    AutomationProperties.AutomationId="openParenthesisButton"
-                                   AutomationProperties.Name="{Binding LeftParenthesisAutomationName}"
                                    ButtonId="OpenParenthesis"
                                    Content="("
-                                   Tag="{x:Bind Model.OpenParenthesisCount, Mode=OneWay}"/>
-        <controls:CalculatorButton x:Name="closeParenthesisButton"
+                                   GotFocus="OpenParenthesisButton_GotFocus"
+                                   Tag="{x:Bind ParenthesisCountToString(Model.OpenParenthesisCount), Mode=OneWay}"/>
+        <controls:CalculatorButton x:Name="CloseParenthesisButton"
                                    x:Uid="closeParenthesisButton"
                                    Grid.Row="2"
                                    Grid.Column="3"
@@ -594,7 +594,7 @@
                                    ButtonId="CloseParenthesis"
                                    Content=")"/>
 
-        <controls:CalculatorButton x:Name="modButton"
+        <controls:CalculatorButton x:Name="ModButton"
                                    x:Uid="modButton"
                                    Grid.Row="2"
                                    Grid.Column="4"

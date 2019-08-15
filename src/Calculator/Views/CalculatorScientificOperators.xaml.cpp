@@ -56,27 +56,26 @@ void CalculatorScientificOperators::shiftButton_Check(_In_ Platform::Object^ /*s
 
 void CalculatorScientificOperators::shiftButton_Uncheck(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
 {
-    shiftButton->IsChecked = false;
+    ShiftButton->IsChecked = false;
     SetOperatorRowVisibility();
-    shiftButton->Focus(::FocusState::Programmatic);
+    ShiftButton->Focus(::FocusState::Programmatic);
 }
 
 void CalculatorScientificOperators::trigFlyoutShift_Toggle(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
 {
     SetTrigRowVisibility();
-    Common::KeyboardShortcutManager::ShiftButtonChecked(trigShiftButton->IsEnabled && trigShiftButton->IsChecked->Value);
+    Common::KeyboardShortcutManager::ShiftButtonChecked(TrigShiftButton->IsEnabled && TrigShiftButton->IsChecked->Value);
 }
 
 void CalculatorScientificOperators::trigFlyoutHyp_Toggle(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
 {
-    TraceLogger::GetInstance().LogHypButtonUsed(ApplicationView::GetApplicationViewIdForWindow(CoreWindow::GetForCurrentThread()));
     SetTrigRowVisibility();
 }
 
 void CalculatorScientificOperators::flyoutButton_Clicked(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
 {
-    this->hypButton->IsChecked = false;
-    this->trigShiftButton->IsChecked = false;
+    this->HypButton->IsChecked = false;
+    this->TrigShiftButton->IsChecked = false;
     this->Trigflyout->Hide();
     this->FuncFlyout->Hide();
 }
@@ -90,8 +89,8 @@ void CalculatorScientificOperators::shiftButton_IsEnabledChanged(
 
 void CalculatorScientificOperators::SetTrigRowVisibility()
 {
-    bool isShiftChecked = trigShiftButton->IsChecked->Value;
-    bool isHypeChecked = hypButton->IsChecked->Value;
+    bool isShiftChecked = TrigShiftButton->IsChecked->Value;
+    bool isHypeChecked = HypButton->IsChecked->Value;
 
     InverseHyperbolicTrigFunctions->Visibility = ::Visibility::Collapsed;
     InverseTrigFunctions->Visibility = ::Visibility::Collapsed;
@@ -119,7 +118,7 @@ void CalculatorScientificOperators::SetTrigRowVisibility()
 void CalculatorScientificOperators::SetOperatorRowVisibility()
 {
     ::Visibility rowVis, invRowVis;
-    if (shiftButton->IsChecked->Value)
+    if (ShiftButton->IsChecked->Value)
     {
         rowVis = ::Visibility::Collapsed;
         invRowVis = ::Visibility::Visible;

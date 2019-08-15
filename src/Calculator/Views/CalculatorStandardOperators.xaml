@@ -108,20 +108,6 @@
                         <triggers:ControlSizeTrigger MinWidth="780"
                                                      MinHeight="814"
                                                      Source="{x:Bind Root}"/>
-                        <Setter Target="PercentButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="SquareRootButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="XPower2Button.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="XPower3Button.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="InvertButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="NegateButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="ClearEntryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="ClearButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="BackSpaceButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="DivideButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="MultiplyButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="MinusButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="PlusButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="EqualButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="percentButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
@@ -265,14 +251,14 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <controls:CalculatorButton x:Name="percentButton"
+            <controls:CalculatorButton x:Name="PercentButton"
                                        x:Uid="percentButton"
                                        Grid.Column="0"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="percentButton"
                                        ButtonId="Percent"
                                        Content="&#xE94C;"/>
-            <controls:CalculatorButton x:Name="clearEntryButton"
+            <controls:CalculatorButton x:Name="ClearEntryButton"
                                        x:Uid="clearEntryButton"
                                        Grid.Column="1"
                                        Style="{StaticResource OperatorButtonStyle}"
@@ -280,7 +266,7 @@
                                        AutomationProperties.AutomationId="clearEntryButton"
                                        ButtonId="ClearEntry"
                                        Content="CE"/>
-            <controls:CalculatorButton x:Name="clearButton"
+            <controls:CalculatorButton x:Name="ClearButton"
                                        x:Uid="clearButton"
                                        Grid.Column="2"
                                        Style="{StaticResource OperatorButtonStyle}"
@@ -288,7 +274,7 @@
                                        AutomationProperties.AutomationId="clearButton"
                                        ButtonId="Clear"
                                        Content="C"/>
-            <controls:CalculatorButton x:Name="backSpaceButton"
+            <controls:CalculatorButton x:Name="BackSpaceButton"
                                        x:Uid="backSpaceButton"
                                        Grid.Column="3"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
@@ -317,14 +303,14 @@
                 <ColumnDefinition x:Name="FnC2" Width="1*"/>
                 <ColumnDefinition x:Name="FnC3" Width="1*"/>
             </Grid.ColumnDefinitions>
-            <controls:CalculatorButton x:Name="invertButton"
+            <controls:CalculatorButton x:Name="InvertButton"
                                        x:Uid="invertButton"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                        FontSize="18"
                                        AutomationProperties.AutomationId="invertButton"
                                        ButtonId="Invert"
                                        Content="&#xf7c9;"/>
-            <controls:CalculatorButton x:Name="xpower2Button"
+            <controls:CalculatorButton x:Name="Xpower2Button"
                                        x:Uid="xpower2Button"
                                        Grid.Column="1"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
@@ -332,7 +318,7 @@
                                        AutomationProperties.AutomationId="xpower2Button"
                                        ButtonId="XPower2"
                                        Content="&#xf7c8;"/>
-            <controls:CalculatorButton x:Name="squareRootButton"
+            <controls:CalculatorButton x:Name="SquareRootButton"
                                        x:Uid="squareRootButton"
                                        Grid.Column="2"
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
