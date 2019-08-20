@@ -20,7 +20,9 @@
     </UserControl.Resources>
     <Grid x:Name="ScientificOperators">
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="OverflowRow" Height="Auto"/>
+            <RowDefinition x:Name="OverflowRow"
+                           Height="Auto"
+                           MinHeight="34"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
