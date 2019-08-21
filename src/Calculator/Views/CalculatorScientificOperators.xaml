@@ -20,9 +20,7 @@
     </UserControl.Resources>
     <Grid x:Name="ScientificOperators">
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="OverflowRow"
-                           Height="Auto"
-                           MinHeight="34"/>
+            <RowDefinition x:Name="OverflowRow" Height="Auto"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -880,7 +878,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <controls:CalculatorButton Name="clearEntryButton"
+            <controls:CalculatorButton Name="ClearEntryButton"
                                        x:Uid="clearEntryButton"
                                        Grid.Column="1"
                                        Style="{StaticResource OperatorButtonStyle}"
