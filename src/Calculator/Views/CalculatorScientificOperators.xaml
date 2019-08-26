@@ -391,7 +391,7 @@
                                      x:Uid="trigButton"
                                      Style="{StaticResource OverflowButtonStyle}"
                                      Glyph="&#xF892;">
-                <Button.Flyout>
+                <controls:OverflowButton.FlyoutMenu>
                     <Flyout x:Name="Trigflyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
@@ -745,13 +745,13 @@
                             </Grid>
                         </Grid>
                     </Flyout>
-                </Button.Flyout>
+                </controls:OverflowButton.FlyoutMenu>
             </controls:OverflowButton>
             <controls:OverflowButton x:Name="FuncButton"
                                      x:Uid="funcButton"
                                      Style="{StaticResource OverflowButtonStyle}"
                                      Glyph="&#xF893;">
-                <Button.Flyout>
+                <controls:OverflowButton.FlyoutMenu>
                     <Flyout x:Name="FuncFlyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
@@ -832,7 +832,7 @@
                                                        IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
                         </Grid>
                     </Flyout>
-                </Button.Flyout>
+                </controls:OverflowButton.FlyoutMenu>
             </controls:OverflowButton>
         </controls:OverflowListView>
 

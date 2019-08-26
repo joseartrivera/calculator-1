@@ -42,21 +42,6 @@ void CalculatorProgrammerRadixOperators::OnUnloaded(Object ^, RoutedEventArgs ^)
     Model->ProgModeRadixChange -= m_progModeRadixChangeToken;
 }
 
-void CalculatorProgrammerRadixOperators::bitwiseFlyout_Toggle(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e)
-{
-    bool isShiftChecked = static_cast<ToggleButton ^>(sender)->IsChecked->Value;
-    if (isShiftChecked)
-    {
-        //BitwiseFunctions->Visibility = ::Visibility::Collapsed;
-        //InverseBitwiseFunctions->Visibility = ::Visibility::Visible;
-    }
-    else
-    {
-        //BitwiseFunctions->Visibility = ::Visibility::Visible;
-       // InverseBitwiseFunctions->Visibility = ::Visibility::Collapsed;
-    }
-}
-
 void CalculatorProgrammerRadixOperators::flyoutButton_Clicked(_In_ Platform::Object^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs^ /*e*/)
 {
     this->BitwiseFlyout->Hide();

@@ -9,7 +9,8 @@ namespace CalculatorApp
 {
     namespace Controls
     {
-        public ref class OverflowButton sealed : Windows::UI::Xaml::Controls::Button
+    public
+        ref class OverflowButton sealed : Windows::UI::Xaml::Controls::Primitives::ToggleButton
         {
         public:
             OverflowButton()
@@ -22,16 +23,14 @@ namespace CalculatorApp
             DEPENDENCY_PROPERTY(Platform::String^, Glyph);
             DEPENDENCY_PROPERTY(double, GlyphFontSize);
             DEPENDENCY_PROPERTY(double, ChevronFontSize);
+            DEPENDENCY_PROPERTY(Windows::UI::Xaml::Controls::Flyout^, FlyoutMenu);
 
         protected:
             virtual void OnApplyTemplate() override;
+            virtual void OnToggle() override;
 
         private:
-            void FlyoutOpened(Platform::Object^ sender, Platform::Object^ args);
             void FlyoutClosed(Platform::Object^ sender, Platform::Object^ args);
-
-            Windows::UI::Xaml::Media::Brush^ m_flyoutOpenBackgroundBrush;
-            Windows::UI::Xaml::Media::Brush^ m_flyoutClosedBackgroundBrush;
         };
     }
 }

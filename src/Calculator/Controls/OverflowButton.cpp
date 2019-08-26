@@ -18,31 +18,27 @@ DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, Text);
 DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, Glyph);
 DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, GlyphFontSize);
 DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, ChevronFontSize);
+DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, FlyoutMenu);
 
 void OverflowButton::OnApplyTemplate()
 {
-    if (Flyout != nullptr)
+    if (FlyoutMenu != nullptr)
     {
-        m_flyoutOpenBackgroundBrush = dynamic_cast<Brush^>(Application::Current->Resources->Lookup("AppControlPressedButtonFaceBrush"));
-        m_flyoutClosedBackgroundBrush = dynamic_cast<Brush^>(Application::Current->Resources->Lookup("SystemControlBackgroundTransparentBrush"));
-
-        Flyout->Opened += ref new EventHandler<Object^>(this, &OverflowButton::FlyoutOpened);
-        Flyout->Closed += ref new EventHandler<Object^>(this, &OverflowButton::FlyoutClosed);
+        FlyoutMenu->Closed += ref new EventHandler<Object ^>(this, &OverflowButton::FlyoutClosed);
     }
 }
 
-void OverflowButton::FlyoutOpened(Object^ sender, Object^ args)
+void OverflowButton::OnToggle()
 {
-    if (m_flyoutOpenBackgroundBrush != nullptr)
+    ToggleButton::OnToggle();
+
+    if (IsChecked)
     {
-        this->Background = m_flyoutOpenBackgroundBrush;
+        FlyoutMenu->ShowAt(this);
     }
 }
 
-void OverflowButton::FlyoutClosed(Object^ sender, Object^ args)
+void OverflowButton::FlyoutClosed(Object ^ sender, Object ^ args)
 {
-    if (m_flyoutClosedBackgroundBrush != nullptr)
-    {
-        this->Background = m_flyoutClosedBackgroundBrush;
-    }
+    IsChecked = false;
 }

@@ -115,7 +115,6 @@
                         <Setter Target="RshButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="LshLogicalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="RshLogicalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="BitwiseShiftButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="NotButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
 
                         <Setter Target="OverflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeLarge}"/>
@@ -174,7 +173,6 @@
                         <Setter Target="RshButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="LshLogicalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="RshLogicalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="BitwiseShiftButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="NotButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
 
                         <Setter Target="OverflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeMedium}"/>
@@ -231,7 +229,6 @@
                         <Setter Target="RshButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="LshLogicalButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="RshLogicalButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="BitwiseShiftButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="NotButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
 
                         <Setter Target="OverflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeSmall}"/>
@@ -259,7 +256,7 @@
                                      x:Uid="bitwiseButton"
                                      Style="{StaticResource OverflowButtonStyle}"
                                      Glyph="&#xF895;">
-                <Button.Flyout>
+                <controls:OverflowButton.FlyoutMenu>
                     <Flyout x:Name="BitwiseFlyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
@@ -277,18 +274,6 @@
                                 <ColumnDefinition Width="1*"/>
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
-
-                            <ToggleButton x:Name="BitwiseShiftButton"
-                                          x:Uid="bitwiseShiftButton"
-                                          Style="{StaticResource CaptionToggleEmphasizedButtonStyle}"
-                                          FontFamily="{StaticResource CalculatorFontFamily}"
-                                          AutomationProperties.AutomationId="shiftButton"
-                                          Checked="bitwiseFlyout_Toggle"
-                                          Content="&#xF897;"
-                                          IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"
-                                          Unchecked="bitwiseFlyout_Toggle"
-                                          Visibility="Collapsed"/>
-
 
                             <controls:CalculatorButton x:Name="AndButton"
                                                        x:Uid="andButton"
@@ -379,50 +364,15 @@
                                                        Content="XNOR"
                                                        IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"
                                                        Visibility="Collapsed"/>
-
-
-                            <!--<Grid x:Name="BitwiseFunctions"
-                                  Grid.RowSpan="2"
-                                  Grid.Column="0"
-                                  Grid.ColumnSpan="3">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-                                </Grid.RowDefinitions>
-
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                </Grid.ColumnDefinitions>
-
-                            </Grid>
-                            <Grid x:Name="InverseBitwiseFunctions"
-                                  Grid.RowSpan="2"
-                                  Grid.Column="0"
-                                  Grid.ColumnSpan="3"
-                                  Visibility="Collapsed">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-                                </Grid.RowDefinitions>
-
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                </Grid.ColumnDefinitions>
-                            </Grid>-->
-
                         </Grid>
                     </Flyout>
-                </Button.Flyout>
+                </controls:OverflowButton.FlyoutMenu>
             </controls:OverflowButton>
             <controls:OverflowButton x:Name="BitShiftButton"
                                      x:Uid="bitShiftButton"
                                      Style="{StaticResource OverflowButtonStyle}"
                                      Glyph="&#xE301;">
-                <Button.Flyout>
+                <controls:OverflowButton.FlyoutMenu>
                     <Flyout x:Name="BitShiftFlyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
                             FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
@@ -447,7 +397,7 @@
                                          Checked="bitshiftFlyout_Checked"/>
                         </StackPanel>
                     </Flyout>
-                </Button.Flyout>
+                </controls:OverflowButton.FlyoutMenu>
             </controls:OverflowButton>
         </controls:OverflowListView>
 

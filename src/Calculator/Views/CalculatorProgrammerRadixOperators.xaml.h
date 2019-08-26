@@ -33,7 +33,6 @@ namespace CalculatorApp
         void checkDefaultBitShift();
 
     private:
-        void bitwiseFlyout_Toggle(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
         void bitshiftFlyout_Checked(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
         void flyoutButton_Clicked(_In_ Platform::Object ^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs ^ e);
         void SetVisibilityBinding(Windows::UI::Xaml::FrameworkElement ^ element, Platform::String ^ path, Windows::UI::Xaml::Data::IValueConverter ^ converter);

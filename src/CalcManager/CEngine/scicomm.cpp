@@ -762,7 +762,7 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
     case IDC_EULER:
         if (!m_fIntegerMode)
         {
-            CheckAndAddLastBinOpToHistory(); // pi is like entering the number
+            CheckAndAddLastBinOpToHistory(); // e is like entering the number
             m_currentVal = Rational{ rat_exp };
 
             DisplayNum();

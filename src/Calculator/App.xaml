@@ -17,6 +17,7 @@
                     <x:Double x:Key="HighContrastStrokeThickness">0</x:Double>
                     <Color x:Key="AltHighColor">#FF000000</Color>
                     <Color x:Key="ChromeMediumLowColor">#FF2B2B2B</Color>
+                    <Color x:Key="OperatorPanelScrollButtonBackgroundColor">#FF858585</Color>
                     <SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{StaticResource AltHighColor}"/>
                     <SolidColorBrush x:Key="SystemControlBackgroundChromeMediumLowBrush" Color="{StaticResource ChromeMediumLowColor}"/>
                     <SolidColorBrush x:Key="TitleBarForegroundBaseHighBrush" Color="{StaticResource SystemBaseHighColor}"/>
@@ -31,7 +32,11 @@
                     <RevealBackgroundBrush x:Key="AppControlPressedButtonFaceBrush" Color="#30FFFFFF"/>
                     <SolidColorBrush x:Key="AppControlTransparentAccentColorBrush" Color="{ThemeResource SystemAccentColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextBaseHighColorBrush" Color="{StaticResource SystemBaseHighColor}"/>
+                    <SolidColorBrush x:Key="OperatorPanelScrollButtonBackgroundBrush" Color="{ThemeResource OperatorPanelScrollButtonBackgroundColor}"/>
                     <SolidColorBrush x:Key="AppControlHighlightCalcButtonBrush"
+                                     Opacity="0.4"
+                                     Color="{ThemeResource SystemAccentColor}"/>
+                    <SolidColorBrush x:Key="AppControlHighlightCalcButtonToggledBrush"
                                      Opacity="0.4"
                                      Color="{ThemeResource SystemAccentColor}"/>
 
@@ -68,6 +73,7 @@
                     <x:Double x:Key="HighContrastStrokeThickness">0</x:Double>
                     <Color x:Key="AltHighColor">#FFF2F2F2</Color>
                     <Color x:Key="ChromeMediumLowColor">#FFE0E0E0</Color>
+                    <Color x:Key="OperatorPanelScrollButtonBackgroundColor">#FF858585</Color>
                     <SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{StaticResource SystemAltHighColor}"/>
                     <SolidColorBrush x:Key="SystemControlBackgroundChromeMediumLowBrush" Color="{StaticResource ChromeMediumLowColor}"/>
                     <SolidColorBrush x:Key="TitleBarForegroundBaseHighBrush" Color="{StaticResource SystemBaseHighColor}"/>
@@ -82,10 +88,15 @@
                     <RevealBackgroundBrush x:Key="AppControlPressedButtonFaceBrush" Color="#30000000"/>
                     <SolidColorBrush x:Key="AppControlTransparentAccentColorBrush" Color="{ThemeResource SystemAccentColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextBaseHighColorBrush" Color="{StaticResource SystemBaseHighColor}"/>
+                    <SolidColorBrush x:Key="OperatorPanelScrollButtonBackgroundBrush" Color="{ThemeResource OperatorPanelScrollButtonBackgroundColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextRedColorBrush" Color="Red"/>
                     <SolidColorBrush x:Key="AppControlHighlightCalcButtonBrush"
                                      Opacity="0.4"
                                      Color="{ThemeResource SystemAccentColor}"/>
+                    <SolidColorBrush x:Key="AppControlHighlightCalcButtonToggledBrush"
+                                     Opacity="0.4"
+                                     Color="{ThemeResource SystemAccentColor}"/>
+
                     <SolidColorBrush x:Key="AppControlHighlightCalcButtonHoverBrush"
                                      Opacity="0.7"
                                      Color="{ThemeResource SystemAccentColor}"/>
@@ -125,9 +136,10 @@
                     <SolidColorBrush x:Key="AppOverflowOperatorBackground" Color="{ThemeResource SystemColorButtonFaceColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextBaseMediumHighBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
                     <SolidColorBrush x:Key="AppControlHoverButtonFaceBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
-                    <SolidColorBrush x:Key="AppControlPressedButtonFaceBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
+                    <SolidColorBrush x:Key="AppControlPressedButtonFaceBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
                     <SolidColorBrush x:Key="AppControlTransparentAccentColorBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="AppControlPageTextBaseHighColorBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
+                    <SolidColorBrush x:Key="OperatorPanelScrollButtonBackgroundBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextRedColorBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
                     <SolidColorBrush x:Key="AppControlForegroundTransparentRevealBorderBrush" Color="{ThemeResource SystemColorButtonTextColor}"/>
                     <SolidColorBrush x:Key="AppControlHighlightAccentRevealBackgroundBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
@@ -136,6 +148,7 @@
                     <SolidColorBrush x:Key="AppChromeAcrylicHostBackdropMediumLowBrush" Color="{ThemeResource SystemColorWindowColor}"/>
                     <SolidColorBrush x:Key="AppChromeAcrylicOperatorFlyoutBackgroundBrush" Color="{ThemeResource SystemColorWindowColor}"/>
                     <SolidColorBrush x:Key="AppControlHighlightCalcButtonBrush" Color="{ThemeResource SystemColorWindowColor}"/>
+                    <SolidColorBrush x:Key="AppControlHighlightCalcButtonToggledBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
                     <SolidColorBrush x:Key="AppControlHighlightCalcButtonHoverBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
@@ -553,9 +566,7 @@
                 </Setter>
             </Style>
 
-            <Style x:Key="OverflowButtonStyle"
-                   BasedOn="{StaticResource CaptionButtonStyle}"
-                   TargetType="Controls:OverflowButton">
+            <Style x:Key="OverflowButtonStyle" TargetType="Controls:OverflowButton">
                 <Setter Property="FontSize" Value="{StaticResource CaptionFontSize}"/>
                 <Setter Property="GlyphFontSize" Value="{StaticResource CaptionFontSize}"/>
                 <Setter Property="ChevronFontSize" Value="{StaticResource CaptionFontSize}"/>
@@ -565,6 +576,10 @@
                 <Setter Property="VerticalAlignment" Value="Stretch"/>
                 <Setter Property="HorizontalContentAlignment" Value="Center"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundTransparentBrush}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Margin" Value="1"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Controls:OverflowButton">
@@ -591,6 +606,44 @@
                                                 <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlDisabledBaseLowBrush}"/>
                                                 <Setter Target="ContentPresenter.BorderThickness" Value="0"/>
                                             </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Checked">
+                                            <VisualState.Setters>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource AppControlPressedButtonFaceBrush}"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="CheckedPointerOver">
+                                            <VisualState.Setters>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
+                                                <Setter Target="RootGrid.(RevealBrush.State)" Value="PointerOver"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource AppControlPressedButtonFaceBrush}"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="CheckedPressed">
+                                            <VisualState.Setters>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
+                                                <Setter Target="RootGrid.(RevealBrush.State)" Value="Pressed"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource AppControlPressedButtonFaceBrush}"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="CheckedDisabled">
+                                            <VisualState.Setters>
+                                                <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlDisabledBaseLowBrush}"/>
+                                                <Setter Target="ContentPresenter.BorderThickness" Value="0"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="Sizing">
+                                        <VisualState x:Name="NormalSize">
+                                            <VisualState.StateTriggers>
+                                                <AdaptiveTrigger MinWindowHeight="{StaticResource AppMinWindowHeight}" MinWindowWidth="{StaticResource AppMinWindowWidth}"/>
+                                            </VisualState.StateTriggers>
+                                        </VisualState>
+                                        <VisualState x:Name="SmallSize">
+                                            <VisualState.StateTriggers>
+                                                <AdaptiveTrigger MinWindowHeight="0" MinWindowWidth="0"/>
+                                            </VisualState.StateTriggers>
                                         </VisualState>
                                     </VisualStateGroup>
                                 </VisualStateManager.VisualStateGroups>
@@ -900,7 +953,7 @@
                                         <VisualState x:Name="Checked">
                                             <VisualState.Setters>
                                                 <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}"/>
-                                                <Setter Target="RootGrid.Background" Value="{ThemeResource AppControlHighlightCalcButtonBrush}"/>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource AppControlHighlightCalcButtonToggledBrush}"/>
                                             </VisualState.Setters>
                                         </VisualState>
                                         <VisualState x:Name="CheckedPointerOver">
@@ -1458,11 +1511,11 @@
                                                         HeaderTransitions="{TemplateBinding HeaderTransitions}"/>
                                     </ScrollViewer>
                                     <Button x:Name="ScrollLeft"
-                                            Width="20"
+                                            MinWidth="20"
                                             Padding="0"
                                             HorizontalAlignment="Left"
                                             VerticalAlignment="Stretch"
-                                            Background="{ThemeResource SystemBaseMediumLowColor}"
+                                            Background="{ThemeResource OperatorPanelScrollButtonBackgroundBrush}"
                                             Foreground="{ThemeResource SystemAltMediumHighColor}"
                                             FontFamily="{ThemeResource SymbolThemeFontFamily}"
                                             FontSize="12"
@@ -1470,18 +1523,19 @@
                                             IsTabStop="False"
                                             Visibility="Collapsed">
                                         <Button.Resources>
-                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource SystemBaseMediumLowColor}"/>
-                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemBaseMediumLowColor}"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource OperatorPanelScrollButtonBackgroundColor}"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource OperatorPanelScrollButtonBackgroundColor}"/>
+                                            <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="{ThemeResource SystemBaseMediumLowColor}"/>
                                             <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="{ThemeResource SystemAltMediumHighColor}"/>
                                             <SolidColorBrush x:Key="ButtonForegroundPressed" Color="{ThemeResource SystemAltMediumHighColor}"/>
                                         </Button.Resources>
                                     </Button>
                                     <Button x:Name="ScrollRight"
-                                            Width="20"
+                                            MinWidth="20"
                                             Padding="0"
                                             HorizontalAlignment="Right"
                                             VerticalAlignment="Stretch"
-                                            Background="{ThemeResource SystemBaseMediumLowColor}"
+                                            Background="{ThemeResource OperatorPanelScrollButtonBackgroundBrush}"
                                             Foreground="{ThemeResource SystemAltMediumHighColor}"
                                             FontFamily="{ThemeResource SymbolThemeFontFamily}"
                                             FontSize="12"
@@ -1489,9 +1543,10 @@
                                             IsTabStop="False"
                                             Visibility="Collapsed">
                                         <Button.Resources>
-                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource SystemBaseMediumLowColor}"/>
-                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemBaseMediumLowColor}"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource OperatorPanelScrollButtonBackgroundColor}"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource OperatorPanelScrollButtonBackgroundColor}"/>
                                             <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="{ThemeResource SystemAltMediumHighColor}"/>
+                                            <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="{ThemeResource SystemBaseMediumLowColor}"/>
                                             <SolidColorBrush x:Key="ButtonForegroundPressed" Color="{ThemeResource SystemAltMediumHighColor}"/>
                                         </Button.Resources>
                                     </Button>
