@@ -91,7 +91,7 @@ bool App::m_isAnimationEnabled = true;
 /// </summary>
 bool App::IsAnimationEnabled()
 {
-    return false;
+    return App::m_isAnimationEnabled;
 }
 
 /// <summary>
