@@ -61,7 +61,7 @@
                                   BackgroundSource="HostBackdrop"
                                   FallbackColor="{ThemeResource SystemChromeMediumColor}"
                                   TintColor="{ThemeResource SystemChromeLowColor}"
-                                  TintOpacity="0.2"/>
+                                  TintOpacity="1.0"/>
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Light">
                     <Thickness x:Key="HighContrastThicknessTop">0,0,0,0</Thickness>
@@ -111,7 +111,7 @@
                                   BackgroundSource="HostBackdrop"
                                   FallbackColor="{ThemeResource SystemChromeMediumColor}"
                                   TintColor="{ThemeResource SystemChromeLowColor}"
-                                  TintOpacity="0.2"/>
+                                  TintOpacity="1.0"/>
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="HighContrast">
                     <Thickness x:Key="HighContrastThicknessTop">0,1,0,0</Thickness>
