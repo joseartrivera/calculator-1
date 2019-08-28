@@ -9,10 +9,11 @@ namespace CalculatorApp
 {
     namespace Controls
     {
-        public ref class OverflowListView sealed : public Windows::UI::Xaml::Controls::ListView
+    public
+        ref class OperatorPanelListView sealed : public Windows::UI::Xaml::Controls::ListView
         {
         public:
-            OverflowListView();
+            OperatorPanelListView();
 
         protected:
             virtual void OnApplyTemplate() override;

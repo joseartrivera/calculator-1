@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 
 #include "pch.h"
-#include "OverflowListView.h"
+#include "OperatorPanelListView.h"
 
 using namespace CalculatorApp;
 using namespace CalculatorApp::Controls;
@@ -15,11 +15,11 @@ using namespace Windows::UI::Xaml;
 using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::Xaml::Controls;
 
-OverflowListView::OverflowListView()
+OperatorPanelListView::OperatorPanelListView()
 {
 }
 
-void OverflowListView::OnApplyTemplate()
+void OperatorPanelListView::OnApplyTemplate()
 {
     m_scrollViewer = dynamic_cast<ScrollViewer^>(GetTemplateChild("ScrollViewer"));
     m_scrollLeft = dynamic_cast<Button^>(GetTemplateChild("ScrollLeft"));
@@ -30,28 +30,28 @@ void OverflowListView::OnApplyTemplate()
 
     if (m_scrollLeft != nullptr)
     {
-        m_scrollLeft->Click += ref new RoutedEventHandler(this, &OverflowListView::OnScrollClick);
-        m_scrollLeft->PointerExited += ref new PointerEventHandler(this, &OverflowListView::OnButtonPointerExited);
+        m_scrollLeft->Click += ref new RoutedEventHandler(this, &OperatorPanelListView::OnScrollClick);
+        m_scrollLeft->PointerExited += ref new PointerEventHandler(this, &OperatorPanelListView::OnButtonPointerExited);
     }
 
     if (m_scrollRight != nullptr)
     {
-        m_scrollRight->Click += ref new RoutedEventHandler(this, &OverflowListView::OnScrollClick);
-        m_scrollRight->PointerExited += ref new PointerEventHandler(this, &OverflowListView::OnButtonPointerExited);
+        m_scrollRight->Click += ref new RoutedEventHandler(this, &OperatorPanelListView::OnScrollClick);
+        m_scrollRight->PointerExited += ref new PointerEventHandler(this, &OperatorPanelListView::OnButtonPointerExited);
     }
 
     if (m_scrollViewer != nullptr)
     {
-        m_scrollViewer->ViewChanged += ref new EventHandler<ScrollViewerViewChangedEventArgs^>(this, &OverflowListView::ScrollViewChanged);
+        m_scrollViewer->ViewChanged += ref new EventHandler<ScrollViewerViewChangedEventArgs^>(this, &OperatorPanelListView::ScrollViewChanged);
     }
 
-    this->PointerEntered += ref new PointerEventHandler(this, &OverflowListView::OnPointerEntered);
-    this->PointerExited += ref new PointerEventHandler(this, &OverflowListView::OnPointerExited);
+    this->PointerEntered += ref new PointerEventHandler(this, &OperatorPanelListView::OnPointerEntered);
+    this->PointerExited += ref new PointerEventHandler(this, &OperatorPanelListView::OnPointerExited);
 
     ListView::OnApplyTemplate();
 }
 
-void OverflowListView::ScrollViewChanged(_In_ Object^, _In_ ScrollViewerViewChangedEventArgs^ e)
+void OperatorPanelListView::ScrollViewChanged(_In_ Object^, _In_ ScrollViewerViewChangedEventArgs^ e)
 {
     if (m_isPointerEntered && !e->IsIntermediate)
     {
@@ -59,7 +59,7 @@ void OverflowListView::ScrollViewChanged(_In_ Object^, _In_ ScrollViewerViewChan
     }
 }
 
-void OverflowListView::OnScrollClick(_In_ Object^ sender, _In_ RoutedEventArgs^)
+void OperatorPanelListView::OnScrollClick(_In_ Object^ sender, _In_ RoutedEventArgs^)
 {
     auto clicked = dynamic_cast<Button^>(sender);
     if (clicked == m_scrollLeft)
@@ -73,7 +73,7 @@ void OverflowListView::OnScrollClick(_In_ Object^ sender, _In_ RoutedEventArgs^)
 }
 
 
-void OverflowListView::OnButtonPointerExited(_In_ Object^ sender, _In_ PointerRoutedEventArgs^ e)
+void OperatorPanelListView::OnButtonPointerExited(_In_ Object^ sender, _In_ PointerRoutedEventArgs^ e)
 {
     auto button = dynamic_cast<Button^>(sender);
 
@@ -84,7 +84,7 @@ void OverflowListView::OnButtonPointerExited(_In_ Object^ sender, _In_ PointerRo
     }
 }
 
-void OverflowListView::OnPointerEntered(_In_ Object^ sender, _In_ PointerRoutedEventArgs^ e)
+void OperatorPanelListView::OnPointerEntered(_In_ Object^ sender, _In_ PointerRoutedEventArgs^ e)
 {
     if (e->Pointer->PointerDeviceType == PointerDeviceType::Mouse)
     {
@@ -93,27 +93,27 @@ void OverflowListView::OnPointerEntered(_In_ Object^ sender, _In_ PointerRoutedE
     }
 }
 
-void OverflowListView::OnPointerExited(_In_ Object^ sender, _In_ PointerRoutedEventArgs^ e)
+void OperatorPanelListView::OnPointerExited(_In_ Object^ sender, _In_ PointerRoutedEventArgs^ e)
 {
     m_scrollLeft->Visibility = ::Visibility::Collapsed;
     m_scrollRight->Visibility = ::Visibility::Collapsed;
     m_isPointerEntered = false;
 }
 
-void OverflowListView::ScrollLeft()
+void OperatorPanelListView::ScrollLeft()
 {
         double offset = m_scrollViewer->HorizontalOffset - (scrollRatio * m_scrollViewer->ViewportWidth);
         m_scrollViewer->ChangeView(offset, nullptr, nullptr);
 }
 
-void OverflowListView::ScrollRight()
+void OperatorPanelListView::ScrollRight()
 {
         double offset = m_scrollViewer->HorizontalOffset + (scrollRatio * m_scrollViewer->ViewportWidth);
         m_scrollViewer->ChangeView(offset, nullptr, nullptr);
 }
 
 
-void OverflowListView::UpdateScrollButtons()
+void OperatorPanelListView::UpdateScrollButtons()
 {
     if (m_content == nullptr || m_scrollViewer == nullptr)
     {
@@ -141,7 +141,7 @@ void OverflowListView::UpdateScrollButtons()
     }
 }
 
-void OverflowListView::ShowHideScrollButtons(::Visibility vLeft, ::Visibility vRight)
+void OperatorPanelListView::ShowHideScrollButtons(::Visibility vLeft, ::Visibility vRight)
 {
     if (m_scrollLeft != nullptr && m_scrollRight != nullptr)
     {

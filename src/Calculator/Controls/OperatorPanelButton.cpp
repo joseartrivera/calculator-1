@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 
 #include "pch.h"
-#include "OverflowButton.h"
+#include "OperatorPanelButton.h"
 
 using namespace Platform;
 using namespace Windows::Foundation;
@@ -14,21 +14,21 @@ using namespace CalculatorApp;
 using namespace CalculatorApp::Common;
 using namespace CalculatorApp::Controls;
 
-DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, Text);
-DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, Glyph);
-DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, GlyphFontSize);
-DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, ChevronFontSize);
-DEPENDENCY_PROPERTY_INITIALIZATION(OverflowButton, FlyoutMenu);
+DEPENDENCY_PROPERTY_INITIALIZATION(OperatorPanelButton, Text);
+DEPENDENCY_PROPERTY_INITIALIZATION(OperatorPanelButton, Glyph);
+DEPENDENCY_PROPERTY_INITIALIZATION(OperatorPanelButton, GlyphFontSize);
+DEPENDENCY_PROPERTY_INITIALIZATION(OperatorPanelButton, ChevronFontSize);
+DEPENDENCY_PROPERTY_INITIALIZATION(OperatorPanelButton, FlyoutMenu);
 
-void OverflowButton::OnApplyTemplate()
+void OperatorPanelButton::OnApplyTemplate()
 {
     if (FlyoutMenu != nullptr)
     {
-        FlyoutMenu->Closed += ref new EventHandler<Object ^>(this, &OverflowButton::FlyoutClosed);
+        FlyoutMenu->Closed += ref new EventHandler<Object ^>(this, &OperatorPanelButton::FlyoutClosed);
     }
 }
 
-void OverflowButton::OnToggle()
+void OperatorPanelButton::OnToggle()
 {
     ToggleButton::OnToggle();
 
@@ -38,7 +38,7 @@ void OverflowButton::OnToggle()
     }
 }
 
-void OverflowButton::FlyoutClosed(Object ^ sender, Object ^ args)
+void OperatorPanelButton::FlyoutClosed(Object ^ sender, Object ^ args)
 {
     IsChecked = false;
 }

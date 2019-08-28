@@ -20,7 +20,7 @@
     </UserControl.Resources>
     <Grid x:Name="ScientificOperators">
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="OverflowRow" Height="Auto"/>
+            <RowDefinition x:Name="OperatorPanelRow" Height="Auto"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -174,16 +174,16 @@
                         <Setter Target="DmsButton.FontSize" Value="{ThemeResource CalcButtonTextIconCaptionSize}"/>
                         <Setter Target="DegreesButton.FontSize" Value="{ThemeResource CalcButtonTextIconCaptionSize}"/>
 
-                        <Setter Target="OverflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeLarge}"/>
+                        <Setter Target="OperatorPanelRow.MinHeight" Value="{StaticResource OperatorPanelButtonRowSizeLarge}"/>
 
-                        <Setter Target="TrigButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeLarge}"/>
-                        <Setter Target="TrigButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeLarge}"/>
-                        <Setter Target="TrigButton.FontSize" Value="{ThemeResource OverflowFontSizeLarge}"/>
+                        <Setter Target="TrigButton.ChevronFontSize" Value="{ThemeResource OperatorPanelChevronFontSizeLarge}"/>
+                        <Setter Target="TrigButton.GlyphFontSize" Value="{ThemeResource OperatorPanelGlyphFontSizeLarge}"/>
+                        <Setter Target="TrigButton.FontSize" Value="{ThemeResource OperatorPanelFontSizeLarge}"/>
 
 
-                        <Setter Target="FuncButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeLarge}"/>
-                        <Setter Target="FuncButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeLarge}"/>
-                        <Setter Target="FuncButton.FontSize" Value="{ThemeResource OverflowFontSizeLarge}"/>
+                        <Setter Target="FuncButton.ChevronFontSize" Value="{ThemeResource OperatorPanelChevronFontSizeLarge}"/>
+                        <Setter Target="FuncButton.GlyphFontSize" Value="{ThemeResource OperatorPanelGlyphFontSizeLarge}"/>
+                        <Setter Target="FuncButton.FontSize" Value="{ThemeResource OperatorPanelFontSizeLarge}"/>
 
                         <Setter Target="TrigGrid.MinWidth" Value="516"/>
                         <Setter Target="TrigGrid.MinHeight" Value="192"/>
@@ -270,15 +270,15 @@
                         <Setter Target="DmsButton.FontSize" Value="{ThemeResource CalcStandardOperatorTextIconCaptionSize}"/>
                         <Setter Target="DegreesButton.FontSize" Value="{ThemeResource CalcStandardOperatorTextIconCaptionSize}"/>
 
-                        <Setter Target="OverflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeMedium}"/>
+                        <Setter Target="OperatorPanelRow.MinHeight" Value="{StaticResource OperatorPanelButtonRowSizeMedium}"/>
 
-                        <Setter Target="TrigButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeMedium}"/>
-                        <Setter Target="TrigButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
-                        <Setter Target="TrigButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
+                        <Setter Target="TrigButton.ChevronFontSize" Value="{ThemeResource OperatorPanelChevronFontSizeMedium}"/>
+                        <Setter Target="TrigButton.GlyphFontSize" Value="{ThemeResource OperatorPanelGlyphFontSizeMedium}"/>
+                        <Setter Target="TrigButton.FontSize" Value="{ThemeResource OperatorPanelFontSizeMedium}"/>
 
-                        <Setter Target="FuncButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeMedium}"/>
-                        <Setter Target="FuncButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
-                        <Setter Target="FuncButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
+                        <Setter Target="FuncButton.ChevronFontSize" Value="{ThemeResource OperatorPanelChevronFontSizeMedium}"/>
+                        <Setter Target="FuncButton.GlyphFontSize" Value="{ThemeResource OperatorPanelGlyphFontSizeMedium}"/>
+                        <Setter Target="FuncButton.FontSize" Value="{ThemeResource OperatorPanelFontSizeMedium}"/>
 
                         <Setter Target="TrigGrid.MinWidth" Value="480"/>
                         <Setter Target="TrigGrid.MinHeight" Value="144"/>
@@ -363,15 +363,15 @@
                         <Setter Target="DmsButton.FontSize" Value="{ThemeResource CalcOperatorTextIconCaptionSize}"/>
                         <Setter Target="DegreesButton.FontSize" Value="{ThemeResource CalcOperatorTextIconCaptionSize}"/>
 
-                        <Setter Target="OverflowRow.MinHeight" Value="{ThemeResource OverflowButtonRowSizeSmall}"/>
+                        <Setter Target="OperatorPanelRow.MinHeight" Value="{ThemeResource OperatorPanelButtonRowSizeSmall}"/>
 
-                        <Setter Target="TrigButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeSmall}"/>
-                        <Setter Target="TrigButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeSmall}"/>
-                        <Setter Target="TrigButton.FontSize" Value="{ThemeResource OverflowFontSizeSmall}"/>
+                        <Setter Target="TrigButton.ChevronFontSize" Value="{ThemeResource OperatorPanelChevronFontSizeSmall}"/>
+                        <Setter Target="TrigButton.GlyphFontSize" Value="{ThemeResource OperatorPanelGlyphFontSizeSmall}"/>
+                        <Setter Target="TrigButton.FontSize" Value="{ThemeResource OperatorPanelFontSizeSmall}"/>
 
-                        <Setter Target="FuncButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeSmall}"/>
-                        <Setter Target="FuncButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeSmall}"/>
-                        <Setter Target="FuncButton.FontSize" Value="{ThemeResource OverflowFontSizeSmall}"/>
+                        <Setter Target="FuncButton.ChevronFontSize" Value="{ThemeResource OperatorPanelChevronFontSizeSmall}"/>
+                        <Setter Target="FuncButton.GlyphFontSize" Value="{ThemeResource OperatorPanelGlyphFontSizeSmall}"/>
+                        <Setter Target="FuncButton.FontSize" Value="{ThemeResource OperatorPanelFontSizeSmall}"/>
 
                         <Setter Target="TrigGrid.MinWidth" Value="258"/>
                         <Setter Target="TrigGrid.MinHeight" Value="96"/>
@@ -383,18 +383,18 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <controls:OverflowListView x:Uid="ScientificOverflow"
-                                   Grid.ColumnSpan="5"
-                                   Background="{ThemeResource AppOverflowOperatorBackground}"
-                                   AutomationProperties.HeadingLevel="Level1">
-            <controls:OverflowButton x:Name="TrigButton"
-                                     x:Uid="trigButton"
-                                     Style="{StaticResource OverflowButtonStyle}"
-                                     Glyph="&#xF892;">
-                <controls:OverflowButton.FlyoutMenu>
+        <controls:OperatorPanelListView x:Uid="ScientificOperatorPanel"
+                                        Grid.ColumnSpan="5"
+                                        Background="{ThemeResource AppOperatorPanelBackground}"
+                                        AutomationProperties.HeadingLevel="Level1">
+            <controls:OperatorPanelButton x:Name="TrigButton"
+                                          x:Uid="trigButton"
+                                          Style="{StaticResource OperatorPanelButtonStyle}"
+                                          Glyph="&#xF892;">
+                <controls:OperatorPanelButton.FlyoutMenu>
                     <Flyout x:Name="Trigflyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
-                            FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
+                            FlyoutPresenterStyle="{ThemeResource OperatorPanelFlyoutStyle}"
                             Placement="BottomEdgeAlignedLeft">
                         <Grid x:Name="TrigGrid"
                               MinWidth="258"
@@ -745,16 +745,16 @@
                             </Grid>
                         </Grid>
                     </Flyout>
-                </controls:OverflowButton.FlyoutMenu>
-            </controls:OverflowButton>
-            <controls:OverflowButton x:Name="FuncButton"
-                                     x:Uid="funcButton"
-                                     Style="{StaticResource OverflowButtonStyle}"
-                                     Glyph="&#xF893;">
-                <controls:OverflowButton.FlyoutMenu>
+                </controls:OperatorPanelButton.FlyoutMenu>
+            </controls:OperatorPanelButton>
+            <controls:OperatorPanelButton x:Name="FuncButton"
+                                          x:Uid="funcButton"
+                                          Style="{StaticResource OperatorPanelButtonStyle}"
+                                          Glyph="&#xF893;">
+                <controls:OperatorPanelButton.FlyoutMenu>
                     <Flyout x:Name="FuncFlyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
-                            FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
+                            FlyoutPresenterStyle="{ThemeResource OperatorPanelFlyoutStyle}"
                             Placement="Bottom">
                         <Grid x:Name="FuncGrid"
                               MinWidth="194"
@@ -832,9 +832,9 @@
                                                        IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
                         </Grid>
                     </Flyout>
-                </controls:OverflowButton.FlyoutMenu>
-            </controls:OverflowButton>
-        </controls:OverflowListView>
+                </controls:OperatorPanelButton.FlyoutMenu>
+            </controls:OperatorPanelButton>
+        </controls:OperatorPanelListView>
 
         <ToggleButton x:Name="ShiftButton"
                       x:Uid="shiftButton"

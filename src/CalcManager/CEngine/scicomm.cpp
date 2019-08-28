@@ -735,9 +735,9 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
         {
             CheckAndAddLastBinOpToHistory(); // rand is like entering the number
 
-            std::random_device rd;
-            std::mt19937 gen(rd());
-            std::uniform_real_distribution<> distr(0, 1);
+            random_device rd;
+            mt19937 gen(rd());
+            uniform_real_distribution<> distr(0, 1);
             auto random = distr(gen);
             wstringstream str;
             str << fixed << setprecision(m_precision) << random;

@@ -3831,11 +3831,11 @@
     <value>Bitshift</value>
     <comment>Screen reader prompt for the square root button on the scientific operator keypad</comment>
   </data>
-  <data name="ScientificOverflow.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+  <data name="ScientificOperatorPanel.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Scientific Operator Panels</value>
     <comment>Screen reader prompt for the Scientific Operator Panels on the scientific operator keypad</comment>
   </data>
-  <data name="ProgrammerOverflow.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+  <data name="ProgrammerOperatorPanel.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Programmer Operator Panels</value>
     <comment>Screen reader prompt for the Programmer Operator Panels on the programmer operator keypad</comment>
   </data>

@@ -10,14 +10,14 @@ namespace CalculatorApp
     namespace Controls
     {
     public
-        ref class OverflowButton sealed : Windows::UI::Xaml::Controls::Primitives::ToggleButton
+        ref class OperatorPanelButton sealed : Windows::UI::Xaml::Controls::Primitives::ToggleButton
         {
         public:
-            OverflowButton()
+            OperatorPanelButton()
             {
             }
 
-            DEPENDENCY_PROPERTY_OWNER(OverflowButton);
+            DEPENDENCY_PROPERTY_OWNER(OperatorPanelButton);
 
             DEPENDENCY_PROPERTY(Platform::String^, Text);
             DEPENDENCY_PROPERTY(Platform::String^, Glyph);

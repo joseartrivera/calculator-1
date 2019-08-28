@@ -23,7 +23,7 @@
 
     <Grid x:Name="ProgRadixOps">
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="OverflowRow"
+            <RowDefinition x:Name="OperatorPanelRow"
                            Height="Auto"
                            MinHeight="34"/>
             <RowDefinition Height="1*"/>
@@ -117,15 +117,15 @@
                         <Setter Target="RshLogicalButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="NotButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
 
-                        <Setter Target="OverflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeLarge}"/>
+                        <Setter Target="OperatorPanelRow.MinHeight" Value="{StaticResource OperatorPanelButtonRowSizeLarge}"/>
 
-                        <Setter Target="BitwiseButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeLarge}"/>
-                        <Setter Target="BitwiseButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeLarge}"/>
-                        <Setter Target="BitwiseButton.FontSize" Value="{ThemeResource OverflowFontSizeLarge}"/>
+                        <Setter Target="BitwiseButton.ChevronFontSize" Value="{ThemeResource OperatorPanelChevronFontSizeLarge}"/>
+                        <Setter Target="BitwiseButton.GlyphFontSize" Value="{ThemeResource OperatorPanelGlyphFontSizeLarge}"/>
+                        <Setter Target="BitwiseButton.FontSize" Value="{ThemeResource OperatorPanelFontSizeLarge}"/>
 
-                        <Setter Target="BitShiftButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeLarge}"/>
-                        <Setter Target="BitShiftButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeLarge}"/>
-                        <Setter Target="BitShiftButton.FontSize" Value="{ThemeResource OverflowFontSizeLarge}"/>
+                        <Setter Target="BitShiftButton.ChevronFontSize" Value="{ThemeResource OperatorPanelChevronFontSizeLarge}"/>
+                        <Setter Target="BitShiftButton.GlyphFontSize" Value="{ThemeResource OperatorPanelGlyphFontSizeLarge}"/>
+                        <Setter Target="BitShiftButton.FontSize" Value="{ThemeResource OperatorPanelFontSizeLarge}"/>
 
                         <Setter Target="BitwiseGrid.MinWidth" Value="387"/>
                         <Setter Target="BitwiseGrid.MinHeight" Value="192"/>
@@ -175,15 +175,15 @@
                         <Setter Target="RshLogicalButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="NotButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
 
-                        <Setter Target="OverflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeMedium}"/>
+                        <Setter Target="OperatorPanelRow.MinHeight" Value="{StaticResource OperatorPanelButtonRowSizeMedium}"/>
 
-                        <Setter Target="BitwiseButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeMedium}"/>
-                        <Setter Target="BitwiseButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
-                        <Setter Target="BitwiseButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
+                        <Setter Target="BitwiseButton.ChevronFontSize" Value="{ThemeResource OperatorPanelChevronFontSizeMedium}"/>
+                        <Setter Target="BitwiseButton.GlyphFontSize" Value="{ThemeResource OperatorPanelGlyphFontSizeMedium}"/>
+                        <Setter Target="BitwiseButton.FontSize" Value="{ThemeResource OperatorPanelFontSizeMedium}"/>
 
-                        <Setter Target="BitShiftButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeMedium}"/>
-                        <Setter Target="BitShiftButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeMedium}"/>
-                        <Setter Target="BitShiftButton.FontSize" Value="{ThemeResource OverflowFontSizeMedium}"/>
+                        <Setter Target="BitShiftButton.ChevronFontSize" Value="{ThemeResource OperatorPanelChevronFontSizeMedium}"/>
+                        <Setter Target="BitShiftButton.GlyphFontSize" Value="{ThemeResource OperatorPanelGlyphFontSizeMedium}"/>
+                        <Setter Target="BitShiftButton.FontSize" Value="{ThemeResource OperatorPanelFontSizeMedium}"/>
 
                         <Setter Target="BitwiseGrid.MinWidth" Value="416"/>
                         <Setter Target="BitwiseGrid.MinHeight" Value="144"/>
@@ -231,15 +231,15 @@
                         <Setter Target="RshLogicalButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="NotButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
 
-                        <Setter Target="OverflowRow.MinHeight" Value="{StaticResource OverflowButtonRowSizeSmall}"/>
+                        <Setter Target="OperatorPanelRow.MinHeight" Value="{StaticResource OperatorPanelButtonRowSizeSmall}"/>
 
-                        <Setter Target="BitwiseButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeSmall}"/>
-                        <Setter Target="BitwiseButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeSmall}"/>
-                        <Setter Target="BitwiseButton.FontSize" Value="{ThemeResource OverflowFontSizeSmall}"/>
+                        <Setter Target="BitwiseButton.ChevronFontSize" Value="{ThemeResource OperatorPanelChevronFontSizeSmall}"/>
+                        <Setter Target="BitwiseButton.GlyphFontSize" Value="{ThemeResource OperatorPanelGlyphFontSizeSmall}"/>
+                        <Setter Target="BitwiseButton.FontSize" Value="{ThemeResource OperatorPanelFontSizeSmall}"/>
 
-                        <Setter Target="BitShiftButton.ChevronFontSize" Value="{ThemeResource OverflowChevronFontSizeSmall}"/>
-                        <Setter Target="BitShiftButton.GlyphFontSize" Value="{ThemeResource OverflowGlyphFontSizeSmall}"/>
-                        <Setter Target="BitShiftButton.FontSize" Value="{ThemeResource OverflowFontSizeSmall}"/>
+                        <Setter Target="BitShiftButton.ChevronFontSize" Value="{ThemeResource OperatorPanelChevronFontSizeSmall}"/>
+                        <Setter Target="BitShiftButton.GlyphFontSize" Value="{ThemeResource OperatorPanelGlyphFontSizeSmall}"/>
+                        <Setter Target="BitShiftButton.FontSize" Value="{ThemeResource OperatorPanelFontSizeSmall}"/>
 
                         <Setter Target="BitwiseGrid.MinWidth" Value="194"/>
                         <Setter Target="BitwiseGrid.MinHeight" Value="96"/>
@@ -248,18 +248,18 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <controls:OverflowListView x:Uid="ProgrammerOverflow"
-                                   Grid.ColumnSpan="6"
-                                   Background="{ThemeResource AppOverflowOperatorBackground}"
-                                   AutomationProperties.HeadingLevel="Level1">
-            <controls:OverflowButton x:Name="BitwiseButton"
-                                     x:Uid="bitwiseButton"
-                                     Style="{StaticResource OverflowButtonStyle}"
-                                     Glyph="&#xF895;">
-                <controls:OverflowButton.FlyoutMenu>
+        <controls:OperatorPanelListView x:Uid="ProgrammerOperatorPanel"
+                                        Grid.ColumnSpan="6"
+                                        Background="{ThemeResource AppOperatorPanelBackground}"
+                                        AutomationProperties.HeadingLevel="Level1">
+            <controls:OperatorPanelButton x:Name="BitwiseButton"
+                                          x:Uid="bitwiseButton"
+                                          Style="{StaticResource OperatorPanelButtonStyle}"
+                                          Glyph="&#xF895;">
+                <controls:OperatorPanelButton.FlyoutMenu>
                     <Flyout x:Name="BitwiseFlyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
-                            FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
+                            FlyoutPresenterStyle="{ThemeResource OperatorPanelFlyoutStyle}"
                             Placement="BottomEdgeAlignedLeft">
                         <Grid x:Name="BitwiseGrid"
                               MinWidth="258"
@@ -366,16 +366,16 @@
                                                        Visibility="Collapsed"/>
                         </Grid>
                     </Flyout>
-                </controls:OverflowButton.FlyoutMenu>
-            </controls:OverflowButton>
-            <controls:OverflowButton x:Name="BitShiftButton"
-                                     x:Uid="bitShiftButton"
-                                     Style="{StaticResource OverflowButtonStyle}"
-                                     Glyph="&#xE301;">
-                <controls:OverflowButton.FlyoutMenu>
+                </controls:OperatorPanelButton.FlyoutMenu>
+            </controls:OperatorPanelButton>
+            <controls:OperatorPanelButton x:Name="BitShiftButton"
+                                          x:Uid="bitShiftButton"
+                                          Style="{StaticResource OperatorPanelButtonStyle}"
+                                          Glyph="&#xE301;">
+                <controls:OperatorPanelButton.FlyoutMenu>
                     <Flyout x:Name="BitShiftFlyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
-                            FlyoutPresenterStyle="{ThemeResource OverflowFlyoutStyle}"
+                            FlyoutPresenterStyle="{ThemeResource OperatorPanelFlyoutStyle}"
                             Placement="Bottom">
                         <StackPanel MaxWidth="192" Padding="12">
                             <RadioButton x:Name="ArithmeticShiftButton"
@@ -397,9 +397,9 @@
                                          Checked="bitshiftFlyout_Checked"/>
                         </StackPanel>
                     </Flyout>
-                </controls:OverflowButton.FlyoutMenu>
-            </controls:OverflowButton>
-        </controls:OverflowListView>
+                </controls:OperatorPanelButton.FlyoutMenu>
+            </controls:OperatorPanelButton>
+        </controls:OperatorPanelListView>
 
         <Grid x:Uid="ProgrammerOperators"
               Grid.Row="1"

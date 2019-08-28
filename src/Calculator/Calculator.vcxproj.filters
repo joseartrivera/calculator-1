@@ -295,18 +295,18 @@
     <ClCompile Include="Common\AppLifecycleLogger.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="Controls\OverflowListView.cpp">
-      <Filter>Controls</Filter>
-    </ClCompile>
     <ClCompile Include="Controls\HorizontalNoOverflowStackPanel.cpp">
       <Filter>Controls</Filter>
     </ClCompile>
     <ClCompile Include="Views\TitleBar.xaml.cpp" />
-    <ClCompile Include="Controls\OverflowButton.cpp">
-      <Filter>Controls</Filter>
-    </ClCompile>
     <ClCompile Include="Views\StateTriggers\ControlSizeTrigger.cpp">
       <Filter>Views\StateTriggers</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\OperatorPanelListView.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\OperatorPanelButton.cpp">
+      <Filter>Controls</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -391,19 +391,19 @@
     <ClInclude Include="Common\AppLifecycleLogger.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="Controls\OverflowListView.h">
-      <Filter>Controls</Filter>
-    </ClInclude>
     <ClInclude Include="Controls\HorizontalNoOverflowStackPanel.h">
-      <Filter>Controls</Filter>
-    </ClInclude>
-    <ClInclude Include="Controls\OverflowButton.h">
       <Filter>Controls</Filter>
     </ClInclude>
     <ClInclude Include="Views\StateTriggers\ControlSizeTrigger.h">
       <Filter>Views\StateTriggers</Filter>
     </ClInclude>
     <ClInclude Include="Views\TitleBar.xaml.h" />
+    <ClInclude Include="Controls\OperatorPanelListView.h">
+      <Filter>Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Controls\OperatorPanelButton.h">
+      <Filter>Controls</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
@@ -471,6 +471,7 @@
     <Page Include="Views\TitleBar.xaml">
       <Filter>Views</Filter>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)DensityStyles\Compact.xaml" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="Resources\en-US\CEngineStrings.resw">

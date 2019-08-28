@@ -24,7 +24,7 @@
                     <SolidColorBrush x:Key="SystemControlBackgroundTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="SystemControlHighlightTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="AppBackgroundAltMediumLowBrush" Color="{ThemeResource SystemAltMediumLowColor}"/>
-                    <SolidColorBrush x:Key="AppOverflowOperatorBackground"
+                    <SolidColorBrush x:Key="AppOperatorPanelBackground"
                                      Opacity="0.4"
                                      Color="{ThemeResource SystemAltMediumLowColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextBaseMediumHighBrush" Color="{StaticResource SystemBaseMediumHighColor}"/>
@@ -80,7 +80,7 @@
                     <SolidColorBrush x:Key="SystemControlBackgroundTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="SystemControlHighlightTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="AppBackgroundAltMediumLowBrush" Color="#66FFFFFF"/>
-                    <SolidColorBrush x:Key="AppOverflowOperatorBackground"
+                    <SolidColorBrush x:Key="AppOperatorPanelBackground"
                                      Opacity="0.4"
                                      Color="{ThemeResource SystemAltMediumLowColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextBaseMediumHighBrush" Color="{StaticResource SystemBaseMediumHighColor}"/>
@@ -133,7 +133,7 @@
                     <SolidColorBrush x:Key="SystemControlBackgroundTransparentBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
                     <SolidColorBrush x:Key="SystemControlHighlightTransparentBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
                     <SolidColorBrush x:Key="AppBackgroundAltMediumLowBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
-                    <SolidColorBrush x:Key="AppOverflowOperatorBackground" Color="{ThemeResource SystemColorButtonFaceColor}"/>
+                    <SolidColorBrush x:Key="AppOperatorPanelBackground" Color="{ThemeResource SystemColorButtonFaceColor}"/>
                     <SolidColorBrush x:Key="AppControlPageTextBaseMediumHighBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>
                     <SolidColorBrush x:Key="AppControlHoverButtonFaceBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
                     <SolidColorBrush x:Key="AppControlPressedButtonFaceBrush" Color="{ThemeResource SystemColorHighlightColor}"/>
@@ -164,20 +164,20 @@
             <x:Double x:Key="PivotHeaderItemFontSize">15</x:Double>
             <FontWeight x:Key="PivotHeaderItemThemeFontWeight">SemiBold</FontWeight>
 
-            <x:Double x:Key="OverflowButtonRowSizeLarge">64</x:Double>
-            <x:Double x:Key="OverflowFontSizeLarge">24</x:Double>
-            <x:Double x:Key="OverflowGlyphFontSizeLarge">24</x:Double>
-            <x:Double x:Key="OverflowChevronFontSizeLarge">16</x:Double>
+            <x:Double x:Key="OperatorPanelButtonRowSizeLarge">64</x:Double>
+            <x:Double x:Key="OperatorPanelFontSizeLarge">24</x:Double>
+            <x:Double x:Key="OperatorPanelGlyphFontSizeLarge">24</x:Double>
+            <x:Double x:Key="OperatorPanelChevronFontSizeLarge">16</x:Double>
 
-            <x:Double x:Key="OverflowButtonRowSizeMedium">64</x:Double>
-            <x:Double x:Key="OverflowFontSizeMedium">16</x:Double>
-            <x:Double x:Key="OverflowGlyphFontSizeMedium">20</x:Double>
-            <x:Double x:Key="OverflowChevronFontSizeMedium">10</x:Double>
+            <x:Double x:Key="OperatorPanelButtonRowSizeMedium">64</x:Double>
+            <x:Double x:Key="OperatorPanelFontSizeMedium">16</x:Double>
+            <x:Double x:Key="OperatorPanelGlyphFontSizeMedium">20</x:Double>
+            <x:Double x:Key="OperatorPanelChevronFontSizeMedium">10</x:Double>
 
-            <x:Double x:Key="OverflowButtonRowSizeSmall">38</x:Double>
-            <x:Double x:Key="OverflowFontSizeSmall">14</x:Double>
-            <x:Double x:Key="OverflowGlyphFontSizeSmall">16</x:Double>
-            <x:Double x:Key="OverflowChevronFontSizeSmall">8</x:Double>
+            <x:Double x:Key="OperatorPanelButtonRowSizeSmall">38</x:Double>
+            <x:Double x:Key="OperatorPanelFontSizeSmall">14</x:Double>
+            <x:Double x:Key="OperatorPanelGlyphFontSizeSmall">16</x:Double>
+            <x:Double x:Key="OperatorPanelChevronFontSizeSmall">8</x:Double>
 
             <x:Double x:Key="CaptionFontSize">12</x:Double>
             <x:Double x:Key="BodyFontSize">15</x:Double>
@@ -566,7 +566,7 @@
                 </Setter>
             </Style>
 
-            <Style x:Key="OverflowButtonStyle" TargetType="Controls:OverflowButton">
+            <Style x:Key="OperatorPanelButtonStyle" TargetType="Controls:OperatorPanelButton">
                 <Setter Property="FontSize" Value="{StaticResource CaptionFontSize}"/>
                 <Setter Property="GlyphFontSize" Value="{StaticResource CaptionFontSize}"/>
                 <Setter Property="ChevronFontSize" Value="{StaticResource CaptionFontSize}"/>
@@ -582,7 +582,7 @@
                 <Setter Property="Margin" Value="1"/>
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="Controls:OverflowButton">
+                        <ControlTemplate TargetType="Controls:OperatorPanelButton">
                             <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
                                 <VisualStateManager.VisualStateGroups>
                                     <VisualStateGroup x:Name="CommonStates">
@@ -1407,7 +1407,7 @@
                 </Setter>
             </Style>
 
-            <Style x:Key="OverflowFlyoutStyle" TargetType="FlyoutPresenter">
+            <Style x:Key="OperatorPanelFlyoutStyle" TargetType="FlyoutPresenter">
                 <Setter Property="Padding" Value="0"/>
                 <Setter Property="Background" Value="{ThemeResource AppChromeAcrylicOperatorFlyoutBackgroundBrush}"/>
                 <Setter Property="Margin" Value="0,-3,0,0"/>
@@ -1430,7 +1430,7 @@
                 </Setter>
             </Style>
 
-            <Style TargetType="Controls:OverflowListView">
+            <Style TargetType="Controls:OperatorPanelListView">
                 <Setter Property="IsTabStop" Value="False"/>
                 <Setter Property="TabNavigation" Value="Once"/>
                 <Setter Property="IsSwipeEnabled" Value="True"/>
@@ -1480,12 +1480,19 @@
                 </Setter>
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="Controls:OverflowListView">
+                        <ControlTemplate TargetType="Controls:OperatorPanelListView">
                             <Border x:Name="Border"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}">
                                 <Grid x:Name="Grid">
+                                    <Grid.Resources>
+                                        <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource OperatorPanelScrollButtonBackgroundColor}"/>
+                                        <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource OperatorPanelScrollButtonBackgroundColor}"/>
+                                        <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="{ThemeResource SystemAltMediumHighColor}"/>
+                                        <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="{ThemeResource SystemBaseMediumLowColor}"/>
+                                        <SolidColorBrush x:Key="ButtonForegroundPressed" Color="{ThemeResource SystemAltMediumHighColor}"/>
+                                    </Grid.Resources>
                                     <Grid.ColumnDefinitions/>
                                     <ScrollViewer x:Name="ScrollViewer"
                                                   AutomationProperties.AccessibilityView="Raw"
@@ -1521,15 +1528,7 @@
                                             FontSize="12"
                                             Content="&#xE76B;"
                                             IsTabStop="False"
-                                            Visibility="Collapsed">
-                                        <Button.Resources>
-                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource OperatorPanelScrollButtonBackgroundColor}"/>
-                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource OperatorPanelScrollButtonBackgroundColor}"/>
-                                            <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="{ThemeResource SystemBaseMediumLowColor}"/>
-                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="{ThemeResource SystemAltMediumHighColor}"/>
-                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="{ThemeResource SystemAltMediumHighColor}"/>
-                                        </Button.Resources>
-                                    </Button>
+                                            Visibility="Collapsed"/>
                                     <Button x:Name="ScrollRight"
                                             MinWidth="20"
                                             Padding="0"
@@ -1541,15 +1540,7 @@
                                             FontSize="12"
                                             Content="&#xE76C;"
                                             IsTabStop="False"
-                                            Visibility="Collapsed">
-                                        <Button.Resources>
-                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource OperatorPanelScrollButtonBackgroundColor}"/>
-                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource OperatorPanelScrollButtonBackgroundColor}"/>
-                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="{ThemeResource SystemAltMediumHighColor}"/>
-                                            <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="{ThemeResource SystemBaseMediumLowColor}"/>
-                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="{ThemeResource SystemAltMediumHighColor}"/>
-                                        </Button.Resources>
-                                    </Button>
+                                            Visibility="Collapsed"/>
                                 </Grid>
                             </Border>
                         </ControlTemplate>

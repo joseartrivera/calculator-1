@@ -223,7 +223,7 @@
     <AppVersion Condition="'$(AppVersion)' == ''">0.0.0.0</AppVersion>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <AppxBundlePlatforms>x86|x64|arm|arm64</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
   </PropertyGroup>
@@ -253,8 +253,8 @@
     <ClInclude Include="Converters\RadixToStringConverter.h" />
     <ClInclude Include="Converters\VisibilityNegationConverter.h" />
     <ClInclude Include="Controls\HorizontalNoOverflowStackPanel.h" />
-    <ClInclude Include="Controls\OverflowListView.h" />
-    <ClInclude Include="Controls\OverflowButton.h" />
+    <ClInclude Include="Controls\OperatorPanelListView.h" />
+    <ClInclude Include="Controls\OperatorPanelButton.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h">
       <DependentUpon>App.xaml</DependentUpon>
@@ -386,8 +386,8 @@
     <ClCompile Include="Converters\RadixToStringConverter.cpp" />
     <ClCompile Include="Converters\VisibilityNegationConverter.cpp" />
     <ClCompile Include="Controls\HorizontalNoOverflowStackPanel.cpp" />
-    <ClCompile Include="Controls\OverflowListView.cpp" />
-    <ClCompile Include="Controls\OverflowButton.cpp" />
+    <ClCompile Include="Controls\OperatorPanelListView.cpp" />
+    <ClCompile Include="Controls\OperatorPanelButton.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
