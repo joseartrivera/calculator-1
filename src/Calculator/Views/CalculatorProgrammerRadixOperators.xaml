@@ -75,8 +75,8 @@
             <VisualStateGroup>
                 <VisualState x:Name="Large">
                     <VisualState.StateTriggers>
-                        <triggers:ControlSizeTrigger MinWidth="1170"
-                                                     MinHeight="810"
+                        <triggers:ControlSizeTrigger MinWidth="1053"
+                                                     MinHeight="729"
                                                      Source="{x:Bind ProgRadixOps}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
@@ -133,8 +133,8 @@
                 </VisualState>
                 <VisualState x:Name="Medium">
                     <VisualState.StateTriggers>
-                        <triggers:ControlSizeTrigger MinWidth="700"
-                                                     MinHeight="485"
+                        <triggers:ControlSizeTrigger MinWidth="630"
+                                                     MinHeight="437"
                                                      Source="{x:Bind ProgRadixOps}"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>

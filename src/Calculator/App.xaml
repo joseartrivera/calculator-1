@@ -65,7 +65,7 @@
                     <AcrylicBrush x:Key="AppChromeAcrylicOperatorFlyoutBackgroundBrush"
                                   BackgroundSource="HostBackdrop"
                                   FallbackColor="{ThemeResource SystemChromeMediumColor}"
-                                  TintColor="{ThemeResource SystemChromeLowColor}"
+                                  TintColor="#FF2F2F2F"
                                   TintOpacity="1.0"/>
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Light">
@@ -175,7 +175,7 @@
             <x:Double x:Key="OperatorPanelChevronFontSizeMedium">10</x:Double>
 
             <x:Double x:Key="OperatorPanelButtonRowSizeSmall">38</x:Double>
-            <x:Double x:Key="OperatorPanelFontSizeSmall">14</x:Double>
+            <x:Double x:Key="OperatorPanelFontSizeSmall">12</x:Double>
             <x:Double x:Key="OperatorPanelGlyphFontSizeSmall">16</x:Double>
             <x:Double x:Key="OperatorPanelChevronFontSizeSmall">8</x:Double>
 
@@ -662,8 +662,8 @@
                                                   ContentTemplate="{TemplateBinding ContentTemplate}"
                                                   ContentTransitions="{TemplateBinding ContentTransitions}">
                                     <StackPanel Orientation="Horizontal">
-                                        <FontIcon Margin="0,0,6,0"
-                                                  VerticalAlignment="Bottom"
+                                        <FontIcon Margin="0,2,8,0"
+                                                  VerticalAlignment="Center"
                                                   FontFamily="{StaticResource CalculatorFontFamily}"
                                                   FontSize="{TemplateBinding GlyphFontSize}"
                                                   Glyph="{TemplateBinding Glyph}"/>
@@ -671,7 +671,7 @@
                                                    VerticalAlignment="Center"
                                                    FontSize="{TemplateBinding FontSize}"
                                                    Text="{TemplateBinding Text}"/>
-                                        <FontIcon Margin="6,0,0,0"
+                                        <FontIcon Margin="8,4,0,0"
                                                   VerticalAlignment="Center"
                                                   FontFamily="{StaticResource CalculatorFontFamily}"
                                                   FontSize="{TemplateBinding ChevronFontSize}"
@@ -1408,7 +1408,7 @@
             </Style>
 
             <Style x:Key="OperatorPanelFlyoutStyle" TargetType="FlyoutPresenter">
-                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Padding" Value="1"/>
                 <Setter Property="Background" Value="{ThemeResource AppChromeAcrylicOperatorFlyoutBackgroundBrush}"/>
                 <Setter Property="Margin" Value="0,-3,0,0"/>
                 <Setter Property="MaxWidth" Value="Infinity"/>
