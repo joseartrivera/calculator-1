@@ -36,10 +36,6 @@ CalcEngine::Rational CCalcEngine::DoOperation(int operation, CalcEngine::Rationa
             result = (result | rhs) ^ m_chopNumbers[m_numwidth];
             break;
 
-        case IDC_XNOR:
-            result = (result ^ rhs) ^ m_chopNumbers[m_numwidth];
-            break;
-
         case IDC_RSHF:
         {
             if (m_fIntegerMode && result >= m_dwWordBitWidth) // Lsh/Rsh >= than current word size is always 0

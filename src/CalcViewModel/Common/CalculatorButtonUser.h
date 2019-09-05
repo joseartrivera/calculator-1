@@ -112,7 +112,6 @@ public
         LogBaseX = (int) CM::Command::CommandLogBaseX,
         Nand = (int) CM::Command::CommandNand,
         Nor = (int) CM::Command::CommandNor,
-        XNor = (int)CM::Command::CommandXNor,
         Abs = (int) CM::Command::CommandAbs,
         Floor = (int) CM::Command::CommandFloor,
         Ceil = (int) CM::Command::CommandCeil,

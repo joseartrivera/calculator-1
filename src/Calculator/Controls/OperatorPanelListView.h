@@ -35,11 +35,9 @@ namespace CalculatorApp
             bool m_isPointerEntered;
 
             Windows::UI::Xaml::Controls::ItemsPresenter^ m_content;
-            Windows::UI::Xaml::Controls::Border^ m_border;
             Windows::UI::Xaml::Controls::ScrollViewer^ m_scrollViewer;
             Windows::UI::Xaml::Controls::Button^ m_scrollLeft;
             Windows::UI::Xaml::Controls::Button^ m_scrollRight;
-            Windows::UI::Xaml::Controls::Grid^ m_grid;
         };
     }
 }

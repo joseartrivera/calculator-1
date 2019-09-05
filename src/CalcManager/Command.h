@@ -175,7 +175,7 @@ namespace CalculationManager
         CommandLogBaseX = 500,
         CommandNand = 501,
         CommandNor = 502,
-        CommandXNor = 503,
+
         CommandLSHFL = 504,
         CommandRSHFL = 505,
         CommandRand = 600,

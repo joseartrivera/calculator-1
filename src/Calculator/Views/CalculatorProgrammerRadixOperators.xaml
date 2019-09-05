@@ -23,9 +23,7 @@
 
     <Grid x:Name="ProgRadixOps">
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="OperatorPanelRow"
-                           Height="Auto"
-                           MinHeight="34"/>
+            <RowDefinition x:Name="OperatorPanelRow" Height="Auto"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -106,7 +104,6 @@
                         <Setter Target="XorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="NandButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="NorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
-                        <Setter Target="XnorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="RolButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="RorButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
                         <Setter Target="RolCarryButton.FontSize" Value="{StaticResource CalcButtonCaptionSize}"/>
@@ -164,7 +161,6 @@
                         <Setter Target="XorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="NandButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="NorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="XnorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="RolButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="RorButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="RolCarryButton.FontSize" Value="{StaticResource CalcStandardOperatorCaptionSize}"/>
@@ -220,7 +216,6 @@
                         <Setter Target="XorButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="NandButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="NorButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="XnorButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="RolButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="RorButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
                         <Setter Target="RolCarryButton.FontSize" Value="{StaticResource CalcOperatorCaptionSize}"/>
@@ -252,6 +247,7 @@
                                         Grid.ColumnSpan="6"
                                         Background="{ThemeResource AppOperatorPanelBackground}"
                                         AutomationProperties.HeadingLevel="Level1">
+            
             <controls:OperatorPanelButton x:Name="BitwiseButton"
                                           x:Uid="bitwiseButton"
                                           Style="{StaticResource OperatorPanelButtonStyle}"
@@ -274,7 +270,11 @@
                                 <ColumnDefinition Width="1*"/>
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
-
+                            <!--
+                                Because of the way we handle keyboard shortcuts, the IsEnabled property must be bound to a button outside the flyout.
+                                This is because the content from within the Flyout do not inherit the IsEnabled property of the flyout parent,
+                                causing the shortcut keys to be used when the control would normally be disabled.
+                            -->
                             <controls:CalculatorButton x:Name="AndButton"
                                                        x:Uid="andButton"
                                                        Style="{StaticResource OperatorButtonStyle}"
@@ -310,8 +310,6 @@
                                                        Content="NOT"
                                                        IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"/>
 
-
-
                             <controls:CalculatorButton x:Name="XorButton"
                                                        x:Uid="xorButton"
                                                        Grid.Row="1"
@@ -324,7 +322,6 @@
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="XOR"
                                                        IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"/>
-
 
                             <controls:CalculatorButton x:Name="NandButton"
                                                        x:Uid="nandButton"
@@ -350,20 +347,6 @@
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="NOR"
                                                        IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"/>
-
-                            <controls:CalculatorButton x:Name="XnorButton"
-                                                       x:Uid="xnorButton"
-                                                       Grid.Row="1"
-                                                       Grid.Column="2"
-                                                       Style="{StaticResource OperatorButtonStyle}"
-                                                       FontSize="12"
-                                                       AutomationProperties.AutomationId="xnorButton"
-                                                       ButtonId="XNor"
-                                                       Click="flyoutButton_Clicked"
-                                                       Command="{x:Bind Model.ButtonPressed}"
-                                                       Content="XNOR"
-                                                       IsEnabled="{x:Bind BitwiseButton.IsEnabled, Mode=OneWay}"
-                                                       Visibility="Collapsed"/>
                         </Grid>
                     </Flyout>
                 </controls:OperatorPanelButton.FlyoutMenu>
@@ -440,6 +423,7 @@
                                        ButtonId="RolC"
                                        Content="&#xF88E;"
                                        Visibility="Collapsed"/>
+
             <controls:CalculatorButton x:Name="RorCarryButton"
                                        x:Uid="rorCarryButton"
                                        Grid.Column="1"
@@ -505,6 +489,7 @@
                                        ButtonId="Clear"
                                        Content="C"
                                        Visibility="{x:Bind Model.IsInputEmpty, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
             <controls:CalculatorButton x:Name="ClearEntryButton"
                                        x:Uid="clearEntryButton"
                                        Style="{StaticResource OperatorButtonStyle}"
@@ -513,6 +498,7 @@
                                        ButtonId="ClearEntry"
                                        Content="CE"
                                        Visibility="{x:Bind Model.IsInputEmpty, Mode=OneWay, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
+
             <controls:CalculatorButton x:Name="BackSpaceButton"
                                        x:Uid="backSpaceButton"
                                        Grid.Column="1"
@@ -534,6 +520,7 @@
                                    Content="("
                                    GotFocus="OpenParenthesisButton_GotFocus"
                                    Tag="{x:Bind ParenthesisCountToString(Model.OpenParenthesisCount), Mode=OneWay}"/>
+
         <controls:CalculatorButton x:Name="CloseParenthesisButton"
                                    x:Uid="closeParenthesisButton"
                                    Grid.Row="2"
@@ -574,6 +561,7 @@
                                        AutomationProperties.AutomationId="divideButton"
                                        ButtonId="Divide"
                                        Content="&#xE94A;"/>
+
             <controls:CalculatorButton x:Name="MultiplyButton"
                                        x:Uid="multiplyButton"
                                        Grid.Row="1"
@@ -582,6 +570,7 @@
                                        AutomationProperties.AutomationId="multiplyButton"
                                        ButtonId="Multiply"
                                        Content="&#xE947;"/>
+
             <controls:CalculatorButton x:Name="MinusButton"
                                        x:Uid="minusButton"
                                        Grid.Row="2"
@@ -590,6 +579,7 @@
                                        AutomationProperties.AutomationId="minusButton"
                                        ButtonId="Subtract"
                                        Content="&#xE949;"/>
+
             <controls:CalculatorButton x:Name="PlusButton"
                                        x:Uid="plusButton"
                                        Grid.Row="3"
@@ -598,6 +588,7 @@
                                        AutomationProperties.AutomationId="plusButton"
                                        ButtonId="Add"
                                        Content="&#xE948;"/>
+
             <controls:CalculatorButton x:Name="EqualButton"
                                        x:Uid="equalButton"
                                        Grid.Row="4"
@@ -639,6 +630,7 @@
                                        ButtonId="A"
                                        Content="A"
                                        IsEnabled="{x:Bind Model.AreHEXButtonsEnabled, Mode=OneWay}"/>
+
             <controls:CalculatorButton x:Name="BButton"
                                        x:Uid="bButton"
                                        Grid.Row="1"
@@ -648,6 +640,7 @@
                                        ButtonId="B"
                                        Content="B"
                                        IsEnabled="{x:Bind Model.AreHEXButtonsEnabled, Mode=OneWay}"/>
+
             <controls:CalculatorButton x:Name="CButton"
                                        x:Uid="cButton"
                                        Grid.Row="2"
@@ -657,6 +650,7 @@
                                        ButtonId="C"
                                        Content="C"
                                        IsEnabled="{x:Bind Model.AreHEXButtonsEnabled, Mode=OneWay}"/>
+
             <controls:CalculatorButton x:Name="DButton"
                                        x:Uid="dButton"
                                        Grid.Row="3"
@@ -666,6 +660,7 @@
                                        ButtonId="D"
                                        Content="D"
                                        IsEnabled="{x:Bind Model.AreHEXButtonsEnabled, Mode=OneWay}"/>
+
             <controls:CalculatorButton x:Name="EButton"
                                        x:Uid="eButton"
                                        Grid.Row="4"
@@ -675,6 +670,7 @@
                                        ButtonId="E"
                                        Content="E"
                                        IsEnabled="{x:Bind Model.AreHEXButtonsEnabled, Mode=OneWay}"/>
+
             <controls:CalculatorButton x:Name="FButton"
                                        x:Uid="fButton"
                                        Grid.Row="5"

@@ -163,7 +163,7 @@
 #define IDC_LOGBASEX            500 //logx(y)
 #define IDC_NAND                501
 #define IDC_NOR                 502
-#define IDC_XNOR                503
+
 #define IDC_LSHFL               504
 #define IDC_RSHFL               505
 #define IDC_BINARYEXTENDEDLAST  IDC_RSHFL

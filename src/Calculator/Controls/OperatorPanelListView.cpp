@@ -24,9 +24,7 @@ void OperatorPanelListView::OnApplyTemplate()
     m_scrollViewer = dynamic_cast<ScrollViewer^>(GetTemplateChild("ScrollViewer"));
     m_scrollLeft = dynamic_cast<Button^>(GetTemplateChild("ScrollLeft"));
     m_scrollRight = dynamic_cast<Button^>(GetTemplateChild("ScrollRight"));
-    m_border = dynamic_cast<Border^>(GetTemplateChild("Border"));
     m_content = dynamic_cast<ItemsPresenter^>(GetTemplateChild("Content"));
-    m_grid = dynamic_cast<Grid^>(GetTemplateChild("Grid"));
 
     if (m_scrollLeft != nullptr)
     {
@@ -72,7 +70,6 @@ void OperatorPanelListView::OnScrollClick(_In_ Object^ sender, _In_ RoutedEventA
     }
 }
 
-
 void OperatorPanelListView::OnButtonPointerExited(_In_ Object^ sender, _In_ PointerRoutedEventArgs^ e)
 {
     auto button = dynamic_cast<Button^>(sender);
@@ -111,7 +108,6 @@ void OperatorPanelListView::ScrollRight()
         double offset = m_scrollViewer->HorizontalOffset + (scrollRatio * m_scrollViewer->ViewportWidth);
         m_scrollViewer->ChangeView(offset, nullptr, nullptr);
 }
-
 
 void OperatorPanelListView::UpdateScrollButtons()
 {

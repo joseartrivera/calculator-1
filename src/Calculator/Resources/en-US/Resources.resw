@@ -122,7 +122,7 @@
     <comment>{@Appx_ShortDisplayName@}{StringCategory="Feature Title"} This is the title of the official application when published through Windows Store.</comment>
   </data>
   <data name="DevAppName" xml:space="preserve">
-    <value>Calculator [Dev] [Keyboard]</value>
+    <value>Calculator [Dev]</value>
     <comment>{@Appx_ShortDisplayName@}{StringCategory="Feature Title"} This is the name of the application when built by a user via GitHub. We use a different name to make it easier for users to distinguish the apps when both this version and the Store version are installed on the same device.</comment>
   </data>
   <data name="AppStoreName" xml:space="preserve">
@@ -3738,18 +3738,6 @@
   <data name="norButton.[using:CalculatorApp.Controls]CalculatorButton.AuditoryFeedback" xml:space="preserve">
     <value>Nor</value>
     <comment>Auditory feedback for Screen Reader users. Users will hear "Display is 7 nor" when the button is pressed. NAND is a mathematical operation on two binary values.</comment>
-  </data>
-  <data name="xnorButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Xnor</value>
-    <comment>Screen reader prompt for the Calculator button xnor in the scientific flyout keypad</comment>
-  </data>
-  <data name="xnorButton.[using:CalculatorApp.Common]KeyboardShortcutManager.Character" xml:space="preserve">
-    <value>,</value>
-    <comment>{Locked}This is the character that should trigger this button. Note that it is a character and not a key, so it does not come from the Windows::System::VirtualKey enum.</comment>
-  </data>
-  <data name="xnorButton.[using:CalculatorApp.Controls]CalculatorButton.AuditoryFeedback" xml:space="preserve">
-    <value>Xnor</value>
-    <comment>Auditory feedback for Screen Reader users. Users will hear "Display is 7 xnor" when the button is pressed. NAND is a mathematical operation on two binary values.</comment>
   </data>
   <data name="rolCarryButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Rotate on left with carry</value>

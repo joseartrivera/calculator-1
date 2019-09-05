@@ -62,11 +62,7 @@
                                   FallbackColor="{ThemeResource SystemChromeMediumColor}"
                                   TintColor="{ThemeResource SystemChromeLowColor}"
                                   TintOpacity="0.7"/>
-                    <AcrylicBrush x:Key="AppChromeAcrylicOperatorFlyoutBackgroundBrush"
-                                  BackgroundSource="HostBackdrop"
-                                  FallbackColor="{ThemeResource SystemChromeMediumColor}"
-                                  TintColor="#FF2F2F2F"
-                                  TintOpacity="1.0"/>
+                    <SolidColorBrush x:Key="AppChromeAcrylicOperatorFlyoutBackgroundBrush" Color="#FF2F2F2F"/>
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Light">
                     <Thickness x:Key="HighContrastThicknessTop">0,0,0,0</Thickness>
@@ -79,7 +75,7 @@
                     <SolidColorBrush x:Key="TitleBarForegroundBaseHighBrush" Color="{StaticResource SystemBaseHighColor}"/>
                     <SolidColorBrush x:Key="SystemControlBackgroundTransparentBrush" Color="Transparent"/>
                     <SolidColorBrush x:Key="SystemControlHighlightTransparentBrush" Color="Transparent"/>
-                    <SolidColorBrush x:Key="AppBackgroundAltMediumLowBrush" Color="#66FFFFFF"/>
+                    <SolidColorBrush x:Key="AppBackgroundAltMediumLowBrush" Color="{ThemeResource SystemAltMediumLowColor}"/>
                     <SolidColorBrush x:Key="AppOperatorPanelBackground"
                                      Opacity="0.4"
                                      Color="{ThemeResource SystemAltMediumLowColor}"/>
@@ -118,11 +114,7 @@
                                   FallbackColor="{ThemeResource SystemChromeMediumColor}"
                                   TintColor="{ThemeResource SystemChromeLowColor}"
                                   TintOpacity="0.7"/>
-                    <AcrylicBrush x:Key="AppChromeAcrylicOperatorFlyoutBackgroundBrush"
-                                  BackgroundSource="HostBackdrop"
-                                  FallbackColor="{ThemeResource SystemChromeMediumColor}"
-                                  TintColor="{ThemeResource SystemChromeLowColor}"
-                                  TintOpacity="1.0"/>
+                    <SolidColorBrush x:Key="AppChromeAcrylicOperatorFlyoutBackgroundBrush" Color="{ThemeResource SystemChromeLowColor}"/>
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="HighContrast">
                     <Thickness x:Key="HighContrastThicknessTop">0,1,0,0</Thickness>

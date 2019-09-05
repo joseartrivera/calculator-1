@@ -42,7 +42,7 @@
                 <VisualState x:Name="NoErrorLayout"/>
                 <VisualState x:Name="ErrorLayout">
                     <VisualState.Setters>
-                        <Setter Target="Xpower2Button.IsEnabled" Value="False"/>
+                        <Setter Target="XPower2Button.IsEnabled" Value="False"/>
                         <Setter Target="PowerButton.IsEnabled" Value="False"/>
                         <Setter Target="SinButton.IsEnabled" Value="False"/>
                         <Setter Target="CosButton.IsEnabled" Value="False"/>
@@ -51,7 +51,7 @@
                         <Setter Target="CoshButton.IsEnabled" Value="False"/>
                         <Setter Target="TanhButton.IsEnabled" Value="False"/>
 
-                        <Setter Target="Xpower3Button.IsEnabled" Value="False"/>
+                        <Setter Target="XPower3Button.IsEnabled" Value="False"/>
                         <Setter Target="YSquareRootButton.IsEnabled" Value="False"/>
                         <Setter Target="InvsinButton.IsEnabled" Value="False"/>
                         <Setter Target="InvcosButton.IsEnabled" Value="False"/>
@@ -130,8 +130,8 @@
                         <Setter Target="YSquareRootButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="PowerOfEButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="LogBaseEButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="Xpower2Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
-                        <Setter Target="Xpower3Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="XPower2Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
+                        <Setter Target="XPower3Button.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="SquareRootButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
                         <Setter Target="InvertButton.FontSize" Value="{ThemeResource CalcButtonCaptionSize}"/>
 
@@ -226,8 +226,8 @@
                         <Setter Target="YSquareRootButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="PowerOfEButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="LogBaseEButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="Xpower2Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
-                        <Setter Target="Xpower3Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="XPower2Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
+                        <Setter Target="XPower3Button.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="SquareRootButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
                         <Setter Target="InvertButton.FontSize" Value="{ThemeResource CalcStandardOperatorCaptionSize}"/>
 
@@ -319,8 +319,8 @@
                         <Setter Target="YSquareRootButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="PowerOfEButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="LogBaseEButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="Xpower2Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
-                        <Setter Target="Xpower3Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="XPower2Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
+                        <Setter Target="XPower3Button.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="SquareRootButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
                         <Setter Target="InvertButton.FontSize" Value="{ThemeResource CalcOperatorCaptionSize}"/>
 
@@ -387,6 +387,7 @@
                                         Grid.ColumnSpan="5"
                                         Background="{ThemeResource AppOperatorPanelBackground}"
                                         AutomationProperties.HeadingLevel="Level1">
+
             <controls:OperatorPanelButton x:Name="TrigButton"
                                           x:Uid="trigButton"
                                           Style="{StaticResource OperatorPanelButtonStyle}"
@@ -410,7 +411,11 @@
                                 <ColumnDefinition Width="1*"/>
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
-
+                            <!--
+                                Because of the way we handle keyboard shortcuts, the IsEnabled property must be bound to a button outside the flyout.
+                                This is because the content from within the Flyout do not inherit the IsEnabled property of the flyout parent,
+                                causing the shortcut keys to be used when the control would normally be disabled.
+                            -->
                             <ToggleButton x:Name="TrigShiftButton"
                                           x:Uid="trigShiftButton"
                                           Style="{StaticResource CaptionToggleEmphasizedButtonStyle}"
@@ -456,6 +461,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="sin"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="CosButton"
                                                            x:Uid="cosButton"
                                                            Grid.Column="1"
@@ -466,6 +472,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="cos"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="TanButton"
                                                            x:Uid="tanButton"
                                                            Grid.Column="2"
@@ -487,6 +494,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="sec"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="CscButton"
                                                            x:Uid="cscButton"
                                                            Grid.Row="1"
@@ -498,6 +506,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="csc"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="CotButton"
                                                            x:Uid="cotButton"
                                                            Grid.Row="1"
@@ -510,6 +519,7 @@
                                                            Content="cot"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
                             </Grid>
+
                             <Grid x:Name="InverseTrigFunctions"
                                   Grid.RowSpan="2"
                                   Grid.Column="1"
@@ -534,6 +544,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="sin⁻¹"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="InvcosButton"
                                                            x:Uid="invcosButton"
                                                            Grid.Column="1"
@@ -544,6 +555,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="cos⁻¹"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="InvtanButton"
                                                            x:Uid="invtanButton"
                                                            Grid.Column="2"
@@ -565,6 +577,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="sec⁻¹"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="InvcscButton"
                                                            x:Uid="invcscButton"
                                                            Grid.Row="1"
@@ -576,6 +589,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="csc⁻¹"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="InvcotButton"
                                                            x:Uid="invcotButton"
                                                            Grid.Row="1"
@@ -588,6 +602,7 @@
                                                            Content="cot⁻¹"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
                             </Grid>
+
                             <Grid x:Name="HyperbolicTrigFunctions"
                                   Grid.RowSpan="2"
                                   Grid.Column="1"
@@ -612,6 +627,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="sinh"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="CoshButton"
                                                            x:Uid="coshButton"
                                                            Grid.Column="1"
@@ -622,6 +638,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="cosh"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="TanhButton"
                                                            x:Uid="tanhButton"
                                                            Grid.Column="2"
@@ -643,6 +660,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="sech"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="CschButton"
                                                            x:Uid="cschButton"
                                                            Grid.Row="1"
@@ -654,6 +672,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="csch"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="CothButton"
                                                            x:Uid="cothButton"
                                                            Grid.Row="1"
@@ -666,6 +685,7 @@
                                                            Content="coth"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
                             </Grid>
+
                             <Grid x:Name="InverseHyperbolicTrigFunctions"
                                   Grid.RowSpan="2"
                                   Grid.Column="1"
@@ -689,6 +709,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="sinh⁻¹"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="InvcoshButton"
                                                            x:Uid="invcoshButton"
                                                            Grid.Column="1"
@@ -699,6 +720,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="cosh⁻¹"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="InvtanhButton"
                                                            x:Uid="invtanhButton"
                                                            Grid.Column="2"
@@ -720,6 +742,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="sech⁻¹"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="InvcschButton"
                                                            x:Uid="invcschButton"
                                                            Grid.Row="1"
@@ -731,6 +754,7 @@
                                                            Command="{x:Bind Model.ButtonPressed}"
                                                            Content="csch⁻¹"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
+
                                 <controls:CalculatorButton x:Name="InvcothButton"
                                                            x:Uid="invcothButton"
                                                            Grid.Row="1"
@@ -747,15 +771,18 @@
                     </Flyout>
                 </controls:OperatorPanelButton.FlyoutMenu>
             </controls:OperatorPanelButton>
+
             <controls:OperatorPanelButton x:Name="FuncButton"
                                           x:Uid="funcButton"
                                           Style="{StaticResource OperatorPanelButtonStyle}"
                                           Glyph="&#xF893;">
+
                 <controls:OperatorPanelButton.FlyoutMenu>
                     <Flyout x:Name="FuncFlyout"
                             Windows10version1809:AreOpenCloseAnimationsEnabled="False"
                             FlyoutPresenterStyle="{ThemeResource OperatorPanelFlyoutStyle}"
                             Placement="Bottom">
+
                         <Grid x:Name="FuncGrid"
                               MinWidth="194"
                               MinHeight="96"
@@ -778,6 +805,7 @@
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="&#xF884;"
                                                        IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
+
                             <controls:CalculatorButton x:Name="FloorButton"
                                                        x:Uid="floorButton"
                                                        Grid.Column="1"
@@ -788,6 +816,7 @@
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="&#xF885;"
                                                        IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
+
                             <controls:CalculatorButton x:Name="CeilButton"
                                                        x:Uid="ceilButton"
                                                        Grid.Column="2"
@@ -798,6 +827,7 @@
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="&#xF886;"
                                                        IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
+
                             <controls:CalculatorButton x:Name="RandButton"
                                                        x:Uid="randButton"
                                                        Grid.Row="1"
@@ -808,6 +838,7 @@
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="rand"
                                                        IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
+
                             <controls:CalculatorButton x:Name="DmsButton"
                                                        x:Uid="dmsButton"
                                                        Grid.Row="1"
@@ -819,6 +850,7 @@
                                                        Command="{x:Bind Model.ButtonPressed}"
                                                        Content="&#xF890;"
                                                        IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
+
                             <controls:CalculatorButton x:Name="DegreesButton"
                                                        x:Uid="degreesButton"
                                                        Grid.Row="1"
@@ -887,6 +919,7 @@
                                        ButtonId="ClearEntry"
                                        Content="CE"
                                        Visibility="{x:Bind Model.IsInputEmpty, Mode=OneWay, Converter={StaticResource BooleanToVisibilityNegationConverter}}"/>
+
             <controls:CalculatorButton x:Name="ClearButton"
                                        x:Uid="clearButton"
                                        Grid.Column="1"
@@ -896,6 +929,7 @@
                                        ButtonId="Clear"
                                        Content="C"
                                        Visibility="{x:Bind Model.IsInputEmpty, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
             <controls:CalculatorButton x:Name="BackSpaceButton"
                                        x:Uid="backSpaceButton"
                                        Grid.Column="2"
@@ -922,19 +956,21 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <controls:CalculatorButton x:Name="Xpower2Button"
+                <controls:CalculatorButton x:Name="XPower2Button"
                                            x:Uid="xpower2Button"
                                            Style="{StaticResource SymbolOperatorButtonStyle}"
                                            AutomationProperties.AutomationId="xpower2Button"
                                            ButtonId="XPower2"
                                            Content="&#xf7c8;"/>
-                <controls:CalculatorButton x:Name="Xpower3Button"
+
+                <controls:CalculatorButton x:Name="XPower3Button"
                                            x:Uid="xpower3Button"
                                            Grid.Row="1"
                                            Style="{StaticResource SymbolOperatorButtonStyle}"
                                            AutomationProperties.AutomationId="xpower3Button"
                                            ButtonId="Cube"
                                            Content="&#xf7cb;"/>
+
                 <controls:CalculatorButton x:Name="PowerButton"
                                            x:Uid="powerButton"
                                            Grid.Row="2"
@@ -942,6 +978,7 @@
                                            AutomationProperties.AutomationId="powerButton"
                                            ButtonId="XPowerY"
                                            Content="&#xf7ca;"/>
+
                 <controls:CalculatorButton x:Name="PowerOf10Button"
                                            x:Uid="powerOf10Button"
                                            Grid.Row="3"
@@ -949,6 +986,7 @@
                                            AutomationProperties.AutomationId="powerOf10Button"
                                            ButtonId="TenPowerX"
                                            Content="&#xF7CC;"/>
+
                 <controls:CalculatorButton x:Name="LogBase10Button"
                                            x:Uid="logBase10Button"
                                            Grid.Row="4"
@@ -956,6 +994,7 @@
                                            AutomationProperties.AutomationId="logBase10Button"
                                            ButtonId="LogBase10"
                                            Content="log"/>
+
                 <controls:CalculatorButton x:Name="LogBaseEButton"
                                            x:Uid="logBaseEButton"
                                            Grid.Row="5"
@@ -982,6 +1021,7 @@
                                            ButtonId="Sqrt"
                                            Click="shiftButton_Uncheck"
                                            Content="&#xF899;"/>
+
                 <controls:CalculatorButton x:Name="CubeRootButton"
                                            x:Uid="cubeRootButton"
                                            Grid.Row="1"
@@ -990,6 +1030,7 @@
                                            ButtonId="CubeRoot"
                                            Click="shiftButton_Uncheck"
                                            Content="&#xF881;"/>
+
                 <controls:CalculatorButton x:Name="YSquareRootButton"
                                            x:Uid="ySquareRootButton"
                                            Grid.Row="2"
@@ -998,6 +1039,7 @@
                                            ButtonId="YRootX"
                                            Click="shiftButton_Uncheck"
                                            Content="&#xf7cd;"/>
+
                 <controls:CalculatorButton x:Name="TwoPowerXButton"
                                            x:Uid="twoPowerXButton"
                                            Grid.Row="3"
@@ -1006,6 +1048,7 @@
                                            ButtonId="TwoPowerX"
                                            Click="shiftButton_Uncheck"
                                            Content="&#xF882;"/>
+
                 <controls:CalculatorButton x:Name="LogBaseX"
                                            x:Uid="logBaseX"
                                            Grid.Row="4"
@@ -1014,6 +1057,7 @@
                                            ButtonId="LogBaseX"
                                            Click="shiftButton_Uncheck"
                                            Content="&#xF883;"/>
+
                 <controls:CalculatorButton x:Name="PowerOfEButton"
                                            x:Uid="powerOfEButton"
                                            Grid.Row="5"
@@ -1042,6 +1086,7 @@
                                        AutomationProperties.AutomationId="invertButton"
                                        ButtonId="Invert"
                                        Content="&#xf7c9;"/>
+
             <controls:CalculatorButton x:Name="AbsButton"
                                        x:Uid="absButton"
                                        Grid.Column="1"
@@ -1049,6 +1094,7 @@
                                        AutomationProperties.AutomationId="absButton"
                                        ButtonId="Abs"
                                        Content="&#xF884;"/>
+
             <controls:CalculatorButton x:Name="ExpButton"
                                        x:Uid="expButton"
                                        Grid.Column="2"
@@ -1056,6 +1102,7 @@
                                        AutomationProperties.AutomationId="expButton"
                                        ButtonId="Exp"
                                        Content="exp"/>
+
             <controls:CalculatorButton x:Name="ModButton"
                                        x:Uid="modButton"
                                        Grid.Column="3"
@@ -1076,6 +1123,7 @@
                                    Content="("
                                    GotFocus="OpenParenthesisButton_GotFocus"
                                    Tag="{x:Bind ParenthesisCountToString(Model.OpenParenthesisCount), Mode=OneWay}"/>
+
         <controls:CalculatorButton x:Name="CloseParenthesisButton"
                                    x:Uid="closeParenthesisButton"
                                    Grid.Row="3"
@@ -1085,6 +1133,7 @@
                                    AutomationProperties.AutomationId="closeParenthesisButton"
                                    ButtonId="CloseParenthesis"
                                    Content=")"/>
+
         <controls:CalculatorButton x:Name="FactorialButton"
                                    x:Uid="factorialButton"
                                    Grid.Row="3"
@@ -1115,6 +1164,7 @@
                                        AutomationProperties.AutomationId="divideButton"
                                        ButtonId="Divide"
                                        Content="&#xE94A;"/>
+
             <controls:CalculatorButton x:Name="MultiplyButton"
                                        x:Uid="multiplyButton"
                                        Grid.Row="1"
@@ -1122,6 +1172,7 @@
                                        AutomationProperties.AutomationId="multiplyButton"
                                        ButtonId="Multiply"
                                        Content="&#xE947;"/>
+
             <controls:CalculatorButton x:Name="MinusButton"
                                        x:Uid="minusButton"
                                        Grid.Row="2"
@@ -1129,6 +1180,7 @@
                                        AutomationProperties.AutomationId="minusButton"
                                        ButtonId="Subtract"
                                        Content="&#xE949;"/>
+
             <controls:CalculatorButton x:Name="PlusButton"
                                        x:Uid="plusButton"
                                        Grid.Row="3"
@@ -1136,6 +1188,7 @@
                                        AutomationProperties.AutomationId="plusButton"
                                        ButtonId="Add"
                                        Content="&#xE948;"/>
+
             <controls:CalculatorButton x:Name="EqualButton"
                                        x:Uid="equalButton"
                                        Grid.Row="4"

@@ -72,7 +72,10 @@ void OperatorsPanel::EnsureProgrammerRadixOps()
         this->FindName(L"ProgrammerRadixOperators");
     }
 
-    ProgrammerRadixOperators->checkDefaultBitShift();
+    if (ProgrammerRadixOperators)
+    {
+        ProgrammerRadixOperators->checkDefaultBitShift();
+    }
 }
 
 void OperatorsPanel::EnsureProgrammerBitFlipPanel()

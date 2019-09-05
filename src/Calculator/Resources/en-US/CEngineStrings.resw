@@ -541,10 +541,6 @@
     <value>NOR</value>
     <comment>{Locked}The string that represents the function</comment>
   </data>
-  <data name="Xnor" xml:space="preserve">
-    <value>XNOR</value>
-    <comment>{Locked}The string that represents the function</comment>
-  </data>
   <data name="CubeRoot" xml:space="preserve">
     <value>cuberoot</value>
     <comment>{Locked}The string that represents the function</comment>

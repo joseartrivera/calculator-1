@@ -59,14 +59,15 @@ void CalculatorProgrammerRadixOperators::bitshiftFlyout_Checked(Platform::Object
     {
         FindName("RolButton");
         FindName("RorButton");
-        FindName("rolCarryButton");
-        FindName("rorCarryButton");
-        FindName("lshLogicalButton");
-        FindName("rshLogicalButton");
+        FindName("RolCarryButton");
+        FindName("RorCarryButton");
+        FindName("LshLogicalButton");
+        FindName("RshLogicalButton");
     }
 
     // Since arithmeticShiftButton defaults to IsChecked = true, this event an fire before we can load the deferred loaded controls. If that is the case, just return and do nothing.
-    if (RolButton == nullptr)
+    if (RolButton == nullptr || RorButton == nullptr || RolCarryButton == nullptr || RorCarryButton == nullptr || LshLogicalButton == nullptr
+        || RshLogicalButton == nullptr)
     {
         return;
     }
