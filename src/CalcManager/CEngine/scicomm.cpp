@@ -178,7 +178,7 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
     // BINARY OPERATORS:
     if (IsBinOpCode(wParam))
     {
-        // Change the operation if last input was operation.
+        // Change the operation if last input was operation. Ex: '1 + ' was already entered and - was pressed, input changes to '1 - '
         if (IsBinOpCode(m_nLastCom))
         {
             bool fPrecInvToHigher = false; // Is Precedence Inversion from lower to higher precedence happening ??
@@ -252,15 +252,15 @@ void CCalcEngine::ProcessCommandWorker(OpCode wParam)
                 {
                     DisplayNum();
 
+                    // If we are not following order of operations, complete the equation and add it to the history.
+                    // The new history will start with m_currentVal followed by the new binary operator
+                    // to better communicate to the user that this is working in immediate execution.
                     if (!m_fPrecedence)
                     {
-                        if (!m_HistoryCollector.FOpndAddedToHistory())
-                        {
-                            m_HistoryCollector.AddOpndToHistory(m_numberString, m_currentVal);
-                        }
 
                         wstring groupedString = GroupDigitsPerRadix(m_numberString, m_radix);
                         m_HistoryCollector.CompleteEquation(groupedString);
+                        m_HistoryCollector.AddOpndToHistory(m_numberString, m_currentVal);
                     }
                 }
 
